@@ -209,6 +209,13 @@ extension ChatViewController : UITableViewDataSource{
                     self.presenter.actionClicked(action: action)
                 }
                 return cell ?? UITableViewCell()
+            case .gallery:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GallaryTableViewCell") as? GallaryTableViewCell
+                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+                cell?.actionClicked = { action in
+                    self.presenter.actionClicked(action: action)
+                }
+                return cell ?? UITableViewCell()
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BotChatTableViewCell") as? BotChatTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
