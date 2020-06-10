@@ -18,6 +18,9 @@ class BasicMessage : Codable , Mappable {
     var msgType : MessageType
     var mediaUrl : String
     var actions : [Action]
+    var galleryItems : [GallaryItem]
+    var image : String
+    var url : String
     
     init(){
         type = ""
@@ -27,6 +30,9 @@ class BasicMessage : Codable , Mappable {
         msgType = .text
         mediaUrl = ""
         actions = [Action]()
+        galleryItems = [GallaryItem]()
+        image = ""
+        url = ""
     }
     
     func mapping(map: Map) {
@@ -37,7 +43,11 @@ class BasicMessage : Codable , Mappable {
         msgType = MessageType.init(rawValue: slug.lowercased()) ?? .text
         mediaUrl <- map["mediaUrl"]
         actions <- map["actions"]
+        galleryItems <- map["data"]
+        image <- map["image"]
+        url <- map["url"]
     }
+    
     
     required convenience init?(map: Map) {
         self.init()

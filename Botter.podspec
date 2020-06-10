@@ -43,7 +43,7 @@ Pod::Spec.new do |spec|
 
   
   spec.platform     = :ios, "11.0"
-  spec.ios.framework  = 'WebKit'
+  spec.ios.framework  = 'WebKit' , 'AVKit'
  
 
 

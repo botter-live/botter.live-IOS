@@ -198,6 +198,9 @@
 		8CC4F6E7248D1C3E000692AE /* BotterSDK-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CC4F6E6248D1B77000692AE /* BotterSDK-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CC4F6E8248D24C7000692AE /* Assets.xcassets in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC4F4E0248CFCCA000692AE /* Assets.xcassets */; };
 		8CFC709F248FC227006C677B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFC709E248FC227006C677B /* WebKit.framework */; };
+		8CFC70A1248FCD64006C677B /* GallaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A0248FCD64006C677B /* GallaryTableViewCell.swift */; };
+		8CFC70A3248FCE31006C677B /* GallaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A2248FCE31006C677B /* GallaryItem.swift */; };
+		8CFC70A5248FD19E006C677B /* GalleryItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */; };
 		C8958CEB655F999D6D4C445D /* Pods_BotterSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F2A8C2FA872B259EF56186 /* Pods_BotterSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -404,6 +407,9 @@
 		8CC4F6CA248D180D000692AE /* ContentSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSheet.swift; sourceTree = "<group>"; };
 		8CC4F6E6248D1B77000692AE /* BotterSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BotterSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		8CFC709E248FC227006C677B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		8CFC70A0248FCD64006C677B /* GallaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryTableViewCell.swift; sourceTree = "<group>"; };
+		8CFC70A2248FCE31006C677B /* GallaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryItem.swift; sourceTree = "<group>"; };
+		8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -560,6 +566,7 @@
 			children = (
 				8CC4F4DE248CFCCA000692AE /* BasicMessage.swift */,
 				8CC4F4DF248CFCCA000692AE /* Action.swift */,
+				8CFC70A2248FCE31006C677B /* GallaryItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -586,9 +593,9 @@
 		8CC4F4E7248CFCCB000692AE /* ChatView */ = {
 			isa = PBXGroup;
 			children = (
+				8CC4F4EA248CFCCB000692AE /* Cells */,
 				8CC4F4E8248CFCCB000692AE /* ChatWireframe.swift */,
 				8CC4F4E9248CFCCB000692AE /* ChatViewController.swift */,
-				8CC4F4EA248CFCCB000692AE /* Cells */,
 				8CC4F4F2248CFCCB000692AE /* ChatInteractor.swift */,
 				8CC4F4F3248CFCCB000692AE /* ChatPresenter.swift */,
 				8CC4F4F4248CFCCB000692AE /* ChatInterfaces.swift */,
@@ -606,6 +613,8 @@
 				8CC4F4EF248CFCCB000692AE /* HeroTableViewCell.swift */,
 				8CC4F4F0248CFCCB000692AE /* TagCollectionViewCell.xib */,
 				8CC4F4F1248CFCCB000692AE /* BotChatTableViewCell.swift */,
+				8CFC70A0248FCD64006C677B /* GallaryTableViewCell.swift */,
+				8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1002,6 +1011,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFC70A1248FCD64006C677B /* GallaryTableViewCell.swift in Sources */,
 				8CC4F6B3248D17A9000692AE /* UIImageView+WebCache.m in Sources */,
 				8CC4F522248CFCCC000692AE /* FormatterInterface.swift in Sources */,
 				8CC4F682248D17A9000692AE /* CodableTransform.swift in Sources */,
@@ -1048,7 +1058,9 @@
 				8CC4F548248CFCCC000692AE /* ImageBotTableViewCell.swift in Sources */,
 				8CC4F683248D17A9000692AE /* ImmutableMappable.swift in Sources */,
 				8CC4F6A2248D17A9000692AE /* UIImage+MultiFormat.m in Sources */,
+				8CFC70A3248FCE31006C677B /* GallaryItem.swift in Sources */,
 				8CC4F52F248CFCCC000692AE /* SemiRoundedInputFeild.swift in Sources */,
+				8CFC70A5248FD19E006C677B /* GalleryItemCollectionViewCell.swift in Sources */,
 				8CC4F51B248CFCCC000692AE /* PickerCell.swift in Sources */,
 				8CC4F69A248D17A9000692AE /* UIImage+ForceDecode.m in Sources */,
 				8CC4F686248D17A9000692AE /* MapError.swift in Sources */,

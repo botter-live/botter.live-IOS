@@ -15,7 +15,13 @@ class SocketManager : WebSocketDelegate {
     var messageRecieved:((BasicMessage)->())!
     
     private var socket: WebSocket!
-    var isConnected = false
+    var isConnected = false {
+        didSet{
+            if !isConnected{
+                
+            }
+        }
+    }
 //    let server = WebSocketServer()
     private let guid : String = UUID().uuidString
     
@@ -51,6 +57,7 @@ class SocketManager : WebSocketDelegate {
            case .viabilityChanged(_):
                break
            case .reconnectSuggested(_):
+            self.connect()
                break
            case .cancelled:
                isConnected = false
@@ -103,15 +110,20 @@ class SocketManager : WebSocketDelegate {
     }
     
     func sendPostBack(value : String){
-        let msg : [String : Any] = [
-                   "type": "message" ,
-                   "text" : value,
-                   "user": guid ,
-                   "bot_id": "nKmovPCdWNZdYnIejRnd" ,
-                   ]
-        
-        let msgString = json(from: msg) ?? ""
-        socket.write(string: msgString)
+        if isConnected {
+            let msg : [String : Any] = [
+                "type": "message" ,
+                "text" : value,
+                "user": guid ,
+                "bot_id": "nKmovPCdWNZdYnIejRnd" ,
+            ]
+            
+            let msgString = json(from: msg) ?? ""
+            socket.write(string: msgString)
+        }else{
+            connect()
+            sendPostBack(value: value)
+        }
     }
     
     func handleMessage(msg : String){

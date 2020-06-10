@@ -27,7 +27,7 @@ class HeroTableViewCell: BotChatTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        let cellNib = UINib(nibName: "TagCollectionViewCell", bundle: Bundle.init(for: self.classForCoder))
+        let cellNib = UINib(nibName: "TagCollectionViewCell", bundle: MyFrameworkBundle.bundle)
         self.sizingCell = (cellNib.instantiate(withOwner: nil, options: nil) as NSArray).firstObject as! TagCollectionViewCell?
         collectionView.register(cellNib, forCellWithReuseIdentifier: "TagCollectionViewCell")
         self.flowLayout?.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -43,7 +43,11 @@ class HeroTableViewCell: BotChatTableViewCell {
     override func setData(msg: BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
     }
-
+    
+    override func prepareForReuse() {
+        self.msg = BasicMessage()
+        collectionView.reloadData()
+    }
 }
 
 extension HeroTableViewCell : UICollectionViewDataSource {

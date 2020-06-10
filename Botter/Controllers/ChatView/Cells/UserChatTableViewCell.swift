@@ -29,13 +29,14 @@ class UserChatTableViewCell: UITableViewCell {
             textLbl.text = msg.text
         }
         
-        
-        BGView.clipsToBounds = true
-        BGView.layer.cornerRadius = 6
-        if msg.isBotMsg{
-            BGView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner , .layerMaxXMaxYCorner]
-        }else{
-           BGView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner , .layerMaxXMaxYCorner]
+        if BGView != nil{
+            BGView.clipsToBounds = true
+            BGView.layer.cornerRadius = 6
+            if msg.isBotMsg{
+                BGView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner , .layerMaxXMaxYCorner]
+            }else{
+                BGView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner , .layerMaxXMaxYCorner]
+            }
         }
     }
 

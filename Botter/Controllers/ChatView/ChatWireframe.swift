@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import AVKit
 
 final class ChatWireframe: BaseWireframe {
 
@@ -33,13 +34,30 @@ final class ChatWireframe: BaseWireframe {
 extension ChatWireframe: ChatWireframeInterface {
     
     func openVideo(url: String) {
-        
+        if url.isYoutubeLink(){
+            openUrl(url: url)
+        }else{
+            if let vedioURL =  URL.init(string: url) {
+                let player = AVPlayer(url:vedioURL)
+                let playerViewController = AVPlayerViewController()
+                playerViewController.player = player
+                
+                if let currentVC = UIApplication.shared.windows[0].visibleViewController{
+                    currentVC.present(playerViewController, animated: true) {
+                        player.play()
+                    }
+                }
+            }
+        }
     }
     
     func openUrl(url: String) {
 //        WebLinksViewController.openInParent(link: url, parent: self.viewController)
-        if let url = URL(string: "url") {
-            UIApplication.shared.open(url)
+        if let url = URL(string: url) {
+//            UIApplication.shared.open(url)
+            if UIApplication.shared.canOpenURL(url){
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
         }
     }
     
@@ -47,3 +65,4 @@ extension ChatWireframe: ChatWireframeInterface {
         self.viewController.makePhoneCall(phoneNumber: number)
     }
 }
+
