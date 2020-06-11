@@ -1,16 +1,3 @@
-PODS:
-  - Botter (1.0.0)
-
-DEPENDENCIES:
-  - Botter (from `../BotterSDK`)
-
-EXTERNAL SOURCES:
-  Botter:
-    :path: "../BotterSDK"
-
-SPEC CHECKSUMS:
-  Botter: 24cc6350f8b3521618acfa1141c93935967775fa
-
-PODFILE CHECKSUM: 1b06bcc75de001aa8cfd33b9de5a686736106b68
+PODFILE CHECKSUM: e850dae7ebda1ade0ba1e894f6633ddf3efb55c9
 
 COCOAPODS: 1.9.3
