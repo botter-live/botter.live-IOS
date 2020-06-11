@@ -19,6 +19,8 @@ public func show(APIKey : String){
     let floatingButtonController = FloatingBtnController()
 }
 
+public var chatTitle = ""
+
 public func openChatScreen(APIKey : String){
     let windows = UIApplication.shared.windows
     if let index = windows.lastIndex(where: { (window) -> Bool in
@@ -47,14 +49,24 @@ public func showLauncherButton(){
 }
 
 internal func openChat(parent : UIViewController){
-    let chatScreen = ChatWireframe.init()
-    if #available(iOS 13.0, *) {
-        chatScreen.viewController.modalPresentationStyle = .automatic
-    } else {
-        // Fallback on earlier versions
+//    let chatScreen = ChatWireframe.init()
+//    if #available(iOS 13.0, *) {
+//        chatScreen.viewController.modalPresentationStyle = .automatic
+//    } else {
+//        // Fallback on earlier versions
+//    }
+//    parent.presentWireframe(chatScreen, animated: true , completion: nil)
+    WebLinksViewController.openInParent(link: "https://aldawaa.bluecrunch.org/", parent: parent)
+}
+
+public func setLauncherBottomMargin(marginValue value : Float){
+    FloatingButtonWindow.bottomMargin = CGFloat(value)
+    let windows = UIApplication.shared.windows
+    if let floatingWindow = windows.last(where:  { (window) -> Bool in
+        window is FloatingButtonWindow
+    }){
+        (floatingWindow as? FloatingButtonWindow)?.resetButtonPlace()
     }
-    parent.presentWireframe(chatScreen, animated: true , completion: nil)
-//    WebLinksViewController.openInParent(link: "https://aldawaa.bluecrunch.org/", parent: parent)
 }
 
 //UIWindow.Level.alert + 1

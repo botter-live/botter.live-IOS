@@ -21,6 +21,7 @@ final class ChatViewController: UIViewController {
     
     var presenter: ChatPresenterInterface!
     var original : CGFloat = 0
+    var currentAudio = -1
     
     // MARK: - Lifecycle -
     
@@ -28,6 +29,7 @@ final class ChatViewController: UIViewController {
         super.viewDidLoad()
         self.keyBoardSettings()
         self.presenter.openSocket()
+       
     }
     
     @IBAction func sendMesg(){
@@ -46,6 +48,7 @@ final class ChatViewController: UIViewController {
     func showError(errorMsg: String) {
         self.showMessage(errorMsg)
     }
+    
 }
 
 // MARK: - Extensions -
@@ -214,6 +217,18 @@ extension ChatViewController : UITableViewDataSource{
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
                 cell?.actionClicked = { action in
                     self.presenter.actionClicked(action: action)
+                }
+                return cell ?? UITableViewCell()
+            case .audio:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AudioBotTableViewCell") as? AudioBotTableViewCell
+                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row), isCurrent: indexPath.row == currentAudio, index: indexPath.row)
+                cell?.playPausePressed = { btnIndex in
+                    if self.currentAudio == btnIndex{
+                        self.currentAudio = -1
+                    }else{
+                        self.currentAudio = btnIndex
+                    }
+                    self.reload()
                 }
                 return cell ?? UITableViewCell()
             default:

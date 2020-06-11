@@ -35,6 +35,7 @@ extension ChatInteractor: ChatInteractorInterface {
             self.presenter.clearTextBox()
             self.presenter.messageReceived(message: Message)
         }else{
+            SocketManager.shared.connect()
             self.presenter.showError(errorMsg: "Failed to send,\nPlease check your internet connection")
         }
     }

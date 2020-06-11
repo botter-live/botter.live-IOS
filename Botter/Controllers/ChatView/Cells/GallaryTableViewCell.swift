@@ -55,6 +55,6 @@ extension GallaryTableViewCell : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
        
-        return CGSize.init(width: 200, height: 228)
+        return CGSize.init(width: 250, height: 228)
     }
 }

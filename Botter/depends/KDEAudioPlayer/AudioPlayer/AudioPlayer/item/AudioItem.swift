@@ -144,28 +144,28 @@ open class AudioItem: NSObject {
 
     /// The artist of the item.
     ///
-    /// This can change over time which is why the property is dynamic. It enables KVO on the property.
-    open dynamic var artist: String?
+    /// This can change over time which is why the property is . It enables KVO on the property.
+    open var artist: String?
 
     /// The title of the item.
     ///
-    /// This can change over time which is why the property is dynamic. It enables KVO on the property.
-    open dynamic var title: String?
+    /// This can change over time which is why the property is . It enables KVO on the property.
+    open var title: String?
 
     /// The album of the item.
     ///
-    /// This can change over time which is why the property is dynamic. It enables KVO on the property.
-    open dynamic var album: String?
+    /// This can change over time which is why the property is . It enables KVO on the property.
+    open var album: String?
 
     ///The track count of the item's album.
     ///
-    /// This can change over time which is why the property is dynamic. It enables KVO on the property.
-    open dynamic var trackCount: NSNumber?
+    /// This can change over time which is why the property is . It enables KVO on the property.
+    open  var trackCount: NSNumber?
 
     /// The track number of the item in its album.
     ///
-    /// This can change over time which is why the property is dynamic. It enables KVO on the property.
-    open dynamic var trackNumber: NSNumber?
+    /// This can change over time which is why the property is . It enables KVO on the property.
+    open  var trackNumber: NSNumber?
 
     /// The artwork image of the item.
     open var artworkImage: Image? {
@@ -193,11 +193,11 @@ open class AudioItem: NSObject {
 
     /// The artwork image of the item.
     ///
-    /// This can change over time which is why the property is dynamic. It enables KVO on the property.
+    /// This can change over time which is why the property is . It enables KVO on the property.
     #if os(OSX)
-    open dynamic var artwork: Image?
+    open  var artwork: Image?
     #else
-    open dynamic var artwork: MPMediaItemArtwork?
+    open  var artwork: MPMediaItemArtwork?
 
     /// The image size.
     private var imageSize: CGSize?
@@ -213,15 +213,15 @@ open class AudioItem: NSObject {
         items.forEach {
             if let commonKey = $0.commonKey {
                 switch commonKey {
-                case AVMetadataCommonKeyTitle where title == nil:
+                case AVMetadataKey.commonKeyTitle where title == nil:
                     title = $0.value as? String
-                case AVMetadataCommonKeyArtist where artist == nil:
+                case AVMetadataKey.commonKeyArtist where artist == nil:
                     artist = $0.value as? String
-                case AVMetadataCommonKeyAlbumName where album == nil:
+                case AVMetadataKey.commonKeyAlbumName where album == nil:
                     album = $0.value as? String
-                case AVMetadataID3MetadataKeyTrackNumber where trackNumber == nil:
+                case AVMetadataKey.id3MetadataKeyTrackNumber where trackNumber == nil:
                     trackNumber = $0.value as? NSNumber
-                case AVMetadataCommonKeyArtwork where artwork == nil:
+                case AVMetadataKey.commonKeyArtwork where artwork == nil:
                     artworkImage = ($0.value as? Data).flatMap { Image(data: $0) }
                 default:
                     break

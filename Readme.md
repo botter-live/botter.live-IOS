@@ -38,3 +38,17 @@ the files attached with this document is a SDK for iPhone simulator and another 
 > or
 >
 > > call these two functions whenever we want to show/hide launcher button
+
+## Customization
+
+**Change Launcher Position** 
+
+> to change launcher Position you can set bottom margin calling this:
+>
+> > *Botter.setLauncherBottomMargin(marginValue: Float(40))*
+
+**Change Title Text** 
+
+> to change title text you can set it calling this :
+>
+> > *Botter.chatTitle = "Welcome to al dwaa pharmacies\nاهلاً و سهلاً بكم"*

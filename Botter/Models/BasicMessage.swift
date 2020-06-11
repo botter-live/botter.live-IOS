@@ -9,7 +9,7 @@
 import Foundation
 //import ObjectMapper
 
-class BasicMessage : Codable , Mappable {
+class BasicMessage :  Mappable {
     
     var type : String
     var text : String
@@ -22,6 +22,10 @@ class BasicMessage : Codable , Mappable {
     var image : String
     var url : String
     
+    var player = AudioPlayer()
+    var audioDuration : TimeInterval!
+    var foundDuration : (()->())!
+    
     init(){
         type = ""
         text = ""
@@ -33,6 +37,7 @@ class BasicMessage : Codable , Mappable {
         galleryItems = [GallaryItem]()
         image = ""
         url = ""
+        audioDuration = 0
     }
     
     func mapping(map: Map) {
@@ -46,6 +51,10 @@ class BasicMessage : Codable , Mappable {
         galleryItems <- map["data"]
         image <- map["image"]
         url <- map["url"]
+        
+        if msgType == .audio{
+            handleAudio()
+        }
     }
     
     
@@ -56,8 +65,16 @@ class BasicMessage : Codable , Mappable {
     static func getMessage(dict : [String:Any])-> BasicMessage{
         return Mapper<BasicMessage>().map(JSON: dict)!
     }
+    
+    
+    func handleAudio(){
+        let item = AudioItem(mediumQualitySoundURL: URL.init(string: mediaUrl))
+        player.delegate = self
+        player.play(item: item!)
+        player.volume = 0
+//        setImage(state: player.state)
+    }
 }
-
 
 enum MessageType : String , Codable{
     case text = "text"
@@ -70,4 +87,19 @@ enum MessageType : String , Codable{
     case gallery = "gallery"
     case video = "video"
     case hero = "hero"
+}
+
+extension BasicMessage : AudioPlayerDelegate{
+    func audioPlayer(_ audioPlayer: AudioPlayer, didFindDuration duration: TimeInterval, for item: AudioItem) {
+        self.audioDuration = duration
+        player.stop()
+        if foundDuration != nil {
+            self.foundDuration()
+            self.foundDuration = nil
+        }
+    }
+    
+    func audioPlayer(_ audioPlayer: AudioPlayer, willStartPlaying item: AudioItem) {
+        
+    }
 }

@@ -14,6 +14,8 @@ class WebLinksViewController: UIViewController , WKNavigationDelegate, WKUIDeleg
 
     @IBOutlet weak var webView : WKWebView!
     @IBOutlet weak var indicator : UIActivityIndicatorView!
+    @IBOutlet weak var titleLbl : UILabel!
+    
     
     var link = ""
     
@@ -22,7 +24,10 @@ class WebLinksViewController: UIViewController , WKNavigationDelegate, WKUIDeleg
         self.webView.navigationDelegate = self
         self.indicator.startAnimating()
         self.loadWebView()
-  }
+        if Botter.chatTitle != ""{
+            self.titleLbl.text = Botter.chatTitle
+        }
+    }
     
     static func openInParent(link : String , parent : UIViewController){
            let vc = WebLinksViewController.instantiateFromStoryBoard(appStoryBoard: .Main)

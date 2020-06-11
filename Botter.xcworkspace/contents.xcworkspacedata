@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/bluecrunch/Desktop/Projects/Native/BotterSDK/Botter.xcodeproj">
+      location = "group:Botter.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -14,6 +14,7 @@ class FloatingBtnController: UIViewController {
     
     var window : FloatingButtonWindow?
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
@@ -23,6 +24,7 @@ class FloatingBtnController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         window?.rootViewController = self
         window?.button = self.button
+        window?.floatingButtonController = self
         window?.makeKeyAndVisible()
     }
     
@@ -33,6 +35,9 @@ class FloatingBtnController: UIViewController {
     
     override func loadView() {
         let view = UIView()
+        if self.button != nil{
+            self.button.removeFromSuperview()
+        }
         let button = UIButton(type: .custom)
         button.setTitle("", for: .normal)
         button.setTitleColor(UIColor.green, for: .normal)
@@ -41,8 +46,8 @@ class FloatingBtnController: UIViewController {
 //        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("BotterSDK.bundle")
        
 //        let podBundle = Bundle(path: Bundle(for: FloatingBtnController.self). path(forResource: "Botter", ofType: "bundle")!)
-
-        let image = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle, compatibleWith: nil)
+//MyFrameworkBundle.bundle
+        let image = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle , compatibleWith: nil)
         button.setImage(image , for: .normal)
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowRadius = 3
@@ -52,8 +57,12 @@ class FloatingBtnController: UIViewController {
         button.clipsToBounds = true
         button.sizeToFit()
         
+        let bottomInset = self.window?.safeAreaInsets.bottom ?? 0
+        let height : CGFloat = 60
         let screenSpecs = UIScreen.main.bounds
-        button.frame = CGRect(origin: CGPoint(x: screenSpecs.width - 100, y: screenSpecs.height - 100), size: CGSize.init(width: 60, height: 60))
+//        let viewFrame = self.view.frame
+//        print(viewFrame)
+        button.frame = CGRect(origin: CGPoint(x: screenSpecs.width - 100, y: (screenSpecs.height - FloatingButtonWindow.bottomMargin - bottomInset - height)), size: CGSize.init(width: 60, height: height ))
         button.autoresizingMask = []
         view.addSubview(button)
         self.view = view
@@ -78,8 +87,8 @@ class FloatingBtnController: UIViewController {
 class FloatingButtonWindow: UIWindow {
     
     var button: UIButton?
-    
-//    weak var floatingButtonController: FloatingBtnController?
+    static var bottomMargin : CGFloat = 40
+    weak var floatingButtonController: FloatingBtnController?
     
     init() {
         super.init(frame: UIScreen.main.bounds)
@@ -104,6 +113,9 @@ class FloatingButtonWindow: UIWindow {
         }
     }
     
+    func resetButtonPlace(){
+        floatingButtonController?.loadView()
+    }
     
 }
 
@@ -122,12 +134,18 @@ open class BotterControllerWithHiddenLauncher : UIViewController  {
 }
 public final class MyFrameworkBundle {
     public static let main: Bundle = Bundle(for: MyFrameworkBundle.self)
+
     
-    static var bundle:Bundle {
+    static var bundle:Bundle! {
         let podBundle = Bundle(for: FloatingBtnController.self)
 
-        let bundleURL = podBundle.url(forResource: "Botter", withExtension: "bundle")
-        print("bundel : " + (bundleURL!.absoluteString) )
-        return Bundle(url: bundleURL!)!
+        if let bundleURL = podBundle.url(forResource: "Botter", withExtension: "bundle"){
+            //        print("bundel : " + (bundleURL!.absoluteString) )
+            return Bundle(url: bundleURL) ?? nil
+        }else{
+            return Bundle.main
+        }
     }
+    
+    
 }
