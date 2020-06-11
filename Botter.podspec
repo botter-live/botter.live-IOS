@@ -56,7 +56,7 @@ Pod::Spec.new do |spec|
   spec.resource_bundles = {
     'Botter' => ['**/*.{xib,storyboard,xcassets,}']
 }
-  spec.exclude_files = "Classes/Exclude"
+  spec.exclude_files = "Botter/BotterSample/*.{xib,storyboard,xcassets,}"
 
 
   spec.swift_version = "4.2" 
