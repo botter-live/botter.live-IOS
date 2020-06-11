@@ -143,7 +143,7 @@ public final class MyFrameworkBundle {
             //        print("bundel : " + (bundleURL!.absoluteString) )
             return Bundle(url: bundleURL) ?? nil
         }else{
-            return Bundle.main
+            return podBundle
         }
     }
     
