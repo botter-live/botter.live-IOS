@@ -718,7 +718,7 @@ to Botter Mobile</string>
                                 </connections>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27u-gJ-guB" customClass="PaddedUILabel" customModule="Botter" customModuleProvider="target">
-                                <rect key="frame" x="178" y="120" width="58.5" height="26.5"/>
+                                <rect key="frame" x="190" y="120" width="34.5" height="18.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

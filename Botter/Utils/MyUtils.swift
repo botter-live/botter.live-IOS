@@ -10,12 +10,8 @@ import Foundation
 import UIKit
 
 enum AppStoryboard : String {
-    case Main = "Main"
-    case PreLogin = "PreLogin"
-    case Home = "Home"
-    case More = "More"
-    case License = "License"
-    case QueryFines = "QueryFines"
+    case Main = "Chat"
+   
     
     
    

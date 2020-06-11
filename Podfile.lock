@@ -1,5 +1,5 @@
 PODS:
-  - Botter (0.0.1)
+  - Botter (1.0.0)
 
 DEPENDENCIES:
   - Botter (from `../BotterSDK`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../BotterSDK"
 
 SPEC CHECKSUMS:
-  Botter: bef277136c7b9c9ef03c3213f27e5b10188904a1
+  Botter: 24cc6350f8b3521618acfa1141c93935967775fa
 
 PODFILE CHECKSUM: 1b06bcc75de001aa8cfd33b9de5a686736106b68
 

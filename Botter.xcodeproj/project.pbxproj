@@ -11,7 +11,6 @@
 		8C08E7FF249298E300A2B984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E7FE249298E300A2B984 /* AppDelegate.swift */; };
 		8C08E801249298E300A2B984 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E800249298E300A2B984 /* SceneDelegate.swift */; };
 		8C08E806249298E300A2B984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C08E804249298E300A2B984 /* Main.storyboard */; };
-		8C08E808249298E500A2B984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C08E807249298E500A2B984 /* Assets.xcassets */; };
 		8C08E80B249298E500A2B984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C08E809249298E500A2B984 /* LaunchScreen.storyboard */; };
 		8C08E81424929B7400A2B984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E802249298E300A2B984 /* ViewController.swift */; };
 		8C08E81624929BA100A2B984 /* HiddenLauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E81524929BA100A2B984 /* HiddenLauncherViewController.swift */; };
@@ -81,8 +80,7 @@
 		8CC4F53F248CFCCC000692AE /* BasicMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4F4DE248CFCCA000692AE /* BasicMessage.swift */; };
 		8CC4F540248CFCCC000692AE /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4F4DF248CFCCA000692AE /* Action.swift */; };
 		8CC4F541248CFCCC000692AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4F4E0248CFCCA000692AE /* Assets.xcassets */; };
-		8CC4F542248CFCCC000692AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4F4E2248CFCCB000692AE /* LaunchScreen.storyboard */; };
-		8CC4F543248CFCCC000692AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4F4E4248CFCCB000692AE /* Main.storyboard */; };
+		8CC4F543248CFCCC000692AE /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4F4E4248CFCCB000692AE /* Chat.storyboard */; };
 		8CC4F544248CFCCC000692AE /* ChatWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4F4E8248CFCCB000692AE /* ChatWireframe.swift */; };
 		8CC4F545248CFCCC000692AE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4F4E9248CFCCB000692AE /* ChatViewController.swift */; };
 		8CC4F546248CFCCC000692AE /* VideoBotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4F4EB248CFCCB000692AE /* VideoBotTableViewCell.swift */; };
@@ -252,7 +250,6 @@
 		8C08E800249298E300A2B984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C08E802249298E300A2B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C08E805249298E300A2B984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8C08E807249298E500A2B984 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C08E80A249298E500A2B984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C08E80C249298E500A2B984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C08E81524929BA100A2B984 /* HiddenLauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenLauncherViewController.swift; sourceTree = "<group>"; };
@@ -292,7 +289,7 @@
 		8CAB89CD249134BA009BBAB6 /* KDEAudioPlayer.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = KDEAudioPlayer.release.xcconfig; path = "Botter/depends/Target Support Files/KDEAudioPlayer/KDEAudioPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		8CC4F4A3248CFBA4000692AE /* Botter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Botter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CC4F4A6248CFBA4000692AE /* Botter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Botter.h; sourceTree = "<group>"; };
-		8CC4F4A7248CFBA4000692AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CC4F4A7248CFBA4000692AE /* BotterInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BotterInfo.plist; sourceTree = "<group>"; };
 		8CC4F4AF248CFCC9000692AE /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		8CC4F4B1248CFCCA000692AE /* tagViewLayOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tagViewLayOut.swift; sourceTree = "<group>"; };
 		8CC4F4B2248CFCCA000692AE /* RoundedCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCardView.swift; sourceTree = "<group>"; };
@@ -331,8 +328,7 @@
 		8CC4F4DE248CFCCA000692AE /* BasicMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicMessage.swift; sourceTree = "<group>"; };
 		8CC4F4DF248CFCCA000692AE /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		8CC4F4E0248CFCCA000692AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8CC4F4E3248CFCCB000692AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8CC4F4E5248CFCCB000692AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CC4F4E5248CFCCB000692AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chat.storyboard; sourceTree = "<group>"; };
 		8CC4F4E8248CFCCB000692AE /* ChatWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatWireframe.swift; sourceTree = "<group>"; };
 		8CC4F4E9248CFCCB000692AE /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8CC4F4EB248CFCCB000692AE /* VideoBotTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoBotTableViewCell.swift; sourceTree = "<group>"; };
@@ -538,7 +534,6 @@
 				8C08E800249298E300A2B984 /* SceneDelegate.swift */,
 				8C08E802249298E300A2B984 /* ViewController.swift */,
 				8C08E804249298E300A2B984 /* Main.storyboard */,
-				8C08E807249298E500A2B984 /* Assets.xcassets */,
 				8C08E809249298E500A2B984 /* LaunchScreen.storyboard */,
 				8C08E80C249298E500A2B984 /* Info.plist */,
 				8C08E81524929BA100A2B984 /* HiddenLauncherViewController.swift */,
@@ -629,7 +624,7 @@
 				8CC4F4E1248CFCCB000692AE /* StoryBoard */,
 				8CC4F512248CFCCC000692AE /* Utils */,
 				8CC4F4A6248CFBA4000692AE /* Botter.h */,
-				8CC4F4A7248CFBA4000692AE /* Info.plist */,
+				8CC4F4A7248CFBA4000692AE /* BotterInfo.plist */,
 				8CC4F570248CFEE5000692AE /* Botter.swift */,
 			);
 			path = Botter;
@@ -737,8 +732,7 @@
 		8CC4F4E1248CFCCB000692AE /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				8CC4F4E2248CFCCB000692AE /* LaunchScreen.storyboard */,
-				8CC4F4E4248CFCCB000692AE /* Main.storyboard */,
+				8CC4F4E4248CFCCB000692AE /* Chat.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -1164,7 +1158,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C08E80B249298E500A2B984 /* LaunchScreen.storyboard in Resources */,
-				8C08E808249298E500A2B984 /* Assets.xcassets in Resources */,
 				8C08E806249298E300A2B984 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1175,8 +1168,7 @@
 			files = (
 				8CC4F534248CFCCC000692AE /* LoaderView.xib in Resources */,
 				8CC4F51E248CFCCC000692AE /* PickerView.xib in Resources */,
-				8CC4F543248CFCCC000692AE /* Main.storyboard in Resources */,
-				8CC4F542248CFCCC000692AE /* LaunchScreen.storyboard in Resources */,
+				8CC4F543248CFCCC000692AE /* Chat.storyboard in Resources */,
 				8CC4F54B248CFCCC000692AE /* TagCollectionViewCell.xib in Resources */,
 				8CC4F541248CFCCC000692AE /* Assets.xcassets in Resources */,
 				8CC4F51F248CFCCC000692AE /* PickerCell.xib in Resources */,
@@ -1471,20 +1463,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		8CC4F4E2248CFCCB000692AE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8CC4F4E3248CFCCB000692AE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		8CC4F4E4248CFCCB000692AE /* Main.storyboard */ = {
+		8CC4F4E4248CFCCB000692AE /* Chat.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8CC4F4E5248CFCCB000692AE /* Base */,
 			);
-			name = Main.storyboard;
+			name = Chat.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1662,7 +1646,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Botter/Info.plist;
+				INFOPLIST_FILE = Botter/BotterInfo.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1690,7 +1674,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Botter/Info.plist;
+				INFOPLIST_FILE = Botter/BotterInfo.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
