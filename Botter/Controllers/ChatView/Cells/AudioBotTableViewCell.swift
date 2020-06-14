@@ -48,6 +48,9 @@ class AudioBotTableViewCell: BotChatTableViewCell {
             self.setDuration()
         }
         setImage(state: player.state)
+        if player.state == .playing && !isCurrent{
+            player.stop()
+        }
     }
     
     @IBAction func buttonTapped(){
@@ -84,7 +87,7 @@ class AudioBotTableViewCell: BotChatTableViewCell {
 //        player = AudioPlayer()
         player.delegate = nil
         durationTxt = ""
-        
+        imageBtn.tag = 0
     }
     
     func setDuration(){
@@ -100,13 +103,7 @@ class AudioBotTableViewCell: BotChatTableViewCell {
         }else if player.currentItem != nil {
             player.seek(to: TimeInterval(sender.value))
         }else{
-            let item = AudioItem(mediumQualitySoundURL: URL.init(string: msg.mediaUrl))!
-            player.play(item: item)
-            if playPausePressed != nil {
-                playPausePressed(imageBtn.tag)
-            }
-            
-            player.seek(to: TimeInterval(sender.value))
+            sender.value = 0
         }
     }
 

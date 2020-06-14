@@ -42,11 +42,17 @@ class HeroTableViewCell: BotChatTableViewCell {
     
     override func setData(msg: BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.reloadData()
+        
     }
     
     override func prepareForReuse() {
         self.msg = BasicMessage()
         collectionView.reloadData()
+        collectionView.delegate = nil
+        collectionView.dataSource = nil
     }
 }
 

@@ -1,3 +1,24 @@
-PODFILE CHECKSUM: e850dae7ebda1ade0ba1e894f6633ddf3efb55c9
+PODS:
+  - Botter (1.0.1):
+    - SwiftyGif
+  - SwiftyGif (5.3.0)
+
+DEPENDENCIES:
+  - Botter (from `../BotterSDK`)
+  - SwiftyGif
+
+SPEC REPOS:
+  trunk:
+    - SwiftyGif
+
+EXTERNAL SOURCES:
+  Botter:
+    :path: "../BotterSDK"
+
+SPEC CHECKSUMS:
+  Botter: 195648d7b77458dbf3e3725f6e6e4eb619a61f54
+  SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
+
+PODFILE CHECKSUM: 4bc2a52b99d0a8bb7d41806c5137457027e812a1
 
 COCOAPODS: 1.9.3

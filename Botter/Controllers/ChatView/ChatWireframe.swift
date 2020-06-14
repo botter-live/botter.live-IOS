@@ -37,16 +37,24 @@ extension ChatWireframe: ChatWireframeInterface {
         if url.isYoutubeLink(){
             openUrl(url: url)
         }else{
-            if let vedioURL =  URL.init(string: url) {
+            let nURL = url.replacingOccurrences(of: "http:", with: "https:")
+            if let vedioURL =  URL.init(string: nURL) {
                 let player = AVPlayer(url:vedioURL)
                 let playerViewController = AVPlayerViewController()
                 playerViewController.player = player
                 
-                if let currentVC = UIApplication.shared.windows[0].visibleViewController{
-                    currentVC.present(playerViewController, animated: true) {
-                        player.play()
+                let windows = UIApplication.shared.windows
+                if let floatingWindow = windows.last(where:  { (window) -> Bool in
+                    window is FloatingButtonWindow
+                }){
+                    if let currentVC = (floatingWindow as? FloatingButtonWindow)?.visibleViewController{
+                        currentVC.present(playerViewController, animated: true) {
+                            player.play()
+                        }
                     }
                 }
+                
+                
             }
         }
     }

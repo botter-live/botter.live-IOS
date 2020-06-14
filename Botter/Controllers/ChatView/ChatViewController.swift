@@ -29,6 +29,8 @@ final class ChatViewController: UIViewController {
         super.viewDidLoad()
         self.keyBoardSettings()
         self.presenter.openSocket()
+        
+        
        
     }
     
@@ -198,6 +200,10 @@ extension ChatViewController : UITableViewDataSource{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ImageBotTableViewCell") as? ImageBotTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
                 return cell ?? UITableViewCell()
+                case .gif:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "GifTableViewCell") as? GifTableViewCell
+                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+                return cell ?? UITableViewCell()
             case .video:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VideoBotTableViewCell") as? VideoBotTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
@@ -207,6 +213,13 @@ extension ChatViewController : UITableViewDataSource{
                 return cell ?? UITableViewCell()
             case .hero:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "HeroTableViewCell") as? HeroTableViewCell
+                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+                cell?.actionClicked = { action in
+                    self.presenter.actionClicked(action: action)
+                }
+                return cell ?? UITableViewCell()
+            case .triviaQuestion:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TriviaTableViewCell") as? TriviaTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
                 cell?.actionClicked = { action in
                     self.presenter.actionClicked(action: action)
@@ -231,6 +244,10 @@ extension ChatViewController : UITableViewDataSource{
                     self.reload()
                 }
                 return cell ?? UITableViewCell()
+            case .typing :
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TypingIndicatorTableViewCell") as? TypingIndicatorTableViewCell
+                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+                return cell ?? UITableViewCell()
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BotChatTableViewCell") as? BotChatTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
@@ -246,6 +263,17 @@ extension ChatViewController : UITableViewDataSource{
         }
       
 //        return UITableViewCell()
+    }
+    
+    
+}
+
+extension ChatViewController : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if presenter.messgesList[indexPath.row].msgType == .typing && !checkIfLastBotInput(index: indexPath.row){
+            return 0
+        }
+        return UITableView.automaticDimension
     }
 }
 

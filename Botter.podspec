@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   
 
   spec.name         = "Botter"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "Botter is an integration with Botter Chatbot"
 
   spec.homepage     = "https://github.com/NoraSayed135/Botter"
@@ -44,13 +44,13 @@ Pod::Spec.new do |spec|
   
   spec.platform     = :ios, "11.0"
   spec.ios.framework  = 'WebKit' , 'AVKit' , 'AVFoundation'
-  #spec.dependency 'KDEAudioPlayer'
+  spec.dependency 'SwiftyGif'
 
 
  #:path => '/Users/bluecrunch/Desktop/Projects/Native/BotterSDK'
-#= { :git => 'https://your-repository-url', :tag => s.version }
+#:git => 'https://github.com/NoraSayed135/Botter.git', :tag => spec.version
 
-  spec.source       = { :git => 'https://github.com/NoraSayed135/Botter.git', :tag => spec.version }
+  spec.source       = { :path => '/Users/bluecrunch/Desktop/Projects/Native/BotterSDK' }
 
   spec.source_files  = "**/*.{swift,h,m}"
   spec.resource_bundles = {
