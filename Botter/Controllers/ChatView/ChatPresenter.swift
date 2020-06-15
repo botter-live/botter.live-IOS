@@ -38,6 +38,11 @@ extension ChatPresenter: ChatPresenterInterface {
     }
     
     func messageReceived(message: BasicMessage) {
+        print("count : \(messgesList.count)")
+        messgesList = messgesList.filter { (msg) -> Bool in
+            msg.msgType != .typing
+        }
+        print("count : \(messgesList.count)")
         messgesList.append(message)
         self.view.reload()
     }

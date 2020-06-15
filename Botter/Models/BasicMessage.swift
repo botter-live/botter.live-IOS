@@ -87,6 +87,8 @@ enum MessageType : String , Codable{
     case gallery = "gallery"
     case video = "video"
     case hero = "hero"
+    case typing = "typing"
+    case gif = "gif"
 }
 
 extension BasicMessage : AudioPlayerDelegate{

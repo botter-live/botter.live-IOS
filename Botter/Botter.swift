@@ -49,14 +49,14 @@ public func showLauncherButton(){
 }
 
 internal func openChat(parent : UIViewController){
-//    let chatScreen = ChatWireframe.init()
-//    if #available(iOS 13.0, *) {
-//        chatScreen.viewController.modalPresentationStyle = .automatic
-//    } else {
-//        // Fallback on earlier versions
-//    }
-//    parent.presentWireframe(chatScreen, animated: true , completion: nil)
-    WebLinksViewController.openInParent(link: "https://aldawaa.bluecrunch.org/", parent: parent)
+    let chatScreen = ChatWireframe.init()
+    if #available(iOS 13.0, *) {
+        chatScreen.viewController.modalPresentationStyle = .automatic
+    } else {
+        // Fallback on earlier versions
+    }
+    parent.presentWireframe(chatScreen, animated: true , completion: nil)
+//    WebLinksViewController.openInParent(link: "https://aldawaa.bluecrunch.org/", parent: parent)
 }
 
 public func setLauncherBottomMargin(marginValue value : Float){

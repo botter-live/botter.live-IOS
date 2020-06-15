@@ -6,7 +6,7 @@ target 'Botter' do
   use_frameworks!
 
   # Pods for BotterSDK
-  
+  pod 'SwiftyGif'
 #  pod 'Starscream', '~> 4.0.0'
 #  pod 'Alamofire'
 #  pod 'SDWebImage', '~> 4.4.2'
@@ -23,9 +23,13 @@ end
 #
 #  # Pods for BotterSDKSample
 #
-#  pod 'Botter', :path => '../BotterSDK'
+
+target 'BotterSample' do
+ # Comment the next line if you don't want to use dynamic frameworks
+ use_frameworks!
+  pod 'Botter', :path => '../BotterSDK'
 #
-#end
+end
 
 #post_install do |installer|
 #    installer.pods_project.build_configurations.each do |config|
