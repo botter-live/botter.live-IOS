@@ -15,6 +15,7 @@ class Action : Codable , Mappable{
     var block : Int
     var value : String
     var action : ActionType
+    var msgIndex = -1
     
     init(){
         type = ""

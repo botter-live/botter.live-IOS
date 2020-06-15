@@ -41,7 +41,7 @@ class FloatingBtnController: UIViewController {
         let button = UIButton(type: .custom)
         button.setTitle("", for: .normal)
         button.setTitleColor(UIColor.green, for: .normal)
-        button.backgroundColor = UIColor.init(codeString: "#263279")
+        button.backgroundColor = UIColor.init(codeString: "#642C7A")
 //        let frameworkBundle = Bundle.init(for: FloatingBtnController.self)
 //        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("BotterSDK.bundle")
        

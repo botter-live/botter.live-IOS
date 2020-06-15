@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		8C2515A124967AB80003ED61 /* GifTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2515A024967AB80003ED61 /* GifTableViewCell.swift */; };
 		8C5B39BB24966AD500C3CFF2 /* TriviaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5B39BA24966AD500C3CFF2 /* TriviaTableViewCell.swift */; };
 		8C8ACC2A249648CE00A155DB /* TypingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8ACC29249648CE00A155DB /* TypingIndicatorView.swift */; };
+		8CA0A6C32497A5860009FEA2 /* StartConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0A6C22497A5860009FEA2 /* StartConversationViewController.swift */; };
+		8CA0A6C52497B85A0009FEA2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0A6C42497B85A0009FEA2 /* Weather.swift */; };
+		8CA0A6C72497BE4F0009FEA2 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0A6C62497BE4F0009FEA2 /* WeatherTableViewCell.swift */; };
 		8CAB89D024913569009BBAB6 /* AudioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB89AC249134BA009BBAB6 /* AudioItem.swift */; };
 		8CAB89D124913569009BBAB6 /* AudioItemEventProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB89AD249134BA009BBAB6 /* AudioItemEventProducer.swift */; };
 		8CAB89D224913569009BBAB6 /* AudioItemQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAB89AE249134BA009BBAB6 /* AudioItemQueue.swift */; };
@@ -258,6 +261,9 @@
 		8C30DC3024963A8600C497E6 /* TypingIndicatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingIndicatorTableViewCell.swift; sourceTree = "<group>"; };
 		8C5B39BA24966AD500C3CFF2 /* TriviaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaTableViewCell.swift; sourceTree = "<group>"; };
 		8C8ACC29249648CE00A155DB /* TypingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingIndicatorView.swift; sourceTree = "<group>"; };
+		8CA0A6C22497A5860009FEA2 /* StartConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartConversationViewController.swift; sourceTree = "<group>"; };
+		8CA0A6C42497B85A0009FEA2 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		8CA0A6C62497BE4F0009FEA2 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		8CAB89AC249134BA009BBAB6 /* AudioItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioItem.swift; path = AudioPlayer/AudioPlayer/item/AudioItem.swift; sourceTree = "<group>"; };
 		8CAB89AD249134BA009BBAB6 /* AudioItemEventProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioItemEventProducer.swift; path = AudioPlayer/AudioPlayer/event/AudioItemEventProducer.swift; sourceTree = "<group>"; };
 		8CAB89AE249134BA009BBAB6 /* AudioItemQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioItemQueue.swift; path = AudioPlayer/AudioPlayer/item/AudioItemQueue.swift; sourceTree = "<group>"; };
@@ -732,6 +738,7 @@
 				8CC4F4DE248CFCCA000692AE /* BasicMessage.swift */,
 				8CC4F4DF248CFCCA000692AE /* Action.swift */,
 				8CFC70A2248FCE31006C677B /* GallaryItem.swift */,
+				8CA0A6C42497B85A0009FEA2 /* Weather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -750,6 +757,7 @@
 				8CC4F4E7248CFCCB000692AE /* ChatView */,
 				8CC4F4F5248CFCCB000692AE /* WebLinksViewController.swift */,
 				8CC4F4F6248CFCCB000692AE /* FloatingBtn */,
+				8CA0A6C22497A5860009FEA2 /* StartConversationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -784,6 +792,7 @@
 				8C30DC3024963A8600C497E6 /* TypingIndicatorTableViewCell.swift */,
 				8C5B39BA24966AD500C3CFF2 /* TriviaTableViewCell.swift */,
 				8C2515A024967AB80003ED61 /* GifTableViewCell.swift */,
+				8CA0A6C62497BE4F0009FEA2 /* WeatherTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1272,6 +1281,7 @@
 				8CC4F682248D17A9000692AE /* CodableTransform.swift in Sources */,
 				8CAB89E224913569009BBAB6 /* EventProducer.swift in Sources */,
 				8CC4F544248CFCCC000692AE /* ChatWireframe.swift in Sources */,
+				8CA0A6C72497BE4F0009FEA2 /* WeatherTableViewCell.swift in Sources */,
 				8CC4F540248CFCCC000692AE /* Action.swift in Sources */,
 				8CAB89D324913569009BBAB6 /* AudioPlayer.swift in Sources */,
 				8C8ACC2A249648CE00A155DB /* TypingIndicatorView.swift in Sources */,
@@ -1299,6 +1309,7 @@
 				8CC4F6CE248D180D000692AE /* ContentHeader.swift in Sources */,
 				8CC4F520248CFCCC000692AE /* CardView.swift in Sources */,
 				8CC4F524248CFCCC000692AE /* PresenterInterface.swift in Sources */,
+				8CA0A6C52497B85A0009FEA2 /* Weather.swift in Sources */,
 				8CC4F56C248CFCCC000692AE /* MyUtils.swift in Sources */,
 				8CC4F554248CFCCC000692AE /* Date.swift in Sources */,
 				8CC4F523248CFCCC000692AE /* UIStoryboardExtension.swift in Sources */,
@@ -1419,6 +1430,7 @@
 				8CC4F531248CFCCC000692AE /* TextBoxFeild.swift in Sources */,
 				8CC4F6A4248D17A9000692AE /* SDWebImageCompat.m in Sources */,
 				8CC4F677248D17A9000692AE /* URLTransform.swift in Sources */,
+				8CA0A6C32497A5860009FEA2 /* StartConversationViewController.swift in Sources */,
 				8CC4F550248CFCCC000692AE /* WebLinksViewController.swift in Sources */,
 				8CC4F673248D17A9000692AE /* Mappable.swift in Sources */,
 				8CC4F54A248CFCCC000692AE /* HeroTableViewCell.swift in Sources */,

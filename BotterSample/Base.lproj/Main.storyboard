@@ -26,7 +26,7 @@ to Botter Mobile</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="by7-05-TBD">
                                 <rect key="frame" x="97.5" y="490.5" width="219" height="32"/>
-                                <color key="backgroundColor" red="0.14901960780000001" green="0.1960784314" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="   Screen without launcher   ">
                                     <color key="titleColor" red="0.8980392157" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
@@ -37,7 +37,7 @@ to Botter Mobile</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZA-bN-P4t">
                                 <rect key="frame" x="97.5" y="530.5" width="219" height="32"/>
-                                <color key="backgroundColor" red="0.14901960780000001" green="0.1960784314" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="   Toggle Launcher Position   ">
                                     <color key="titleColor" red="0.8980392157" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
@@ -47,7 +47,7 @@ to Botter Mobile</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.74117647060000003" green="0.58039215690000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="V9O-k4-e2e" firstAttribute="centerX" secondItem="dsx-eG-mcK" secondAttribute="centerX" id="AYb-l9-nkl"/>
                             <constraint firstItem="V9O-k4-e2e" firstAttribute="leading" secondItem="xao-1u-WIV" secondAttribute="leading" constant="4" id="HaR-sR-xx3"/>
@@ -84,7 +84,7 @@ to Botter Mobile</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXD-76-QI0">
                                 <rect key="frame" x="154.5" y="490.5" width="105" height="32"/>
-                                <color key="backgroundColor" red="0.14901960780000001" green="0.1960784314" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="   Open Chat   ">
                                     <color key="titleColor" red="0.8980392157" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
@@ -94,7 +94,7 @@ to Botter Mobile</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="vLc-lL-lXw" firstAttribute="trailing" secondItem="B5s-JV-CV9" secondAttribute="trailing" constant="4" id="K6x-PM-hMH"/>
                             <constraint firstItem="EXD-76-QI0" firstAttribute="centerX" secondItem="1p9-EZ-eTO" secondAttribute="centerX" id="MrR-mN-iIC"/>
