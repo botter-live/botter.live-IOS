@@ -40,6 +40,22 @@ extension ChatInteractor: ChatInteractorInterface {
         }
     }
     
+    func triviaMessage(text : String)->Bool{
+        if SocketManager.shared.isConnected{
+            SocketManager.shared.sendMessage(text: text)
+            let Message = BasicMessage()
+            Message.type = "message"
+            Message.isBotMsg = false
+            Message.text = text
+            self.presenter.messageReceived(message: Message)
+            return true
+        }else{
+            SocketManager.shared.connect()
+            self.presenter.showError(errorMsg: "Failed to send,\nPlease check your internet connection")
+            return false
+        }
+    }
+    
     func actionClicked(action: Action) {
         switch action.action {
         case .call:
@@ -55,4 +71,5 @@ extension ChatInteractor: ChatInteractorInterface {
             break
         }
     }
+    
 }

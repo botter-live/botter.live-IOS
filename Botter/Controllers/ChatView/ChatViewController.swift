@@ -222,7 +222,7 @@ extension ChatViewController : UITableViewDataSource{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TriviaTableViewCell") as? TriviaTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
                 cell?.actionClicked = { action in
-                    self.presenter.actionClicked(action: action)
+                    self.presenter.triviaActionClicked(action: action)
                 }
                 return cell ?? UITableViewCell()
             case .gallery:
@@ -246,6 +246,10 @@ extension ChatViewController : UITableViewDataSource{
                 return cell ?? UITableViewCell()
             case .typing :
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TypingIndicatorTableViewCell") as? TypingIndicatorTableViewCell
+                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+                return cell ?? UITableViewCell()
+            case .weather :
+                let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableViewCell") as? WeatherTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
                 return cell ?? UITableViewCell()
             default:

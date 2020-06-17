@@ -11,10 +11,6 @@ import UIKit
 class TriviaTableViewCell: HeroTableViewCell {
     
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // set custom behavior for trivia option
-    }
-    
     override func prepareForReuse() {
         self.msg = BasicMessage()
         collectionView.reloadData()

@@ -75,6 +75,13 @@ extension Date {
            return dateFormatter.string(from: self)
        }
     
+    func getWeatherDateString()->String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
+        
+        return dateFormatter.string(from: self)
+    }
+    
     static func getDateString(_ dateString : String) -> String{
     
         let dateFormatter = DateFormatter()
@@ -199,8 +206,8 @@ extension Date {
         let weekDay = myComponents.weekday
         dateFormater.locale = NSLocale.init(localeIdentifier: "en_US") as Locale
         let index = (weekDay!  - 1) % 7
-        print(dateFormater.weekdaySymbols[index])
-        return (dateFormater.weekdaySymbols[index]).uppercased()
+        print(dateFormater.shortWeekdaySymbols[index])
+        return (dateFormater.shortWeekdaySymbols[index]).capitalized
 //            dateFormater.weekdaySymbols[Calendar.current.component(.weekday, from: self)]
     }
     

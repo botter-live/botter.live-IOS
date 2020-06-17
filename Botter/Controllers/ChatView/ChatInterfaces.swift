@@ -34,11 +34,14 @@ protocol ChatPresenterInterface: PresenterInterface {
     func actionClicked(action : Action)
     func openUrl(url : String)
     func call(number: String)
+    func triviaActionClicked(action: Action)
+    
 }
 
 protocol ChatInteractorInterface: InteractorInterface {
     func openSocket()
     func sendMessage(text : String)
     func actionClicked(action : Action)
+    func triviaMessage(text : String)->Bool
     
 }

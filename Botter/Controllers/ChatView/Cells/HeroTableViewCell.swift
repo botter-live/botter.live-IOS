@@ -69,6 +69,7 @@ extension HeroTableViewCell : UICollectionViewDataSource {
 extension HeroTableViewCell : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.actionClicked != nil{
+            self.msg.actions[indexPath.item].msgIndex = self.msg.msgIndex
             actionClicked(self.msg.actions[indexPath.item])
         }
     }

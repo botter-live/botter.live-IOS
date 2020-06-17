@@ -11,6 +11,7 @@ import Foundation
 
 class BasicMessage :  Mappable {
     
+    var msgIndex = -1
     var type : String
     var text : String
     var isBotMsg : Bool
@@ -21,7 +22,7 @@ class BasicMessage :  Mappable {
     var galleryItems : [GallaryItem]
     var image : String
     var url : String
-    
+    var weather : Weather
     var player = AudioPlayer()
     var audioDuration : TimeInterval!
     var foundDuration : (()->())!
@@ -38,6 +39,7 @@ class BasicMessage :  Mappable {
         image = ""
         url = ""
         audioDuration = 0
+        weather = Weather()
     }
     
     func mapping(map: Map) {
@@ -51,6 +53,7 @@ class BasicMessage :  Mappable {
         galleryItems <- map["data"]
         image <- map["image"]
         url <- map["url"]
+        weather <- map["data"]
         
         if msgType == .audio{
             handleAudio()
@@ -89,6 +92,7 @@ enum MessageType : String , Codable{
     case hero = "hero"
     case typing = "typing"
     case gif = "gif"
+    case map = "map"
 }
 
 extension BasicMessage : AudioPlayerDelegate{

@@ -43,6 +43,7 @@ extension ChatPresenter: ChatPresenterInterface {
             msg.msgType != .typing
         }
         print("count : \(messgesList.count)")
+        message.msgIndex = messgesList.count
         messgesList.append(message)
         self.view.reload()
     }
@@ -67,6 +68,14 @@ extension ChatPresenter: ChatPresenterInterface {
         interactor.actionClicked(action: action)
     }
     
+    func triviaActionClicked(action: Action) {
+        if interactor.triviaMessage(text: action.title){
+            self.messgesList[action.msgIndex].actions.removeAll()
+            self.view.reload()
+        }
+        
+    }
+    
     func openUrl(url: String) {
         wireframe.openUrl(url: url)
     }
@@ -74,5 +83,7 @@ extension ChatPresenter: ChatPresenterInterface {
     func call(number: String) {
         wireframe.call(number: number)
     }
+    
+    
     
 }

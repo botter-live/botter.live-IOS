@@ -49,13 +49,13 @@ public func showLauncherButton(){
 }
 
 internal func openChat(parent : UIViewController){
-    let chatScreen = ChatWireframe.init()
+    let chatScreen = StartConversationViewController.instantiateFromStoryBoard(appStoryBoard: .Main)
     if #available(iOS 13.0, *) {
-        chatScreen.viewController.modalPresentationStyle = .automatic
+        chatScreen.modalPresentationStyle = .automatic
     } else {
         // Fallback on earlier versions
     }
-    parent.presentWireframe(chatScreen, animated: true , completion: nil)
+    parent.present(chatScreen, animated: true , completion: nil)
 //    WebLinksViewController.openInParent(link: "https://aldawaa.bluecrunch.org/", parent: parent)
 }
 
