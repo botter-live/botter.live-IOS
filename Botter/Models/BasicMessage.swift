@@ -26,6 +26,9 @@ class BasicMessage :  Mappable {
     var player = AudioPlayer()
     var audioDuration : TimeInterval!
     var foundDuration : (()->())!
+    var hasTime : Bool
+    var pickDateTimeTitle : String
+    var location : Location
     
     init(){
         type = ""
@@ -40,6 +43,9 @@ class BasicMessage :  Mappable {
         url = ""
         audioDuration = 0
         weather = Weather()
+        hasTime = false
+        pickDateTimeTitle = ""
+        location = Location()
     }
     
     func mapping(map: Map) {
@@ -47,16 +53,25 @@ class BasicMessage :  Mappable {
         text <- map["payload"]
         isBotMsg <- map["isBotMsg"]
         slug <- map["slug"]
-        msgType = MessageType.init(rawValue: slug.lowercased()) ?? .text
+//        slug = slug.replacingOccurrences(of: "-", with: "").lowercased()
+        msgType = MessageType.init(rawValue: slug) ?? .text
         mediaUrl <- map["mediaUrl"]
         actions <- map["actions"]
         galleryItems <- map["data"]
         image <- map["image"]
         url <- map["url"]
         weather <- map["data"]
+        hasTime <- map["hasTime"]
+        pickDateTimeTitle <- map["text"]
+        location <- map["location"]
         
         if msgType == .audio{
             handleAudio()
+        }
+        if msgType == .dateTime{
+            let action = Action()
+            action.title = hasTime ? "Pick Time" : "Pick Date"
+            actions.append(action)
         }
     }
     
@@ -93,6 +108,7 @@ enum MessageType : String , Codable{
     case typing = "typing"
     case gif = "gif"
     case map = "map"
+    case dateTime = "card-date-time-input"
 }
 
 extension BasicMessage : AudioPlayerDelegate{

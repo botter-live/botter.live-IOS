@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LazyImage
 
 class GalleryItemCollectionViewCell: UICollectionViewCell {
     
@@ -14,14 +15,15 @@ class GalleryItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemTitle : UILabel!
     @IBOutlet weak var itemActionBtn : UIButton!
     
+    var lazyImage = LazyImage()
     var actionClicked:((Action)->())!
     var item = GallaryItem()
     
     func setData(item : GallaryItem){
         self.item = item
-        itemImage?.sd_setShowActivityIndicatorView(true)
-        itemImage?.sd_setIndicatorStyle(.white)
-        itemImage?.sd_setImage(with: URL.init(string: item.imageUrl), completed: nil)
+        self.lazyImage.show(imageView: self.itemImage! , url: item.imageUrl) { (lazyError) in
+            print(lazyError?.localizedDescription)
+        }
         itemActionBtn.isHidden = !item.hasAction
         itemTitle.text = item.title
     }

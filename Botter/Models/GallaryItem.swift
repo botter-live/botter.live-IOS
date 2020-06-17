@@ -15,6 +15,7 @@ class GallaryItem : Codable , Mappable{
     var imageUrl : String
     var action : Action
     var hasAction : Bool
+    var desc : String
     
     init(){
         actions = [Action]()
@@ -22,6 +23,7 @@ class GallaryItem : Codable , Mappable{
         imageUrl = ""
         action = Action()
         hasAction = false
+        desc = ""
     }
     
     required convenience init?(map: Map) {
@@ -32,6 +34,7 @@ class GallaryItem : Codable , Mappable{
         actions <- map["actions"]
         title <- map["header"]
         imageUrl <- map["url"]
+        desc <- map["desc"]
         hasAction = actions.count != 0
         if hasAction {
             action = actions[0]

@@ -26,9 +26,9 @@ class ImageBotTableViewCell: BotChatTableViewCell {
     
     override func setData(msg: BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
-        msgImage?.sd_setShowActivityIndicatorView(true)
-        msgImage?.sd_setIndicatorStyle(.white)
-        msgImage?.sd_setImage(with: URL.init(string: msg.mediaUrl), completed: nil)
+        self.lazyImage.show(imageView: self.msgImage!, url: msg.mediaUrl) { (lazyError) in
+        //            print(lazyError?.localizedDescription)
+                }
     }
 
 }

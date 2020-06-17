@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftyGif
+//import SwiftyGif
 
 class GifTableViewCell: ImageBotTableViewCell  {
 
@@ -26,6 +26,7 @@ class GifTableViewCell: ImageBotTableViewCell  {
     
     override func setData(msg: BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
+        
         self.msgImage?.setGifFromURL(URL.init(string: msg.mediaUrl)!, manager: SwiftyGifManager.defaultManager , loopCount: 0, levelOfIntegrity: GifLevelOfIntegrity(5), showLoader: true)
         msgImage?.contentMode = .scaleAspectFill
     }
