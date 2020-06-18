@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 //public class Botter {
 //
 ////     private static var floatingButtonController: FloatingBtnController?

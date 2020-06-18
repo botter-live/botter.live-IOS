@@ -44,7 +44,9 @@ Pod::Spec.new do |spec|
   
   spec.platform     = :ios, "11.0"
   spec.ios.framework  = 'WebKit' , 'AVKit' , 'AVFoundation'
-  spec.dependency 'SwiftyGif'
+  #spec.dependency 'SwiftyGif'
+  spec.dependency 'LazyImage' 
+
 
 
  #:path => '/Users/bluecrunch/Desktop/Projects/Native/BotterSDK'

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class WeatherTableViewCell: BotChatTableViewCell {
+
+class WeatherTableViewCell: BotChatTableViewCell  {
 
     @IBOutlet weak var areaLbl : UILabel!
     @IBOutlet weak var dateLbl : UILabel!
@@ -33,12 +34,18 @@ class WeatherTableViewCell: BotChatTableViewCell {
         super.setData(msg: msg, showIcon: showIcon)
         areaLbl.text = msg.weather.area
         dateLbl.text = Date().getWeekDay() + ", " + Date().getWeatherDateString()
-        tempLbl.text = msg.weather.temp + "°"
-        hieghTempLbl.text = "Lo " + msg.weather.heighTemp
-        lowTempLbl.text = "Hi " + msg.weather.lowTemp
-        img?.sd_setShowActivityIndicatorView(true)
-               img?.sd_setIndicatorStyle(.white)
-        img?.sd_setImage(with: URL.init(string: msg.weather.imageUrl), completed: nil)
+        tempLbl.text = msg.weather.temp
+//            + "°C"
+        hieghTempLbl.text =  msg.weather.heighTemp
+        lowTempLbl.text =  msg.weather.lowTemp
+        
+        
+//        self.lazyImage.showWithSpinner(imageView: self.img, url: msg.weather.imageUrl)
+        self.lazyImage.show(imageView: self.img, url: msg.weather.imageUrl) { (lazyError) in
+            print(lazyError?.localizedDescription)
+        }
     }
 
+   
+    
 }

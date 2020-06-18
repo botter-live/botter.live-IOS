@@ -11,7 +11,7 @@ import UIKit
 class GallaryTableViewCell: BotChatTableViewCell {
     
     
-    @IBOutlet weak var collectionView : CustomCollection!
+    @IBOutlet weak var collectionView : UICollectionView!
     
     var actionClicked:((Action)->())!
     
@@ -47,6 +47,7 @@ extension GallaryTableViewCell : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryItemCollectionViewCell", for: indexPath) as! GalleryItemCollectionViewCell
         cell.setData(item: self.msg.galleryItems[indexPath.row])
         cell.actionClicked = self.actionClicked
+        cell.layoutIfNeeded()
         return cell
     }
 }
@@ -55,6 +56,6 @@ extension GallaryTableViewCell : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
        
-        return CGSize.init(width: 250, height: 228)
+        return CGSize.init(width: 260, height: 300)
     }
 }

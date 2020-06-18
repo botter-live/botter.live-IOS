@@ -1,24 +1,24 @@
 PODS:
   - Botter (1.0.1):
-    - SwiftyGif
-  - SwiftyGif (5.3.0)
+    - LazyImage
+  - LazyImage (7.0.1)
 
 DEPENDENCIES:
   - Botter (from `../BotterSDK`)
-  - SwiftyGif
+  - LazyImage
 
 SPEC REPOS:
   trunk:
-    - SwiftyGif
+    - LazyImage
 
 EXTERNAL SOURCES:
   Botter:
     :path: "../BotterSDK"
 
 SPEC CHECKSUMS:
-  Botter: 195648d7b77458dbf3e3725f6e6e4eb619a61f54
-  SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
+  Botter: ad3b587387868365b889100eb1e1de20307b77ee
+  LazyImage: 4db5288d8660b28e64e60c57f5b5d414af922160
 
-PODFILE CHECKSUM: 4bc2a52b99d0a8bb7d41806c5137457027e812a1
+PODFILE CHECKSUM: d7e537c1e19160e7a6911193a16eed08564d03c0
 
 COCOAPODS: 1.9.3
