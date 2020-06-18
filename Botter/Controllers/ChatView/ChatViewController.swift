@@ -243,6 +243,9 @@ extension ChatViewController : UITableViewDataSource{
                 cell?.actionClicked = { action in
                     self.presenter.actionClicked(action: action)
                 }
+                cell?.openVideo = { url in
+                    self.presenter.openVideo(url: url)
+                }
                 return cell ?? UITableViewCell()
             case .map:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "MapTableViewCell") as? MapTableViewCell

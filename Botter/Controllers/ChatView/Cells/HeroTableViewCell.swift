@@ -45,6 +45,8 @@ class HeroTableViewCell: BotChatTableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.reloadData()
+        self.layoutIfNeeded()
+        self.layoutIfNeeded()
         
     }
     
@@ -63,6 +65,7 @@ extension HeroTableViewCell : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCollectionViewCell", for: indexPath) as! TagCollectionViewCell
         cell.setData(action: self.msg.actions[indexPath.item])
+        
         return cell
     }
 }
