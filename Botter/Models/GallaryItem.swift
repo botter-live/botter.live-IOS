@@ -10,20 +10,22 @@ import Foundation
 
 class GallaryItem : Codable , Mappable{
     
-    private var actions : [Action]
+    var actions : [Action]
     var title : String
     var imageUrl : String
-    var action : Action
-    var hasAction : Bool
     var desc : String
+    var type : String
+    var mediaType : MediaType
+    var thumbnail : String
     
     init(){
         actions = [Action]()
         title = ""
         imageUrl = ""
-        action = Action()
-        hasAction = false
         desc = ""
+        type = ""
+        mediaType = .image
+        thumbnail = ""
     }
     
     required convenience init?(map: Map) {
@@ -35,9 +37,14 @@ class GallaryItem : Codable , Mappable{
         title <- map["header"]
         imageUrl <- map["url"]
         desc <- map["desc"]
-        hasAction = actions.count != 0
-        if hasAction {
-            action = actions[0]
-        }
+        type <- map["media_type"]
+        mediaType = MediaType.init(rawValue: type) ?? .image
+        thumbnail <- map["video_thumbnail"]
+    }
+    
+    enum MediaType : String , Codable{
+        case image = "image"
+        case gif = "gif"
+        case video = "video"
     }
 }
