@@ -6,8 +6,7 @@ target 'Botter' do
   use_frameworks!
 
   # Pods for BotterSDK
-#  pod 'SwiftyGif'
-#  pod 'AlamofireImage', '~> 4.1'
+  pod 'SoundManager'
   pod 'LazyImage'
 
 end
