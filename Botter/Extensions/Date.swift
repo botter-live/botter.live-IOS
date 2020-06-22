@@ -58,6 +58,11 @@ extension Date {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: self)
     }
+    func toTimeString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        return dateFormatter.string(from: self)
+    }
     
     static func fromNumber(_ time: Int) -> String {
         let date = NSDate(timeIntervalSince1970: TimeInterval(time/1000))

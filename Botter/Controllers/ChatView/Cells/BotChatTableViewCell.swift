@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import LazyImage
 
 class BotChatTableViewCell: UserChatTableViewCell {
     
     @IBOutlet weak var botIcon : UIView!
 
     var msg = BasicMessage()
-    
+    var lazyImage = LazyImage()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -11,9 +11,10 @@ import UIKit
 class GallaryTableViewCell: BotChatTableViewCell {
     
     
-    @IBOutlet weak var collectionView : CustomCollection!
+    @IBOutlet weak var collectionView : UICollectionView!
     
     var actionClicked:((Action)->())!
+    var openVideo : ((String)->())!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,9 +31,11 @@ class GallaryTableViewCell: BotChatTableViewCell {
            super.setData(msg : msg , showIcon: showIcon)
            self.msg = msg
            botIcon.isHidden = !showIcon
+        collectionView.reloadData()
        }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         self.msg = BasicMessage()
         collectionView.reloadData()
     }
@@ -45,8 +48,12 @@ extension GallaryTableViewCell : UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryItemCollectionViewCell", for: indexPath) as! GalleryItemCollectionViewCell
-        cell.setData(item: self.msg.galleryItems[indexPath.row])
+        
+        let max = msg.galleryItems.map { $0.actions.count }.max() ?? 0
+        cell.setData(item: self.msg.galleryItems[indexPath.row], maxCount: max)
         cell.actionClicked = self.actionClicked
+        cell.openVideo = self.openVideo
+        cell.layoutIfNeeded()
         return cell
     }
 }
@@ -55,6 +62,6 @@ extension GallaryTableViewCell : UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
        
-        return CGSize.init(width: 250, height: 228)
+        return CGSize.init(width: 270, height: 320)
     }
 }

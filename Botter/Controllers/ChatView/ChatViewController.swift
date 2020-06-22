@@ -186,6 +186,13 @@ extension ChatViewController : TextBoxDelegate{
         return isLastBotInput
     }
     
+    func openDatePicker(msg : BasicMessage){
+        DatePickerPopViewController.open(in: self, mode: msg.hasTime ? .time : .date) { (selected) in
+            msg.actions[0].title = selected
+            self.presenter.triviaActionClicked(action: msg.actions[0])
+        }
+    }
+    
 }
 extension ChatViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -193,6 +200,7 @@ extension ChatViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let msg = presenter.messgesList[indexPath.row]
         if msg.isBotMsg{
             switch msg.msgType {
@@ -218,11 +226,15 @@ extension ChatViewController : UITableViewDataSource{
                     self.presenter.actionClicked(action: action)
                 }
                 return cell ?? UITableViewCell()
-            case .triviaQuestion:
+            case .triviaQuestion , .dateTime:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TriviaTableViewCell") as? TriviaTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
                 cell?.actionClicked = { action in
-                    self.presenter.triviaActionClicked(action: action)
+                    if msg.msgType == .triviaQuestion{
+                        self.presenter.triviaActionClicked(action: action)
+                    }else{
+                        self.openDatePicker(msg: msg)
+                    }
                 }
                 return cell ?? UITableViewCell()
             case .gallery:
@@ -231,6 +243,16 @@ extension ChatViewController : UITableViewDataSource{
                 cell?.actionClicked = { action in
                     self.presenter.actionClicked(action: action)
                 }
+                cell?.openVideo = { url in
+                    self.presenter.openVideo(url: url)
+                }
+                return cell ?? UITableViewCell()
+            case .map:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MapTableViewCell") as? MapTableViewCell
+                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+//                cell?.actionClicked = { action in
+//                    self.presenter.actionClicked(action: action)
+//                }
                 return cell ?? UITableViewCell()
             case .audio:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioBotTableViewCell") as? AudioBotTableViewCell

@@ -12,15 +12,24 @@ import UIKit
 class DatePickerPopViewController: UIViewController {
     
     @IBOutlet weak var datePicker : UIDatePicker!
+    @IBOutlet weak var titleLbl : UILabel!
+    @IBOutlet weak var subTitleLbl : UILabel!
     
     var doneActionHandler: ((Any)->Void)?
     var selectedDate = Date()
     var date = ""
     var max : Date?
     var min : Date?
+    var mode : UIDatePicker.Mode = .date
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker.datePickerMode = mode
+        if mode == .time {
+           titleLbl.text = titleLbl.text?.replacingOccurrences(of: "Date", with: "Time")
+//            subTitleLbl.text = subTitleLbl.text!.replacingOccurrences(of: "day", with: time)
+            subTitleLbl.text = subTitleLbl.text
+        }
         if date == ""{
             datePicker.setDate(selectedDate, animated: true)
         }
@@ -49,6 +58,28 @@ class DatePickerPopViewController: UIViewController {
     }
     
     override func collapsedHeight(containedIn contentSheet: ContentSheet) -> CGFloat {
-        return 350
+        return 440
     }
+    
+    static func open(in parent:UIViewController , mode : UIDatePicker.Mode , completion:@escaping((String)->())){
+        let content: ContentSheetContentProtocol
+        let vc = DatePickerPopViewController.instantiateFromStoryBoard(appStoryBoard: .Main)
+//        vc.modalPresentationStyle = .overCurrentContext
+        vc.mode = mode
+        vc.selectedDate = Date()
+        vc.doneActionHandler = { action in
+            let selected = mode == .date ? vc.selectedDate.toString() : vc.selectedDate.toTimeString()
+            completion(selected)
+        }
+        let contentController = vc
+        content = contentController
+        let contentSheet = ContentSheet(content: content)
+        contentSheet.blurBackground = false
+        contentSheet.showDefaultHeader = false
+    
+        parent.present(contentSheet, animated: true, completion: nil)
+        
+    }
+    
+    
 }
