@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import SoundManager
 
 final class ChatViewController: UIViewController {
     
@@ -29,7 +30,7 @@ final class ChatViewController: UIViewController {
         super.viewDidLoad()
         self.keyBoardSettings()
         self.presenter.openSocket()
-        
+        AudioHandler.shared = AudioHandler()
         
        
     }
@@ -148,6 +149,12 @@ extension ChatViewController {
             NotificationCenter.default.removeObserver(self)
         }
     }
+    
+    public override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        AudioHandler.shared.player.pause()
+        
+    }
 }
 extension ChatViewController : TextBoxDelegate{
     func textBoxDidChange(textBox: TextBoxFeild) {
@@ -257,14 +264,14 @@ extension ChatViewController : UITableViewDataSource{
             case .audio:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioBotTableViewCell") as? AudioBotTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row), isCurrent: indexPath.row == currentAudio, index: indexPath.row)
-                cell?.playPausePressed = { btnIndex in
-                    if self.currentAudio == btnIndex{
-                        self.currentAudio = -1
-                    }else{
-                        self.currentAudio = btnIndex
-                    }
-                    self.reload()
-                }
+//                cell?.playPausePressed = { btnIndex in
+//                    if self.currentAudio == btnIndex{
+//                        self.currentAudio = -1
+//                    }else{
+//                        self.currentAudio = btnIndex
+//                    }
+//                    self.reload()
+//                }
                 return cell ?? UITableViewCell()
             case .typing :
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TypingIndicatorTableViewCell") as? TypingIndicatorTableViewCell

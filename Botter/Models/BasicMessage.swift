@@ -25,6 +25,7 @@ class BasicMessage :  Mappable {
     var weather : Weather
     var player = AudioPlayer()
     var audioDuration : TimeInterval!
+    var audioIndex = -1
     var foundDuration : (()->())!
     var hasTime : Bool
     var pickDateTimeTitle : String

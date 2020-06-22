@@ -38,13 +38,14 @@ extension ChatPresenter: ChatPresenterInterface {
     }
     
     func messageReceived(message: BasicMessage) {
-        print("count : \(messgesList.count)")
         messgesList = messgesList.filter { (msg) -> Bool in
             msg.msgType != .typing
         }
-        print("count : \(messgesList.count)")
         message.msgIndex = messgesList.count
         messgesList.append(message)
+        if message.msgType == .audio{
+            AudioHandler.shared.addAudioMessage(msg: message)
+        }
         self.view.reload()
     }
     

@@ -17,8 +17,7 @@ class AudioBotTableViewCell: BotChatTableViewCell {
     @IBOutlet weak var progress : UIActivityIndicatorView!
     
 //    var player = Player()
-    var player = AudioPlayer()
-    var playPausePressed : ((Int)->())!
+    
     var isCurrent = false
     var durationTxt = ""
     
@@ -36,61 +35,34 @@ class AudioBotTableViewCell: BotChatTableViewCell {
     func setData(msg: BasicMessage, showIcon: Bool = false ,isCurrent: Bool , index : Int){
         super.setData(msg: msg, showIcon: showIcon)
         imageBtn.tag = index
-        //set image
-        self.isCurrent = isCurrent
-        player.delegate = self
         seekBar.value = 0
-//        let item = AudioItem(mediumQualitySoundURL: URL.init(string: msg.mediaUrl))
-        //        player.currentItem = item
-//        player.play(item: item!)
         self.setDuration()
         self.msg.foundDuration = {
             self.setDuration()
         }
-        setImage(state: player.state)
-        if player.state == .playing && !isCurrent{
-            player.stop()
-        }
+        
+        AudioHandler.setImage(state: AudioHandler.shared.player.state, cell: self)
+        
     }
     
     @IBAction func buttonTapped(){
-        imageBtn.isHidden = false
-        progress.isHidden = true
-        switch player.state {
-        case .buffering , .waitingForConnection:
-            progress.isHidden = false
-            imageBtn.isHidden = true
-            break
-        case .failed:
-            let item = AudioItem(mediumQualitySoundURL: URL.init(string: msg.mediaUrl))!
-            player.play(item: item)
-            break
-        case .paused:
-            player.resume()
-            break
-        case .playing:
-            player.stop()
-            break
-        case .stopped:
-            let item = AudioItem(mediumQualitySoundURL: URL.init(string: msg.mediaUrl))!
-            player.play(item: item)
-            break
-        }
- 
-        if playPausePressed != nil {
-            playPausePressed(imageBtn.tag)
-        }
+        AudioHandler.shared.playPausePressed(cell: self)
+
     }
 
     
     override func prepareForReuse() {
 //        player = AudioPlayer()
-        player.delegate = nil
         durationTxt = ""
         imageBtn.tag = 0
     }
     
     func setDuration(){
+//        if (msg.audioDuration < 60) {
+//            durationTxt = String(format: "0:%02ld", msg.audioDuration)
+//        } else {
+//            durationTxt = String(format: "%ld:%02ld", msg.audioDuration / 60, Int(msg.audioDuration) % 60)
+//        }
         durationTxt = msg.audioDuration.asString(style: .positional)
         textLbl.text = durationTxt
         seekBar.maximumValue = Float(msg.audioDuration)
@@ -98,13 +70,7 @@ class AudioBotTableViewCell: BotChatTableViewCell {
     }
     
     @IBAction func seekBarValueChanded(_ sender : UISlider){
-        if isCurrent {
-            player.seek(to: TimeInterval(sender.value))
-        }else if player.currentItem != nil {
-            player.seek(to: TimeInterval(sender.value))
-        }else{
-            sender.value = 0
-        }
+        AudioHandler.shared.seekTo(sender.value, cell: self)
     }
 
 }
@@ -118,57 +84,4 @@ extension Double {
     return formattedString
   }
     
-}
-extension AudioBotTableViewCell : AudioPlayerDelegate{
-    func audioPlayer(_ audioPlayer: AudioPlayer, didChangeStateFrom from: AudioPlayerState, to state: AudioPlayerState) {
-      setImage(state: state)
-    }
-    
-    func setImage(state : AudioPlayerState){
-        imageBtn.isHidden = false
-        progress.isHidden = true
-//        MyFrameworkBundle.bundle
-        let pause = UIImage(named:  "pauseIcon" , in: MyFrameworkBundle.bundle , compatibleWith: nil)
-        let play = UIImage(named:   "playIcon", in: MyFrameworkBundle.bundle, compatibleWith: nil)
-        switch state {
-        case .buffering , .waitingForConnection:
-            imageBtn.isHidden = true
-            progress.isHidden = false
-            imageBtn.setImage(play, for: .normal)
-            break
-        case .failed:
-            imageBtn.setImage(play, for: .normal)
-            break
-        case .paused:
-            imageBtn.setImage(play, for: .normal)
-            break
-        case .playing:
-            imageBtn.setImage(pause, for: .normal)
-            break
-        case .stopped:
-            setDuration()
-            imageBtn.setImage(play, for: .normal)
-            break
-        }
-    }
-    
-    
-    func audioPlayer(_ audioPlayer: AudioPlayer, didUpdateProgressionTo time: TimeInterval, percentageRead: Float) {
-        seekBar.value = Float(player.currentItemProgression!)
-        textLbl.text = player.currentItemProgression!.asString(style: .positional) +  "  /  " + player.currentItemDuration!.asString(style: .positional)
-    }
-    
-    func audioPlayer(_ audioPlayer: AudioPlayer, didUpdateEmptyMetadataOn item: AudioItem, withData data: Metadata) {
-        print(data)
-    }
-    
-    func audioPlayer(_ audioPlayer: AudioPlayer, didLoad range: TimeRange, for item: AudioItem) {
-        
-    }
-    
-    func audioPlayer(_ audioPlayer: AudioPlayer, willStartPlaying item: AudioItem) {
-        if !isCurrent {
-            audioPlayer.stop()
-        }
-    }
 }

@@ -1,24 +1,29 @@
 PODS:
   - Botter (1.0.1):
     - LazyImage
+    - SoundManager
   - LazyImage (7.0.1)
+  - SoundManager (1.4.2)
 
 DEPENDENCIES:
   - Botter (from `../BotterSDK`)
   - LazyImage
+  - SoundManager
 
 SPEC REPOS:
   trunk:
     - LazyImage
+    - SoundManager
 
 EXTERNAL SOURCES:
   Botter:
     :path: "../BotterSDK"
 
 SPEC CHECKSUMS:
-  Botter: ad3b587387868365b889100eb1e1de20307b77ee
+  Botter: dd16b4044b0ab53ac58ad90e63056be2af753766
   LazyImage: 4db5288d8660b28e64e60c57f5b5d414af922160
+  SoundManager: 99ae328a3ec9b259db774c9851a65feeceba8183
 
-PODFILE CHECKSUM: d7e537c1e19160e7a6911193a16eed08564d03c0
+PODFILE CHECKSUM: 3039df3768de597747d49c02e93d444584b4a677
 
 COCOAPODS: 1.9.3
