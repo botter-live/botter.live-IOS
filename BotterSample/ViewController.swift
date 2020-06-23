@@ -11,11 +11,17 @@ import Botter
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var actionBtn:UIButton!
+    @IBOutlet weak var toggelBtn:UIButton!
+    
+    
     var bottomMargin = 40
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        actionBtn.backgroundColor = BotterSettingsManager.AccentColor
+        toggelBtn.backgroundColor = BotterSettingsManager.AccentColor
     }
 
     

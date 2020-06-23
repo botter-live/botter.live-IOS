@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // to show chat icon over entir app
+        customizeChat()
         Botter.chatTitle = "Welcome to al dwaa pharmacies\nاهلاً و سهلاً بكم"
         Botter.show(APIKey: "nKmovPCdWNZ")
 //        BotterSDK.openChatScreen()
@@ -24,20 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-
-//    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-//        // Called when a new scene session is being created.
-//        // Use this method to select a configuration to create the new scene with.
-//        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-//    }
-//
-//    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-//        // Called when the user discards a scene session.
-//        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-//        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-//    }
-
+    
+    func customizeChat(){
+        BotterSettingsManager.AccentColor = UIColor.init(colorString: "#97a258")
+        BotterSettingsManager.BotterMessageBGColor = UIColor.init(colorString: "#dbedd5")
+    }
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         print(url.absoluteString)
         return true
@@ -46,3 +39,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
  
+extension UIColor {
+
+    convenience init(colorString: String) {
+        self.init(colorString: colorString, alpha:1)
+    }
+
+    convenience init(colorString: String, alpha: CGFloat) {
+        var hexWithoutSymbol = colorString
+        if hexWithoutSymbol.hasPrefix("#") {
+//            var str = codeString
+            let _ = hexWithoutSymbol.remove(at: colorString.startIndex)
+        }
+        
+        let scanner = Scanner(string: hexWithoutSymbol)
+        var hexInt:UInt32 = 0x0
+        scanner.scanHexInt32(&hexInt)
+        
+        var r:UInt32!, g:UInt32!, b:UInt32!
+        switch (hexWithoutSymbol.count) {
+        case 3: // #RGB
+            r = ((hexInt >> 4) & 0xf0 | (hexInt >> 8) & 0x0f)
+            g = ((hexInt >> 0) & 0xf0 | (hexInt >> 4) & 0x0f)
+            b = ((hexInt << 4) & 0xf0 | hexInt & 0x0f)
+            break;
+        case 6: // #RRGGBB
+            r = (hexInt >> 16) & 0xff
+            g = (hexInt >> 8) & 0xff
+            b = hexInt & 0xff
+            break;
+        default:
+            // TODO:ERROR
+            break;
+        }
+        
+        self.init(
+            red: (CGFloat(r)/255),
+            green: (CGFloat(g)/255),
+            blue: (CGFloat(b)/255),
+            alpha:alpha)
+    }
+}

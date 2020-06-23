@@ -52,7 +52,7 @@ to Botter Mobile</string>
         <scene sceneID="yh5-U9-WyS">
             <objects>
                 <viewController storyboardIdentifier="StartConversationViewController" id="doQ-LX-xpz" customClass="StartConversationViewController" customModule="Botter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JJc-nd-Etp">
+                    <view key="view" contentMode="scaleToFill" id="JJc-nd-Etp" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -78,15 +78,16 @@ to Botter Mobile</string>
                                 <state key="normal" image="close"/>
                                 <connections>
                                     <action selector="backDismiss:" destination="1bD-de-UBG" eventType="touchUpInside" id="BH8-Ji-xQy"/>
+                                    <action selector="backDismiss:" destination="doQ-LX-xpz" eventType="touchUpInside" id="hsr-mM-Oee"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey there 👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1F-72-WKh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey there 👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1F-72-WKh" customClass="ChatHeadLine" customModule="Botter" customModuleProvider="target">
                                 <rect key="frame" x="30" y="104" width="350" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’re here to answer your questions about Company. Ask us anything!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utV-R1-0e6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’re here to answer your questions about Company. Ask us anything!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utV-R1-0e6" customClass="ChatWelcomeLbl" customModule="Botter" customModuleProvider="target">
                                 <rect key="frame" x="30" y="143.5" width="350" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -133,7 +134,7 @@ to Botter Mobile</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwY-OS-e9W" customClass="AllSidsCardView" customModule="Botter" customModuleProvider="target">
                                 <rect key="frame" x="24" y="193" width="366" height="180"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start a conversation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVT-gG-X9M">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start a conversation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVT-gG-X9M" customClass="MediumChatText" customModule="Botter" customModuleProvider="target">
                                         <rect key="frame" x="16" y="14" width="334" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <nil key="textColor"/>
@@ -170,7 +171,7 @@ to Botter Mobile</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuU-Wi-RXb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuU-Wi-RXb" customClass="BotterMesgLbl" customModule="Botter" customModuleProvider="target">
                                         <rect key="frame" x="36" y="40" width="36.5" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
@@ -197,7 +198,7 @@ to Botter Mobile</string>
                                             <constraint firstAttribute="width" constant="48" id="wLy-FZ-hDT"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVu-Ci-zpS">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVu-Ci-zpS" customClass="FontLikeBtn" customModule="Botter" customModuleProvider="target">
                                         <rect key="frame" x="16" y="126" width="200" height="40"/>
                                         <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -293,22 +294,47 @@ to Botter Mobile</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnj-ya-FOi">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnj-ya-FOi" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Olx-3d-3Dm">
                                         <rect key="frame" x="0.0" y="34" width="414" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Botter" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhJ-tN-HXW">
-                                                <rect key="frame" x="72" y="17" width="326" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Botter" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhJ-tN-HXW" customClass="ChatHeader" customModule="Botter" customModuleProvider="target">
+                                                <rect key="frame" x="72" y="5" width="264" height="26"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkT-zo-WdZ">
+                                                <rect key="frame" x="72" y="36" width="12" height="12"/>
+                                                <color key="backgroundColor" red="0.1333333333" green="0.76470588240000004" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="12" id="0eD-hY-COf"/>
+                                                    <constraint firstAttribute="width" constant="12" id="uBT-V8-hZ6"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sro-s6-mgF">
+                                                <rect key="frame" x="92" y="35" width="36.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="highlightedColor" red="1" green="0.97647058819999999" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmg-7A-12u" customClass="RoundedView" customModule="Botter" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="10" width="40" height="40"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Oit-IZ-sSi">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Oit-IZ-sSi" customClass="HeaderLogo" customModule="Botter" customModuleProvider="target">
                                                         <rect key="frame" x="6" y="6" width="28" height="28"/>
                                                         <color key="tintColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <userDefinedRuntimeAttributes>
@@ -328,15 +354,33 @@ to Botter Mobile</string>
                                                     <constraint firstItem="Oit-IZ-sSi" firstAttribute="top" secondItem="bmg-7A-12u" secondAttribute="top" constant="6" id="wUA-WU-Lue"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Uu-kD-Bjh">
+                                                <rect key="frame" x="344" y="8" width="40" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="kTQ-Rf-iw9"/>
+                                                    <constraint firstAttribute="width" constant="40" id="oe8-DR-xXH"/>
+                                                </constraints>
+                                                <state key="normal" image="close"/>
+                                                <connections>
+                                                    <action selector="backDismiss:" destination="doQ-LX-xpz" eventType="touchUpInside" id="CZS-BN-Evd"/>
+                                                    <action selector="backDismiss:" destination="1bD-de-UBG" eventType="touchUpInside" id="hhS-1S-Wqo"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="OhJ-tN-HXW" secondAttribute="trailing" constant="16" id="ELb-Rw-DkK"/>
-                                            <constraint firstItem="OhJ-tN-HXW" firstAttribute="centerY" secondItem="Olx-3d-3Dm" secondAttribute="centerY" id="IYJ-fG-odJ"/>
+                                            <constraint firstItem="7Uu-kD-Bjh" firstAttribute="leading" secondItem="OhJ-tN-HXW" secondAttribute="trailing" constant="8" id="0Kt-qL-s1T"/>
+                                            <constraint firstItem="Sro-s6-mgF" firstAttribute="centerY" secondItem="OkT-zo-WdZ" secondAttribute="centerY" id="1zC-GJ-Shy"/>
+                                            <constraint firstItem="OhJ-tN-HXW" firstAttribute="centerY" secondItem="Olx-3d-3Dm" secondAttribute="centerY" constant="-12" id="IYJ-fG-odJ"/>
+                                            <constraint firstItem="OkT-zo-WdZ" firstAttribute="leading" secondItem="bmg-7A-12u" secondAttribute="trailing" constant="8" id="JqI-dX-bDq"/>
                                             <constraint firstItem="bmg-7A-12u" firstAttribute="leading" secondItem="Olx-3d-3Dm" secondAttribute="leading" constant="24" id="NKf-dO-t6o"/>
                                             <constraint firstItem="OhJ-tN-HXW" firstAttribute="leading" secondItem="bmg-7A-12u" secondAttribute="trailing" constant="8" id="PUC-K1-cST"/>
                                             <constraint firstItem="bmg-7A-12u" firstAttribute="centerY" secondItem="Olx-3d-3Dm" secondAttribute="centerY" id="T47-pN-Fif"/>
+                                            <constraint firstItem="Sro-s6-mgF" firstAttribute="leading" secondItem="OkT-zo-WdZ" secondAttribute="trailing" constant="8" id="Zgg-7Q-zXG"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Uu-kD-Bjh" secondAttribute="trailing" constant="30" id="fg1-s0-xze"/>
+                                            <constraint firstItem="7Uu-kD-Bjh" firstAttribute="centerY" secondItem="bmg-7A-12u" secondAttribute="centerY" id="mBz-kM-mJG"/>
                                             <constraint firstAttribute="height" constant="60" id="svP-YE-qRt"/>
+                                            <constraint firstItem="OkT-zo-WdZ" firstAttribute="centerY" secondItem="bmg-7A-12u" secondAttribute="centerY" constant="12" id="uPh-LS-D9k"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -349,7 +393,7 @@ to Botter Mobile</string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="uRS-dj-06M">
-                                <rect key="frame" x="0.0" y="100" width="414" height="697"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="661"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserChatTableViewCell" rowHeight="80" id="mDg-0s-5zt" customClass="UserChatTableViewCell" customModule="Botter" customModuleProvider="target">
@@ -359,11 +403,11 @@ to Botter Mobile</string>
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-AY-cfX">
+                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-AY-cfX" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="319.5" y="12" width="72.5" height="56"/>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfm-sH-FJq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfm-sH-FJq" customClass="UserMesgLbl" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="335.5" y="24" width="34.5" height="32"/>
                                                     <fontDescription key="fontDescription" name="FuturaBT-Book" family="Futura" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -388,24 +432,85 @@ to Botter Mobile</string>
                                             <outlet property="textLbl" destination="Hfm-sH-FJq" id="yZL-7v-ewj"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserFaildChatTableViewCell" rowHeight="112" id="pM8-zM-dZL" customClass="UserChatTableViewCell" customModule="Botter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="135.5" width="414" height="112"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pM8-zM-dZL" id="zFh-PT-ENL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="112"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9FE-yY-kKD">
+                                                    <rect key="frame" x="319.5" y="12" width="72.5" height="56"/>
+                                                    <color key="backgroundColor" red="0.83137254901960778" green="0.2627450980392157" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAw-TX-1Sv">
+                                                    <rect key="frame" x="335.5" y="24" width="34.5" height="32"/>
+                                                    <fontDescription key="fontDescription" name="FuturaBT-Book" family="Futura" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfR-Q6-ZoK">
+                                                    <rect key="frame" x="193" y="73.5" width="199" height="26.5"/>
+                                                    <state key="normal">
+                                                        <attributedString key="attributedTitle">
+                                                            <fragment content="Failed to send the message, ">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.83137254900000002" green="0.26274509800000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" metaFont="system"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="Try Again">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.83137254900000002" green="0.26274509800000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" metaFont="system"/>
+                                                                    <integer key="NSUnderline" value="1"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="resend" destination="pM8-zM-dZL" eventType="touchUpInside" id="cg6-IS-8Lo"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pAw-TX-1Sv" firstAttribute="top" secondItem="zFh-PT-ENL" secondAttribute="top" constant="24" id="1ni-ih-xVo"/>
+                                                <constraint firstItem="pAw-TX-1Sv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zFh-PT-ENL" secondAttribute="leading" constant="54" id="2dY-fL-ZMH"/>
+                                                <constraint firstAttribute="trailing" secondItem="9FE-yY-kKD" secondAttribute="trailing" constant="22" id="796-9P-UXO"/>
+                                                <constraint firstItem="9FE-yY-kKD" firstAttribute="leading" secondItem="pAw-TX-1Sv" secondAttribute="leading" constant="-16" id="IOn-qR-8an"/>
+                                                <constraint firstItem="wfR-Q6-ZoK" firstAttribute="trailing" secondItem="9FE-yY-kKD" secondAttribute="trailing" id="Uup-Ng-Am5"/>
+                                                <constraint firstAttribute="trailing" secondItem="pAw-TX-1Sv" secondAttribute="trailing" constant="44" id="bbm-sX-tpx"/>
+                                                <constraint firstAttribute="bottom" secondItem="pAw-TX-1Sv" secondAttribute="bottom" constant="56" id="dlW-Ro-srd"/>
+                                                <constraint firstItem="9FE-yY-kKD" firstAttribute="trailing" secondItem="pAw-TX-1Sv" secondAttribute="trailing" constant="22" id="h46-mV-Xc7"/>
+                                                <constraint firstAttribute="bottom" secondItem="wfR-Q6-ZoK" secondAttribute="bottom" constant="12" id="lRB-PY-gal"/>
+                                                <constraint firstItem="9FE-yY-kKD" firstAttribute="top" secondItem="zFh-PT-ENL" secondAttribute="top" constant="12" id="n4x-vp-xO8"/>
+                                                <constraint firstAttribute="bottom" secondItem="9FE-yY-kKD" secondAttribute="bottom" constant="44" id="olh-Qm-D6t"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="BGView" destination="9FE-yY-kKD" id="Eoj-AC-W5M"/>
+                                            <outlet property="textLbl" destination="pAw-TX-1Sv" id="6wu-MQ-EV9"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BotChatTableViewCell" rowHeight="80" id="bOJ-8p-W44" customClass="BotChatTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="135.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="247.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bOJ-8p-W44" id="0xM-f3-fgx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7D-oG-TDO">
+                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7D-oG-TDO" customClass="botBubbelView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="56" y="12" width="72.5" height="56"/>
                                                     <color key="backgroundColor" red="0.91764705882352937" green="0.94117647058823528" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBh-jZ-W6L">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBh-jZ-W6L" customClass="BotterMesgLbl" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="72" y="24" width="34.5" height="32"/>
                                                     <fontDescription key="fontDescription" name="FuturaBT-Book" family="Futura" pointSize="14"/>
                                                     <color key="textColor" red="0.15686274510000001" green="0.16078431369999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1y-5t-jMO" customClass="RoundedView" customModule="Botter" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1y-5t-jMO" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="32" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DWV-XH-Mqt">
@@ -429,6 +534,11 @@ to Botter Mobile</string>
                                                         <constraint firstAttribute="width" constant="36" id="kH1-nS-pm2"/>
                                                         <constraint firstItem="DWV-XH-Mqt" firstAttribute="centerX" secondItem="p1y-5t-jMO" secondAttribute="centerX" id="lvN-iZ-qw8"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -452,13 +562,13 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MapTableViewCell" rowHeight="258" id="SWE-7p-2JH" customClass="MapTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="215.5" width="414" height="258"/>
+                                        <rect key="frame" x="0.0" y="327.5" width="414" height="258"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SWE-7p-2JH" id="W5e-Ra-8HK">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU4-Da-aRe">
+                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU4-Da-aRe" customClass="botBubbelView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="56" y="12" width="220" height="234"/>
                                                     <color key="backgroundColor" red="0.91764705879999997" green="0.94117647059999998" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -490,19 +600,19 @@ to Botter Mobile</string>
                                                         <constraint firstAttribute="height" constant="120" id="iCe-Z8-Qjt"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D00-2A-p2o">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D00-2A-p2o" customClass="boldChatText" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="72" y="148" width="196" height="17"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" red="0.15686274510000001" green="0.16078431369999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TZ-Eh-Jav">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4TZ-Eh-Jav" customClass="BotterMesgLbl" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="72" y="169" width="196" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.15686274510000001" green="0.16078431369999999" blue="0.1960784314" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWX-Kc-n35" customClass="RoundedView" customModule="Botter" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWX-Kc-n35" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="210" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="g0r-16-RSm">
@@ -526,6 +636,11 @@ to Botter Mobile</string>
                                                         <constraint firstAttribute="height" constant="36" id="h9z-kn-wV8"/>
                                                         <constraint firstItem="g0r-16-RSm" firstAttribute="centerX" secondItem="MWX-Kc-n35" secondAttribute="centerX" id="ltS-8p-J6x"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -560,13 +675,13 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WeatherTableViewCell" rowHeight="164" id="NCP-xd-9Md" customClass="WeatherTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="473.5" width="414" height="164"/>
+                                        <rect key="frame" x="0.0" y="585.5" width="414" height="164"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NCP-xd-9Md" id="w3b-lS-WH2">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35y-FZ-Y1C" customClass="RoundedView" customModule="Botter" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35y-FZ-Y1C" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="116" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mci-EC-6Cu">
@@ -590,6 +705,11 @@ to Botter Mobile</string>
                                                         <constraint firstItem="mci-EC-6Cu" firstAttribute="centerX" secondItem="35y-FZ-Y1C" secondAttribute="centerX" id="YCZ-bx-9V5"/>
                                                         <constraint firstItem="mci-EC-6Cu" firstAttribute="centerY" secondItem="35y-FZ-Y1C" secondAttribute="centerY" id="x3C-SI-19j"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebh-Z9-mQa">
                                                     <rect key="frame" x="60" y="12" width="294" height="140"/>
@@ -691,7 +811,7 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TypingIndicatorTableViewCell" rowHeight="80" id="JQa-hX-qoP" customClass="TypingIndicatorTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="637.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="749.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JQa-hX-qoP" id="2Lj-al-iHN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -712,7 +832,7 @@ to Botter Mobile</string>
                                                         <constraint firstAttribute="width" constant="58" id="hfv-Dp-0Hn"/>
                                                     </constraints>
                                                 </stackView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zG4-Wl-HhV" customClass="RoundedView" customModule="Botter" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zG4-Wl-HhV" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="32" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="W23-n2-0rp">
@@ -736,6 +856,11 @@ to Botter Mobile</string>
                                                         <constraint firstAttribute="height" constant="36" id="Rli-pg-8Se"/>
                                                         <constraint firstItem="W23-n2-0rp" firstAttribute="centerY" secondItem="zG4-Wl-HhV" secondAttribute="centerY" id="r5e-gK-dPb"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -753,7 +878,7 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AudioBotTableViewCell" rowHeight="80" id="Wsp-4v-oxm" customClass="AudioBotTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="717.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="829.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wsp-4v-oxm" id="Od7-TL-QHw">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -766,7 +891,7 @@ to Botter Mobile</string>
                                                         <constraint firstAttribute="height" constant="80" id="4QI-d8-l3n"/>
                                                     </constraints>
                                                 </view>
-                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtH-sT-m06">
+                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtH-sT-m06" customClass="botBubbelView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="56" y="12" width="298" height="56"/>
                                                     <subviews>
                                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="lCQ-vZ-uZc">
@@ -874,23 +999,23 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HeroTableViewCell" rowHeight="250" id="EUW-L6-T62" customClass="HeroTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="797.5" width="414" height="250"/>
+                                        <rect key="frame" x="0.0" y="909.5" width="414" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EUW-L6-T62" id="d5p-S8-fvB">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5M-PG-z7e">
+                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5M-PG-z7e" customClass="botBubbelView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="56" y="12" width="298" height="226"/>
                                                     <color key="backgroundColor" red="0.91764705879999997" green="0.94117647059999998" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8i-af-O02">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8i-af-O02" customClass="BotterMesgLbl" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="72" y="24" width="34.5" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="FuturaBT-Book" family="Futura" pointSize="14"/>
                                                     <color key="textColor" red="0.15686274510000001" green="0.16078431369999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3t-zu-NrU" customClass="RoundedView" customModule="Botter" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3t-zu-NrU" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="190" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="d36-H7-sRD">
@@ -914,6 +1039,11 @@ to Botter Mobile</string>
                                                         <constraint firstAttribute="height" constant="36" id="baU-OT-a2x"/>
                                                         <constraint firstItem="d36-H7-sRD" firstAttribute="centerY" secondItem="I3t-zu-NrU" secondAttribute="centerY" id="nyo-KH-mDB"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Z8-ca-bXy" customClass="CustomCollection" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="64" y="40.5" width="278" height="185.5"/>
@@ -960,23 +1090,23 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TriviaTableViewCell" rowHeight="250" id="bSn-XN-AP2" customClass="TriviaTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1047.5" width="414" height="250"/>
+                                        <rect key="frame" x="0.0" y="1159.5" width="414" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bSn-XN-AP2" id="Ovz-kG-ndD">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHk-X7-QEb">
+                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHk-X7-QEb" customClass="botBubbelView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="56" y="12" width="72.5" height="40.5"/>
                                                     <color key="backgroundColor" red="0.91764705879999997" green="0.94117647059999998" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2T-Sq-Yg9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2T-Sq-Yg9" customClass="BotterMesgLbl" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="72" y="24" width="34.5" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="FuturaBT-Book" family="Futura" pointSize="14"/>
                                                     <color key="textColor" red="0.15686274510000001" green="0.16078431369999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yh-PW-kgi" customClass="RoundedView" customModule="Botter" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yh-PW-kgi" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="202" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="IN0-HX-DsF">
@@ -1000,6 +1130,11 @@ to Botter Mobile</string>
                                                         <constraint firstItem="IN0-HX-DsF" firstAttribute="centerX" secondItem="6yh-PW-kgi" secondAttribute="centerX" id="j2c-3V-3Gs"/>
                                                         <constraint firstAttribute="width" constant="36" id="xUg-SZ-Jjy"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lzx-3f-Zdb" customClass="CustomCollection" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="52" y="56.5" width="340" height="181.5"/>
@@ -1046,13 +1181,13 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageBotTableViewCell" id="HGi-Ge-I0K" customClass="ImageBotTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1297.5" width="414" height="224"/>
+                                        <rect key="frame" x="0.0" y="1409.5" width="414" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HGi-Ge-I0K" id="IMF-c7-TRh">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRo-IS-w9N">
+                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRo-IS-w9N" customClass="botBubbelView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="56" y="12" width="298" height="200"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mFJ-Gd-kpu">
@@ -1068,7 +1203,7 @@ to Botter Mobile</string>
                                                         <constraint firstAttribute="bottom" secondItem="mFJ-Gd-kpu" secondAttribute="bottom" constant="8" id="swq-7R-ZuQ"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbr-Rl-Tr1" customClass="RoundedView" customModule="Botter" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbr-Rl-Tr1" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="176" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bqE-Mf-khI">
@@ -1092,6 +1227,11 @@ to Botter Mobile</string>
                                                         <constraint firstItem="bqE-Mf-khI" firstAttribute="centerY" secondItem="mbr-Rl-Tr1" secondAttribute="centerY" id="Tmd-LM-rb5"/>
                                                         <constraint firstItem="bqE-Mf-khI" firstAttribute="centerX" secondItem="mbr-Rl-Tr1" secondAttribute="centerX" id="zH2-C2-zEo"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -1111,13 +1251,13 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GifTableViewCell" id="Itc-Rj-QLn" customClass="GifTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1521.5" width="414" height="224"/>
+                                        <rect key="frame" x="0.0" y="1633.5" width="414" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Itc-Rj-QLn" id="Ob6-Lb-Wq1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Po8-AQ-gXS">
+                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Po8-AQ-gXS" customClass="botBubbelView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="56" y="12" width="298" height="200"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vqA-tL-jY2">
@@ -1152,7 +1292,7 @@ to Botter Mobile</string>
                                                         <constraint firstItem="EnN-YJ-zIx" firstAttribute="centerY" secondItem="vqA-tL-jY2" secondAttribute="centerY" id="osI-nM-KAK"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25G-1b-tRa" customClass="RoundedView" customModule="Botter" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25G-1b-tRa" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="176" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-Gm-8fh">
@@ -1176,6 +1316,11 @@ to Botter Mobile</string>
                                                         <constraint firstItem="Ceu-Gm-8fh" firstAttribute="centerX" secondItem="25G-1b-tRa" secondAttribute="centerX" id="hYr-Bj-NeU"/>
                                                         <constraint firstItem="Ceu-Gm-8fh" firstAttribute="centerY" secondItem="25G-1b-tRa" secondAttribute="centerY" id="um8-Gu-Jh5"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -1196,7 +1341,7 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GallaryTableViewCell" rowHeight="344" id="Ish-5G-Ajz" customClass="GallaryTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1745.5" width="414" height="344"/>
+                                        <rect key="frame" x="0.0" y="1857.5" width="414" height="344"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ish-5G-Ajz" id="GXG-aB-mn8">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="344"/>
@@ -1222,7 +1367,7 @@ to Botter Mobile</string>
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="300"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-vj-gMP">
+                                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-vj-gMP" customClass="botBubbelView" customModule="Botter" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="254" height="300"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2hN-RE-cu6">
@@ -1286,7 +1431,7 @@ to Botter Mobile</string>
                                                                                     <constraint firstAttribute="bottom" secondItem="Fsm-xy-6Rt" secondAttribute="bottom" id="WKJ-mq-oe2"/>
                                                                                 </constraints>
                                                                             </view>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ng6-o2-czq">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ng6-o2-czq" customClass="BotterMesgLbl" customModule="Botter" customModuleProvider="target">
                                                                                 <rect key="frame" x="8" y="130.5" width="238" height="33.5"/>
                                                                                 <string key="text">Label
 itemTitle.alpha = 0</string>
@@ -1294,7 +1439,7 @@ itemTitle.alpha = 0</string>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zzx-id-XaK">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zzx-id-XaK" customClass="MediumChatText" customModule="Botter" customModuleProvider="target">
                                                                                 <rect key="frame" x="8" y="109.5" width="238" height="17"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                                 <nil key="textColor"/>
@@ -1419,7 +1564,7 @@ itemTitle.alpha = 0</string>
                                                         <outlet property="delegate" destination="Ish-5G-Ajz" id="7n6-qy-ZZv"/>
                                                     </connections>
                                                 </collectionView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWt-ov-p9X" customClass="RoundedView" customModule="Botter" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWt-ov-p9X" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="296" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3qJ-CJ-Qzv">
@@ -1443,6 +1588,11 @@ itemTitle.alpha = 0</string>
                                                         <constraint firstAttribute="width" constant="36" id="puI-zy-RfV"/>
                                                         <constraint firstItem="3qJ-CJ-Qzv" firstAttribute="centerX" secondItem="HWt-ov-p9X" secondAttribute="centerX" id="xMd-IQ-YNm"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -1461,13 +1611,13 @@ itemTitle.alpha = 0</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoBotTableViewCell" id="4om-US-p7V" customClass="VideoBotTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="2089.5" width="414" height="224"/>
+                                        <rect key="frame" x="0.0" y="2201.5" width="414" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4om-US-p7V" id="0HF-Do-qYy">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPu-LT-BlT">
+                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPu-LT-BlT" customClass="botBubbelView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="56" y="12" width="298" height="200"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="afT-y7-nc7">
@@ -1506,7 +1656,7 @@ itemTitle.alpha = 0</string>
                                                         <constraint firstItem="ta9-qE-u1n" firstAttribute="height" secondItem="afT-y7-nc7" secondAttribute="height" id="vno-Cv-JBR"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2O-dx-htN" customClass="RoundedView" customModule="Botter" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2O-dx-htN" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="176" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="pcd-Kn-7i5">
@@ -1530,6 +1680,11 @@ itemTitle.alpha = 0</string>
                                                         <constraint firstItem="pcd-Kn-7i5" firstAttribute="centerX" secondItem="Y2O-dx-htN" secondAttribute="centerX" id="Xin-FU-bBp"/>
                                                         <constraint firstAttribute="height" constant="36" id="qG4-eK-2CT"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -1578,6 +1733,43 @@ itemTitle.alpha = 0</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Ux-RT-jdn">
+                                <rect key="frame" x="0.0" y="761" width="414" height="0.0"/>
+                                <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GpK-GP-tZB">
+                                        <rect key="frame" x="0.0" y="0.0" width="705.5" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry. It looks like there was an issue with your internet connection. Please check your connection and try again." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WUA-KK-I0Q">
+                                                <rect key="frame" x="20" y="4" width="634" height="62"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzH-le-j67">
+                                                <rect key="frame" x="662" y="8" width="27.5" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="27.5" id="B5c-fy-LKx"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="close-1"/>
+                                                <connections>
+                                                    <action selector="closeConnectionUpdateView" destination="mBd-sT-l3W" eventType="touchUpOutside" id="eYx-jy-6Wh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.97647058823529409" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="1Jj-2e-egf"/>
+                                            <constraint firstItem="WUA-KK-I0Q" firstAttribute="leading" secondItem="GpK-GP-tZB" secondAttribute="leading" constant="20" id="ALm-wA-yg6"/>
+                                            <constraint firstAttribute="bottom" secondItem="WUA-KK-I0Q" secondAttribute="bottom" constant="4" id="KAU-dv-RHd"/>
+                                            <constraint firstAttribute="trailing" secondItem="TzH-le-j67" secondAttribute="trailing" constant="16" id="UNZ-2A-cvs"/>
+                                            <constraint firstItem="TzH-le-j67" firstAttribute="top" secondItem="GpK-GP-tZB" secondAttribute="top" constant="8" id="dK0-Tw-KIR"/>
+                                            <constraint firstItem="WUA-KK-I0Q" firstAttribute="top" secondItem="GpK-GP-tZB" secondAttribute="top" constant="4" id="fJS-lz-1YE"/>
+                                            <constraint firstItem="TzH-le-j67" firstAttribute="leading" secondItem="WUA-KK-I0Q" secondAttribute="trailing" constant="8" id="jD3-pT-lJa"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbO-1Z-HJ8" customClass="TextBoxFeild" customModule="Botter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="797" width="414" height="65"/>
                                 <subviews>
@@ -1659,17 +1851,56 @@ itemTitle.alpha = 0</string>
                                     <outlet property="field" destination="HFT-ZM-5nD" id="o1h-46-kCC"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTX-FM-DZ2">
+                                <rect key="frame" x="132" y="761" width="150" height="36"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="epT-mK-IEv" customClass="HeaderLogo" customModule="Botter" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="10.5" width="15" height="15"/>
+                                        <color key="tintColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We Run on Botter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8X-h9-EId" customClass="AccentTextLbl" customModule="Botter" customModuleProvider="target">
+                                        <rect key="frame" x="38.5" y="11" width="99.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fm-xO-fTi">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="36"/>
+                                        <connections>
+                                            <action selector="botterWebsiteClicked" destination="mBd-sT-l3W" eventType="touchUpInside" id="g0M-5c-s8Q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="epT-mK-IEv" firstAttribute="centerY" secondItem="eTX-FM-DZ2" secondAttribute="centerY" id="381-ZT-2En"/>
+                                    <constraint firstAttribute="trailing" secondItem="T8X-h9-EId" secondAttribute="trailing" constant="12" id="52u-oy-Nth"/>
+                                    <constraint firstItem="T8X-h9-EId" firstAttribute="centerY" secondItem="eTX-FM-DZ2" secondAttribute="centerY" id="59b-Iu-Yku"/>
+                                    <constraint firstItem="5fm-xO-fTi" firstAttribute="height" secondItem="eTX-FM-DZ2" secondAttribute="height" id="LRj-JY-ckQ"/>
+                                    <constraint firstItem="epT-mK-IEv" firstAttribute="leading" secondItem="eTX-FM-DZ2" secondAttribute="leading" constant="12" id="LyQ-sa-J1r"/>
+                                    <constraint firstItem="5fm-xO-fTi" firstAttribute="centerY" secondItem="eTX-FM-DZ2" secondAttribute="centerY" id="UEp-bN-ZyP"/>
+                                    <constraint firstItem="5fm-xO-fTi" firstAttribute="width" secondItem="eTX-FM-DZ2" secondAttribute="width" id="aeV-bq-bgs"/>
+                                    <constraint firstAttribute="width" constant="150" id="pTI-rZ-0lQ"/>
+                                    <constraint firstAttribute="height" constant="36" id="sJo-Pz-fGW"/>
+                                    <constraint firstItem="5fm-xO-fTi" firstAttribute="centerX" secondItem="eTX-FM-DZ2" secondAttribute="centerX" id="w7v-w4-L5g"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7Ux-RT-jdn" firstAttribute="leading" secondItem="zEN-aT-QC1" secondAttribute="leading" id="0KS-h2-3ti"/>
+                            <constraint firstItem="zEN-aT-QC1" firstAttribute="trailing" secondItem="7Ux-RT-jdn" secondAttribute="trailing" id="3Fe-5i-M0y"/>
+                            <constraint firstItem="eTX-FM-DZ2" firstAttribute="centerX" secondItem="elV-lh-Q1K" secondAttribute="centerX" id="4Wf-b1-y2r"/>
                             <constraint firstItem="zEN-aT-QC1" firstAttribute="trailing" secondItem="cnj-ya-FOi" secondAttribute="trailing" id="5me-hr-0oF"/>
                             <constraint firstAttribute="trailing" secondItem="fbO-1Z-HJ8" secondAttribute="trailing" id="8eO-8I-cjr"/>
                             <constraint firstItem="27u-gJ-guB" firstAttribute="centerX" secondItem="elV-lh-Q1K" secondAttribute="centerX" id="CWX-7s-EhN"/>
                             <constraint firstItem="cnj-ya-FOi" firstAttribute="top" secondItem="elV-lh-Q1K" secondAttribute="top" id="FTl-d3-r8J"/>
                             <constraint firstItem="cnj-ya-FOi" firstAttribute="leading" secondItem="zEN-aT-QC1" secondAttribute="leading" id="OBK-63-ZnI"/>
+                            <constraint firstItem="eTX-FM-DZ2" firstAttribute="top" secondItem="7Ux-RT-jdn" secondAttribute="bottom" id="PlB-hd-mqu"/>
                             <constraint firstItem="zEN-aT-QC1" firstAttribute="bottom" secondItem="fbO-1Z-HJ8" secondAttribute="bottom" id="RoG-WM-yBL"/>
+                            <constraint firstItem="fbO-1Z-HJ8" firstAttribute="top" secondItem="eTX-FM-DZ2" secondAttribute="bottom" id="SDM-CQ-VSJ"/>
                             <constraint firstItem="uRS-dj-06M" firstAttribute="leading" secondItem="elV-lh-Q1K" secondAttribute="leading" id="Wxz-Qc-7Hg"/>
-                            <constraint firstItem="fbO-1Z-HJ8" firstAttribute="top" secondItem="uRS-dj-06M" secondAttribute="bottom" id="bEX-4r-5cX"/>
+                            <constraint firstItem="7Ux-RT-jdn" firstAttribute="top" secondItem="uRS-dj-06M" secondAttribute="bottom" id="ZH7-5N-sU9"/>
                             <constraint firstItem="uRS-dj-06M" firstAttribute="top" secondItem="cnj-ya-FOi" secondAttribute="bottom" id="bdG-If-Jnc"/>
                             <constraint firstItem="27u-gJ-guB" firstAttribute="top" secondItem="cnj-ya-FOi" secondAttribute="bottom" constant="20" id="h39-u4-mFe"/>
                             <constraint firstItem="zEN-aT-QC1" firstAttribute="trailing" secondItem="uRS-dj-06M" secondAttribute="trailing" id="pKn-XA-vVA"/>
@@ -1680,6 +1911,7 @@ itemTitle.alpha = 0</string>
                     <connections>
                         <outlet property="bottomConstraint" destination="RoG-WM-yBL" id="7PG-9y-WmT"/>
                         <outlet property="chatView" destination="fbO-1Z-HJ8" id="K9T-2C-vwr"/>
+                        <outlet property="connectionErrorView" destination="GpK-GP-tZB" id="RQg-eZ-YYj"/>
                         <outlet property="groupedDateLbl" destination="27u-gJ-guB" id="pQL-Tg-4ZI"/>
                         <outlet property="tableView" destination="uRS-dj-06M" id="yni-qH-ouO"/>
                     </connections>

@@ -44,7 +44,7 @@ Pod::Spec.new do |spec|
   
   spec.platform     = :ios, "11.0"
   spec.ios.framework  = 'WebKit' , 'AVKit' , 'AVFoundation'
-  spec.dependency 'SoundManager'
+  #spec.dependency 'ReachabilitySwift'
   spec.dependency 'LazyImage' 
 
 

@@ -61,6 +61,10 @@ to Botter Mobile</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xao-1u-WIV"/>
                     </view>
+                    <connections>
+                        <outlet property="actionBtn" destination="by7-05-TBD" id="Vbf-4e-Ksd"/>
+                        <outlet property="toggelBtn" destination="cZA-bN-P4t" id="Xvh-Ah-s6g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKl-0z-3ad" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,6 +109,9 @@ to Botter Mobile</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vLc-lL-lXw"/>
                     </view>
+                    <connections>
+                        <outlet property="openChatBtn" destination="EXD-76-QI0" id="aMZ-ek-UFb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Po9-fZ-kCQ" sceneMemberID="firstResponder"/>
             </objects>

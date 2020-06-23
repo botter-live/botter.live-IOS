@@ -20,6 +20,7 @@ protocol ChatViewInterface: ViewInterface {
     func reload()
     func clearTextBox()
     func showError(errorMsg : String)
+    func connectionUpdated(isConnected : Bool)
     
 }
 
@@ -35,13 +36,15 @@ protocol ChatPresenterInterface: PresenterInterface {
     func openUrl(url : String)
     func call(number: String)
     func triviaActionClicked(action: Action)
+    func resend(msg : BasicMessage)
     
 }
 
 protocol ChatInteractorInterface: InteractorInterface {
     func openSocket()
-    func sendMessage(text : String)
+    func sendMessage(text : String , completion:@escaping((BasicMessage)->()))
     func actionClicked(action : Action)
-    func triviaMessage(text : String)->Bool
+    func triviaMessage(action : Action , completion:@escaping((BasicMessage)->()))
+    func resend(msg: BasicMessage , completion:@escaping((Bool)->()))
     
 }

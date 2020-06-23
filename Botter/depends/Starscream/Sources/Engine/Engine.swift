@@ -10,6 +10,7 @@ import Foundation
 
 public protocol EngineDelegate: class {
     func didReceive(event: WebSocketEvent)
+    func connectionChanged(canSend : Bool)
 }
 
 public protocol Engine {

@@ -6,7 +6,7 @@ target 'Botter' do
   use_frameworks!
 
   # Pods for BotterSDK
-  pod 'SoundManager'
+#  pod 'ReachabilitySwift'
   pod 'LazyImage'
 
 end

@@ -35,6 +35,9 @@ final class ChatPresenter {
 extension ChatPresenter: ChatPresenterInterface {
     func openSocket() {
         self.interactor.openSocket()
+        SocketManager.shared.connectionUpdated = { 
+            self.view.connectionUpdated(isConnected: SocketManager.shared.isConnected)
+        }
     }
     
     func messageReceived(message: BasicMessage) {
@@ -50,7 +53,10 @@ extension ChatPresenter: ChatPresenterInterface {
     }
     
     func sendMessage(text: String) {
-        self.interactor.sendMessage(text: text)
+        self.interactor.sendMessage(text: text, completion: { Message in
+            
+            self.messageReceived(message: Message)
+        })
     }
     
     func clearTextBox() {
@@ -70,11 +76,20 @@ extension ChatPresenter: ChatPresenterInterface {
     }
     
     func triviaActionClicked(action: Action) {
-        if interactor.triviaMessage(text: action.title){
+        interactor.triviaMessage(action: action) { (msg) in
+            self.messageReceived(message: msg)
             self.messgesList[action.msgIndex].actions.removeAll()
             self.view.reload()
         }
         
+    }
+    
+    func resend(msg: BasicMessage) {
+        interactor.resend(msg: msg) { (isSent) in
+            self.messgesList[msg.msgIndex].msgSent = true
+            self.view.reload()
+        }
+       
     }
     
     func openUrl(url: String) {

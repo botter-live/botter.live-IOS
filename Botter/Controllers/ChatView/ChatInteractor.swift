@@ -25,35 +25,63 @@ extension ChatInteractor: ChatInteractorInterface {
         }
     }
     
-    func sendMessage(text : String){
+    func resend(msg: BasicMessage , completion:@escaping((Bool)->()))  {
+        
         if SocketManager.shared.isConnected{
-            SocketManager.shared.sendMessage(text: text)
-            let Message = BasicMessage()
-            Message.type = "message"
-            Message.isBotMsg = false
-            Message.text = text
-            self.presenter.clearTextBox()
-            self.presenter.messageReceived(message: Message)
+            if msg.blockValue != ""{
+                SocketManager.shared.sendMessage(text: msg.blockValue) { (isSent) in
+                    completion(isSent)
+                }
+            }else{
+                SocketManager.shared.sendMessage(text: msg.text){ (isSent) in
+                    completion(isSent)
+                }
+            }
+             
         }else{
             SocketManager.shared.connect()
-            self.presenter.showError(errorMsg: "Failed to send,\nPlease check your internet connection")
+            completion(false)
         }
     }
     
-    func triviaMessage(text : String)->Bool{
+    func sendMessage(text : String , completion:@escaping((BasicMessage)->())){
+        let Message = BasicMessage()
+        Message.type = "message"
+        Message.isBotMsg = false
+        Message.text = text
+        self.presenter.clearTextBox()
+        
         if SocketManager.shared.isConnected{
-            SocketManager.shared.sendMessage(text: text)
-            let Message = BasicMessage()
-            Message.type = "message"
-            Message.isBotMsg = false
-            Message.text = text
-            self.presenter.messageReceived(message: Message)
-            return true
+            SocketManager.shared.sendMessage(text: text){ isSent in
+                completion(Message)
+            }
         }else{
             SocketManager.shared.connect()
-            self.presenter.showError(errorMsg: "Failed to send,\nPlease check your internet connection")
-            return false
+            Message.msgSent = false
+            completion(Message)
         }
+        
+    }
+    
+    func triviaMessage(action : Action , completion:@escaping((BasicMessage)->())){
+        let Message = BasicMessage()
+        Message.type = "message"
+        Message.isBotMsg = false
+        Message.text = action.title
+        if SocketManager.shared.isConnected{
+            SocketManager.shared.sendPostBack(value: action.value){ isSent in
+                completion(Message)
+            }
+//            return true
+        }else{
+            SocketManager.shared.connect()
+            Message.msgSent = false
+//            return false
+            Message.blockValue = action.value
+            completion(Message)
+        }
+//        self.presenter.messageReceived(message: Message)
+   
     }
     
     func actionClicked(action: Action) {
@@ -65,7 +93,9 @@ extension ChatInteractor: ChatInteractorInterface {
             presenter.openUrl(url: action.value)
             break
         case .postBack:
-            SocketManager.shared.sendPostBack(value: action.value)
+            SocketManager.shared.sendPostBack(value: action.value, completion: { isSent in
+//                completion(isSent)
+            })
             break
         default:
             break

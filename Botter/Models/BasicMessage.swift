@@ -30,6 +30,8 @@ class BasicMessage :  Mappable {
     var hasTime : Bool
     var pickDateTimeTitle : String
     var location : Location
+    var msgSent = true
+    var blockValue = ""
     
     init(){
         type = ""
