@@ -1,24 +1,16 @@
 PODS:
-  - Botter (1.0.1):
-    - LazyImage
   - LazyImage (7.0.1)
 
 DEPENDENCIES:
-  - Botter (from `../BotterSDK`)
   - LazyImage
 
 SPEC REPOS:
   trunk:
     - LazyImage
 
-EXTERNAL SOURCES:
-  Botter:
-    :path: "../BotterSDK"
-
 SPEC CHECKSUMS:
-  Botter: ad3b587387868365b889100eb1e1de20307b77ee
   LazyImage: 4db5288d8660b28e64e60c57f5b5d414af922160
 
-PODFILE CHECKSUM: e9f3c50c1c3b57793fc40610b7ea5129c72e9e10
+PODFILE CHECKSUM: 3a7dd6052086cef5d87eb49305f50e53b9c93c7d
 
 COCOAPODS: 1.9.3
