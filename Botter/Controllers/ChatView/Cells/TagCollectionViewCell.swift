@@ -22,5 +22,7 @@ class TagCollectionViewCell: UICollectionViewCell {
 
     func setData(action : Action){
         titleLbl.text = action.title
+        BGView.borderColor = BotterSettingsManager.AccentColor
+        titleLbl.textColor = BotterSettingsManager.AccentColor
     }
 }

@@ -11,9 +11,11 @@ import Botter
 
 class HiddenLauncherViewController: BotterControllerWithHiddenLauncher {
 
+    @IBOutlet weak var openChatBtn:UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        openChatBtn.backgroundColor = BotterSettingsManager.AccentColor
         // Do any additional setup after loading the view.
     }
     

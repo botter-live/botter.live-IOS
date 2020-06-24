@@ -9,7 +9,6 @@
 //
 
 import UIKit
-import SoundManager
 
 final class ChatViewController: UIViewController {
     
@@ -19,6 +18,7 @@ final class ChatViewController: UIViewController {
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var chatView : TextBoxFeild!
     @IBOutlet weak var bottomConstraint : NSLayoutConstraint!
+    @IBOutlet weak var connectionErrorView : UIView!
     
     var presenter: ChatPresenterInterface!
     var original : CGFloat = 0
@@ -28,6 +28,11 @@ final class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
         self.keyBoardSettings()
         self.presenter.openSocket()
         AudioHandler.shared = AudioHandler()
@@ -35,8 +40,20 @@ final class ChatViewController: UIViewController {
        
     }
     
+    @IBAction func closeConnectionUpdateView(){
+        connectionErrorView.isHidden = true
+    }
+    
+    func connectionUpdated(isConnected : Bool){
+        connectionErrorView.isHidden = isConnected
+    }
+    
+    @IBAction func botterWebsiteClicked (){
+        CommonActions.botterSiteClicked()
+    }
+    
     @IBAction func sendMesg(){
-         self.view.endEditing(true)
+        self.view.endEditing(true)
         if chatView.getText().isEmpty{
             
         }else{
@@ -133,11 +150,21 @@ extension ChatViewController {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if isBeingDismissed {
-            // TODO: Do your stuff here.
-            SocketManager.shared.dissConnect()
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        if isBeingDismissed {
+//            // TODO: Do your stuff here.
+//            SocketManager.shared.dissConnect()
+//        }
+//    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        AudioHandler.shared.player.pause()
+        if (self.isBeingDismissed || self.isMovingFromParent) {
+            // clean up code here
+            SocketManager.shared = nil
+            SocketManager.shared = SocketManager()
         }
     }
     
@@ -150,11 +177,7 @@ extension ChatViewController {
         }
     }
     
-    public override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        AudioHandler.shared.player.pause()
-        
-    }
+    
 }
 extension ChatViewController : TextBoxDelegate{
     func textBoxDidChange(textBox: TextBoxFeild) {
@@ -288,10 +311,12 @@ extension ChatViewController : UITableViewDataSource{
             }
             
         }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "UserChatTableViewCell") as? UserChatTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: msg.msgSent ? "UserChatTableViewCell" : "UserFaildChatTableViewCell") as? UserChatTableViewCell
            
             cell?.setData(msg: msg )
-            
+            cell?.resendAction = { myMsg in
+                self.presenter.resend(msg: myMsg)
+            }
             return cell ?? UITableViewCell()
         }
       

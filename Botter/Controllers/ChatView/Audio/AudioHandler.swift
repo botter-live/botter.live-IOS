@@ -79,6 +79,14 @@ extension AudioHandler : AudioPlayerDelegate{
         if current != nil{
             AudioHandler.setImage(state: state, cell: current)
         }
+        
+        switch state {
+        case .playing:
+            print("Playing")
+            break
+        default:
+            break
+        }
     }
     
     static func setImage(state : AudioPlayerState , cell : AudioBotTableViewCell){
@@ -113,6 +121,7 @@ extension AudioHandler : AudioPlayerDelegate{
         }
     }
     
+   
     
     
     func audioPlayer(_ audioPlayer: AudioPlayer, didUpdateProgressionTo time: TimeInterval, percentageRead: Float) {
@@ -134,10 +143,15 @@ extension AudioHandler : AudioPlayerDelegate{
     
     
     func audioPlayer(_ audioPlayer: AudioPlayer, willStartPlaying item: AudioItem) {
+         
         if current != nil {
             if self.current.seekBar.value > 0 {
                 audioPlayer.seek(to: TimeInterval(self.current.seekBar.value))
+            }else{
+               
             }
+        }else{
+            player.stop()
         }
     }
 }

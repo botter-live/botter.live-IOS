@@ -27,6 +27,11 @@ class WebLinksViewController: UIViewController , WKNavigationDelegate, WKUIDeleg
         if Botter.chatTitle != ""{
             self.titleLbl.text = Botter.chatTitle
         }
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     static func openInParent(link : String , parent : UIViewController){

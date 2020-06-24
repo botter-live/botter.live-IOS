@@ -52,17 +52,11 @@ class AudioBotTableViewCell: BotChatTableViewCell {
 
     
     override func prepareForReuse() {
-//        player = AudioPlayer()
         durationTxt = ""
         imageBtn.tag = 0
     }
     
     func setDuration(){
-//        if (msg.audioDuration < 60) {
-//            durationTxt = String(format: "0:%02ld", msg.audioDuration)
-//        } else {
-//            durationTxt = String(format: "%ld:%02ld", msg.audioDuration / 60, Int(msg.audioDuration) % 60)
-//        }
         durationTxt = msg.audioDuration.asString(style: .positional)
         textLbl.text = durationTxt
         seekBar.maximumValue = Float(msg.audioDuration)

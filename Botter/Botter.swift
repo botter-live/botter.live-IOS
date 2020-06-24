@@ -60,7 +60,7 @@ internal func openChat(parent : UIViewController){
 }
 
 public func setLauncherBottomMargin(marginValue value : Float){
-    FloatingButtonWindow.bottomMargin = CGFloat(value)
+    BotterSettingsManager.bottomMargin = CGFloat(value)
     let windows = UIApplication.shared.windows
     if let floatingWindow = windows.last(where:  { (window) -> Bool in
         window is FloatingButtonWindow

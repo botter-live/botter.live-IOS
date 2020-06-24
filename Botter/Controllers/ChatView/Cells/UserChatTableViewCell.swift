@@ -13,6 +13,9 @@ class UserChatTableViewCell: UITableViewCell {
     @IBOutlet weak var textLbl : PaddedUILabel!
     @IBOutlet weak var BGView : UIView!
     
+    var msg = BasicMessage()
+    var resendAction:((BasicMessage)->())!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,6 +28,7 @@ class UserChatTableViewCell: UITableViewCell {
     }
     
     func setData(msg : BasicMessage , showIcon : Bool = false){
+        self.msg = msg
         if textLbl != nil{
             textLbl.text = msg.text
         }
@@ -37,6 +41,12 @@ class UserChatTableViewCell: UITableViewCell {
             }else{
                 BGView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner , .layerMaxXMaxYCorner]
             }
+        }
+    }
+    
+    @IBAction func resend(){
+        if resendAction != nil{
+            resendAction(self.msg)
         }
     }
 

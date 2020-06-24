@@ -30,6 +30,8 @@ class BasicMessage :  Mappable {
     var hasTime : Bool
     var pickDateTimeTitle : String
     var location : Location
+    var msgSent = true
+    var blockValue = ""
     
     init(){
         type = ""
@@ -123,6 +125,6 @@ extension BasicMessage : AudioPlayerDelegate{
     }
     
     func audioPlayer(_ audioPlayer: AudioPlayer, willStartPlaying item: AudioItem) {
-        
+        player.stop()
     }
 }
