@@ -26,7 +26,7 @@ class UserMesgLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.FontColor
-        let tFont = BotterSettingsManager.font.regular
+        let tFont = BotterSettingsManager.Font.getRegularFontForLabel(lbl: self)
         tFont.withSize(font.pointSize)
         font = tFont
     }
@@ -36,7 +36,7 @@ class BotterMesgLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.BotterMessageFontColor
-        let tFont = BotterSettingsManager.font.regular
+        let tFont = BotterSettingsManager.Font.getRegularFontForLabel(lbl: self)
          tFont.withSize(font.pointSize)
         font = tFont
         
@@ -47,7 +47,7 @@ class ChatHeader : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.ChatTitleColor
-        let tFont = BotterSettingsManager.font.bold
+        let tFont = BotterSettingsManager.Font.getMediumFontForLabel(lbl: self)
          tFont.withSize(font.pointSize)
         font = tFont
         text = BotterSettingsManager.ChatTitleText
@@ -58,7 +58,7 @@ class boldChatText : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.BotterMessageFontColor
-        let tFont = BotterSettingsManager.font.bold
+        let tFont = BotterSettingsManager.Font.getMediumFontForLabel(lbl: self)
          tFont.withSize(font.pointSize)
         font = tFont
     }
@@ -68,7 +68,7 @@ class MediumChatText : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.BotterMessageFontColor
-        let tFont = BotterSettingsManager.font.medium
+        let tFont = BotterSettingsManager.Font.getMediumFontForLabel(lbl: self)
          tFont.withSize(font.pointSize)
         font = tFont
     }
@@ -79,7 +79,7 @@ class ChatHeadLine : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.FontColor
-        let tFont = BotterSettingsManager.font.medium
+        let tFont = BotterSettingsManager.Font.getMediumFontForLabel(lbl: self)
          tFont.withSize(26)
         font = tFont
         text = BotterSettingsManager.HeadlineMessage
@@ -90,7 +90,7 @@ class ChatWelcomeLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.FontColor
-        let tFont = BotterSettingsManager.font.regular
+        let tFont = BotterSettingsManager.Font.getRegularFontForLabel(lbl: self)
          tFont.withSize(font.pointSize)
         font = tFont
         text = BotterSettingsManager.WelcomeMessage
@@ -135,7 +135,9 @@ class HeaderLogo : UIImageView{
     override func awakeFromNib() {
         super.awakeFromNib()
         tintColor = BotterSettingsManager.AccentColor
-//        image = BotterSettingsManager.logo
+        if BotterSettingsManager.logo != nil {
+            image = BotterSettingsManager.logo
+        }
     }
 }
 

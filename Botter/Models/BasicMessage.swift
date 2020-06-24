@@ -125,6 +125,6 @@ extension BasicMessage : AudioPlayerDelegate{
     }
     
     func audioPlayer(_ audioPlayer: AudioPlayer, willStartPlaying item: AudioItem) {
-        
+        player.stop()
     }
 }

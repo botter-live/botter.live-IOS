@@ -21,14 +21,31 @@ public class BotterSettingsManager  {
     public static var HeadlineMessage : String = "Hey there 👋"
     public static var WelcomeMessage : String = "We’re here to answer your questions about Company. Ask us anything!"
     
-    public static var logo : UIImage = #imageLiteral(resourceName: "botterIcon")
+    public static var logo : UIImage = UIImage(named: "botterIcon", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
+    public static var chatIcon : UIImage = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     
+
+    public static var  alignLauncherLeft : Bool = false
+    public static var bottomMargin : CGFloat = 40
     
-    public struct font {
-        static var regular : UIFont = UIFont.systemFont(ofSize: 14, weight: .regular)
-        static var medium : UIFont = UIFont.systemFont(ofSize: 14, weight: .medium)
-        static var bold : UIFont = UIFont.systemFont(ofSize: 14, weight: .bold)
+    public struct Font {
+        public static var regularFontName : String = ""
+        public static var mediumFontName : String = ""
+
+        static func getRegularFontForLabel(lbl : UILabel)->UIFont{
+            if let regularFont = UIFont.init(name: regularFontName , size: lbl.font.pointSize){
+                return regularFont
+            }
+            return UIFont.systemFont(ofSize: lbl.font.pointSize)
+        }
         
+        static func getMediumFontForLabel(lbl : UILabel)->UIFont{
+            
+            if let mediumFont = UIFont.init(name: mediumFontName , size: lbl.font.pointSize){
+               return mediumFont
+            }
+             return UIFont.mySemiBoldSystemFont(ofSize: lbl.font.pointSize)
+        }
         
     }
 }

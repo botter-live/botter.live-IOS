@@ -42,12 +42,11 @@ class FloatingBtnController: UIViewController {
         button.setTitle("", for: .normal)
         button.setTitleColor(UIColor.green, for: .normal)
         button.backgroundColor = BotterSettingsManager.AccentColor
-//        let frameworkBundle = Bundle.init(for: FloatingBtnController.self)
-//        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("BotterSDK.bundle")
-       
-//        let podBundle = Bundle(path: Bundle(for: FloatingBtnController.self). path(forResource: "Botter", ofType: "bundle")!)
-//MyFrameworkBundle.bundle
-        let image = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle , compatibleWith: nil)
+    
+        var image = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
+        if BotterSettingsManager.chatIcon != nil{
+            image = BotterSettingsManager.chatIcon
+        }
         button.setImage(image , for: .normal)
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowRadius = 3
@@ -60,9 +59,9 @@ class FloatingBtnController: UIViewController {
         let bottomInset = self.window?.safeAreaInsets.bottom ?? 0
         let height : CGFloat = 60
         let screenSpecs = UIScreen.main.bounds
-//        let viewFrame = self.view.frame
-//        print(viewFrame)
-        button.frame = CGRect(origin: CGPoint(x: screenSpecs.width - 100, y: (screenSpecs.height - FloatingButtonWindow.bottomMargin - bottomInset - height)), size: CGSize.init(width: 60, height: height ))
+        let mWidth : CGFloat = 60
+        let x : CGFloat = BotterSettingsManager.alignLauncherLeft ? 40 : screenSpecs.width - mWidth - 40
+        button.frame = CGRect(origin: CGPoint(x: x , y: (screenSpecs.height - BotterSettingsManager.bottomMargin - bottomInset - height)), size: CGSize.init(width: mWidth , height: height ))
         button.autoresizingMask = []
         view.addSubview(button)
         self.view = view
@@ -81,13 +80,17 @@ class FloatingBtnController: UIViewController {
         
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        loadView()
+    }
+    
   
 }
 
 class FloatingButtonWindow: UIWindow {
     
     var button: UIButton?
-    static var bottomMargin : CGFloat = 40
     weak var floatingButtonController: FloatingBtnController?
     
     init() {

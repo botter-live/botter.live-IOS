@@ -29,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func customizeChat(){
         BotterSettingsManager.AccentColor = UIColor.init(colorString: "#97a258")
         BotterSettingsManager.BotterMessageBGColor = UIColor.init(colorString: "#dbedd5")
+        BotterSettingsManager.Font.regularFontName = "Roboto-Regular"
+        BotterSettingsManager.Font.mediumFontName = "Roboto-Medium"
+        BotterSettingsManager.alignLauncherLeft = true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {

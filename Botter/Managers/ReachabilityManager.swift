@@ -60,6 +60,6 @@ class ReachabilityManager: NSObject {
        NotificationCenter.default.removeObserver(self,
                                                  name: Notification.Name.ReachabilityChanged,
                    object: reachability)
-        reachabilityChangedEvent = nil
+//        reachabilityChangedEvent = nil
     }
 }
