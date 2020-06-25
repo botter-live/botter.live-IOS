@@ -20,9 +20,10 @@ To run the example project, clone the repo, and run   ``` pod install ```   from
 >> 1 - remove _Scene Manifest_ from info.plist file 
 >> 2- comment scene configuration functions in App delegate 
 >> 3-  add this line in App Delegate class :
->>```swift
->>var  window: UIWindow?
->>```
+>>
+>> ```swift
+>> var  window: UIWindow?
+>> ```
 
 
 ## Implementation
