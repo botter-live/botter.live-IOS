@@ -11,7 +11,7 @@ To run the example project, clone the repo, and run   ``` pod install ```   from
 
 **Steps**
 >1- Botter  is available through CocoaPods. To install it, simply add the following line to your Podfile:
->```
+>```swift
 >pod 'Botter' , :git => 'https://github.com/NoraSayed135/Botter.git'
 >```
 
@@ -20,7 +20,7 @@ To run the example project, clone the repo, and run   ``` pod install ```   from
 >> 1 - remove _Scene Manifest_ from info.plist file 
 >> 2- comment scene configuration functions in App delegate 
 >> 3-  add this line in App Delegate class :
->>```
+>>```swift
 >>var  window: UIWindow?
 >>```
 
@@ -30,7 +30,7 @@ To run the example project, clone the repo, and run   ``` pod install ```   from
 
 Botter SDK provide the option of showing launcher button throughout entire app 
 
-```
+```swift
  import Botter
 
  @UIApplicationMain
@@ -47,7 +47,7 @@ Botter SDK provide the option of showing launcher button throughout entire app
 
  you trigger open chat action on your custom button
 
-```
+```swift
 @IBAction func openChat(){
   
        Botter.openChatScreen(APIKey: "nKmovPCdWNZ")
@@ -59,7 +59,7 @@ Botter SDK provide the option of showing launcher button throughout entire app
  you can hide launcher button in certain controllers to do so we have two ways 
 
  > make the controller where we want to hide the button inhirit from **BotterControllerWithHiddenLauncher** 
- ```
+ ```swift
 import Botter
 
 class HiddenLauncherViewController: BotterControllerWithHiddenLauncher {
@@ -76,13 +76,13 @@ class HiddenLauncherViewController: BotterControllerWithHiddenLauncher {
 >
 > **Botter.showLauncherButton()**
 
-> ```
+> ```swift
 open override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
        Botter.hideLauncherButton()
    }
 >```
- >```
+ >```swift
  open override func viewDidDisappear(_ animated: Bool) {
        super.viewDidDisappear(animated)
        Botter.showLauncherButton()
@@ -94,14 +94,14 @@ open override func viewWillAppear(_ animated: Bool) {
 **Change Launcher Position** 
 
 > to change launcher Position you can set bottom margin calling this:
->```
-Botter.setLauncherBottomMargin(marginValue: Float(40))
+>```swift
+BotterSettingsManager.bottomMargin = 40
 >```
 
 **Change Title Text** 
 
 > to change title text you can set it calling this :
 >
->```
+>```swift
 BotterSettingsManager.ChatTitleText = "Botter"
 >```
