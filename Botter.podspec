@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   
 
   spec.name         = "Botter"
-  spec.version      = "1.0.2.1"
+  spec.version      = "1.0.2.2"
   spec.summary      = "Botter is an integration with Botter Chatbot"
 
   spec.homepage     = "https://github.com/NoraSayed135/Botter"

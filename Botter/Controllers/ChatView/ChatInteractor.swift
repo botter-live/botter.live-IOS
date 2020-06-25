@@ -69,8 +69,14 @@ extension ChatInteractor: ChatInteractorInterface {
         Message.isBotMsg = false
         Message.text = action.title
         if SocketManager.shared.isConnected{
-            SocketManager.shared.sendPostBack(value: action.value){ isSent in
-                completion(Message)
+            if action.action == .date{
+                SocketManager.shared.sendMessage(text: action.title) { (isSent) in
+                    completion(Message)
+                }
+            }else{
+                SocketManager.shared.sendPostBack(value: action.value){ isSent in
+                    completion(Message)
+                }
             }
 //            return true
         }else{

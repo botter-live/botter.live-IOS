@@ -42,5 +42,6 @@ enum ActionType : String , Codable{
     case postBack = "postback"
     case call = "call"
     case openUrl = "openurl"
+    case date = "date"
     case none = ""
 }

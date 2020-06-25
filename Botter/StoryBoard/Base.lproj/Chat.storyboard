@@ -363,6 +363,7 @@ to Botter Mobile</string>
                                                 <state key="normal" image="close"/>
                                                 <connections>
                                                     <action selector="backDismiss:" destination="doQ-LX-xpz" eventType="touchUpInside" id="CZS-BN-Evd"/>
+                                                    <action selector="backDismiss:" destination="mBd-sT-l3W" eventType="touchUpInside" id="Mcd-6X-xyi"/>
                                                     <action selector="backDismiss:" destination="1bD-de-UBG" eventType="touchUpInside" id="hhS-1S-Wqo"/>
                                                 </connections>
                                             </button>
