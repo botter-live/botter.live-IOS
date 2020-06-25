@@ -21,9 +21,7 @@ class HiddenLauncherViewController: BotterControllerWithHiddenLauncher {
     
 
    @IBAction func openChat(){
-        
-        // this will not hide chat icon as the line of BotterSDK.show()
-        // is in appDelegate class
+   
         Botter.openChatScreen(APIKey: "nKmovPCdWNZ")
     }
 
