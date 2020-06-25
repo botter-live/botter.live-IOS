@@ -10,20 +10,20 @@ To run the example project, clone the repo, and run   ``` pod install ```   from
 # Installation
 
 **Steps**
->1- Botter  is available through CocoaPods. To install it, simply add the following line to your Podfile:
->```swift
->pod 'Botter' , :git => 'https://github.com/NoraSayed135/Botter.git'
->```
+1- Botter  is available through CocoaPods. To install it, simply add the following line to your Podfile:
+```swift
+pod 'Botter' , :git = 'https://github.com/NoraSayed135/Botter.git'
+```
 
->2- Customize your app to allow multiple window in case you want to show floating button on to of your entire app /*if not skip  this*/ to this follow this steps
->
->> 1 - remove _Scene Manifest_ from info.plist file 
->> 2- comment scene configuration functions in App delegate 
->> 3-  add this line in App Delegate class :
->>
->> ```swift
->> var  window: UIWindow?
->> ```
+2- Customize your app to allow multiple window in case you want to show floating button on to of your entire app /*if not skip  this*/ to this follow this steps
+
+ 1 - remove _Scene Manifest_ from info.plist file 
+ 2- comment scene configuration functions in App delegate 
+ 3-  add this line in App Delegate class :
+
+ ```swift
+ var  window: UIWindow?
+ ```
 
 
 ## Implementation
@@ -38,7 +38,7 @@ Botter SDK provide the option of showing launcher button throughout entire app
  class AppDelegate: UIResponder, UIApplicationDelegate {
      var window: UIWindow?
 
-     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) - Bool {
          Botter.show(APIKey: "nKmovPCdWNZ")
 
          return true
@@ -59,7 +59,7 @@ Botter SDK provide the option of showing launcher button throughout entire app
 
  you can hide launcher button in certain controllers to do so we have two ways 
 
- > make the controller where we want to hide the button inhirit from **BotterControllerWithHiddenLauncher** 
+  make the controller where we want to hide the button inhirit from **BotterControllerWithHiddenLauncher** 
  ```swift
 import Botter
 
@@ -69,40 +69,41 @@ class HiddenLauncherViewController: BotterControllerWithHiddenLauncher {
  
  ```
 
-> or
->
-> call these two functions whenever we want to show/hide launcher button 
->
-> **Botter.hideLauncherButton()**
->
-> **Botter.showLauncherButton()**
+ or
 
-> ```swift
+ call these two functions whenever we want to show/hide launcher button 
+
+ **Botter.hideLauncherButton()**
+
+ **Botter.showLauncherButton()**
+
+ ```swift
 open override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
        Botter.hideLauncherButton()
    }
->```
- >```swift
+```
+```swift
  open override func viewDidDisappear(_ animated: Bool) {
        super.viewDidDisappear(animated)
        Botter.showLauncherButton()
    }
-> ```
+ ```
 
 ## Customization
 
 **Change Launcher Position** 
 
-> to change launcher Position you can set bottom margin calling this:
->```swift
+ to change launcher Position you can set bottom margin calling this:
+```swift
 BotterSettingsManager.bottomMargin = 40
->```
+```
 
 **Change Title Text** 
 
-> to change title text you can set it calling this :
->
->```swift
+ to change title text you can set it calling this :
+
+```swift
 BotterSettingsManager.ChatTitleText = "Botter"
->```
+```
+
