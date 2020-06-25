@@ -44,7 +44,7 @@ public class BotterSettingsManager  {
             if let mediumFont = UIFont.init(name: mediumFontName , size: lbl.font.pointSize){
                return mediumFont
             }
-             return UIFont.mySemiBoldSystemFont(ofSize: lbl.font.pointSize)
+             return UIFont.boldSystemFont(ofSize: lbl.font.pointSize)
         }
         
     }
