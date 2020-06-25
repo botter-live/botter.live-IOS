@@ -74,6 +74,7 @@ class BasicMessage :  Mappable {
         if msgType == .dateTime{
             let action = Action()
             action.title = hasTime ? "Pick Time" : "Pick Date"
+            action.action = .date
             actions.append(action)
         }
     }

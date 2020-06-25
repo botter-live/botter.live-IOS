@@ -78,6 +78,11 @@ extension ChatPresenter: ChatPresenterInterface {
     func triviaActionClicked(action: Action) {
         interactor.triviaMessage(action: action) { (msg) in
             self.messageReceived(message: msg)
+//            if let last = self.messgesList.last{
+//                if last.msgType != .dateTime{
+//                    self.messgesList[action.msgIndex].actions.removeAll()
+//                }
+//            }
             self.messgesList[action.msgIndex].actions.removeAll()
             self.view.reload()
         }

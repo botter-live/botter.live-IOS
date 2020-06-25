@@ -6,9 +6,9 @@ the files attached with this document is a SDK for iPhone simulator and another 
 # Installation
 
 **Steps**
->1- Add the attached framework to your project
->2- Add WebKit Framework 
+>1- add pod 'Botter' , :git => 'https://github.com/NoraSayed135/Botter.git'  in your pod file
 >3- Customize your app to allow multiple window in case you want to show floating button on to of your entire app /*if not skip  this*/ to this follow this steps
+>
 >> 1 - remove _Scene Manifest_ from info.plist file 
 >> 2- comment scene configuration functions in App delegate 
 >> 3- **var  window: UIWindow?** add this line in App Delegate class
@@ -19,15 +19,15 @@ the files attached with this document is a SDK for iPhone simulator and another 
 
 **Option #1** 
 *Place chat button over the entire app*
- > in app delegate class **import  BotterSDK**
+ > in app delegate class **import  Botter**
  > in **didFinishLaunchingWithOptions** function will add this 
- > **BotterSDK.show()**
+ > **Botter.show(APIKey: "nKmovPCdWNZ")**
 
 **Option #2** 
 *trigger open chat action on your custom button*
 
-> in the class that contains the button include the framework **import  BotterSDK**
-> in the **@IBAction** function add this line **BotterSDK.openChatScreen()** *OR* **BotterSDK.openChatScreen(in: UIViewController)**
+> in the class that contains the button include the framework **import  Botter**
+> in the **@IBAction** function add this line **Botter.openChatScreen(APIKey: "nKmovPCdWNZ")** 
 
 **Option #3** 
 
@@ -37,7 +37,11 @@ the files attached with this document is a SDK for iPhone simulator and another 
 >
 > or
 >
-> > call these two functions whenever we want to show/hide launcher button
+> > call these two functions whenever we want to show/hide launcher button 
+> >
+> > **Botter.hideLauncherButton()**
+> >
+> > **Botter.showLauncherButton()**
 
 ## Customization
 
@@ -51,4 +55,4 @@ the files attached with this document is a SDK for iPhone simulator and another 
 
 > to change title text you can set it calling this :
 >
-> > *Botter.chatTitle = "Welcome to al dwaa pharmacies\nاهلاً و سهلاً بكم"*
+> > **BotterSettingsManager.ChatTitleText = "Botter"**

@@ -219,7 +219,6 @@ extension ChatViewController : TextBoxDelegate{
     func openDatePicker(msg : BasicMessage){
         DatePickerPopViewController.open(in: self, mode: msg.hasTime ? .time : .date) { (selected) in
             msg.actions[0].title = selected
-            msg.actions[0].action = .date
             self.presenter.triviaActionClicked(action: msg.actions[0])
         }
     }
