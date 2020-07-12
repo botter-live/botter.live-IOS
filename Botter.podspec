@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   
 
   spec.name         = "Botter"
-  spec.version      = "1.0.2.2"
+  spec.version      = "1.0.2.3"
   spec.summary      = "Botter is an integration with Botter Chatbot"
 
   spec.homepage     = "https://github.com/NoraSayed135/Botter"
@@ -30,9 +30,9 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "Nora" => "nora.sayed@bluecrunch.com" }
+  #spec.author             = { "Nora" => "nora.sayed@bluecrunch.com" }
   # Or just: spec.author    = "Nora"
-  # spec.authors            = { "Nora" => "nora.sayed@bluecrunch.com" }
+  spec.authors            = { "Nora" => "nora.sayed@bluecrunch.com" , "Nora2" => 'norasayed135@gmail.com'}
   # spec.social_media_url   = "https://twitter.com/Nora"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -52,7 +52,7 @@ Pod::Spec.new do |spec|
  #:path => '/Users/bluecrunch/Desktop/Projects/Native/BotterSDK'
 #:git => 'https://github.com/NoraSayed135/Botter.git', :tag => spec.version
 
-  spec.source       = { :git => 'https://github.com/NoraSayed135/Botter.git', :tag => spec.version }
+  spec.source       = { :git => 'http://github.com/NoraSayed135/Botter.git', :tag => spec.version }
 
   spec.source_files  = "**/*.{swift,h,m}"
   spec.resource_bundles = {
