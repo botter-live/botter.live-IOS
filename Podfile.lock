@@ -1,5 +1,5 @@
 PODS:
-  - Botter (1.0.2.1):
+  - Botter (1.0.2.2):
     - LazyImage
   - LazyImage (7.0.1)
 
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
     :path: "../BotterSDK"
 
 SPEC CHECKSUMS:
-  Botter: 767990a5856b3cb5f65b876b1b6f9b85b3d5d512
+  Botter: eda50aca963644da820adf1083c2d12e111b7c97
   LazyImage: 4db5288d8660b28e64e60c57f5b5d414af922160
 
 PODFILE CHECKSUM: e9f3c50c1c3b57793fc40610b7ea5129c72e9e10

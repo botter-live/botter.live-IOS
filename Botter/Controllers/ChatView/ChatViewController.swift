@@ -28,6 +28,9 @@ final class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.registerBotterCellNib(FlightTicketTableViewCell.self)
+        tableView.registerBotterCellNib(FlightStatusTableViewCell.self)
+        tableView.registerBotterCellNib(InvoiceTableViewCell.self)
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
@@ -37,7 +40,7 @@ final class ChatViewController: UIViewController {
         self.presenter.openSocket()
         AudioHandler.shared = AudioHandler()
         
-       
+        
     }
     
     @IBAction func closeConnectionUpdateView(){
@@ -150,13 +153,13 @@ extension ChatViewController {
         
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        if isBeingDismissed {
-//            // TODO: Do your stuff here.
-//            SocketManager.shared.dissConnect()
-//        }
-//    }
+    //    override func viewWillDisappear(_ animated: Bool) {
+    //        super.viewWillDisappear(animated)
+    //        if isBeingDismissed {
+    //            // TODO: Do your stuff here.
+    //            SocketManager.shared.dissConnect()
+    //        }
+    //    }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -181,7 +184,7 @@ extension ChatViewController {
 }
 extension ChatViewController : TextBoxDelegate{
     func textBoxDidChange(textBox: TextBoxFeild) {
-       
+        
     }
     
     func shouldChangeTextInRange(textBox: TextBoxFeild) {
@@ -189,7 +192,7 @@ extension ChatViewController : TextBoxDelegate{
     }
     
     func textBoxDidBeginEditing(textBox: TextBoxFeild) {
-
+        
     }
     
     func textBoxDidEndEditing(textBox: TextBoxFeild) {
@@ -197,11 +200,11 @@ extension ChatViewController : TextBoxDelegate{
     }
     
     func textBoxShouldBeginEditing(textBox: TextBoxFeild) {
-
+        
     }
     
     func textBoxShouldEndEditing(textBox: TextBoxFeild) {
-      
+        
     }
     
     func checkIfLastBotInput(index : Int)->Bool{
@@ -238,7 +241,7 @@ extension ChatViewController : UITableViewDataSource{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ImageBotTableViewCell") as? ImageBotTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
                 return cell ?? UITableViewCell()
-                case .gif:
+            case .gif:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "GifTableViewCell") as? GifTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
                 return cell ?? UITableViewCell()
@@ -280,21 +283,13 @@ extension ChatViewController : UITableViewDataSource{
             case .map:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "MapTableViewCell") as? MapTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-//                cell?.actionClicked = { action in
-//                    self.presenter.actionClicked(action: action)
-//                }
+                //                cell?.actionClicked = { action in
+                //                    self.presenter.actionClicked(action: action)
+                //                }
                 return cell ?? UITableViewCell()
             case .audio:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "AudioBotTableViewCell") as? AudioBotTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row), isCurrent: indexPath.row == currentAudio, index: indexPath.row)
-//                cell?.playPausePressed = { btnIndex in
-//                    if self.currentAudio == btnIndex{
-//                        self.currentAudio = -1
-//                    }else{
-//                        self.currentAudio = btnIndex
-//                    }
-//                    self.reload()
-//                }
                 return cell ?? UITableViewCell()
             case .typing :
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TypingIndicatorTableViewCell") as? TypingIndicatorTableViewCell
@@ -302,6 +297,18 @@ extension ChatViewController : UITableViewDataSource{
                 return cell ?? UITableViewCell()
             case .weather :
                 let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableViewCell") as? WeatherTableViewCell
+                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+                return cell ?? UITableViewCell()
+            case .flightPassngers :
+                let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTicketTableViewCell") as? FlightTicketTableViewCell
+                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+                return cell ?? UITableViewCell()
+            case .flightStatus :
+                let cell = tableView.dequeueReusableCell(withIdentifier: "FlightStatusTableViewCell") as? FlightStatusTableViewCell
+                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+                return cell ?? UITableViewCell()
+            case .receipt :
+                let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceTableViewCell") as? InvoiceTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
                 return cell ?? UITableViewCell()
             default:
@@ -312,18 +319,23 @@ extension ChatViewController : UITableViewDataSource{
             
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: msg.msgSent ? "UserChatTableViewCell" : "UserFaildChatTableViewCell") as? UserChatTableViewCell
-           
+            
             cell?.setData(msg: msg )
             cell?.resendAction = { myMsg in
                 self.presenter.resend(msg: myMsg)
             }
             return cell ?? UITableViewCell()
         }
-      
-//        return UITableViewCell()
+        
+        //        return UITableViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = self.presenter.messgesList[indexPath.row]
+        if item.msgType == .receipt{
+            InvoiceDetailsViewController.open(in: self, invoice: item.invoice)
+        }
+    }
 }
 
 extension ChatViewController : UITableViewDelegate{

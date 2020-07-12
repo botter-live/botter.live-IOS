@@ -48,7 +48,9 @@ class SocketManager : WebSocketDelegate  {
         //        if socket != nil{
         //            socket.disconnect()
         //        }
-        var request = URLRequest(url: URL(string: "wss://botter-gateway-web.botter.live/")!)
+        let gamma = "wss://botter-gateway-web.gamma.botter.live/"
+        let test = "wss://botter-gateway-web.botter.live/"
+        var request = URLRequest(url: URL(string: gamma )!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self

@@ -91,7 +91,7 @@ extension ChatPresenter: ChatPresenterInterface {
     
     func resend(msg: BasicMessage) {
         interactor.resend(msg: msg) { (isSent) in
-            self.messgesList[msg.msgIndex].msgSent = true
+            self.messgesList[msg.msgIndex].msgSent = isSent
             self.view.reload()
         }
        

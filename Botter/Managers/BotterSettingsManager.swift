@@ -31,6 +31,7 @@ public class BotterSettingsManager  {
     public struct Font {
         public static var regularFontName : String = ""
         public static var mediumFontName : String = ""
+        public static var boldFontName : String = ""
 
         static func getRegularFontForLabel(lbl : UILabel)->UIFont{
             if let regularFont = UIFont.init(name: regularFontName , size: lbl.font.pointSize){
@@ -43,6 +44,18 @@ public class BotterSettingsManager  {
             
             if let mediumFont = UIFont.init(name: mediumFontName , size: lbl.font.pointSize){
                return mediumFont
+            }
+             return UIFont.boldSystemFont(ofSize: lbl.font.pointSize)
+        }
+        
+        static func getBoldFontForLabel(lbl : UILabel)->UIFont{
+            
+            if let boldFont = UIFont.init(name: boldFontName , size: lbl.font.pointSize){
+               return boldFont
+            }else{
+                if let mediumFont = UIFont.init(name: mediumFontName , size: lbl.font.pointSize){
+                   return mediumFont
+                }
             }
              return UIFont.boldSystemFont(ofSize: lbl.font.pointSize)
         }

@@ -22,77 +22,91 @@ class AccentView : UIView{
     }
 }
 
-class UserMesgLbl : UILabel{
+class BasicRegularLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
-        textColor = BotterSettingsManager.FontColor
         let tFont = BotterSettingsManager.Font.getRegularFontForLabel(lbl: self)
         tFont.withSize(font.pointSize)
         font = tFont
     }
 }
 
-class BotterMesgLbl : UILabel{
+class BasicMediumLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
-        textColor = BotterSettingsManager.BotterMessageFontColor
-        let tFont = BotterSettingsManager.Font.getRegularFontForLabel(lbl: self)
-         tFont.withSize(font.pointSize)
+        let tFont = BotterSettingsManager.Font.getMediumFontForLabel(lbl: self)
+        tFont.withSize(font.pointSize)
         font = tFont
+    }
+}
+
+class BasicBoldLbl : UILabel{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let tFont = BotterSettingsManager.Font.getBoldFontForLabel(lbl: self)
+        tFont.withSize(font.pointSize)
+        font = tFont
+    }
+}
+
+
+class UserMesgLbl : BasicRegularLbl{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        textColor = BotterSettingsManager.FontColor
         
     }
 }
 
-class ChatHeader : UILabel{
+class BotterMesgLbl : BasicRegularLbl{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        textColor = BotterSettingsManager.BotterMessageFontColor
+    }
+}
+
+class ChatHeader : BasicMediumLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.ChatTitleColor
-        let tFont = BotterSettingsManager.Font.getMediumFontForLabel(lbl: self)
-         tFont.withSize(font.pointSize)
-        font = tFont
         text = BotterSettingsManager.ChatTitleText
     }
 }
 
-class boldChatText : UILabel{
+class boldChatText : BasicMediumLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.BotterMessageFontColor
-        let tFont = BotterSettingsManager.Font.getMediumFontForLabel(lbl: self)
-         tFont.withSize(font.pointSize)
-        font = tFont
     }
 }
 
-class MediumChatText : UILabel{
+class AccentTextLbl : BasicRegularLbl{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        textColor = BotterSettingsManager.AccentColor
+    }
+}
+
+class MediumChatText : BasicMediumLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.BotterMessageFontColor
-        let tFont = BotterSettingsManager.Font.getMediumFontForLabel(lbl: self)
-         tFont.withSize(font.pointSize)
-        font = tFont
     }
 }
 
 
-class ChatHeadLine : UILabel{
+class ChatHeadLine : BasicMediumLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.FontColor
-        let tFont = BotterSettingsManager.Font.getMediumFontForLabel(lbl: self)
-         tFont.withSize(26)
-        font = tFont
         text = BotterSettingsManager.HeadlineMessage
     }
 }
 
-class ChatWelcomeLbl : UILabel{
+class ChatWelcomeLbl : BasicRegularLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.FontColor
-        let tFont = BotterSettingsManager.Font.getRegularFontForLabel(lbl: self)
-         tFont.withSize(font.pointSize)
-        font = tFont
         text = BotterSettingsManager.WelcomeMessage
     }
 }
@@ -106,6 +120,7 @@ class AccentBtn : UIButton{
 //        font = tFont
         tintColor = BotterSettingsManager.AccentColor
     }
+    
 }
 
 
@@ -141,9 +156,12 @@ class HeaderLogo : UIImageView{
     }
 }
 
-class AccentTextLbl : UILabel{
+class AccentImage : UIImageView{
     override func awakeFromNib() {
         super.awakeFromNib()
-        textColor = BotterSettingsManager.AccentColor
+        tintColor = BotterSettingsManager.AccentColor
+       
     }
 }
+
+

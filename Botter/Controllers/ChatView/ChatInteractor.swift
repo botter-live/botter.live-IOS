@@ -27,7 +27,7 @@ extension ChatInteractor: ChatInteractorInterface {
     
     func resend(msg: BasicMessage , completion:@escaping((Bool)->()))  {
         
-        if SocketManager.shared.isConnected{
+        if SocketManager.shared.isConnected && ReachabilityManager.shared.isNetworkAvailable{
             if msg.blockValue != ""{
                 SocketManager.shared.sendMessage(text: msg.blockValue) { (isSent) in
                     completion(isSent)

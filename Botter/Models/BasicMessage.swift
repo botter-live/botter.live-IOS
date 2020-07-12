@@ -32,6 +32,9 @@ class BasicMessage :  Mappable {
     var location : Location
     var msgSent = true
     var blockValue = ""
+    var flightInfo : FlightTicket
+    var flighStatus : FlightStatus
+    var invoice : Invoice
     
     init(){
         type = ""
@@ -49,6 +52,9 @@ class BasicMessage :  Mappable {
         hasTime = false
         pickDateTimeTitle = ""
         location = Location()
+        flightInfo = FlightTicket()
+        flighStatus = FlightStatus()
+        invoice = Invoice()
     }
     
     func mapping(map: Map) {
@@ -67,6 +73,9 @@ class BasicMessage :  Mappable {
         hasTime <- map["hasTime"]
         pickDateTimeTitle <- map["text"]
         location <- map["location"]
+        flightInfo <- map["data"]
+        flighStatus <- map["data"]
+        invoice <- map["data"]
         
         if msgType == .audio{
             handleAudio()
@@ -113,6 +122,7 @@ enum MessageType : String , Codable{
     case gif = "gif"
     case map = "map"
     case dateTime = "card-date-time-input"
+    case receipt = "receipt"
 }
 
 extension BasicMessage : AudioPlayerDelegate{
