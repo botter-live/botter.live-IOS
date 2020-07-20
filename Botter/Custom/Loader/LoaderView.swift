@@ -19,6 +19,11 @@ class LoaderView: UIView {
     }
     */
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.loaderIndicator.color = BotterSettingsManager.AccentColor
+    }
+    
     func animate(){
         let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
         rotation.toValue = Double.pi * 2

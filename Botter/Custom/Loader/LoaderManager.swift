@@ -15,7 +15,10 @@ class LoaderManager: NSObject {
     
     override init() {
         super.init()
-        loader = Bundle.main.loadNibNamed("LoaderView", owner: self , options: nil)?.first as? LoaderView
+        if let bundel = MyFrameworkBundle.bundle{
+            loader = bundel.loadNibNamed("LoaderView", owner: self , options: nil)?.first as? LoaderView
+            
+        }
     }
     
     
@@ -57,6 +60,7 @@ class LoaderManager: NSObject {
             // Fallback on earlier versions
             loader.loaderIndicator.style = .whiteLarge
         }
+        loader.loaderIndicator.color = BotterSettingsManager.AccentColor
 //        loader.loaderIndicator.color = Colors.appPrimeryColor
         view.addSubview(loader)
         view.bringSubviewToFront(loader)

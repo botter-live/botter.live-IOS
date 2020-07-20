@@ -46,7 +46,7 @@ class TextBoxFeild: UIView {
     @IBInspectable  var placeHolder : String = ""{
         didSet{
 //            field.placeholder = placeHolder
-//            refreshText()
+            refreshText()
         }
     }
     

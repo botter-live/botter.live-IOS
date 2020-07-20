@@ -23,6 +23,7 @@ final class ChatViewController: UIViewController {
     var presenter: ChatPresenterInterface!
     var original : CGFloat = 0
     var currentAudio = -1
+    var botData = BotData()
     
     // MARK: - Lifecycle -
     
@@ -41,6 +42,18 @@ final class ChatViewController: UIViewController {
         AudioHandler.shared = AudioHandler()
         
         
+    }
+    
+    override func backDismiss(_ sender: Any) {
+        self.areYouSureMsg(Msg: "Are you sure you want to end this conversation?") { (isYes) in
+            if isYes{
+                if self.botData.endForm.inputs.count > 0 {
+                    self.presenter.openEndForm(form: self.botData.endForm)
+                }else{
+                    self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     @IBAction func closeConnectionUpdateView(){

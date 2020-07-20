@@ -19,12 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // to show chat icon over entir app
         customizeChat()
         Botter.chatTitle = "Welcome to al dwaa pharmacies\nاهلاً و سهلاً بكم"
-        Botter.show(APIKey: "nKmovPCdWNZ")
-//        BotterSDK.openChatScreen()
-//        BotterSDK.openChatScreen(in: <#T##UIViewController#>)
+        Botter.show(APIKey: "nKmovPCdWNZdYnIejRnd")
+
         return true
     }
-
+//
     
     func customizeChat(){
         BotterSettingsManager.AccentColor = UIColor.init(colorString: "#97a258")
@@ -33,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BotterSettingsManager.Font.mediumFontName = "Roboto-Medium"
         BotterSettingsManager.alignLauncherLeft = true
     }
+    
+    
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         print(url.absoluteString)

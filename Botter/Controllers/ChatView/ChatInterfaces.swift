@@ -14,6 +14,7 @@ protocol ChatWireframeInterface: WireframeInterface {
     func openVideo(url : String)
     func openUrl(url : String)
     func call(number: String)
+    func openEndForm(form : Form)
 }
 
 protocol ChatViewInterface: ViewInterface {
@@ -37,7 +38,7 @@ protocol ChatPresenterInterface: PresenterInterface {
     func call(number: String)
     func triviaActionClicked(action: Action)
     func resend(msg : BasicMessage)
-    
+    func openEndForm(form : Form)
 }
 
 protocol ChatInteractorInterface: InteractorInterface {

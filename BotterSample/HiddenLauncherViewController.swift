@@ -22,7 +22,7 @@ class HiddenLauncherViewController: BotterControllerWithHiddenLauncher {
 
    @IBAction func openChat(){
    
-        Botter.openChatScreen(APIKey: "nKmovPCdWNZ")
+        Botter.openChatScreen(APIKey: "nKmovPCdWNZdYnIejRnd")
     }
 
 }

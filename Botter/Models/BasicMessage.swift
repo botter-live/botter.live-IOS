@@ -123,6 +123,7 @@ enum MessageType : String , Codable{
     case map = "map"
     case dateTime = "card-date-time-input"
     case receipt = "receipt"
+    case none = ""
 }
 
 extension BasicMessage : AudioPlayerDelegate{

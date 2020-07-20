@@ -11,6 +11,8 @@ import UIKit
 
 public class BotterSettingsManager  {
     
+    internal static var BotID : String = "nKmovPCdWNZdYnIejRnd"
+    
     public static var AccentColor : UIColor = UIColor.init(codeString: "#642c7a")
     public static var FontColor : UIColor = UIColor.white
     public static var BotterMessageFontColor : UIColor = UIColor.black
@@ -40,6 +42,20 @@ public class BotterSettingsManager  {
             return UIFont.systemFont(ofSize: lbl.font.pointSize)
         }
         
+        static func getRegularFontForFeild(feild : UITextField)->UIFont{
+            if let regularFont = UIFont.init(name: regularFontName , size: feild.font?.pointSize ?? 13){
+                return regularFont
+            }
+            return UIFont.systemFont(ofSize: feild.font?.pointSize ?? 13)
+        }
+        
+        static func getRegularFontForTextArea(feild : UITextView)->UIFont{
+            if let regularFont = UIFont.init(name: regularFontName , size: feild.font?.pointSize ?? 13){
+                return regularFont
+            }
+            return UIFont.systemFont(ofSize: feild.font?.pointSize ?? 13)
+        }
+        
         static func getMediumFontForLabel(lbl : UILabel)->UIFont{
             
             if let mediumFont = UIFont.init(name: mediumFontName , size: lbl.font.pointSize){
@@ -61,4 +77,4 @@ public class BotterSettingsManager  {
         }
         
     }
-}
+} 

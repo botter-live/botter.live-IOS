@@ -36,49 +36,49 @@ extension UITextView: UITextViewDelegate {
     
     
     // Placeholder text
-    @IBInspectable var placeholder: String? {
-        
-        get {
-            // Get the placeholder text from the label
-            var placeholderText: String?
-            
-            if let placeHolderLabel = self.viewWithTag(100) as? UILabel {
-                placeholderText = placeHolderLabel.text
-            }
-            return placeholderText
-        }
-        
-        set {
-            // Store the placeholder text in the label
-            let placeHolderLabel = self.viewWithTag(100) as! UILabel?
-            if placeHolderLabel == nil {
-                // Add placeholder label to text view
-                self.addPlaceholderLabel(newValue!)
-            }
-            else {
-                placeHolderLabel?.text = newValue
-                placeHolderLabel?.sizeToFit()
-            }
-        }
-    }
-    
-    
-    
-    
-    // Hide the placeholder label if there is no text
-    // in the text viewotherwise, show the label
-    public func textViewDidChange(_ textView: UITextView) {
-        
-        let placeHolderLabel = self.viewWithTag(100)
-        
-        if !self.hasText {
-            // Get the placeholder label
-            placeHolderLabel?.isHidden = false
-        }
-        else {
-            placeHolderLabel?.isHidden = true
-        }
-    }
+//    @IBInspectable var placeholder: String? {
+//        
+//        get {
+//            // Get the placeholder text from the label
+//            var placeholderText: String?
+//            
+//            if let placeHolderLabel = self.viewWithTag(100) as? UILabel {
+//                placeholderText = placeHolderLabel.text
+//            }
+//            return placeholderText
+//        }
+//        
+//        set {
+//            // Store the placeholder text in the label
+//            let placeHolderLabel = self.viewWithTag(100) as! UILabel?
+//            if placeHolderLabel == nil {
+//                // Add placeholder label to text view
+//                self.addPlaceholderLabel(newValue!)
+//            }
+//            else {
+//                placeHolderLabel?.text = newValue
+//                placeHolderLabel?.sizeToFit()
+//            }
+//        }
+//    }
+//    
+//    
+//    
+//    
+//    // Hide the placeholder label if there is no text
+//    // in the text viewotherwise, show the label
+//    public func textViewDidChange(_ textView: UITextView) {
+//        
+//        let placeHolderLabel = self.viewWithTag(100)
+//        
+//        if !self.hasText {
+//            // Get the placeholder label
+//            placeHolderLabel?.isHidden = false
+//        }
+//        else {
+//            placeHolderLabel?.isHidden = true
+//        }
+//    }
     
     // Add a placeholder label to the text view
     func addPlaceholderLabel(_ placeholderText: String) {

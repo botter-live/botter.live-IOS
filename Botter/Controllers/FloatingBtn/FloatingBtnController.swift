@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class FloatingBtnController: UIViewController {
     
@@ -25,6 +26,9 @@ class FloatingBtnController: UIViewController {
         window?.rootViewController = self
         window?.button = self.button
         window?.floatingButtonController = self
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside =  true
+        IQKeyboardManager.shared.disabledDistanceHandlingClasses = [ChatViewController.self]
         window?.makeKeyAndVisible()
     }
     

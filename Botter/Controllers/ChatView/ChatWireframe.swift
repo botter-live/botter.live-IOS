@@ -17,13 +17,14 @@ final class ChatWireframe: BaseWireframe {
 
     // MARK: - Module setup -
 
-    init() {
+    init(botData : BotData) {
         let moduleViewController = ChatViewController.instantiateFromStoryBoard(appStoryBoard: .Main)
         super.init(viewController: moduleViewController)
 
         let interactor = ChatInteractor()
         let presenter = ChatPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
+        moduleViewController.botData = botData
         interactor.presenter = presenter
     }
 
@@ -71,6 +72,12 @@ extension ChatWireframe: ChatWireframeInterface {
     
     func call(number: String) {
         self.viewController.makePhoneCall(phoneNumber: number)
+    }
+    
+    func openEndForm(form: Form) {
+        let vc = EndFormViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
+        vc.form = form
+        self.viewController.present(vc, animated: true, completion: nil)
     }
 }
 

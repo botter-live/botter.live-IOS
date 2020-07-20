@@ -1,14 +1,22 @@
 PODS:
-  - Botter (1.0.2.2):
+  - Alamofire (5.0.0-beta.3)
+  - Botter (1.0.2.4):
+    - Alamofire
+    - IQKeyboardManagerSwift
     - LazyImage
+  - IQKeyboardManagerSwift (6.5.5)
   - LazyImage (7.0.1)
 
 DEPENDENCIES:
+  - Alamofire (= 5.0.0-beta.3)
   - Botter (from `../BotterSDK`)
+  - IQKeyboardManagerSwift
   - LazyImage
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - IQKeyboardManagerSwift
     - LazyImage
 
 EXTERNAL SOURCES:
@@ -16,9 +24,11 @@ EXTERNAL SOURCES:
     :path: "../BotterSDK"
 
 SPEC CHECKSUMS:
-  Botter: eda50aca963644da820adf1083c2d12e111b7c97
+  Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
+  Botter: 07071c6cb0fe501d4819476e845de88502bb0ae1
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   LazyImage: 4db5288d8660b28e64e60c57f5b5d414af922160
 
-PODFILE CHECKSUM: e9f3c50c1c3b57793fc40610b7ea5129c72e9e10
+PODFILE CHECKSUM: 1cbfa5a6e7f2a6d896f0fcc015055a7b50a31971
 
 COCOAPODS: 1.9.3

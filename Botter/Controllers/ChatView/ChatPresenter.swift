@@ -105,6 +105,8 @@ extension ChatPresenter: ChatPresenterInterface {
         wireframe.call(number: number)
     }
     
-    
+    func openEndForm(form: Form) {
+        wireframe.openEndForm(form: form)
+    }
     
 }

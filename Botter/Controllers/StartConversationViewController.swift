@@ -21,7 +21,7 @@ class StartConversationViewController: UIViewController {
     }
     
     @IBAction func newConversationClicked(){
-        CommonActions.openChat(parent: self)
+        CommonActions.openChat(parent: self, data: BotData())
     }
 
     @IBAction func botterWebsiteClicked (){
@@ -40,13 +40,13 @@ class CommonActions{
         }
     }
     
-    static func openChat(parent : UIViewController){
-        let chatScreen = ChatWireframe.init()
-        if #available(iOS 13.0, *) {
-            chatScreen.viewController.modalPresentationStyle = .automatic
-        } else {
-            // Fallback on earlier versions
-        }
+    static func openChat(parent : UIViewController , data: BotData){
+        let chatScreen = ChatWireframe.init(botData: data)
+//        if #available(iOS 13.0, *) {
+//            chatScreen.viewController.modalPresentationStyle = .automatic
+//        } else {
+//            // Fallback on earlier versions
+//        }
         parent.presentWireframe(chatScreen, animated: true , completion: nil)
     //    WebLinksViewController.openInParent(link: "https://aldawaa.bluecrunch.org/", parent: parent)
     }

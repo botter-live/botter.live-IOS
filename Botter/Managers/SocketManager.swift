@@ -17,6 +17,7 @@ class SocketManager : WebSocketDelegate  {
     private var socket: WebSocket!
     var timer : Timer!
     var pingCheck = true
+    var attributes = [[String:Any]]()
     var isConnected = false {
         didSet{
             if !isConnected{
@@ -83,7 +84,8 @@ class SocketManager : WebSocketDelegate  {
             isConnected = true
             pingCheck = true
             print("websocket is connected: \(headers)")
-            sendOpeningMessage()
+//            sendOpeningMessage()
+            sendAttrebutes(attributes: self.attributes)
         case .disconnected(let reason, let code):
             isConnected = false
             print("websocket is disconnected: \(reason) with code: \(code)")
@@ -133,24 +135,38 @@ class SocketManager : WebSocketDelegate  {
         socket.disconnect()
     }
     
+    func sendAttrebutes(attributes : [[String:Any]]){
+        let msg = ["bot_id": BotterSettingsManager.BotID ,
+                   "channel": "mobile-ios" ,
+                   "type": "set_attributes",
+                   "user": guid ,
+                   "attributes": attributes] as [String : Any]
+        let msgString = json(from: msg) ?? ""
+        self.socket.write(ping: "PING".data(using: .utf8)!) {
+            if self.isConnected{
+                self.socket.write(string: msgString)
+//                self.sendOpeningMessage()
+            }
+        }
+    }
+    
     func sendOpeningMessage(){
-        let msg = ["bot_id": "nKmovPCdWNZdYnIejRnd" ,
-                   "channel": "socket" ,
+        let msg = ["bot_id": BotterSettingsManager.BotID ,
+                   "channel": "mobile-ios" ,
                    "type": first ? "hello"  : "welcome_back",
                    "user": guid ,
                    "user_profile": ""]
         let msgString = json(from: msg) ?? ""
         self.socket.write(ping: "PING".data(using: .utf8)!) {
             if self.isConnected{
-                self.first = false
                 self.socket.write(string: msgString)
             }
         }
     }
     
     func sendMessage(text : String , completion:@escaping((Bool)->())){
-        let msg = ["bot_id": "nKmovPCdWNZdYnIejRnd" ,
-                   "channel": "socket" ,
+        let msg = ["bot_id": BotterSettingsManager.BotID ,
+                   "channel": "mobile-ios" ,
                    "type": "message" ,
                    "text" : text ,
                    "user": guid ,
@@ -176,7 +192,7 @@ class SocketManager : WebSocketDelegate  {
             "type": "message" ,
             "text" : value,
             "user": guid ,
-            "bot_id": "nKmovPCdWNZdYnIejRnd" ,
+            "bot_id": BotterSettingsManager.BotID ,
         ]
         
         let msgString = json(from: msg) ?? ""
@@ -198,9 +214,13 @@ class SocketManager : WebSocketDelegate  {
     func handleMessage(msg : String){
         let messageJson = convertToJSON(text: msg) ?? [:]
         let msgObj = BasicMessage.getMessage(dict: messageJson)
-        
-        if self.messageRecieved != nil{
-            messageRecieved(msgObj)
+        if msgObj.msgType == .none{
+            sendOpeningMessage()
+        }else{
+            if self.messageRecieved != nil{
+                self.first = false
+                messageRecieved(msgObj)
+            }
         }
     }
     
