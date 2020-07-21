@@ -1,0 +1,6 @@
+framework module Pods_BotterSample {
+  umbrella header "Pods-BotterSample-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Botter {
+  umbrella header "Botter-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -17,6 +17,7 @@ final class StartFormPresenter {
 
     var botData : BotData!
     var dataCells : [UITableViewCell]!
+    var faqsData = [FaqData]()
     
     private unowned let view: StartFormViewInterface
     private let interactor: StartFormInteractorInterface
@@ -36,6 +37,19 @@ final class StartFormPresenter {
 // MARK: - Extensions -
 
 extension StartFormPresenter: StartFormPresenterInterface {
+    func faqsError(error: String) {
+        self.view.showMsg(msg: error)
+    }
+    
+    func fetchedFaqsSuccessfully(faqsResponse: [FaqData]) {
+        self.faqsData = faqsResponse
+        self.view.setFaqsData(faqsData: faqsData)
+    }
+    
+    func getFaqsData(searchText: String) {
+        interactor.loadFaqs(searchText: searchText)
+    }
+    
     
     func loadForms(){
         interactor.loadForms()
