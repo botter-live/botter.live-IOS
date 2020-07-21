@@ -29,4 +29,40 @@ class BotterDataSource : BaseDataSource{
         }
         
     }
+    
+    
+    func getFAQsData(searchText: String,completion:@escaping(ResponseStatus,Any)->Void){
+    //        let params = ["bot_id" : BotterSettingsManager.BotID]
+    //        print(Constants.BOTTER_DATA + BotterSettingsManager.BotID)
+        
+        let faqUrl = Constants.FAQ_DATA + BotterSettingsManager.BotID + "&search=" + searchText
+        
+        
+         BaseArrayAPI(url: faqUrl , method: .get , params: nil, headers: nil) { (json, error) in
+            
+            
+                if json != nil {
+                    print(json)
+                    
+                    
+                    let data = FaqData.getFAQS(dict: json ?? [[:]])
+                    
+                    
+                    completion(.sucess , data)
+                }else{
+                    if (error != nil){
+                        completion(.networkError , error!.localizedDescription)
+                    }
+                    else{
+                        completion(.networkError,"Something went wrong!")
+                    }
+                }
+            }
+            
+        }
+    
+    
+    
+    
+    
 }

@@ -18,6 +18,24 @@ final class StartFormInteractor {
 // MARK: - Extensions -
 
 extension StartFormInteractor: StartFormInteractorInterface {
+    func loadFaqs(searchText: String) {
+        self.presenter.showLoader()
+        let dataSource = BotterDataSource()
+        dataSource.getFAQsData(searchText: searchText) { (status, response) in
+            self.presenter.hideLoader()
+            switch status {
+            case .sucess :
+                 self.presenter.fetchedFaqsSuccessfully(faqsResponse: response as? [FaqData] ?? [])
+                break
+            case .error , .networkError :
+                self.presenter.faqsError(error: response as? String ?? "Some thing went wrong")
+                
+            }
+             
+               
+               }
+    }
+    
     func loadForms() {
         self.presenter.showLoader()
         let dataSource = BotterDataSource()

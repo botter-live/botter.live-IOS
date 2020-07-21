@@ -11,30 +11,54 @@
 import UIKit
 
 final class StartFormViewController: StartConversationViewController {
-
+    
     // MARK: - Public properties -
+    var faqsList = [FaqData]()
     @IBOutlet weak var tableView : UITableView!
-
+    @IBOutlet weak var searchBox : SearchBox!
+    
+    
     var presenter: StartFormPresenterInterface!
-
+    
     var loader = LoaderManager()
     
     // MARK: - Lifecycle -
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.loadForms()
+        searchBox.cParent = self
     }
+    
+   
+    
+   
     
     override func newConversationClicked() {
         self.presenter.validateThenSubmitForm()
     }
-
+    
+    
 }
 
 // MARK: - Extensions -
 
 extension StartFormViewController: StartFormViewInterface {
+    
+    func setFaqsData(faqsData: [FaqData]) {
+        searchBox.setFaqsData(faqsData: faqsData)
+    }
+    
+    func updateFooterHeight(height : Int){
+        
+        tableView.tableFooterView?.frame.size = CGSize(width: tableView.frame.width, height: CGFloat(height))
+        tableView.reloadData()
+    }
+    
+    func showMsg(msg: String) {
+        self.showMessage(msg)
+    }
+    
     func showLoader() {
         self.loader.show(inRect: self.view.frame, inView: self.view)
     }
@@ -56,4 +80,6 @@ extension StartFormViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return self.presenter.dataCells[indexPath.row]
     }
+    
+    
 }
