@@ -11,11 +11,13 @@ import Foundation
 class BotData : Mappable{
     var startForm : Form
     var endForm : Form
+    var menu : Menu
     
     
     init() {
         startForm = Form()
         endForm = Form()
+        menu = Menu()
     }
     
     required convenience init?(map: Map) {
@@ -25,6 +27,7 @@ class BotData : Mappable{
     func mapping(map: Map) {
         startForm <- map["startForm"]
         endForm <- map["endForm"]
+        menu <- map["menu"]
     }
     
     static func getBotterData(dict : [String : Any])->BotData{

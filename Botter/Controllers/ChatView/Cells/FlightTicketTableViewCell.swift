@@ -16,6 +16,7 @@ class FlightTicketTableViewCell: BotChatTableViewCell {
     @IBOutlet weak var bookingNumberLbl : UILabel!
     @IBOutlet weak var totalLbl : UILabel!
     @IBOutlet weak var ticketNumberView : AccentView!
+    @IBOutlet weak var planeImage : UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,7 @@ class FlightTicketTableViewCell: BotChatTableViewCell {
         ticketNumberView.clipsToBounds = true
         ticketNumberView.layer.cornerRadius = 10
         ticketNumberView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        planeImage.tintColor = BotterSettingsManager.FontColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

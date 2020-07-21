@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -345,6 +345,7 @@
                 <outlet property="bookingNumberLbl" destination="46m-Rs-Lww" id="ogD-xB-Idw"/>
                 <outlet property="botIcon" destination="Lkh-a3-CqE" id="IkX-zT-hhG"/>
                 <outlet property="passengersLbl" destination="620-Ig-UmB" id="e3Q-7y-Nna"/>
+                <outlet property="planeImage" destination="Iuw-ou-YVl" id="Fze-lQ-Ub0"/>
                 <outlet property="ticketNumberView" destination="afx-Ja-2aH" id="LzE-Cc-3yn"/>
                 <outlet property="totalLbl" destination="KAN-s1-Gku" id="Gyz-Fu-9aT"/>
                 <outlet property="way1TicketInfo" destination="lOe-pJ-nNq" id="mQP-Qw-Aza"/>
