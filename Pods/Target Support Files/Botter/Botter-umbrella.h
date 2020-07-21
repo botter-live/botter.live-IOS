@@ -41,12 +41,6 @@
 #import "UIView+WebCache.h"
 #import "UIView+WebCacheOperation.h"
 #import "SwiftyGif.h"
-#import "Alamofire-umbrella.h"
-#import "Botter-umbrella.h"
-#import "IQKeyboardManagerSwift-umbrella.h"
-#import "LazyImage-umbrella.h"
-#import "Pods-Botter-umbrella.h"
-#import "Pods-BotterSample-umbrella.h"
 
 FOUNDATION_EXPORT double BotterVersionNumber;
 FOUNDATION_EXPORT const unsigned char BotterVersionString[];

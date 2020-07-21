@@ -114,10 +114,11 @@ class ChatWelcomeLbl : BasicRegularLbl{
 class AccentBtn : UIButton{
     override func awakeFromNib() {
         super.awakeFromNib()
-        setTitleColor(BotterSettingsManager.FontColor, for: .normal)
+        setTitleColor(BotterSettingsManager.AccentColor, for: .normal)
 //        let tFont = BotterSettingsManager.font.regular
 //         tFont.withSize(font.pointSize)
 //        font = tFont
+        borderColor = BotterSettingsManager.AccentColor
         tintColor = BotterSettingsManager.AccentColor
     }
     
@@ -131,6 +132,7 @@ class FontLikeBtn : UIButton{
 //        let tFont = BotterSettingsManager.font.regular
 //        tFont.pointSize = font.pointSize
 //        font = tFont
+        
         backgroundColor = BotterSettingsManager.AccentColor
         tintColor = BotterSettingsManager.FontColor
         titleLabel?.textColor = BotterSettingsManager.FontColor
