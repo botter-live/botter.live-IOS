@@ -17,7 +17,9 @@ protocol StartFormWireframeInterface: WireframeInterface {
 protocol StartFormViewInterface: ViewInterface {
     func showLoader()
     func hideLoader()
-     func reload()
+    func showMsg(msg : String)
+    func reload()
+    func setFaqsData(faqsData : [FaqData])
 }
 
 protocol StartFormPresenterInterface: PresenterInterface {
@@ -30,10 +32,14 @@ protocol StartFormPresenterInterface: PresenterInterface {
     func getCells()
     func validateThenSubmitForm()
     func openChat()
+    func getFaqsData(searchText : String)
+    func fetchedFaqsSuccessfully(faqsResponse : [FaqData])
+    func faqsError(error : String)
 }
 
 protocol StartFormInteractorInterface: InteractorInterface {
     func loadForms()
     func validateForm()
+    func loadFaqs(searchText : String)
     
 }
