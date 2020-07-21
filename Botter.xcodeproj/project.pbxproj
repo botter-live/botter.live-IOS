@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5B32586024C5E88400DA6E0A /* FaqData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B32585E24C5E63200DA6E0A /* FaqData.swift */; };
 		5B32586224C6596500DA6E0A /* FaqsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B32586124C6596500DA6E0A /* FaqsDetailsViewController.swift */; };
+		5B32586424C72F3300DA6E0A /* FaqsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B32586324C72F3200DA6E0A /* FaqsListViewController.swift */; };
+		5B4432E224C730E600C28D79 /* FaqCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4432E124C730E600C28D79 /* FaqCell.swift */; };
 		8C08E7FF249298E300A2B984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E7FE249298E300A2B984 /* AppDelegate.swift */; };
 		8C08E801249298E300A2B984 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E800249298E300A2B984 /* SceneDelegate.swift */; };
 		8C08E806249298E300A2B984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C08E804249298E300A2B984 /* Main.storyboard */; };
@@ -242,6 +244,8 @@
 		157149267BB2DA6FC2718E84 /* Pods-BotterSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BotterSample.debug.xcconfig"; path = "Target Support Files/Pods-BotterSample/Pods-BotterSample.debug.xcconfig"; sourceTree = "<group>"; };
 		5B32585E24C5E63200DA6E0A /* FaqData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqData.swift; sourceTree = "<group>"; };
 		5B32586124C6596500DA6E0A /* FaqsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqsDetailsViewController.swift; sourceTree = "<group>"; };
+		5B32586324C72F3200DA6E0A /* FaqsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqsListViewController.swift; sourceTree = "<group>"; };
+		5B4432E124C730E600C28D79 /* FaqCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaqCell.swift; sourceTree = "<group>"; };
 		5DCB48AAA610E87FACCB5EB4 /* Pods-Botter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.release.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.release.xcconfig"; sourceTree = "<group>"; };
 		60416E9C6DA5A4B9DA11CA15 /* Pods-Botter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.debug.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.debug.xcconfig"; sourceTree = "<group>"; };
 		8B2CD4B5F612A6C1DF24B2CF /* Pods_Botter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -595,6 +599,7 @@
 				8C463AF124C0B6E400B78E96 /* TimeInputTableViewCell.swift */,
 				8C463AFE24C0C3F400B78E96 /* RadioInputTableViewCell.swift */,
 				8C463B0024C0C40600B78E96 /* SelectInputTableViewCell.swift */,
+				5B4432E124C730E600C28D79 /* FaqCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -882,6 +887,7 @@
 				8CC4F4F5248CFCCB000692AE /* WebLinksViewController.swift */,
 				8CC4F4F6248CFCCB000692AE /* FloatingBtn */,
 				8CA0A6C22497A5860009FEA2 /* StartConversationViewController.swift */,
+				5B32586324C72F3200DA6E0A /* FaqsListViewController.swift */,
 				5B32586124C6596500DA6E0A /* FaqsDetailsViewController.swift */,
 			);
 			path = Controllers;
@@ -1343,6 +1349,7 @@
 				8CC4F566248CFCCC000692AE /* UIApplication.swift in Sources */,
 				8CC4F689248D17A9000692AE /* ToJSON.swift in Sources */,
 				8CA2E8B1249A49C1002ADB42 /* UIImageView+SwiftyGif.swift in Sources */,
+				5B32586424C72F3300DA6E0A /* FaqsListViewController.swift in Sources */,
 				8C2EFE3524C4B7560070D728 /* EndFormViewController.swift in Sources */,
 				8CC4F54F248CFCCC000692AE /* ChatInterfaces.swift in Sources */,
 				8CC4F55C248CFCCC000692AE /* NSMutableAttributedString.swift in Sources */,
@@ -1441,6 +1448,7 @@
 				8CC4F532248CFCCC000692AE /* PaddedUILabel.swift in Sources */,
 				8CAB89DD24913569009BBAB6 /* AudioPlayerDelegate.swift in Sources */,
 				8CAB89E024913569009BBAB6 /* BackgroundHandler.swift in Sources */,
+				5B4432E224C730E600C28D79 /* FaqCell.swift in Sources */,
 				8CC4F546248CFCCC000692AE /* VideoBotTableViewCell.swift in Sources */,
 				8CC4F51D248CFCCC000692AE /* CustomPickerView.swift in Sources */,
 				8CFC70A9249100BE006C677B /* AudioBotTableViewCell.swift in Sources */,

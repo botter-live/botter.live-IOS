@@ -12,11 +12,12 @@ import Foundation
 class FaqData : Mappable{
     var id : Int
     var body : FaqsItem
-    
+    var createdAt : String
     
     init() {
         id = -1
         body = FaqsItem()
+        createdAt = ""
     }
     
     required convenience init?(map: Map) {
@@ -26,6 +27,7 @@ class FaqData : Mappable{
     func mapping(map: Map) {
         id <- map["id"]
         body <- map["body"]
+        createdAt <- map["created_at"]
     }
     
     static func getFAQS(dict : [[String : Any]])->[FaqData]{

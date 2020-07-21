@@ -44,7 +44,6 @@ extension StartFormPresenter: StartFormPresenterInterface {
     func fetchedFaqsSuccessfully(faqsResponse: [FaqData]) {
         self.faqsData = faqsResponse
         self.view.setFaqsData(faqsData: faqsData)
-        
     }
     
     func getFaqsData(searchText: String) {

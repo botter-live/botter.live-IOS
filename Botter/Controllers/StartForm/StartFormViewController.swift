@@ -25,23 +25,7 @@ final class StartFormViewController: StartConversationViewController {
     @IBOutlet weak var firstResultAnswerLabel : UILabel!
     @IBOutlet weak var secondResultQuestionLabel : UILabel!
     @IBOutlet weak var secondResultAnswerLabel : UILabel!
-    @IBOutlet weak var noResultLabel : UILabel! 
-    
-    @IBAction func searchClicked(_ sender : UIButton){
-        
-        if searchTextField.text?.count ?? 0 > 0 {
-            searchAboutLabel.text = "Search results for \(searchTextField.text ?? "")"
-            self.presenter.getFaqsData(searchText: searchTextField.text ?? "")
-        }
-        searchStackView.arrangedSubviews[3].isHidden = true
-        searchStackView.arrangedSubviews[4].isHidden = true
-    }
-    
-    
-    @IBAction func showMoreDetailsClicked(_ sender : UIButton){
-        
-        
-    }
+    @IBOutlet weak var noResultLabel : UILabel!
     
     var presenter: StartFormPresenterInterface!
     
@@ -64,19 +48,39 @@ final class StartFormViewController: StartConversationViewController {
     
     @objc func firstFaqsTapped(){
         let vc =  FaqsDetailsViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
-        vc.faqItem = faqsList[0].body
+        vc.faqItem = faqsList[0]
         self.present(vc, animated: true, completion: nil)
     }
     
     @objc func secondFaqsTapped(){
         let vc =  FaqsDetailsViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
-        vc.faqItem = faqsList[0].body
+        vc.faqItem = faqsList[1]
         self.present(vc, animated: true, completion: nil)
     }
     
     override func newConversationClicked() {
         self.presenter.validateThenSubmitForm()
     }
+    
+    
+    @IBAction func searchClicked(_ sender : UIButton){
+        
+        if searchTextField.text?.count ?? 0 > 0 {
+            searchAboutLabel.text = "Search results for \(searchTextField.text ?? "")"
+            self.presenter.getFaqsData(searchText: searchTextField.text ?? "")
+        }
+        searchStackView.arrangedSubviews[3].isHidden = true
+        searchStackView.arrangedSubviews[4].isHidden = true
+    }
+    
+    
+    @IBAction func showMoreDetailsClicked(_ sender : UIButton){
+        let vc =  FaqsListViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
+        vc.faqsList = self.faqsList
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
     
 }
 
@@ -89,19 +93,19 @@ extension StartFormViewController: StartFormViewInterface {
         self.faqsList = faqsData
         if faqsData.count == 0 {
             setupEmptyQuestionView()
-            updateFooterHeight(height: 280)
+            updateFooterHeight(height: 285)
         }else if faqsData.count == 1 {
             setupFirstQuestionView(faqsData: faqsData)
-            updateFooterHeight(height: 280 + Int(mainStackView.arrangedSubviews[1].frame.height))
+            updateFooterHeight(height: 285 + Int(mainStackView.arrangedSubviews[1].frame.height))
         }else if faqsData.count == 2 {
             setAllQuestions(faqsData: faqsData)
             setupSecondQuestionView(faqsData: faqsData)
-            updateFooterHeight(height: 300 + Int(mainStackView.arrangedSubviews[1].frame.height) + Int(mainStackView.arrangedSubviews[2].frame.height))
+            updateFooterHeight(height: 310 + Int(mainStackView.arrangedSubviews[1].frame.height) + Int(mainStackView.arrangedSubviews[2].frame.height))
             
         }else{
             setAllQuestions(faqsData: faqsData)
             setupAllQuestionView(faqsData: faqsData)
-            updateFooterHeight(height: 370 + Int(mainStackView.arrangedSubviews[1].frame.height) + Int(mainStackView.arrangedSubviews[2].frame.height))
+            updateFooterHeight(height: 375 + Int(mainStackView.arrangedSubviews[1].frame.height) + Int(mainStackView.arrangedSubviews[2].frame.height))
         }
         
         
