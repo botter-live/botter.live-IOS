@@ -108,4 +108,22 @@ extension ChatInteractor: ChatInteractorInterface {
         }
     }
     
+    
+    func sendMenuAction(action : MenuItem ,completion:@escaping((BasicMessage)->())){
+        let Message = BasicMessage()
+        Message.type = "message"
+        Message.isBotMsg = false
+        Message.text = action.title
+        if SocketManager.shared.isConnected{
+            SocketManager.shared.sendPostBack(value: action.payload){ isSent in
+                completion(Message)
+            }
+        }else{
+            SocketManager.shared.connect()
+            Message.msgSent = false
+            //            return false
+            Message.blockValue = action.payload
+            completion(Message)
+        }
+    }
 }

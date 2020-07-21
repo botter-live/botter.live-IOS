@@ -84,8 +84,8 @@ class SocketManager : WebSocketDelegate  {
             isConnected = true
             pingCheck = true
             print("websocket is connected: \(headers)")
-//            sendOpeningMessage()
-            sendAttrebutes(attributes: self.attributes)
+            sendOpeningMessage()
+            
         case .disconnected(let reason, let code):
             isConnected = false
             print("websocket is disconnected: \(reason) with code: \(code)")
@@ -160,6 +160,8 @@ class SocketManager : WebSocketDelegate  {
         self.socket.write(ping: "PING".data(using: .utf8)!) {
             if self.isConnected{
                 self.socket.write(string: msgString)
+                self.first = false
+                self.sendAttrebutes(attributes: self.attributes)
             }
         }
     }
@@ -215,10 +217,9 @@ class SocketManager : WebSocketDelegate  {
         let messageJson = convertToJSON(text: msg) ?? [:]
         let msgObj = BasicMessage.getMessage(dict: messageJson)
         if msgObj.msgType == .none{
-            sendOpeningMessage()
+           
         }else{
             if self.messageRecieved != nil{
-                self.first = false
                 messageRecieved(msgObj)
             }
         }

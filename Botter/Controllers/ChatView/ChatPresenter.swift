@@ -109,4 +109,10 @@ extension ChatPresenter: ChatPresenterInterface {
         wireframe.openEndForm(form: form)
     }
     
+    func sendMenuAction(action : MenuItem){
+        self.interactor.sendMenuAction(action: action) { (msg) in
+            self.messageReceived(message: msg)
+            self.view.reload()
+        }
+    }
 }

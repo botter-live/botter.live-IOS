@@ -26,6 +26,10 @@ class EndFormViewController: UIViewController {
         CommonActions.botterSiteClicked()
     }
     
+    override func backDismiss(_ sender: Any) {
+        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     func getCells(){
         dataCells.removeAll()
         for item in self.form.inputs {

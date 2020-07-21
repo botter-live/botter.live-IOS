@@ -32,6 +32,7 @@ final class ChatViewController: UIViewController {
         tableView.registerBotterCellNib(FlightTicketTableViewCell.self)
         tableView.registerBotterCellNib(FlightStatusTableViewCell.self)
         tableView.registerBotterCellNib(InvoiceTableViewCell.self)
+        tableView.registerBotterCellNib(NotifyTableViewCell.self)
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
@@ -66,6 +67,11 @@ final class ChatViewController: UIViewController {
     
     @IBAction func botterWebsiteClicked (){
         CommonActions.botterSiteClicked()
+    }
+    @IBAction func openMenu (){
+        menuViewController.open(in: self, menu: self.botData.menu) { (item) in
+            self.presenter.sendMenuAction(action: item)
+        }
     }
     
     @IBAction func sendMesg(){
@@ -323,6 +329,10 @@ extension ChatViewController : UITableViewDataSource{
             case .receipt :
                 let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceTableViewCell") as? InvoiceTableViewCell
                 cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+                return cell ?? UITableViewCell()
+            case .notify :
+                let cell = tableView.dequeueReusableCell(withIdentifier: "NotifyTableViewCell") as? NotifyTableViewCell
+                cell?.setData(text: msg.notifyText)
                 return cell ?? UITableViewCell()
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BotChatTableViewCell") as? BotChatTableViewCell

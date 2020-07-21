@@ -39,6 +39,7 @@ protocol ChatPresenterInterface: PresenterInterface {
     func triviaActionClicked(action: Action)
     func resend(msg : BasicMessage)
     func openEndForm(form : Form)
+    func sendMenuAction(action : MenuItem)
 }
 
 protocol ChatInteractorInterface: InteractorInterface {
@@ -47,5 +48,6 @@ protocol ChatInteractorInterface: InteractorInterface {
     func actionClicked(action : Action)
     func triviaMessage(action : Action , completion:@escaping((BasicMessage)->()))
     func resend(msg: BasicMessage , completion:@escaping((Bool)->()))
+    func sendMenuAction(action : MenuItem ,completion:@escaping((BasicMessage)->()))
     
 }
