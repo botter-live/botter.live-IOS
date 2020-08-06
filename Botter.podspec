@@ -59,7 +59,7 @@ Pod::Spec.new do |spec|
   spec.resource_bundles = {
     'Botter' => ['**/*.{xib,storyboard,xcassets,}']
 }
-  spec.exclude_files = "Botter/BotterSample/*.{xib,storyboard,xcassets,}"
+  spec.exclude_files = "Botter/BotterSample/*.{xib,storyboard,xcassets,plist}"
 #['Botter/BotterSample/Base.lproj/Main.storyboard' , 'Botter/BotterSample/Base.lproj/#LaunchScreen.storyboard' , 'Botter/BotterSample/Assets.xcassets']
 
 
