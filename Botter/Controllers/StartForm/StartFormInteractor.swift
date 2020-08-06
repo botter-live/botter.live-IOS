@@ -69,8 +69,9 @@ extension StartFormInteractor: StartFormInteractorInterface {
                 attributes.append(tAttribute)
             }
         }
-        
-        SocketManager.shared.attributes = attributes
+        if attributes.count > 0{
+            SocketManager.shared.attributes = attributes
+        }
         self.presenter.openChat()
         
     }

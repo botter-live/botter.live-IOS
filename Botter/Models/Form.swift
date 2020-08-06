@@ -70,7 +70,7 @@ class FormInput : Mappable{
         errorMessage <- map["errorMessage"]
         key <- map["key"]
         label <- map["label"]
-        regex <- map["regex"]
+        regex <- map["regex_ios"]
         required <- map["required"]
         typeString <- map["type"]
         options <- map["options"]

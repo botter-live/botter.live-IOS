@@ -19,6 +19,11 @@ class EndFormViewController: UIViewController {
         super.viewDidLoad()
         getCells()
         self.tableView.reloadData()
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
         // Do any additional setup after loading the self.
     }
     

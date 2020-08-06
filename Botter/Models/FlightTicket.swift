@@ -15,12 +15,14 @@ class FlightTicket : Mappable{
     var total : String
     var tickets : [TicketInfo]
     
+    
     init() {
         confirmationNumber = ""
         currency = ""
         passengers = [String]()
         total = ""
         tickets = [TicketInfo]()
+        
     }
     
     required convenience init?(map: Map) {
@@ -33,6 +35,7 @@ class FlightTicket : Mappable{
         passengers <- map["passengers"]
         total <- map["total"]
         tickets <- map["flight_info"]
+        
     }
 }
 class TicketInfo : Mappable{

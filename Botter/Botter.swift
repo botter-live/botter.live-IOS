@@ -51,15 +51,19 @@ public func showLauncherButton(){
 }
 
 internal func openChat(parent : UIViewController){
-    let chatScreen = StartFormWireframe.init()
-//        StartFormViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
-//    if #available(iOS 13.0, *) {
-//        chatScreen.viewController.modalPresentationStyle = .automatic
-//    } else {
-//        // Fallback on earlier versions
-//    }
-    parent.present(chatScreen.viewController, animated: true , completion: nil)
-//    WebLinksViewController.openInParent(link: "https://aldawaa.bluecrunch.org/", parent: parent)
+    if SocketManager.first {
+        let chatScreen = StartFormWireframe.init()
+        //        StartFormViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
+        //    if #available(iOS 13.0, *) {
+        //        chatScreen.viewController.modalPresentationStyle = .automatic
+        //    } else {
+        //        // Fallback on earlier versions
+        //    }
+        parent.present(chatScreen.viewController, animated: true , completion: nil)
+        //    WebLinksViewController.openInParent(link: "https://aldawaa.bluecrunch.org/", parent: parent)
+    }else{
+        CommonActions.openChat(parent: parent, data: ChatViewController.botData)
+    }
 }
 
 public func setLauncherBottomMargin(marginValue value : Float){

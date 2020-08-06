@@ -31,7 +31,7 @@ class VideoBotTableViewCell: ImageBotTableViewCell {
     
     override func setData(msg: BasicMessage, showIcon: Bool = false) {
            super.setData(msg: msg, showIcon: showIcon)
-           self.lazyImage.show(imageView: self.msgImage! , url: msg.image) { (lazyError) in
+        self.msg.lazyImage.show(imageView: self.msgImage! , url: msg.image) { (lazyError) in
 //               print(lazyError?.localizedDescription)
            }
        }

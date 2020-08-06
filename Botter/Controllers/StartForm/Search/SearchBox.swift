@@ -71,7 +71,6 @@ class SearchBox: AllSidsCardView {
     
     func setFaqsData(faqsData: [FaqData]) {
         self.faqsList = faqsData
-        self.faqsList.append(contentsOf: faqsList)
         if faqsList.count == 0 {
             setupEmptyQuestionView()
             cParent.updateFooterHeight(height: 285)

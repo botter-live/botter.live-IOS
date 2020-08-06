@@ -35,14 +35,27 @@ final class ChatPresenter {
 extension ChatPresenter: ChatPresenterInterface {
     func openSocket() {
         self.interactor.openSocket()
-        SocketManager.shared.connectionUpdated = { 
-            self.view.connectionUpdated(isConnected: SocketManager.shared.isConnected)
+        SocketManager.shared.connectionUpdated = {
+            DispatchQueue.main.async {
+                self.view.connectionUpdated(isConnected: SocketManager.shared.isConnected)
+            }
+            
         }
     }
     
     func messageReceived(message: BasicMessage) {
         messgesList = messgesList.filter { (msg) -> Bool in
             msg.msgType != .typing
+        }
+        if message.msgType == .flightStatus{
+            if message.flighStatus.introMessage != ""{
+                let nMessage = BasicMessage()
+//                nMessage = message
+                nMessage.msgType = .text
+                nMessage.text = message.flighStatus.introMessage
+                nMessage.msgIndex = messgesList.count
+                messgesList.append(nMessage)
+            }
         }
         message.msgIndex = messgesList.count
         messgesList.append(message)
@@ -52,11 +65,23 @@ extension ChatPresenter: ChatPresenterInterface {
         self.view.reload()
     }
     
+    func historyLoaded(list: [BasicMessage]) {
+        for msg in list{
+            messageReceived(message: msg)
+        }
+    }
+    
     func sendMessage(text: String) {
         self.interactor.sendMessage(text: text, completion: { Message in
             
             self.messageReceived(message: Message)
         })
+    }
+    
+    func sendAttachment(file: AttachedFile) {
+        self.interactor.sendAttachment(file: file) { (msg) in
+            self.messageReceived(message: msg)
+        }
     }
     
     func clearTextBox() {

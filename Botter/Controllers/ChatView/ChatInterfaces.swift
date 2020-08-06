@@ -29,6 +29,7 @@ protocol ChatPresenterInterface: PresenterInterface {
     var messgesList : [BasicMessage]! { get set }
     func openSocket()
     func messageReceived(message : BasicMessage)
+    func historyLoaded(list : [BasicMessage])
     func sendMessage(text : String)
     func clearTextBox()
     func showError(errorMsg : String)
@@ -40,6 +41,8 @@ protocol ChatPresenterInterface: PresenterInterface {
     func resend(msg : BasicMessage)
     func openEndForm(form : Form)
     func sendMenuAction(action : MenuItem)
+    func sendAttachment(file : AttachedFile)
+    
 }
 
 protocol ChatInteractorInterface: InteractorInterface {
@@ -49,5 +52,6 @@ protocol ChatInteractorInterface: InteractorInterface {
     func triviaMessage(action : Action , completion:@escaping((BasicMessage)->()))
     func resend(msg: BasicMessage , completion:@escaping((Bool)->()))
     func sendMenuAction(action : MenuItem ,completion:@escaping((BasicMessage)->()))
+    func sendAttachment(file : AttachedFile,completion:@escaping((BasicMessage)->()))
     
 }

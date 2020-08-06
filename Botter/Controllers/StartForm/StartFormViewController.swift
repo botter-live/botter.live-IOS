@@ -28,6 +28,16 @@ final class StartFormViewController: StartConversationViewController {
         super.viewDidLoad()
         presenter.loadForms()
         searchBox.cParent = self
+        searchBox.isHidden = !BotterSettingsManager.hasFAQs
+        if !BotterSettingsManager.hasFAQs{
+            updateFooterHeight(height: 140)
+        }
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
    

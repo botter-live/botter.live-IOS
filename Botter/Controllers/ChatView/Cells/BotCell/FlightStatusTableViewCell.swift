@@ -41,5 +41,7 @@ class FlightStatusTableViewCell: BotChatTableViewCell {
         arrNameLbl.text = fs.arrivalAirportName
         depNameLbl.text = fs.depratureAirportName
         statusLbl.text = fs.status
+        
+        statusLbl.textColor = fs.statusColor
     }
 }

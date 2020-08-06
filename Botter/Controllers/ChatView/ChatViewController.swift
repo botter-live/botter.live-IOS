@@ -23,16 +23,13 @@ final class ChatViewController: UIViewController {
     var presenter: ChatPresenterInterface!
     var original : CGFloat = 0
     var currentAudio = -1
-    var botData = BotData()
+    static var botData = BotData()
     
     // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerBotterCellNib(FlightTicketTableViewCell.self)
-        tableView.registerBotterCellNib(FlightStatusTableViewCell.self)
-        tableView.registerBotterCellNib(InvoiceTableViewCell.self)
-        tableView.registerBotterCellNib(NotifyTableViewCell.self)
+        registerCells()
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
@@ -45,11 +42,21 @@ final class ChatViewController: UIViewController {
         
     }
     
+    func registerCells(){
+        tableView.registerBotterCellNib(FlightTicketTableViewCell.self)
+        tableView.registerBotterCellNib(FlightStatusTableViewCell.self)
+        tableView.registerBotterCellNib(InvoiceTableViewCell.self)
+        tableView.registerBotterCellNib(NotifyTableViewCell.self)
+        tableView.registerBotterCellNib(UserImageTableViewCell.self)
+        tableView.registerBotterCellNib(AttachmentTableViewCell.self)
+    }
+    
     override func backDismiss(_ sender: Any) {
         self.areYouSureMsg(Msg: "Are you sure you want to end this conversation?") { (isYes) in
             if isYes{
-                if self.botData.endForm.inputs.count > 0 {
-                    self.presenter.openEndForm(form: self.botData.endForm)
+                if ChatViewController.botData.endForm.inputs.count > 0 {
+                    //                    self.presenter.openEndForm(form: self.botData.endForm)
+                    self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
                 }else{
                     self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
                 }
@@ -69,8 +76,14 @@ final class ChatViewController: UIViewController {
         CommonActions.botterSiteClicked()
     }
     @IBAction func openMenu (){
-        menuViewController.open(in: self, menu: self.botData.menu) { (item) in
+        menuViewController.open(in: self, menu: ChatViewController.botData.menu) { (item) in
             self.presenter.sendMenuAction(action: item)
+        }
+    }
+    
+    @IBAction func openAttachments (){
+        AttachFileViewController.open(in: self) { (file) in
+            self.presenter.sendAttachment(file: file)
         }
     }
     
@@ -228,11 +241,12 @@ extension ChatViewController : TextBoxDelegate{
     
     func checkIfLastBotInput(index : Int)->Bool{
         var isLastBotInput = false
+        let msg = presenter.messgesList[index]
         if presenter.messgesList.count - 1 == index{
-            isLastBotInput = true
+            isLastBotInput = true && msg.sender.senderType != .user
         }else{
             let nextMsg = presenter.messgesList[index + 1]
-            isLastBotInput = !nextMsg.isBotMsg
+            isLastBotInput = msg.sender.senderType != nextMsg.sender.senderType
         }
         
         return isLastBotInput
@@ -254,99 +268,111 @@ extension ChatViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let msg = presenter.messgesList[indexPath.row]
-        if msg.isBotMsg{
-            switch msg.msgType {
-            case .image:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ImageBotTableViewCell") as? ImageBotTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                return cell ?? UITableViewCell()
-            case .gif:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "GifTableViewCell") as? GifTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                return cell ?? UITableViewCell()
-            case .video:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "VideoBotTableViewCell") as? VideoBotTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                cell?.openVideo = { url in
-                    self.presenter.openVideo(url: url)
-                }
-                return cell ?? UITableViewCell()
-            case .hero:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "HeroTableViewCell") as? HeroTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                cell?.actionClicked = { action in
-                    self.presenter.actionClicked(action: action)
-                }
-                return cell ?? UITableViewCell()
-            case .triviaQuestion , .dateTime:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "TriviaTableViewCell") as? TriviaTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                cell?.actionClicked = { action in
-                    if msg.msgType == .triviaQuestion{
-                        self.presenter.triviaActionClicked(action: action)
-                    }else{
-                        self.openDatePicker(msg: msg)
-                    }
-                }
-                return cell ?? UITableViewCell()
-            case .gallery:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "GallaryTableViewCell") as? GallaryTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                cell?.actionClicked = { action in
-                    self.presenter.actionClicked(action: action)
-                }
-                cell?.openVideo = { url in
-                    self.presenter.openVideo(url: url)
-                }
-                return cell ?? UITableViewCell()
-            case .map:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "MapTableViewCell") as? MapTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                //                cell?.actionClicked = { action in
-                //                    self.presenter.actionClicked(action: action)
-                //                }
-                return cell ?? UITableViewCell()
-            case .audio:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "AudioBotTableViewCell") as? AudioBotTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row), isCurrent: indexPath.row == currentAudio, index: indexPath.row)
-                return cell ?? UITableViewCell()
-            case .typing :
-                let cell = tableView.dequeueReusableCell(withIdentifier: "TypingIndicatorTableViewCell") as? TypingIndicatorTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                return cell ?? UITableViewCell()
-            case .weather :
-                let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableViewCell") as? WeatherTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                return cell ?? UITableViewCell()
-            case .flightPassngers :
-                let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTicketTableViewCell") as? FlightTicketTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                return cell ?? UITableViewCell()
-            case .flightStatus :
-                let cell = tableView.dequeueReusableCell(withIdentifier: "FlightStatusTableViewCell") as? FlightStatusTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                return cell ?? UITableViewCell()
-            case .receipt :
-                let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceTableViewCell") as? InvoiceTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                return cell ?? UITableViewCell()
-            case .notify :
-                let cell = tableView.dequeueReusableCell(withIdentifier: "NotifyTableViewCell") as? NotifyTableViewCell
-                cell?.setData(text: msg.notifyText)
-                return cell ?? UITableViewCell()
-            default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: "BotChatTableViewCell") as? BotChatTableViewCell
-                cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
-                return cell ?? UITableViewCell()
+        switch msg.msgType {
+        case .image:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ImageBotTableViewCell") as? ImageBotTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            return cell ?? UITableViewCell()
+        case .gif:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "GifTableViewCell") as? GifTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            return cell ?? UITableViewCell()
+        case .video:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "VideoBotTableViewCell") as? VideoBotTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            cell?.openVideo = { url in
+                self.presenter.openVideo(url: url)
             }
-            
-        }else{
+            return cell ?? UITableViewCell()
+        case .hero:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HeroTableViewCell") as? HeroTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            cell?.actionClicked = { action in
+                self.presenter.actionClicked(action: action)
+            }
+            return cell ?? UITableViewCell()
+        case .triviaQuestion , .dateTime:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TriviaTableViewCell") as? TriviaTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            cell?.actionClicked = { action in
+                if msg.msgType == .triviaQuestion{
+                    self.presenter.triviaActionClicked(action: action)
+                }else{
+                    self.openDatePicker(msg: msg)
+                }
+            }
+            return cell ?? UITableViewCell()
+        case .gallery:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "GallaryTableViewCell") as? GallaryTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            cell?.actionClicked = { action in
+                self.presenter.actionClicked(action: action)
+            }
+            cell?.openVideo = { url in
+                self.presenter.openVideo(url: url)
+            }
+            return cell ?? UITableViewCell()
+        case .map:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MapTableViewCell") as? MapTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            //                cell?.actionClicked = { action in
+            //                    self.presenter.actionClicked(action: action)
+            //                }
+            return cell ?? UITableViewCell()
+        case .audio:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AudioBotTableViewCell") as? AudioBotTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row), isCurrent: indexPath.row == currentAudio, index: indexPath.row)
+            return cell ?? UITableViewCell()
+        case .typing :
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TypingIndicatorTableViewCell") as? TypingIndicatorTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            return cell ?? UITableViewCell()
+        case .weather :
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherTableViewCell") as? WeatherTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            return cell ?? UITableViewCell()
+        case .flightPassngers :
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTicketTableViewCell") as? FlightTicketTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            return cell ?? UITableViewCell()
+        case .flightStatus :
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightStatusTableViewCell") as? FlightStatusTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            return cell ?? UITableViewCell()
+        case .receipt :
+            let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceTableViewCell") as? InvoiceTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
+            return cell ?? UITableViewCell()
+        case .notify :
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NotifyTableViewCell") as? NotifyTableViewCell
+            cell?.setData(text: msg.notifyText)
+            return cell ?? UITableViewCell()
+        case .userMsg:
             let cell = tableView.dequeueReusableCell(withIdentifier: msg.msgSent ? "UserChatTableViewCell" : "UserFaildChatTableViewCell") as? UserChatTableViewCell
             
             cell?.setData(msg: msg )
             cell?.resendAction = { myMsg in
                 self.presenter.resend(msg: myMsg)
             }
+            return cell ?? UITableViewCell()
+        case .userImage :
+            let cell = tableView.dequeueReusableCell(withIdentifier:  "UserImageTableViewCell" ) as? UserImageTableViewCell
+            
+            cell?.setData(msg: msg )
+            //                cell?.resendAction = { myMsg in
+            //                    self.presenter.resend(msg: myMsg)
+            //                }
+            cell?.tag = indexPath.row
+            return cell ?? UITableViewCell()
+        case .attachment:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentTableViewCell") as? AttachmentTableViewCell
+            
+            cell?.setData(msg: msg)
+            
+            return cell ?? UITableViewCell()
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BotChatTableViewCell") as? BotChatTableViewCell
+            cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
             return cell ?? UITableViewCell()
         }
         
@@ -370,3 +396,13 @@ extension ChatViewController : UITableViewDelegate{
     }
 }
 
+extension String {
+    
+    func fileName() -> String {
+        return URL(fileURLWithPath: self).deletingPathExtension().lastPathComponent
+    }
+    
+    func fileExtension() -> String {
+        return URL(fileURLWithPath: self).pathExtension
+    }
+}

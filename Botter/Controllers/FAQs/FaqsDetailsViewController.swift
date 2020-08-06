@@ -20,6 +20,11 @@ class FaqsDetailsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setFaqsDetailsData()
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     

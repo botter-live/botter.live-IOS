@@ -21,6 +21,11 @@ class menuViewController: UIViewController {
         self.tableView.sectionHeaderHeight = UITableView.automaticDimension;
         self.tableView.estimatedSectionHeaderHeight = 25;
         // Do any additional setup after loading the view.
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     
@@ -88,7 +93,7 @@ extension menuViewController : UITableViewDataSource{
         return tableView
     }
     override func expandedHeight(containedIn contentSheet: ContentSheet) -> CGFloat {
-        UIScreen.main.bounds.height - 50
+        return UIScreen.main.bounds.height - 50
     }
 }
 extension menuViewController : UITableViewDelegate{

@@ -26,7 +26,7 @@ class ImagePickerViewController: UIViewController {
     func openUploadImageBottomSheet(withTitle string : String)
     {
         let picker = CustomPickerView()
-        let options = ["معرض الصور" , "التقط صورة"]
+        let options = ["Camera" , "Gallery" , "File"]
         picker.selectedIndex = -1
         picker.titleText = string
         picker.subTitleText = ""

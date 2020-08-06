@@ -27,6 +27,7 @@ public class BotterSettingsManager  {
     public static var chatIcon : UIImage = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     
 
+    public static var hasFAQs : Bool = true
     public static var  alignLauncherLeft : Bool = false
     public static var bottomMargin : CGFloat = 40
     

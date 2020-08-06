@@ -8,6 +8,7 @@
 
 import Foundation
 //import ObjectMapper
+import LazyImage
 
 class BasicMessage :  Mappable {
     
@@ -36,6 +37,8 @@ class BasicMessage :  Mappable {
     var flighStatus : FlightStatus
     var invoice : Invoice
     var notifyText : String
+    var sender : Sender
+    let lazyImage = LazyImage()
     
     init(){
         type = ""
@@ -57,6 +60,7 @@ class BasicMessage :  Mappable {
         flighStatus = FlightStatus()
         invoice = Invoice()
         notifyText = ""
+        sender = Sender()
     }
     
     func mapping(map: Map) {
@@ -79,6 +83,7 @@ class BasicMessage :  Mappable {
         flighStatus <- map["data"]
         invoice <- map["data"]
         notifyText <- map["notify_text"]
+        sender <- map["sender"]
         
         if msgType == .audio{
             handleAudio()
@@ -88,6 +93,15 @@ class BasicMessage :  Mappable {
             action.title = hasTime ? "Pick Time" : "Pick Date"
             action.action = .date
             actions.append(action)
+        }
+        
+        if msgType == .image || msgType == .userImage{
+            
+            lazyImage.prefetchImage(url: mediaUrl)
+        }
+        
+        if msgType == .userMsg {
+            text <- map["text"]
         }
     }
     
@@ -128,6 +142,9 @@ enum MessageType : String , Codable{
     case receipt = "receipt"
     case none = ""
     case notify = "escalate"
+    case attachment = "attachment"
+    case userMsg = "message"
+    case userImage = "image_attachment"
 }
 
 extension BasicMessage : AudioPlayerDelegate{
@@ -143,4 +160,51 @@ extension BasicMessage : AudioPlayerDelegate{
     func audioPlayer(_ audioPlayer: AudioPlayer, willStartPlaying item: AudioItem) {
         player.stop()
     }
+}
+
+class Sender : Mappable{
+    
+    var senderID : String
+    var avatar : String
+    var senderType : SenderType
+    var avatarType : AvatarType
+    private var senderTypeStr : String
+    private var avatarTypeStr : String
+    
+    init()
+    {
+        senderID = ""
+        senderTypeStr = ""
+        avatarTypeStr = ""
+        avatar = ""
+        senderType = .bot
+        avatarType = .empty
+    }
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        senderID <- map["sender_id"]
+        avatar <- map["avatar"]
+        avatarTypeStr <- map["avatar_type"]
+        senderTypeStr <- map["sender_type"]
+        
+        senderType = SenderType.init(rawValue: senderTypeStr) ?? .bot
+        avatarType = AvatarType.init(rawValue: avatarTypeStr) ?? .empty
+    }
+    
+    
+    
+}
+enum SenderType : String{
+    case user = "USER"
+    case agent = "AGENT"
+    case bot = "BOT"
+}
+
+enum AvatarType : String{
+    case url = "url"
+    case base64 = "base64"
+    case empty = ""
 }

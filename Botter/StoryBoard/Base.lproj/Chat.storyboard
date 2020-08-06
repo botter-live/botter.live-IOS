@@ -728,25 +728,25 @@ to Botter Mobile</string>
                                                     <rect key="frame" x="16" y="32" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DWV-XH-Mqt">
-                                                            <rect key="frame" x="10" y="10" width="16" height="16"/>
+                                                            <rect key="frame" x="2" y="2" width="32" height="32"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="16" id="DHq-Lf-aB7"/>
-                                                                <constraint firstAttribute="height" constant="16" id="oVB-EX-mOw"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="DWV-XH-Mqt" firstAttribute="leading" secondItem="p1y-5t-jMO" secondAttribute="leading" constant="2" id="DxB-iw-EhC"/>
                                                         <constraint firstAttribute="height" constant="36" id="GEc-uC-hc6"/>
                                                         <constraint firstItem="DWV-XH-Mqt" firstAttribute="centerY" secondItem="p1y-5t-jMO" secondAttribute="centerY" id="RzS-hA-ziG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="DWV-XH-Mqt" secondAttribute="trailing" constant="2" id="dgY-Y4-edU"/>
+                                                        <constraint firstAttribute="bottom" secondItem="DWV-XH-Mqt" secondAttribute="bottom" constant="2" id="hLs-Qu-Xph"/>
                                                         <constraint firstAttribute="width" constant="36" id="kH1-nS-pm2"/>
                                                         <constraint firstItem="DWV-XH-Mqt" firstAttribute="centerX" secondItem="p1y-5t-jMO" secondAttribute="centerX" id="lvN-iZ-qw8"/>
+                                                        <constraint firstItem="DWV-XH-Mqt" firstAttribute="top" secondItem="p1y-5t-jMO" secondAttribute="top" constant="2" id="uW6-Wr-fkn"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -771,6 +771,7 @@ to Botter Mobile</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="BGView" destination="R7D-oG-TDO" id="Uwi-ro-qo9"/>
+                                            <outlet property="avatarImg" destination="DWV-XH-Mqt" id="ozd-Lf-tmX"/>
                                             <outlet property="botIcon" destination="p1y-5t-jMO" id="4um-gl-8uG"/>
                                             <outlet property="textLbl" destination="QBh-jZ-W6L" id="dwN-CJ-m0f"/>
                                         </connections>
@@ -830,23 +831,23 @@ to Botter Mobile</string>
                                                     <rect key="frame" x="16" y="210" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="g0r-16-RSm">
-                                                            <rect key="frame" x="10" y="10" width="16" height="16"/>
+                                                            <rect key="frame" x="2" y="2" width="32" height="32"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="16" id="n63-MW-dn1"/>
-                                                                <constraint firstAttribute="width" constant="16" id="qoU-Rk-6VY"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="g0r-16-RSm" firstAttribute="leading" secondItem="MWX-Kc-n35" secondAttribute="leading" constant="2" id="1de-FM-FAW"/>
                                                         <constraint firstItem="g0r-16-RSm" firstAttribute="centerY" secondItem="MWX-Kc-n35" secondAttribute="centerY" id="2zp-rr-RNN"/>
+                                                        <constraint firstAttribute="bottom" secondItem="g0r-16-RSm" secondAttribute="bottom" constant="2" id="EXy-J9-yuw"/>
+                                                        <constraint firstItem="g0r-16-RSm" firstAttribute="top" secondItem="MWX-Kc-n35" secondAttribute="top" constant="2" id="cmg-Q6-hrI"/>
                                                         <constraint firstAttribute="width" constant="36" id="dbh-3g-I4Q"/>
+                                                        <constraint firstAttribute="trailing" secondItem="g0r-16-RSm" secondAttribute="trailing" constant="2" id="fSa-zS-hpn"/>
                                                         <constraint firstAttribute="height" constant="36" id="h9z-kn-wV8"/>
                                                         <constraint firstItem="g0r-16-RSm" firstAttribute="centerX" secondItem="MWX-Kc-n35" secondAttribute="centerX" id="ltS-8p-J6x"/>
                                                     </constraints>
@@ -881,6 +882,7 @@ to Botter Mobile</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="BGView" destination="fU4-Da-aRe" id="GZ5-hc-QZB"/>
+                                            <outlet property="avatarImg" destination="g0r-16-RSm" id="5b2-k3-ldD"/>
                                             <outlet property="botIcon" destination="MWX-Kc-n35" id="9kl-yC-0NV"/>
                                             <outlet property="btn" destination="WLY-YX-eZe" id="2Rx-U9-y2D"/>
                                             <outlet property="descLbl" destination="4TZ-Eh-Jav" id="at8-b1-heF"/>
@@ -899,24 +901,24 @@ to Botter Mobile</string>
                                                     <rect key="frame" x="16" y="116" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mci-EC-6Cu">
-                                                            <rect key="frame" x="10" y="10" width="16" height="16"/>
+                                                            <rect key="frame" x="2" y="2" width="32" height="32"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="16" id="HaA-3S-Co2"/>
-                                                                <constraint firstAttribute="width" constant="16" id="I0I-mD-aQm"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="mci-EC-6Cu" secondAttribute="bottom" constant="2" id="IrT-RD-yuB"/>
+                                                        <constraint firstItem="mci-EC-6Cu" firstAttribute="top" secondItem="35y-FZ-Y1C" secondAttribute="top" constant="2" id="JWo-dX-2pl"/>
                                                         <constraint firstAttribute="height" constant="36" id="MC1-Px-AEF"/>
                                                         <constraint firstAttribute="width" constant="36" id="Pv3-eX-TOB"/>
                                                         <constraint firstItem="mci-EC-6Cu" firstAttribute="centerX" secondItem="35y-FZ-Y1C" secondAttribute="centerX" id="YCZ-bx-9V5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mci-EC-6Cu" secondAttribute="trailing" constant="2" id="a7O-om-KOv"/>
+                                                        <constraint firstItem="mci-EC-6Cu" firstAttribute="leading" secondItem="35y-FZ-Y1C" secondAttribute="leading" constant="2" id="nJ4-hm-xI9"/>
                                                         <constraint firstItem="mci-EC-6Cu" firstAttribute="centerY" secondItem="35y-FZ-Y1C" secondAttribute="centerY" id="x3C-SI-19j"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -1016,6 +1018,7 @@ to Botter Mobile</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="areaLbl" destination="UnY-qO-CaR" id="8Ne-Ng-QOF"/>
+                                            <outlet property="avatarImg" destination="mci-EC-6Cu" id="rVN-b9-XWw"/>
                                             <outlet property="botIcon" destination="35y-FZ-Y1C" id="Msw-IK-Lq7"/>
                                             <outlet property="dateLbl" destination="AIf-3L-HFJ" id="1KG-7c-mwP"/>
                                             <outlet property="hieghTempLbl" destination="eiw-WB-gxT" id="Zc9-rh-zU6"/>
@@ -1050,15 +1053,11 @@ to Botter Mobile</string>
                                                     <rect key="frame" x="16" y="32" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="W23-n2-0rp">
-                                                            <rect key="frame" x="10" y="10" width="16" height="16"/>
+                                                            <rect key="frame" x="2" y="2" width="32" height="32"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="16" id="MkN-Q3-uCw"/>
-                                                                <constraint firstAttribute="width" constant="16" id="T4v-TO-IDd"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
@@ -1066,8 +1065,12 @@ to Botter Mobile</string>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="W23-n2-0rp" firstAttribute="centerX" secondItem="zG4-Wl-HhV" secondAttribute="centerX" id="9xd-bv-LY9"/>
+                                                        <constraint firstAttribute="bottom" secondItem="W23-n2-0rp" secondAttribute="bottom" constant="2" id="Azz-Yy-YjT"/>
+                                                        <constraint firstItem="W23-n2-0rp" firstAttribute="leading" secondItem="zG4-Wl-HhV" secondAttribute="leading" constant="2" id="FkC-Ut-CDt"/>
                                                         <constraint firstAttribute="width" constant="36" id="KpF-IR-pWn"/>
                                                         <constraint firstAttribute="height" constant="36" id="Rli-pg-8Se"/>
+                                                        <constraint firstItem="W23-n2-0rp" firstAttribute="top" secondItem="zG4-Wl-HhV" secondAttribute="top" constant="2" id="cwE-Yb-MRs"/>
+                                                        <constraint firstAttribute="trailing" secondItem="W23-n2-0rp" secondAttribute="trailing" constant="2" id="qRh-jd-R8d"/>
                                                         <constraint firstItem="W23-n2-0rp" firstAttribute="centerY" secondItem="zG4-Wl-HhV" secondAttribute="centerY" id="r5e-gK-dPb"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -1087,6 +1090,7 @@ to Botter Mobile</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="avatarImg" destination="W23-n2-0rp" id="4dL-aJ-WP8"/>
                                             <outlet property="botIcon" destination="zG4-Wl-HhV" id="9ng-Ze-Yfv"/>
                                             <outlet property="typing" destination="hTv-nj-V1Y" id="Kbq-pj-Wlb"/>
                                         </connections>
@@ -1167,15 +1171,11 @@ to Botter Mobile</string>
                                                     <rect key="frame" x="16" y="32" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8hC-Zf-y7S">
-                                                            <rect key="frame" x="10" y="10" width="16" height="16"/>
+                                                            <rect key="frame" x="2" y="2" width="32" height="32"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="16" id="Km1-zU-rF3"/>
-                                                                <constraint firstAttribute="width" constant="16" id="uqG-56-QOm"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
@@ -1183,9 +1183,13 @@ to Botter Mobile</string>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="8hC-Zf-y7S" firstAttribute="centerX" secondItem="xhe-P7-KUE" secondAttribute="centerX" id="01y-xj-MDk"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8hC-Zf-y7S" secondAttribute="trailing" constant="2" id="0Mm-e9-Eg0"/>
+                                                        <constraint firstItem="8hC-Zf-y7S" firstAttribute="leading" secondItem="xhe-P7-KUE" secondAttribute="leading" constant="2" id="E5c-Yz-ZGY"/>
                                                         <constraint firstAttribute="width" constant="36" id="K90-tW-92T"/>
                                                         <constraint firstAttribute="height" constant="36" id="Kzz-Ww-aKS"/>
                                                         <constraint firstItem="8hC-Zf-y7S" firstAttribute="centerY" secondItem="xhe-P7-KUE" secondAttribute="centerY" id="LAN-QL-j20"/>
+                                                        <constraint firstItem="8hC-Zf-y7S" firstAttribute="top" secondItem="xhe-P7-KUE" secondAttribute="top" constant="2" id="fm4-n7-284"/>
+                                                        <constraint firstAttribute="bottom" secondItem="8hC-Zf-y7S" secondAttribute="bottom" constant="2" id="mFz-cp-1AH"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1205,6 +1209,7 @@ to Botter Mobile</string>
                                         <connections>
                                             <outlet property="BGView" destination="GtH-sT-m06" id="9VN-tI-8xW"/>
                                             <outlet property="actionBtn" destination="Jro-J1-otb" id="LgG-bh-zzr"/>
+                                            <outlet property="avatarImg" destination="8hC-Zf-y7S" id="3dq-6u-zPb"/>
                                             <outlet property="botIcon" destination="xhe-P7-KUE" id="keV-aH-fWD"/>
                                             <outlet property="imageBtn" destination="Ben-Sz-4Qk" id="7BO-wB-XYf"/>
                                             <outlet property="progress" destination="lCQ-vZ-uZc" id="8wo-6x-WuM"/>
@@ -1233,15 +1238,11 @@ to Botter Mobile</string>
                                                     <rect key="frame" x="16" y="190" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="d36-H7-sRD">
-                                                            <rect key="frame" x="10" y="10" width="16" height="16"/>
+                                                            <rect key="frame" x="2" y="2" width="32" height="32"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="16" id="Fsj-Ta-Wtb"/>
-                                                                <constraint firstAttribute="height" constant="16" id="JRF-Mc-Hxv"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
@@ -1249,9 +1250,13 @@ to Botter Mobile</string>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="d36-H7-sRD" firstAttribute="centerX" secondItem="I3t-zu-NrU" secondAttribute="centerX" id="882-Yl-rva"/>
+                                                        <constraint firstItem="d36-H7-sRD" firstAttribute="leading" secondItem="I3t-zu-NrU" secondAttribute="leading" constant="2" id="ELI-2A-51y"/>
                                                         <constraint firstAttribute="width" constant="36" id="QmZ-uA-UPA"/>
+                                                        <constraint firstAttribute="bottom" secondItem="d36-H7-sRD" secondAttribute="bottom" constant="2" id="ZS3-h2-cOi"/>
                                                         <constraint firstAttribute="height" constant="36" id="baU-OT-a2x"/>
+                                                        <constraint firstItem="d36-H7-sRD" firstAttribute="top" secondItem="I3t-zu-NrU" secondAttribute="top" constant="2" id="mBi-1x-HbB"/>
                                                         <constraint firstItem="d36-H7-sRD" firstAttribute="centerY" secondItem="I3t-zu-NrU" secondAttribute="centerY" id="nyo-KH-mDB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="d36-H7-sRD" secondAttribute="trailing" constant="2" id="oat-xW-z3c"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1298,6 +1303,7 @@ to Botter Mobile</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="BGView" destination="n5M-PG-z7e" id="LKU-lu-7ds"/>
+                                            <outlet property="avatarImg" destination="d36-H7-sRD" id="ZD8-3c-zXc"/>
                                             <outlet property="botIcon" destination="I3t-zu-NrU" id="sHd-pA-3Zj"/>
                                             <outlet property="collectionView" destination="1Z8-ca-bXy" id="gI3-jC-oQZ"/>
                                             <outlet property="textLbl" destination="F8i-af-O02" id="bUP-RZ-bHV"/>
@@ -1324,15 +1330,11 @@ to Botter Mobile</string>
                                                     <rect key="frame" x="16" y="202" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="IN0-HX-DsF">
-                                                            <rect key="frame" x="10" y="10" width="16" height="16"/>
+                                                            <rect key="frame" x="2" y="2" width="32" height="32"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="16" id="OTo-7w-mC3"/>
-                                                                <constraint firstAttribute="width" constant="16" id="iJV-SM-MS1"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
@@ -1340,7 +1342,11 @@ to Botter Mobile</string>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="IN0-HX-DsF" firstAttribute="centerY" secondItem="6yh-PW-kgi" secondAttribute="centerY" id="1Et-VD-WBK"/>
+                                                        <constraint firstItem="IN0-HX-DsF" firstAttribute="leading" secondItem="6yh-PW-kgi" secondAttribute="leading" constant="2" id="7wF-04-1WQ"/>
                                                         <constraint firstAttribute="height" constant="36" id="Fh5-gY-spE"/>
+                                                        <constraint firstAttribute="bottom" secondItem="IN0-HX-DsF" secondAttribute="bottom" constant="2" id="GRy-HN-lSM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="IN0-HX-DsF" secondAttribute="trailing" constant="2" id="KhE-ID-3lQ"/>
+                                                        <constraint firstItem="IN0-HX-DsF" firstAttribute="top" secondItem="6yh-PW-kgi" secondAttribute="top" constant="2" id="TRg-st-PzG"/>
                                                         <constraint firstItem="IN0-HX-DsF" firstAttribute="centerX" secondItem="6yh-PW-kgi" secondAttribute="centerX" id="j2c-3V-3Gs"/>
                                                         <constraint firstAttribute="width" constant="36" id="xUg-SZ-Jjy"/>
                                                     </constraints>
@@ -1389,6 +1395,7 @@ to Botter Mobile</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="BGView" destination="OHk-X7-QEb" id="am4-Kh-cdI"/>
+                                            <outlet property="avatarImg" destination="IN0-HX-DsF" id="X0v-gC-Kkk"/>
                                             <outlet property="botIcon" destination="6yh-PW-kgi" id="f3L-iy-9b9"/>
                                             <outlet property="collectionView" destination="Lzx-3f-Zdb" id="K6I-53-kJL"/>
                                             <outlet property="textLbl" destination="B2T-Sq-Yg9" id="fyl-O5-NZc"/>
@@ -1421,15 +1428,11 @@ to Botter Mobile</string>
                                                     <rect key="frame" x="16" y="176" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bqE-Mf-khI">
-                                                            <rect key="frame" x="10" y="10" width="16" height="16"/>
+                                                            <rect key="frame" x="2" y="2" width="32" height="32"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="16" id="iQ2-EV-7jb"/>
-                                                                <constraint firstAttribute="width" constant="16" id="rg1-dV-yeX"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
@@ -1437,8 +1440,12 @@ to Botter Mobile</string>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="6ks-8J-oXC"/>
+                                                        <constraint firstItem="bqE-Mf-khI" firstAttribute="leading" secondItem="mbr-Rl-Tr1" secondAttribute="leading" constant="2" id="8HP-a1-tfa"/>
+                                                        <constraint firstItem="bqE-Mf-khI" firstAttribute="top" secondItem="mbr-Rl-Tr1" secondAttribute="top" constant="2" id="Biy-ZK-uDk"/>
                                                         <constraint firstAttribute="width" constant="36" id="Ixn-8Z-B5p"/>
                                                         <constraint firstItem="bqE-Mf-khI" firstAttribute="centerY" secondItem="mbr-Rl-Tr1" secondAttribute="centerY" id="Tmd-LM-rb5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bqE-Mf-khI" secondAttribute="trailing" constant="2" id="X4d-T9-sd3"/>
+                                                        <constraint firstAttribute="bottom" secondItem="bqE-Mf-khI" secondAttribute="bottom" constant="2" id="waS-Ap-8hb"/>
                                                         <constraint firstItem="bqE-Mf-khI" firstAttribute="centerX" secondItem="mbr-Rl-Tr1" secondAttribute="centerX" id="zH2-C2-zEo"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -1460,6 +1467,7 @@ to Botter Mobile</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="BGView" destination="NRo-IS-w9N" id="AVZ-vH-pxp"/>
+                                            <outlet property="avatarImg" destination="bqE-Mf-khI" id="mcr-tH-xaj"/>
                                             <outlet property="botIcon" destination="mbr-Rl-Tr1" id="wfF-Fz-1X5"/>
                                             <outlet property="msgImage" destination="mFJ-Gd-kpu" id="sPy-mf-YX5"/>
                                         </connections>
@@ -1510,23 +1518,23 @@ to Botter Mobile</string>
                                                     <rect key="frame" x="16" y="176" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-Gm-8fh">
-                                                            <rect key="frame" x="10" y="10" width="16" height="16"/>
+                                                            <rect key="frame" x="2" y="2" width="32" height="32"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="16" id="6Uw-fR-TVn"/>
-                                                                <constraint firstAttribute="height" constant="16" id="Pgu-3i-zQ4"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Ceu-Gm-8fh" secondAttribute="trailing" constant="2" id="45h-H0-jX8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ceu-Gm-8fh" secondAttribute="bottom" constant="2" id="B69-8T-XF8"/>
+                                                        <constraint firstItem="Ceu-Gm-8fh" firstAttribute="top" secondItem="25G-1b-tRa" secondAttribute="top" constant="2" id="DdV-4T-wX5"/>
                                                         <constraint firstAttribute="width" constant="36" id="Vyw-Z9-TdL"/>
                                                         <constraint firstAttribute="height" constant="36" id="YjW-Eb-uyT"/>
+                                                        <constraint firstItem="Ceu-Gm-8fh" firstAttribute="leading" secondItem="25G-1b-tRa" secondAttribute="leading" constant="2" id="dCt-T2-6vN"/>
                                                         <constraint firstItem="Ceu-Gm-8fh" firstAttribute="centerX" secondItem="25G-1b-tRa" secondAttribute="centerX" id="hYr-Bj-NeU"/>
                                                         <constraint firstItem="Ceu-Gm-8fh" firstAttribute="centerY" secondItem="25G-1b-tRa" secondAttribute="centerY" id="um8-Gu-Jh5"/>
                                                     </constraints>
@@ -1549,6 +1557,7 @@ to Botter Mobile</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="BGView" destination="Po8-AQ-gXS" id="byp-sc-BRu"/>
+                                            <outlet property="avatarImg" destination="Ceu-Gm-8fh" id="0e7-MB-i9T"/>
                                             <outlet property="botIcon" destination="25G-1b-tRa" id="8ub-p2-PEi"/>
                                             <outlet property="gifIcon" destination="uTw-X9-M29" id="N7i-am-fTh"/>
                                             <outlet property="msgImage" destination="vqA-tL-jY2" id="FA1-8u-uZh"/>
@@ -1782,23 +1791,23 @@ itemTitle.alpha = 0</string>
                                                     <rect key="frame" x="16" y="296" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3qJ-CJ-Qzv">
-                                                            <rect key="frame" x="10" y="10" width="16" height="16"/>
+                                                            <rect key="frame" x="2" y="2" width="32" height="32"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="16" id="Iaz-y6-lBI"/>
-                                                                <constraint firstAttribute="width" constant="16" id="sGG-s4-cwI"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstItem="3qJ-CJ-Qzv" firstAttribute="top" secondItem="HWt-ov-p9X" secondAttribute="top" constant="2" id="CVH-rd-gHm"/>
                                                         <constraint firstItem="3qJ-CJ-Qzv" firstAttribute="centerY" secondItem="HWt-ov-p9X" secondAttribute="centerY" id="CcL-a3-uFd"/>
+                                                        <constraint firstItem="3qJ-CJ-Qzv" firstAttribute="leading" secondItem="HWt-ov-p9X" secondAttribute="leading" constant="2" id="MzW-Tb-Z19"/>
                                                         <constraint firstAttribute="height" constant="36" id="UTE-MR-Cqb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="3qJ-CJ-Qzv" secondAttribute="bottom" constant="2" id="i9e-E2-hNU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3qJ-CJ-Qzv" secondAttribute="trailing" constant="2" id="oy8-cb-bSd"/>
                                                         <constraint firstAttribute="width" constant="36" id="puI-zy-RfV"/>
                                                         <constraint firstItem="3qJ-CJ-Qzv" firstAttribute="centerX" secondItem="HWt-ov-p9X" secondAttribute="centerX" id="xMd-IQ-YNm"/>
                                                     </constraints>
@@ -1820,6 +1829,7 @@ itemTitle.alpha = 0</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="avatarImg" destination="3qJ-CJ-Qzv" id="HRk-3S-72X"/>
                                             <outlet property="botIcon" destination="HWt-ov-p9X" id="M1d-jf-j3o"/>
                                             <outlet property="collectionView" destination="oyi-mN-zXG" id="jci-wQ-Aqx"/>
                                         </connections>
@@ -1874,15 +1884,11 @@ itemTitle.alpha = 0</string>
                                                     <rect key="frame" x="16" y="176" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="pcd-Kn-7i5">
-                                                            <rect key="frame" x="10" y="10" width="16" height="16"/>
+                                                            <rect key="frame" x="2" y="2" width="32" height="32"/>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="16" id="HBw-Je-1vo"/>
-                                                                <constraint firstAttribute="height" constant="16" id="Vjg-iD-Csl"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
+                                                                    <real key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
@@ -1890,8 +1896,12 @@ itemTitle.alpha = 0</string>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="pcd-Kn-7i5" firstAttribute="centerY" secondItem="Y2O-dx-htN" secondAttribute="centerY" id="1wC-Rn-cCU"/>
+                                                        <constraint firstItem="pcd-Kn-7i5" firstAttribute="leading" secondItem="Y2O-dx-htN" secondAttribute="leading" constant="2" id="8gR-Lt-kbS"/>
                                                         <constraint firstAttribute="width" constant="36" id="9dm-mZ-b4D"/>
+                                                        <constraint firstAttribute="trailing" secondItem="pcd-Kn-7i5" secondAttribute="trailing" constant="2" id="Oqu-Ns-LGO"/>
+                                                        <constraint firstItem="pcd-Kn-7i5" firstAttribute="top" secondItem="Y2O-dx-htN" secondAttribute="top" constant="2" id="TUZ-m5-NRX"/>
                                                         <constraint firstItem="pcd-Kn-7i5" firstAttribute="centerX" secondItem="Y2O-dx-htN" secondAttribute="centerX" id="Xin-FU-bBp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pcd-Kn-7i5" secondAttribute="bottom" constant="2" id="YHP-JU-BgW"/>
                                                         <constraint firstAttribute="height" constant="36" id="qG4-eK-2CT"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -1913,6 +1923,7 @@ itemTitle.alpha = 0</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="BGView" destination="JPu-LT-BlT" id="hxU-gG-VfC"/>
+                                            <outlet property="avatarImg" destination="pcd-Kn-7i5" id="b6Z-fj-i37"/>
                                             <outlet property="botIcon" destination="Y2O-dx-htN" id="Vcj-Bt-Kjl"/>
                                             <outlet property="msgImage" destination="afT-y7-nc7" id="RDd-Dz-Yr8"/>
                                         </connections>
@@ -2008,6 +2019,17 @@ itemTitle.alpha = 0</string>
                                                     <action selector="sendMesg" destination="mBd-sT-l3W" eventType="touchUpInside" id="iJ3-0H-KvG"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuX-KU-BeN" customClass="AccentBtn" customModule="Botter" customModuleProvider="target">
+                                                <rect key="frame" x="312" y="10.5" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="H0R-6c-x2L"/>
+                                                    <constraint firstAttribute="width" constant="30" id="yF5-qr-FTY"/>
+                                                </constraints>
+                                                <state key="normal" image="attachIcon"/>
+                                                <connections>
+                                                    <action selector="openAttachments" destination="mBd-sT-l3W" eventType="touchUpInside" id="10Q-ED-Urh"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dm0-MK-Srm" customClass="AccentBtn" customModule="Botter" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="10.5" width="30" height="30"/>
                                                 <constraints>
@@ -2020,7 +2042,7 @@ itemTitle.alpha = 0</string>
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HFT-ZM-5nD">
-                                                <rect key="frame" x="44" y="6" width="296" height="28"/>
+                                                <rect key="frame" x="44" y="6" width="262" height="28"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2032,11 +2054,13 @@ itemTitle.alpha = 0</string>
                                             <constraint firstItem="HFT-ZM-5nD" firstAttribute="leading" secondItem="Dm0-MK-Srm" secondAttribute="trailing" constant="6" id="1Sd-2Q-dxL"/>
                                             <constraint firstItem="OyL-pM-xen" firstAttribute="top" secondItem="gsQ-9V-oRq" secondAttribute="top" constant="10.5" id="8aF-ie-1os"/>
                                             <constraint firstItem="Dm0-MK-Srm" firstAttribute="leading" secondItem="gsQ-9V-oRq" secondAttribute="leading" constant="8" id="AZW-oN-iH4"/>
-                                            <constraint firstItem="OyL-pM-xen" firstAttribute="leading" secondItem="HFT-ZM-5nD" secondAttribute="trailing" constant="6" id="FlE-5J-BVF"/>
+                                            <constraint firstItem="zuX-KU-BeN" firstAttribute="leading" secondItem="HFT-ZM-5nD" secondAttribute="trailing" constant="6" id="BqQ-N0-moe"/>
                                             <constraint firstItem="Dm0-MK-Srm" firstAttribute="centerY" secondItem="OyL-pM-xen" secondAttribute="centerY" id="GHb-yD-qtP"/>
+                                            <constraint firstItem="OyL-pM-xen" firstAttribute="leading" secondItem="zuX-KU-BeN" secondAttribute="trailing" constant="4" id="Hlq-0z-T7Y"/>
                                             <constraint firstAttribute="bottom" secondItem="HFT-ZM-5nD" secondAttribute="bottom" constant="6" id="YZG-uU-oat"/>
                                             <constraint firstItem="HFT-ZM-5nD" firstAttribute="top" secondItem="gsQ-9V-oRq" secondAttribute="top" constant="6" id="f4k-aC-v1C"/>
                                             <constraint firstAttribute="trailing" secondItem="OyL-pM-xen" secondAttribute="trailing" constant="8" id="gYo-ke-vc5"/>
+                                            <constraint firstItem="zuX-KU-BeN" firstAttribute="centerY" secondItem="OyL-pM-xen" secondAttribute="centerY" id="r34-vl-53Q"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -2583,9 +2607,139 @@ itemTitle.alpha = 0</string>
             </objects>
             <point key="canvasLocation" x="138" y="759"/>
         </scene>
+        <!--Attach File View Controller-->
+        <scene sceneID="hcm-GZ-F2v">
+            <objects>
+                <viewController storyboardIdentifier="AttachFileViewController" id="D9K-O4-BA0" customClass="AttachFileViewController" customModule="Botter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Es-80-anT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flA-FU-5wk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6z0-Ix-Hhi">
+                                        <rect key="frame" x="0.0" y="818" width="414" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hB5-Dn-MUi">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <view key="tableHeaderView" contentMode="scaleToFill" id="jrv-9O-StC">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbp-YP-gy2">
+                                                    <rect key="frame" x="167" y="20" width="80" height="10"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="9hp-vC-kYj"/>
+                                                        <constraint firstAttribute="height" constant="10" id="zEc-MS-K2A"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oY-pa-9f0">
+                                                    <rect key="frame" x="368" y="10" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Xn6-IE-Rej"/>
+                                                        <constraint firstAttribute="width" constant="30" id="yaf-Py-3dw"/>
+                                                    </constraints>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" image="close-1"/>
+                                                    <connections>
+                                                        <action selector="backDismiss:" destination="D9K-O4-BA0" eventType="touchUpInside" id="ah0-Nt-gXO"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="IRB-de-n6o"/>
+                                                <constraint firstItem="pbp-YP-gy2" firstAttribute="centerY" secondItem="jrv-9O-StC" secondAttribute="centerY" id="UXp-gr-O5v"/>
+                                                <constraint firstItem="pbp-YP-gy2" firstAttribute="centerX" secondItem="jrv-9O-StC" secondAttribute="centerX" id="lO0-P1-bDr"/>
+                                                <constraint firstItem="9oY-pa-9f0" firstAttribute="centerY" secondItem="jrv-9O-StC" secondAttribute="centerY" id="oY0-RE-pCT"/>
+                                                <constraint firstAttribute="trailing" secondItem="9oY-pa-9f0" secondAttribute="trailing" constant="16" id="zs8-HN-tDM"/>
+                                            </constraints>
+                                        </view>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="GXk-l8-rdY">
+                                                <rect key="frame" x="0.0" y="78" width="414" height="52.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GXk-l8-rdY" id="VGK-cm-gMv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0s-qd-1uX" customClass="BasicRegularLbl" customModule="Botter" customModuleProvider="target">
+                                                            <rect key="frame" x="20" y="16" width="42" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHX-dQ-Brb">
+                                                            <rect key="frame" x="20" y="51.5" width="374" height="1"/>
+                                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" id="zKn-tb-KHo"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="S0s-qd-1uX" secondAttribute="bottom" constant="16" id="KiC-S5-MPy"/>
+                                                        <constraint firstItem="S0s-qd-1uX" firstAttribute="leading" secondItem="VGK-cm-gMv" secondAttribute="leading" constant="20" id="RKA-87-6Nq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="MHX-dQ-Brb" secondAttribute="bottom" id="bmD-Fo-RFi"/>
+                                                        <constraint firstItem="S0s-qd-1uX" firstAttribute="top" secondItem="VGK-cm-gMv" secondAttribute="top" constant="16" id="nMm-Cl-41Z"/>
+                                                        <constraint firstItem="MHX-dQ-Brb" firstAttribute="leading" secondItem="VGK-cm-gMv" secondAttribute="leading" constant="20" id="s4e-SM-3Mz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="MHX-dQ-Brb" secondAttribute="trailing" constant="20" id="tNL-Go-pmG"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="D9K-O4-BA0" id="lg7-V3-4RW"/>
+                                            <outlet property="delegate" destination="D9K-O4-BA0" id="YAo-7h-iCi"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6z0-Ix-Hhi" secondAttribute="bottom" id="4E8-ir-EsD"/>
+                                    <constraint firstItem="hB5-Dn-MUi" firstAttribute="top" secondItem="flA-FU-5wk" secondAttribute="top" id="kkG-M4-b1b"/>
+                                    <constraint firstItem="6z0-Ix-Hhi" firstAttribute="top" secondItem="hB5-Dn-MUi" secondAttribute="bottom" id="l4X-jV-sBF"/>
+                                    <constraint firstItem="6z0-Ix-Hhi" firstAttribute="leading" secondItem="flA-FU-5wk" secondAttribute="leading" id="mw8-GQ-Bzo"/>
+                                    <constraint firstItem="hB5-Dn-MUi" firstAttribute="leading" secondItem="flA-FU-5wk" secondAttribute="leading" id="o73-Be-37y"/>
+                                    <constraint firstAttribute="trailing" secondItem="hB5-Dn-MUi" secondAttribute="trailing" id="v1N-sI-bPc"/>
+                                    <constraint firstAttribute="trailing" secondItem="6z0-Ix-Hhi" secondAttribute="trailing" id="wug-0v-Yml"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hB5-Dn-MUi" firstAttribute="bottom" secondItem="Dwk-y3-QVR" secondAttribute="bottom" id="74g-bX-vRZ"/>
+                            <constraint firstItem="Dwk-y3-QVR" firstAttribute="trailing" secondItem="flA-FU-5wk" secondAttribute="trailing" id="V15-Ci-VNZ"/>
+                            <constraint firstAttribute="bottom" secondItem="flA-FU-5wk" secondAttribute="bottom" id="nKv-qd-brO"/>
+                            <constraint firstItem="flA-FU-5wk" firstAttribute="leading" secondItem="Dwk-y3-QVR" secondAttribute="leading" id="pid-PE-TLb"/>
+                            <constraint firstItem="flA-FU-5wk" firstAttribute="top" secondItem="Dwk-y3-QVR" secondAttribute="top" id="uMk-YK-IYg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dwk-y3-QVR"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="hB5-Dn-MUi" id="jFI-5d-IpE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVx-eR-AcI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1200" y="758.70535714285711"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowRight1" width="8.5" height="13.5"/>
+        <image name="attachIcon" width="20" height="20"/>
         <image name="botterIcon" width="15" height="15"/>
         <image name="close" width="20" height="20"/>
         <image name="close-1" width="20" height="20"/>

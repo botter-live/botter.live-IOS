@@ -1,17 +1,14 @@
 //
-//  ImageBotTableViewCell.swift
+//  AttachmentTableViewCell.swift
 //  Botter
 //
-//  Created by Nora on 6/4/20.
+//  Created by Nora on 7/29/20.
 //  Copyright © 2020 BlueCrunch. All rights reserved.
 //
 
 import UIKit
 
-
-class ImageBotTableViewCell: BotChatTableViewCell {
-    
-    @IBOutlet weak var msgImage : UIImageView?
+class AttachmentTableViewCell: UserChatTableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,10 +22,14 @@ class ImageBotTableViewCell: BotChatTableViewCell {
     }
     
     override func setData(msg: BasicMessage, showIcon: Bool = false) {
-        super.setData(msg: msg, showIcon: showIcon)
-        self.lazyImage.show(imageView: self.msgImage!, url: msg.mediaUrl) { (lazyError) in
-        //            print(lazyError?.localizedDescription)
-                }
+        super.setData(msg: msg)
+        self.msg = msg
+        let urlComponents = self.msg.mediaUrl.components(separatedBy: "/")
+        if urlComponents.count > 0{
+            textLbl.text = urlComponents[urlComponents.count - 1]
+        }else{
+            textLbl.text = ""
+        }
     }
-
+    
 }

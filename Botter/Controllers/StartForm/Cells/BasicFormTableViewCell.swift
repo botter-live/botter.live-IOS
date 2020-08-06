@@ -17,6 +17,7 @@ class BasicFormTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        errorLbl.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -51,6 +52,7 @@ class BasicFormTableViewCell: UITableViewCell {
     }
     
     func evaluateRegex(text : String)->Bool{
+//        let regex = input.regex.trimmingCharacters(in: CharacterSet.init(charactersIn: "/"))
         let testCase = NSPredicate(format:"SELF MATCHES %@", input.regex)
         let isValid = testCase.evaluate(with: text)
         return isValid
@@ -61,3 +63,5 @@ class BasicFormTableViewCell: UITableViewCell {
         return ""
     }
 }
+
+

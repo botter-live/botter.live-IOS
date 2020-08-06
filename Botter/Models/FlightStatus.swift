@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FlightStatus : Mappable{
     var arrivalAirportCode : String
@@ -20,6 +21,9 @@ class FlightStatus : Mappable{
     var flight : String
     var status : String
     var confirmationNumber : String
+    var introMessage : String
+    private var statusColorStr : String
+    var statusColor : UIColor
     
     init() {
         arrivalAirportCode = ""
@@ -33,6 +37,9 @@ class FlightStatus : Mappable{
         flight = ""
         status = ""
         confirmationNumber = ""
+        introMessage = ""
+        statusColorStr = ""
+        statusColor = UIColor.init(codeString: "#aaaaaa")
     }
     
     required convenience init?(map: Map) {
@@ -51,5 +58,20 @@ class FlightStatus : Mappable{
         flight <- map["flight"]
         status <- map["status"]
         confirmationNumber <- map["confirmation_number"]
+        introMessage <- map["intro_message"]
+        statusColorStr <- map["status_color"]
+        
+        setColor()
+        
+    }
+    
+    
+    func setColor(){
+        let testCase = NSPredicate(format:"SELF MATCHES %@", "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$")
+        let isValid = testCase.evaluate(with: statusColorStr)
+        if isValid {
+            let color = UIColor.init(codeString: statusColorStr)
+            statusColor = color
+        }
     }
 }

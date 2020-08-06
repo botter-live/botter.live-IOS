@@ -31,7 +31,7 @@ class MapTableViewCell: BotChatTableViewCell {
         descLbl.text = msg.location.desc
         textLbl.text = msg.location.title
         btn.setTitle(msg.location.btnTitle, for: .normal)
-        self.lazyImage.show(imageView: self.img, url: msg.location.imageUrl) { (lazyError) in
+        self.msg.lazyImage.show(imageView: self.img, url: msg.location.imageUrl) { (lazyError) in
             print(lazyError?.localizedDescription)
         }
     }

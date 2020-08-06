@@ -70,8 +70,8 @@ class GalleryItemCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         self.item = GallaryItem()
-        gifImage.image = UIImage()
-        itemImage.image = UIImage()
+        gifImage.image = nil
+        itemImage.image = nil
     }
     
     @IBAction func actionPressed(_ sender : UIButton){

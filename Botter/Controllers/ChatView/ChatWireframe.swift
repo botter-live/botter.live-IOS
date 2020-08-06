@@ -24,7 +24,7 @@ final class ChatWireframe: BaseWireframe {
         let interactor = ChatInteractor()
         let presenter = ChatPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
-        moduleViewController.botData = botData
+        ChatViewController.botData = botData
         interactor.presenter = presenter
     }
 

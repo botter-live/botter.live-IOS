@@ -13,9 +13,10 @@ class BaseDataSource : Any {
     
     struct  Constants {
         
-        static var BASE_URL = "https://gamma-api.botter.live/widget/"
-        static var BOTTER_DATA = BASE_URL + "data/en_US?bot_id="
-        static var FAQ_DATA = BASE_URL + "faqs/en_US?bot_id="
+        static var BASE_URL = "https://gamma-api.botter.live/"
+        static var BOTTER_DATA = BASE_URL + "widget/data/en_US?bot_id="
+        static var FAQ_DATA = BASE_URL + "widget/faqs/en_US?bot_id="
+        static var UPLOAD_ATTACHMENT = BASE_URL + "api/file/upload"
     }
     
     public enum ResponseStatus: String {
@@ -65,7 +66,37 @@ class BaseDataSource : Any {
                 }
         }
     }
-
+    
+    func upload(data: Data , mime : String , name: String , completion: @escaping ([String: Any]?, Error?) -> Void) {
+        
+        
+        let headers: HTTPHeaders
+        headers = ["Content-type": "multipart/form-data",
+                   "Accept" : "application/json"]
+        let url = try! URLRequest.init(url: "https://uploads.gamma.botter.live/api/file/upload", method: .post, headers: headers)
+        
+        
+        AF.upload(multipartFormData: { (form) in
+            form.append(data, withName: "file",fileName: name , mimeType: mime)
+            
+        }, with:url ).responseJSON { (response) in
+            switch(response.result){
+            case .success(_):
+                let json = response.value as? [String: Any]
+                completion(json,nil)
+                break
+            case .failure(let error):
+                    if let data = response.data {
+                        print("Print Server Error: " + String(data: data, encoding: String.Encoding.utf8)!)
+                    }
+                    print(error)
+                    completion(nil,response.error)
+                    break
+                }
+        }
+        
+        
+    }
     
     
     

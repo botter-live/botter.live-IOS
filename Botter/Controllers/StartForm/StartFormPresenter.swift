@@ -12,9 +12,9 @@ import Foundation
 import UIKit
 
 final class StartFormPresenter {
-
+    
     // MARK: - Private properties -
-
+    
     var botData : BotData!
     var dataCells : [UITableViewCell]!
     var faqsData = [FaqData]()
@@ -22,9 +22,9 @@ final class StartFormPresenter {
     private unowned let view: StartFormViewInterface
     private let interactor: StartFormInteractorInterface
     private let wireframe: StartFormWireframeInterface
-
+    
     // MARK: - Lifecycle -
-
+    
     init(view: StartFormViewInterface, interactor: StartFormInteractorInterface, wireframe: StartFormWireframeInterface) {
         self.view = view
         self.interactor = interactor
@@ -70,54 +70,55 @@ extension StartFormPresenter: StartFormPresenterInterface {
     func getCells(){
         dataCells.removeAll()
         var dataList = [UITableViewCell]()
-        
-        for item in self.botData.startForm.inputs {
-            if let view = self.view as? StartFormViewController {
-                switch item.type {
-                case .textfield:
-                    let cell = view.tableView.dequeueReusableCell(withIdentifier: "TextInputTableViewCell") as? TextInputTableViewCell
-                    cell?.setData(input: item)
-                    dataList.append(cell ?? UITableViewCell())
-                    break
-                case .textarea:
-                    let cell = view.tableView.dequeueReusableCell(withIdentifier: "TextAreaInputTableViewCell") as? TextAreaInputTableViewCell
-                    cell?.setData(input: item)
-                    dataList.append(cell ?? UITableViewCell())
-                    break
-                case .date:
-                    let cell = view.tableView.dequeueReusableCell(withIdentifier: "DateIntputTableViewCell") as? DateIntputTableViewCell
-                    cell?.setData(input: item ,parent: view )
-                    dataList.append(cell ?? UITableViewCell())
-                    break
-                case .time:
-                    let cell = view.tableView.dequeueReusableCell(withIdentifier: "TimeInputTableViewCell") as? TimeInputTableViewCell
-                    cell?.setData(input: item, parent: view )
-                    dataList.append(cell ?? UITableViewCell())
-                    break
-                case .radio :
-                    let cell = view.tableView.dequeueReusableCell(withIdentifier: "RadioInputTableViewCell") as? RadioInputTableViewCell
-                    cell?.setData(input: item)
-                    dataList.append(cell ?? UITableViewCell())
-                    break
-                case .select :
-                    if item.multiple{
-                        let cell = view.tableView.dequeueReusableCell(withIdentifier: "SelectInputTableViewCell") as? SelectInputTableViewCell
+        if SocketManager.first{
+            for item in self.botData.startForm.inputs {
+                if let view = self.view as? StartFormViewController {
+                    switch item.type {
+                    case .textfield:
+                        let cell = view.tableView.dequeueReusableCell(withIdentifier: "TextInputTableViewCell") as? TextInputTableViewCell
                         cell?.setData(input: item)
                         dataList.append(cell ?? UITableViewCell())
-                    }else{
+                        break
+                    case .textarea:
+                        let cell = view.tableView.dequeueReusableCell(withIdentifier: "TextAreaInputTableViewCell") as? TextAreaInputTableViewCell
+                        cell?.setData(input: item)
+                        dataList.append(cell ?? UITableViewCell())
+                        break
+                    case .date:
+                        let cell = view.tableView.dequeueReusableCell(withIdentifier: "DateIntputTableViewCell") as? DateIntputTableViewCell
+                        cell?.setData(input: item ,parent: view )
+                        dataList.append(cell ?? UITableViewCell())
+                        break
+                    case .time:
+                        let cell = view.tableView.dequeueReusableCell(withIdentifier: "TimeInputTableViewCell") as? TimeInputTableViewCell
+                        cell?.setData(input: item, parent: view )
+                        dataList.append(cell ?? UITableViewCell())
+                        break
+                    case .radio :
                         let cell = view.tableView.dequeueReusableCell(withIdentifier: "RadioInputTableViewCell") as? RadioInputTableViewCell
                         cell?.setData(input: item)
                         dataList.append(cell ?? UITableViewCell())
                         break
+                    case .select :
+                        if item.multiple{
+                            let cell = view.tableView.dequeueReusableCell(withIdentifier: "SelectInputTableViewCell") as? SelectInputTableViewCell
+                            cell?.setData(input: item)
+                            dataList.append(cell ?? UITableViewCell())
+                        }else{
+                            let cell = view.tableView.dequeueReusableCell(withIdentifier: "RadioInputTableViewCell") as? RadioInputTableViewCell
+                            cell?.setData(input: item)
+                            dataList.append(cell ?? UITableViewCell())
+                            break
+                        }
+                        break
+                    default:
+                        let cell = view.tableView.dequeueReusableCell(withIdentifier: "TextInputTableViewCell") as? TextInputTableViewCell
+                        cell?.setData(input: item)
+                        dataList.append(cell ?? UITableViewCell())
+                        break
                     }
-                    break
-                default:
-                    let cell = view.tableView.dequeueReusableCell(withIdentifier: "TextInputTableViewCell") as? TextInputTableViewCell
-                    cell?.setData(input: item)
-                    dataList.append(cell ?? UITableViewCell())
-                    break
+                    
                 }
-                
             }
         }
         

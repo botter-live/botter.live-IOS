@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         customizeChat()
         Botter.chatTitle = "Welcome to al dwaa pharmacies\nاهلاً و سهلاً بكم"
         Botter.show(APIKey: "nKmovPCdWNZdYnIejRnd")
-
+        
         return true
     }
 //
@@ -31,8 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BotterSettingsManager.Font.regularFontName = "Roboto-Regular"
         BotterSettingsManager.Font.mediumFontName = "Roboto-Medium"
         BotterSettingsManager.alignLauncherLeft = true
+        
     }
-    
     
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {

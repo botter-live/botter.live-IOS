@@ -17,13 +17,23 @@ pod 'Botter' , :git = 'https://github.com/NoraSayed135/Botter.git'
 
 2- Customize your app to allow multiple window in case you want to show floating button on to of your entire app /*if not skip  this*/ to this follow this steps
 
- 1 - remove _Scene Manifest_ from info.plist file 
- 2- comment scene configuration functions in App delegate 
- 3-  add this line in App Delegate class :
+> 1 - remove _Scene Manifest_ from info.plist file 
+> 2- comment scene configuration functions in App delegate 
+>3-  add this line in App Delegate class :
 
  ```swift
  var  window: UIWindow?
  ```
+
+3- Add Camera and Gallery Permissions in your info.plist file
+
+```html
+<key>NSCameraUsageDescription</key>
+<string>This app requires to access your photo library to send image via chat</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>This app requires to access your photo library to send image via chat</string>
+```
+4- In your project's capabilities, enable both the iCloud and the Key-Sharing.
 
 
 ## Implementation
@@ -82,13 +92,13 @@ open override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
        Botter.hideLauncherButton()
    }
-```
+ ```
 ```swift
  open override func viewDidDisappear(_ animated: Bool) {
        super.viewDidDisappear(animated)
        Botter.showLauncherButton()
    }
- ```
+```
 
 ## Customization
 

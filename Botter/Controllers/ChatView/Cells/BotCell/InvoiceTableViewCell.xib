@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -299,16 +299,12 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kBp-dc-lu6" customClass="AccentView" customModule="Botter" customModuleProvider="target">
                         <rect key="frame" x="16" y="509" width="36" height="36"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NyY-pP-2Dm">
-                                <rect key="frame" x="10" y="10" width="16" height="16"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NyY-pP-2Dm">
+                                <rect key="frame" x="2" y="2" width="32" height="32"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="55f-eu-TcL"/>
-                                    <constraint firstAttribute="width" constant="16" id="m9Q-qg-uT6"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
+                                        <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -318,6 +314,10 @@
                             <constraint firstAttribute="height" constant="36" id="05R-ye-JRJ"/>
                             <constraint firstItem="NyY-pP-2Dm" firstAttribute="centerX" secondItem="kBp-dc-lu6" secondAttribute="centerX" id="94h-uA-GRl"/>
                             <constraint firstItem="NyY-pP-2Dm" firstAttribute="centerY" secondItem="kBp-dc-lu6" secondAttribute="centerY" id="IV7-n3-I97"/>
+                            <constraint firstItem="NyY-pP-2Dm" firstAttribute="leading" secondItem="kBp-dc-lu6" secondAttribute="leading" constant="2" id="crt-Ef-qBG"/>
+                            <constraint firstAttribute="trailing" secondItem="NyY-pP-2Dm" secondAttribute="trailing" constant="2" id="hBZ-FV-CRJ"/>
+                            <constraint firstAttribute="bottom" secondItem="NyY-pP-2Dm" secondAttribute="bottom" constant="2" id="iNm-6k-drg"/>
+                            <constraint firstItem="NyY-pP-2Dm" firstAttribute="top" secondItem="kBp-dc-lu6" secondAttribute="top" constant="2" id="w9X-9z-sHp"/>
                             <constraint firstAttribute="width" constant="36" id="z2K-ay-7wJ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -344,6 +344,7 @@
             <connections>
                 <outlet property="BGView" destination="6ZN-oB-E2I" id="IBE-qH-ctN"/>
                 <outlet property="addressLbl" destination="MaQ-mL-sNn" id="DCf-uZ-hKa"/>
+                <outlet property="avatarImg" destination="NyY-pP-2Dm" id="lbN-Dp-Vj7"/>
                 <outlet property="botIcon" destination="kBp-dc-lu6" id="f7I-Cf-xzh"/>
                 <outlet property="invoiceItem1" destination="tNB-fJ-JWV" id="C5b-DC-oTv"/>
                 <outlet property="invoiceItem2" destination="2SW-e0-UEd" id="Sil-48-tUp"/>
