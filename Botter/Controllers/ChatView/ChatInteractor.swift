@@ -90,7 +90,7 @@ extension ChatInteractor: ChatInteractorInterface {
                     completion(Message)
                 }
             }else{
-                SocketManager.shared.sendPostBack(value: action.value , title: action.title){ isSent in
+                SocketManager.shared.sendPostBack(value: action.value , title: action.title , slug: Message.slug){ isSent in
                     completion(Message)
                 }
             }
@@ -154,7 +154,7 @@ extension ChatInteractor: ChatInteractorInterface {
         Message.msgType = .userMsg
         Message.sender.senderType = .user
         if SocketManager.shared.isConnected{
-            SocketManager.shared.sendPostBack(value: action.payload , title: action.title){ isSent in
+            SocketManager.shared.sendPostBack(value: action.payload , title: action.title , slug:Message.slug ){ isSent in
                 completion(Message)
             }
         }else{

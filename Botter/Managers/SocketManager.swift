@@ -229,10 +229,11 @@ class SocketManager : WebSocketDelegate  {
     }
 
     
-    func sendPostBack(value : String , title : String , completion:@escaping((Bool)->())){
+    func sendPostBack(value : String , title : String , slug : String = "" , completion:@escaping((Bool)->())){
         //        if isConnected {
         let msg : [String : Any] = [
             "type": "message" ,
+            "slug" : slug ,
             "text" : value,
             "user": guid ,
             "postback": ["title" : title , "payload" : value ],
