@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AttachmentTableViewCell" id="6cg-bd-zxr" customClass="AttachmentTableViewCell" customModule="Botter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6cg-bd-zxr" id="5qr-4Z-AmV">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gt3-iV-Q9N">
+                        <rect key="frame" x="84" y="12" width="308" height="200"/>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.94117647059999998" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="file" translatesAutoresizingMaskIntoConstraints="NO" id="Gxw-4I-xxq">
+                        <rect key="frame" x="198" y="34" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="8iU-SQ-rbe"/>
+                            <constraint firstAttribute="width" constant="80" id="xOs-6U-9pk"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWK-CE-9dy" customClass="PaddedUILabel" customModule="Botter" customModuleProvider="target">
+                        <rect key="frame" x="84" y="130" width="308" height="60"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                <real key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="zWK-CE-9dy" secondAttribute="bottom" constant="34" id="2QO-CN-MvU"/>
+                    <constraint firstItem="zWK-CE-9dy" firstAttribute="leading" secondItem="gt3-iV-Q9N" secondAttribute="leading" id="3bw-oy-Awe"/>
+                    <constraint firstItem="gt3-iV-Q9N" firstAttribute="top" secondItem="5qr-4Z-AmV" secondAttribute="top" constant="12" id="Pk2-bE-m4q"/>
+                    <constraint firstAttribute="trailing" secondItem="gt3-iV-Q9N" secondAttribute="trailing" constant="22" id="ZqG-BH-J46"/>
+                    <constraint firstItem="gt3-iV-Q9N" firstAttribute="leading" secondItem="5qr-4Z-AmV" secondAttribute="leading" constant="84" id="dWy-mK-W5L"/>
+                    <constraint firstItem="zWK-CE-9dy" firstAttribute="trailing" secondItem="gt3-iV-Q9N" secondAttribute="trailing" id="g6Y-kc-lHb"/>
+                    <constraint firstItem="zWK-CE-9dy" firstAttribute="top" secondItem="Gxw-4I-xxq" secondAttribute="bottom" constant="16" id="kI6-uH-7po"/>
+                    <constraint firstItem="Gxw-4I-xxq" firstAttribute="top" secondItem="5qr-4Z-AmV" secondAttribute="top" constant="34" id="sv5-dS-s4B"/>
+                    <constraint firstItem="Gxw-4I-xxq" firstAttribute="centerX" secondItem="gt3-iV-Q9N" secondAttribute="centerX" id="teO-k0-6Cf"/>
+                    <constraint firstAttribute="bottom" secondItem="gt3-iV-Q9N" secondAttribute="bottom" constant="12" id="wcU-sH-B9h"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="BGView" destination="gt3-iV-Q9N" id="ggA-mI-OBa"/>
+                <outlet property="textLbl" destination="zWK-CE-9dy" id="xyZ-1c-ibu"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="-33"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="file" width="170" height="170"/>
+    </resources>
+</document>
