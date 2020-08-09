@@ -20,12 +20,12 @@ end
 #  # Pods for BotterSDKSample
 #
 
-target 'BotterSample' do
- # Comment the next line if you don't want to use dynamic frameworks
- use_frameworks!
-  #pod 'Botter', :path => '../BotterSDK'
-#
-end
+#target 'BotterSample' do
+# # Comment the next line if you don't want to use dynamic frameworks
+# use_frameworks!
+#  #pod 'Botter', :path => '../BotterSDK'
+##
+#end
 
 #post_install do |installer|
 #    installer.pods_project.build_configurations.each do |config|
