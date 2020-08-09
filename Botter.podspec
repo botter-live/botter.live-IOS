@@ -65,7 +65,6 @@ Pod::Spec.new do |spec|
 
   spec.swift_version = "4.2" 
   spec.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
-  spec.xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => 'Source/Bridging-Header.h' } 
 
 
 end
