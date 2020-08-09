@@ -1,0 +1,1452 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name Botter
+import AVFoundation
+import AVKit
+import Alamofire
+@_exported import Botter
+import CommonCrypto
+import CoreMedia
+import Foundation
+import IQKeyboardManagerSwift
+import ImageIO
+import LazyImage
+import MapKit
+import MediaPlayer
+import MobileCoreServices
+import Network
+import Photos
+import Swift
+import SystemConfiguration
+import UIKit
+import WebKit
+import zlib
+open class CodableTransform<T> : Botter.TransformType where T : Swift.Decodable, T : Swift.Encodable {
+  public typealias Object = T
+  public typealias JSON = Any
+  public init()
+  open func transformFromJSON(_ value: Any?) -> Botter.CodableTransform<T>.Object?
+  open func transformToJSON(_ value: T?) -> Botter.CodableTransform<T>.JSON?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class AudioPlayer : ObjectiveC.NSObject {
+  public var currentItem: Botter.AudioItem? {
+    get
+  }
+  weak public var delegate: Botter.AudioPlayerDelegate?
+  public var maximumConnectionLossTime: Foundation.TimeInterval
+  public var adjustQualityAutomatically: Swift.Bool
+  public var defaultQuality: Botter.AudioQuality
+  public var adjustQualityTimeInternal: Foundation.TimeInterval {
+    get
+    set(newValue)
+  }
+  public var adjustQualityAfterInterruptionCount: Swift.Int {
+    get
+    set(newValue)
+  }
+  public var maximumRetryCount: Swift.Int {
+    get
+    set(newValue)
+  }
+  public var retryTimeout: Foundation.TimeInterval {
+    get
+    set(newValue)
+  }
+  public var resumeAfterInterruption: Swift.Bool
+  public var resumeAfterConnectionLoss: Swift.Bool
+  public var mode: Botter.AudioPlayerMode {
+    get
+    set(value)
+  }
+  public var volume: Swift.Float {
+    get
+    set(value)
+  }
+  public var rate: Swift.Float {
+    get
+    set(value)
+  }
+  public enum SeekingBehavior {
+    case multiplyRate(Swift.Float)
+    case changeTime(every: Foundation.TimeInterval, delta: Foundation.TimeInterval)
+  }
+  public var seekingBehavior: Botter.AudioPlayer.SeekingBehavior {
+    get
+    set(value)
+  }
+  public var state: Botter.AudioPlayerState {
+    get
+  }
+  public var currentQuality: Botter.AudioQuality {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UITextView : UIKit.UITextViewDelegate {
+  public var substituteFontName: Swift.String {
+    get
+    set(newValue)
+  }
+}
+@objc @_inheritsConvenienceInitializers open class BotterControllerWithHiddenLauncher : UIKit.UIViewController {
+  @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@_hasMissingDesignatedInitializers final public class MyFrameworkBundle {
+  public static var main: Foundation.Bundle
+  @objc deinit
+}
+open class EnumTransform<T> : Botter.TransformType where T : Swift.RawRepresentable {
+  public typealias Object = T
+  public typealias JSON = T.RawValue
+  public init()
+  open func transformFromJSON(_ value: Any?) -> T?
+  open func transformToJSON(_ value: T?) -> T.RawValue?
+  @objc deinit
+}
+@objc public protocol SwiftyGifDelegate {
+  @objc optional func gifDidStart(sender: UIKit.UIImageView)
+  @objc optional func gifDidLoop(sender: UIKit.UIImageView)
+  @objc optional func gifDidStop(sender: UIKit.UIImageView)
+  @objc optional func gifURLDidFinish(sender: UIKit.UIImageView)
+  @objc optional func gifURLDidFail(sender: UIKit.UIImageView, url: Foundation.URL, error: Swift.Error?)
+}
+extension UIImageView {
+  public func setImage(_ image: UIKit.UIImage, manager: Botter.SwiftyGifManager = .defaultManager, loopCount: Swift.Int = -1)
+}
+extension UIImageView {
+  public convenience init(gifImage: UIKit.UIImage, manager: Botter.SwiftyGifManager = .defaultManager, loopCount: Swift.Int = -1)
+  public convenience init(gifURL: Foundation.URL, manager: Botter.SwiftyGifManager = .defaultManager, loopCount: Swift.Int = -1)
+  public func setGifImage(_ gifImage: UIKit.UIImage, manager: Botter.SwiftyGifManager = .defaultManager, loopCount: Swift.Int = -1)
+}
+extension UIImageView {
+  @discardableResult
+  public func setGifFromURL(_ url: Foundation.URL, manager: Botter.SwiftyGifManager = .defaultManager, loopCount: Swift.Int = -1, levelOfIntegrity: Botter.GifLevelOfIntegrity = .default, session: Foundation.URLSession = URLSession.shared, showLoader: Swift.Bool = true, customLoader: UIKit.UIView? = nil) -> Foundation.URLSessionDataTask?
+}
+extension UIImageView {
+  public func startAnimatingGif()
+  public func stopAnimatingGif()
+  public func isAnimatingGif() -> Swift.Bool
+  public func showFrameForIndexDelta(_ delta: Swift.Int)
+  public func showFrameAtIndex(_ index: Swift.Int)
+  public func updateCache()
+  public func updateCurrentImage()
+  public func currentFrameIndex() -> Swift.Int
+  public func frameAtIndex(index: Swift.Int) -> UIKit.UIImage
+  public func isDiscarded(_ imageView: UIKit.UIView?) -> Swift.Bool
+  public func isDisplayedInScreen(_ imageView: UIKit.UIView?) -> Swift.Bool
+  public func clear()
+}
+extension UIImageView {
+  public var gifImage: UIKit.UIImage? {
+    get
+    set(newValue)
+  }
+  public var currentImage: UIKit.UIImage? {
+    get
+    set(newValue)
+  }
+  public var loopCount: Swift.Int {
+    get
+    set(newValue)
+  }
+  public var animationManager: Botter.SwiftyGifManager? {
+    get
+    set(newValue)
+  }
+  public var gifDelegate: Botter.SwiftyGifDelegate? {
+    get
+    set(newValue)
+  }
+  public var displaying: Swift.Bool {
+    get
+    set(newValue)
+  }
+}
+public protocol FrameCollectorDelegate : AnyObject {
+  func didForm(event: Botter.FrameCollector.Event)
+  func decompress(data: Foundation.Data, isFinal: Swift.Bool) -> Foundation.Data?
+}
+@_hasMissingDesignatedInitializers public class FrameCollector {
+  public enum Event {
+    case text(Swift.String)
+    case binary(Foundation.Data)
+    case pong(Foundation.Data?)
+    case ping(Foundation.Data?)
+    case error(Swift.Error)
+    case closed(Swift.String, Swift.UInt16)
+  }
+  public func add(frame: Botter.Frame)
+  @objc deinit
+}
+public typealias TimeRange = (earliest: Foundation.TimeInterval, latest: Foundation.TimeInterval)
+extension AudioPlayer {
+  public var currentItemProgression: Foundation.TimeInterval? {
+    get
+  }
+  public var currentItemDuration: Foundation.TimeInterval? {
+    get
+  }
+  public var currentItemSeekableRange: Botter.TimeRange? {
+    get
+  }
+  public var currentItemLoadedRange: Botter.TimeRange? {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class ContentHeaderView : UIKit.UIView {
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public var isTranslucent: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc deinit
+}
+extension UIWindow {
+  public var visibleViewController: UIKit.UIViewController? {
+    get
+  }
+  public static func getVisibleViewControllerFrom(_ vc: UIKit.UIViewController?) -> UIKit.UIViewController?
+}
+open class DataTransform : Botter.TransformType {
+  public typealias Object = Foundation.Data
+  public typealias JSON = Swift.String
+  public init()
+  open func transformFromJSON(_ value: Any?) -> Foundation.Data?
+  open func transformToJSON(_ value: Foundation.Data?) -> Swift.String?
+  @objc deinit
+}
+public enum ErrorType : Swift.Error {
+  case compressionError
+  case securityError
+  case protocolError
+  case serverError
+  public static func == (a: Botter.ErrorType, b: Botter.ErrorType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public struct WSError : Swift.Error {
+  public let type: Botter.ErrorType
+  public let message: Swift.String
+  public let code: Swift.UInt16
+  public init(type: Botter.ErrorType, message: Swift.String, code: Swift.UInt16)
+}
+public protocol WebSocketClient : AnyObject {
+  func connect()
+  func disconnect(closeCode: Swift.UInt16)
+  func write(string: Swift.String, completion: (() -> ())?)
+  func write(stringData: Foundation.Data, completion: (() -> ())?)
+  func write(data: Foundation.Data, completion: (() -> ())?)
+  func write(ping: Foundation.Data, completion: (() -> ())?)
+  func write(pong: Foundation.Data, completion: (() -> ())?)
+}
+extension WebSocketClient {
+  public func write(string: Swift.String)
+  public func write(data: Foundation.Data)
+  public func write(ping: Foundation.Data)
+  public func write(pong: Foundation.Data)
+  public func disconnect()
+}
+public enum WebSocketEvent {
+  case connected([Swift.String : Swift.String])
+  case disconnected(Swift.String, Swift.UInt16)
+  case text(Swift.String)
+  case binary(Foundation.Data)
+  case pong(Foundation.Data?)
+  case ping(Foundation.Data?)
+  case error(Swift.Error?)
+  case viabilityChanged(Swift.Bool)
+  case reconnectSuggested(Swift.Bool)
+  case cancelled
+}
+public protocol WebSocketDelegate : AnyObject {
+  func didReceive(event: Botter.WebSocketEvent, client: Botter.WebSocket)
+  func connectionUpdates(canSend: Swift.Bool)
+}
+open class WebSocket : Botter.WebSocketClient, Botter.EngineDelegate {
+  weak public var delegate: Botter.WebSocketDelegate?
+  public var onEvent: ((Botter.WebSocketEvent) -> Swift.Void)?
+  public var request: Foundation.URLRequest
+  public var callbackQueue: Dispatch.DispatchQueue
+  public var respondToPingWithPong: Swift.Bool {
+    get
+    set(newValue)
+  }
+  public init(request: Foundation.URLRequest, engine: Botter.Engine)
+  public convenience init(request: Foundation.URLRequest, certPinner: Botter.CertificatePinning? = FoundationSecurity(), compressionHandler: Botter.CompressionHandler? = nil, useCustomEngine: Swift.Bool = true)
+  public func connect()
+  public func disconnect(closeCode: Swift.UInt16 = CloseCode.normal.rawValue)
+  public func forceDisconnect()
+  public func write(data: Foundation.Data, completion: (() -> ())?)
+  public func write(string: Swift.String, completion: (() -> ())?)
+  public func write(stringData: Foundation.Data, completion: (() -> ())?)
+  public func write(ping: Foundation.Data, completion: (() -> ())?)
+  public func write(pong: Foundation.Data, completion: (() -> ())?)
+  public func didReceive(event: Botter.WebSocketEvent)
+  public func connectionChanged(canSend: Swift.Bool)
+  @objc deinit
+}
+public protocol EngineDelegate : AnyObject {
+  func didReceive(event: Botter.WebSocketEvent)
+  func connectionChanged(canSend: Swift.Bool)
+}
+public protocol Engine {
+  func register(delegate: Botter.EngineDelegate)
+  func start(request: Foundation.URLRequest)
+  func stop(closeCode: Swift.UInt16)
+  func forceStop()
+  func write(data: Foundation.Data, opcode: Botter.FrameOpCode, completion: (() -> ())?)
+  func write(string: Swift.String, completion: (() -> ())?)
+}
+extension DateFormatter {
+  public convenience init(withFormat format: Swift.String, locale: Swift.String)
+}
+open class ISO8601DateTransform : Botter.DateFormatterTransform {
+  public init()
+  @objc deinit
+  override public init(dateFormatter: Foundation.DateFormatter)
+}
+public enum AudioPlayerError : Swift.Error {
+  case maximumRetryCountHit
+  case foundationError(Swift.Error)
+}
+public enum AudioPlayerState {
+  case buffering
+  case playing
+  case paused
+  case stopped
+  case waitingForConnection
+  case failed(Botter.AudioPlayerError)
+}
+extension AudioPlayerState : Swift.Equatable {
+}
+public func == (lhs: Botter.AudioPlayerState, rhs: Botter.AudioPlayerState) -> Swift.Bool
+open class NSDecimalNumberTransform : Botter.TransformType {
+  public typealias Object = Foundation.NSDecimalNumber
+  public typealias JSON = Swift.String
+  public init()
+  open func transformFromJSON(_ value: Any?) -> Foundation.NSDecimalNumber?
+  open func transformToJSON(_ value: Foundation.NSDecimalNumber?) -> Swift.String?
+  @objc deinit
+}
+public enum ConnectionEvent {
+  case connected([Swift.String : Swift.String])
+  case disconnected(Swift.String, Swift.UInt16)
+  case text(Swift.String)
+  case binary(Foundation.Data)
+  case pong(Foundation.Data?)
+  case ping(Foundation.Data?)
+  case error(Swift.Error)
+}
+public protocol Connection {
+  func write(data: Foundation.Data, opcode: Botter.FrameOpCode)
+}
+public protocol ConnectionDelegate : AnyObject {
+  func didReceive(event: Botter.ServerEvent)
+}
+public enum ServerEvent {
+  case connected(Botter.Connection, [Swift.String : Swift.String])
+  case disconnected(Botter.Connection, Swift.String, Swift.UInt16)
+  case text(Botter.Connection, Swift.String)
+  case binary(Botter.Connection, Foundation.Data)
+  case pong(Botter.Connection, Foundation.Data?)
+  case ping(Botter.Connection, Foundation.Data?)
+}
+public protocol Server {
+  func start(address: Swift.String, port: Swift.UInt16) -> Swift.Error?
+}
+public typealias Image = UIKit.UIImage
+public enum AudioQuality : Swift.Int {
+  case low
+  case medium
+  case high
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct AudioItemURL {
+  public let quality: Botter.AudioQuality
+  public let url: Foundation.URL
+  public init?(quality: Botter.AudioQuality, url: Foundation.URL?)
+}
+@objc open class AudioItem : ObjectiveC.NSObject {
+  final public let soundURLs: [Botter.AudioQuality : Foundation.URL]
+  public convenience init?(highQualitySoundURL: Foundation.URL? = nil, mediumQualitySoundURL: Foundation.URL? = nil, lowQualitySoundURL: Foundation.URL? = nil)
+  public init?(soundURLs: [Botter.AudioQuality : Foundation.URL])
+  open var highestQualityURL: Botter.AudioItemURL {
+    get
+  }
+  open var mediumQualityURL: Botter.AudioItemURL {
+    get
+  }
+  open var lowestQualityURL: Botter.AudioItemURL {
+    get
+  }
+  open var artist: Swift.String?
+  open var title: Swift.String?
+  open var album: Swift.String?
+  open var trackCount: Foundation.NSNumber?
+  open var trackNumber: Foundation.NSNumber?
+  open var artworkImage: Botter.Image? {
+    get
+    set(newValue)
+  }
+  open var artwork: MediaPlayer.MPMediaItemArtwork?
+  open func parseMetadata(_ items: [AVFoundation.AVMetadataItem])
+  @objc deinit
+  @objc override dynamic public init()
+}
+public protocol ImmutableMappable : Botter.BaseMappable {
+  init(map: Botter.Map) throws
+}
+extension ImmutableMappable {
+  public func mapping(map: Botter.Map)
+  public init(JSONString: Swift.String, context: Botter.MapContext? = nil) throws
+  public init(JSON: [Swift.String : Any], context: Botter.MapContext? = nil) throws
+  public init(JSONObject: Any, context: Botter.MapContext? = nil) throws
+}
+extension Map {
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> T
+  final public func value<Transform>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", using transform: Transform, file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> Transform.Object where Transform : Botter.TransformType
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> T where T : Swift.RawRepresentable
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> T? where T : Swift.RawRepresentable
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> [T] where T : Swift.RawRepresentable
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> [T]? where T : Swift.RawRepresentable
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> T where T : Botter.BaseMappable
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> T? where T : Botter.BaseMappable
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> [T] where T : Botter.BaseMappable
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> [T]? where T : Botter.BaseMappable
+  final public func value<Transform>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", using transform: Transform, file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> [Transform.Object] where Transform : Botter.TransformType
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> [Swift.String : T] where T : Botter.BaseMappable
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> [Swift.String : T]? where T : Botter.BaseMappable
+  final public func value<Transform>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", using transform: Transform, file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> [Swift.String : Transform.Object] where Transform : Botter.TransformType
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> [[T]]? where T : Botter.BaseMappable
+  final public func value<T>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> [[T]] where T : Botter.BaseMappable
+  final public func value<Transform>(_ key: Swift.String, nested: Swift.Bool? = nil, delimiter: Swift.String = ".", using transform: Transform, file: Swift.StaticString = #file, function: Swift.StaticString = #function, line: Swift.UInt = #line) throws -> [[Transform.Object]] where Transform : Botter.TransformType
+}
+extension Mapper where N : Botter.ImmutableMappable {
+  final public func map(JSON: [Swift.String : Any]) throws -> N
+  final public func map(JSONString: Swift.String) throws -> N
+  final public func map(JSONObject: Any) throws -> N
+  final public func mapArray(JSONArray: [[Swift.String : Any]]) throws -> [N]
+  final public func mapArray(JSONString: Swift.String) throws -> [N]
+  final public func mapArray(JSONObject: Any) throws -> [N]
+  final public func mapDictionary(JSONString: Swift.String) throws -> [Swift.String : N]
+  final public func mapDictionary(JSONObject: Any?) throws -> [Swift.String : N]
+  final public func mapDictionary(JSON: [Swift.String : [Swift.String : Any]]) throws -> [Swift.String : N]
+  final public func mapDictionaryOfArrays(JSONObject: Any?) throws -> [Swift.String : [N]]
+  final public func mapDictionaryOfArrays(JSON: [Swift.String : [[Swift.String : Any]]]) throws -> [Swift.String : [N]]
+  final public func mapArrayOfArrays(JSONObject: Any?) throws -> [[N]]
+}
+public struct MapError : Swift.Error {
+  public var key: Swift.String?
+  public var currentValue: Any?
+  public var reason: Swift.String?
+  public var file: Swift.StaticString?
+  public var function: Swift.StaticString?
+  public var line: Swift.UInt?
+  public init(key: Swift.String?, currentValue: Any?, reason: Swift.String?, file: Swift.StaticString? = nil, function: Swift.StaticString? = nil, line: Swift.UInt? = nil)
+}
+extension MapError : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @IBDesignable open class GradientView : UIKit.UIView {
+  @objc @IBInspectable public var startColor: UIKit.UIColor {
+    @objc get
+    @objc set(value)
+  }
+  @objc @IBInspectable public var endColor: UIKit.UIColor {
+    @objc get
+    @objc set(value)
+  }
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic open func layoutSubviews()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @IBDesignable public class GradientHView : UIKit.UIView {
+  @objc @IBInspectable public var color1: UIKit.UIColor? {
+    @objc get
+    @objc set(value)
+  }
+  @objc @IBInspectable public var color2: UIKit.UIColor? {
+    @objc get
+    @objc set(value)
+  }
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+open class SwiftyGifManager {
+  public static var defaultManager: Botter.SwiftyGifManager
+  open var haveCache: Swift.Bool
+  open var remoteCache: [Foundation.URL : Foundation.Data]
+  public init(memoryLimit: Swift.Int)
+  @objc deinit
+  public func startTimerIfNeeded()
+  public func stopTimer()
+  open func addImageView(_ imageView: UIKit.UIImageView) -> Swift.Bool
+  open func deleteImageView(_ imageView: UIKit.UIImageView)
+  open func updateCacheSize(for imageView: UIKit.UIImageView, add: Swift.Bool)
+  open func clear()
+  open func containsImageView(_ imageView: UIKit.UIImageView) -> Swift.Bool
+  open func hasCache(_ imageView: UIKit.UIImageView) -> Swift.Bool
+}
+extension AudioPlayer {
+  public func resume()
+  public func pause()
+  public func previous()
+  public func next()
+  public func nextOrStop()
+  public func stop()
+  public func seek(to time: Foundation.TimeInterval, byAdaptingTimeToFitSeekableRanges: Swift.Bool = false, toleranceBefore: CoreMedia.CMTime = CMTime.positiveInfinity, toleranceAfter: CoreMedia.CMTime = CMTime.positiveInfinity, completionHandler: ((Swift.Bool) -> Swift.Void)? = nil)
+  public func seekToSeekableRangeStart(padding: Foundation.TimeInterval, completionHandler: ((Swift.Bool) -> Swift.Void)? = nil)
+  public func seekToSeekableRangeEnd(padding: Foundation.TimeInterval, completionHandler: ((Swift.Bool) -> Swift.Void)? = nil)
+  public func remoteControlReceived(with event: UIKit.UIEvent)
+}
+public func <- <Transform>(left: inout Transform.Object, right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func >>> <Transform>(left: Transform.Object, right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func <- <Transform>(left: inout Transform.Object?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func >>> <Transform>(left: Transform.Object?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func <- <Transform>(left: inout [Transform.Object], right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func >>> <Transform>(left: [Transform.Object], right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func <- <Transform>(left: inout [Transform.Object]?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func >>> <Transform>(left: [Transform.Object]?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func <- <Transform>(left: inout [Swift.String : Transform.Object], right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func >>> <Transform>(left: [Swift.String : Transform.Object], right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func <- <Transform>(left: inout [Swift.String : Transform.Object]?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func >>> <Transform>(left: [Swift.String : Transform.Object]?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func <- <Transform>(left: inout Transform.Object, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func >>> <Transform>(left: Transform.Object, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func <- <Transform>(left: inout Transform.Object?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func >>> <Transform>(left: Transform.Object?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func <- <Transform>(left: inout Swift.Dictionary<Swift.String, Transform.Object>, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func >>> <Transform>(left: Swift.Dictionary<Swift.String, Transform.Object>, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func <- <Transform>(left: inout Swift.Dictionary<Swift.String, Transform.Object>?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func >>> <Transform>(left: Swift.Dictionary<Swift.String, Transform.Object>?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func <- <Transform>(left: inout Swift.Dictionary<Swift.String, [Transform.Object]>, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func >>> <Transform>(left: Swift.Dictionary<Swift.String, [Transform.Object]>, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func <- <Transform>(left: inout Swift.Dictionary<Swift.String, [Transform.Object]>?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func >>> <Transform>(left: Swift.Dictionary<Swift.String, [Transform.Object]>?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func <- <Transform>(left: inout Swift.Array<Transform.Object>, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func >>> <Transform>(left: Swift.Array<Transform.Object>, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func <- <Transform>(left: inout Swift.Array<Transform.Object>?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func >>> <Transform>(left: Swift.Array<Transform.Object>?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable
+public func <- <Transform>(left: inout [[Transform.Object]], right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func >>> <Transform>(left: [[Transform.Object]], right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func <- <Transform>(left: inout [[Transform.Object]]?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func >>> <Transform>(left: [[Transform.Object]]?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType
+public func <- <Transform>(left: inout Swift.Set<Transform.Object>, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable, Transform.Object : Swift.Hashable
+public func >>> <Transform>(left: Swift.Set<Transform.Object>, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable, Transform.Object : Swift.Hashable
+public func <- <Transform>(left: inout Swift.Set<Transform.Object>?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable, Transform.Object : Swift.Hashable
+public func >>> <Transform>(left: Swift.Set<Transform.Object>?, right: (Botter.Map, Transform)) where Transform : Botter.TransformType, Transform.Object : Botter.BaseMappable, Transform.Object : Swift.Hashable
+extension UIView {
+  @objc override dynamic open func awakeFromNib()
+}
+@_inheritsConvenienceInitializers @objc public class ContentSheetAnimator : ObjectiveC.NSObject, UIKit.UIViewControllerAnimatedTransitioning {
+  @objc public var duration: Foundation.TimeInterval {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public var presenting: Swift.Bool
+  @objc public func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @objc public func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc public class ContentSheetTransitionDelegate : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
+  @objc public var duration: Foundation.TimeInterval {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @objc public class ContentSheetPresentationController : UIKit.UIPresentationController {
+  @objc override dynamic public func presentationTransitionWillBegin()
+  @objc override dynamic public func presentationTransitionDidEnd(_ completed: Swift.Bool)
+  @objc override dynamic public func dismissalTransitionWillBegin()
+  @objc override dynamic public func dismissalTransitionDidEnd(_ completed: Swift.Bool)
+  @objc override dynamic public func containerViewWillLayoutSubviews()
+  @objc override dynamic public func size(forChildContentContainer container: UIKit.UIContentContainer, withParentContainerSize parentSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  @objc override dynamic public var frameOfPresentedViewInContainerView: CoreGraphics.CGRect {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init(presentedViewController: UIKit.UIViewController, presenting presentingViewController: UIKit.UIViewController?)
+}
+public func show(APIKey: Swift.String)
+public func openChatScreen(APIKey: Swift.String)
+public func hideLauncherButton()
+public func showLauncherButton()
+public func setLauncherBottomMargin(marginValue value: Swift.Float)
+public enum FoundationTransportError : Swift.Error {
+  case invalidRequest
+  case invalidOutputStream
+  case timeout
+  public static func == (a: Botter.FoundationTransportError, b: Botter.FoundationTransportError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@objc public class FoundationTransport : ObjectiveC.NSObject, Botter.Transport, Foundation.StreamDelegate {
+  public var usingTLS: Swift.Bool {
+    get
+  }
+  public init(streamConfiguration: ((Foundation.InputStream, Foundation.OutputStream) -> Swift.Void)? = nil)
+  public func connect(url: Foundation.URL, timeout: Swift.Double = 10, certificatePinning: Botter.CertificatePinning? = nil)
+  public func disconnect()
+  public func register(delegate: Botter.TransportEventClient)
+  public func write(data: Foundation.Data, completion: @escaping ((Swift.Error?) -> ()))
+  @objc open func stream(_ aStream: Foundation.Stream, handle eventCode: Foundation.Stream.Event)
+  @objc deinit
+  @objc override dynamic public init()
+}
+open class CustomDateFormatTransform : Botter.DateFormatterTransform {
+  public init(formatString: Swift.String)
+  @objc deinit
+  override public init(dateFormatter: Foundation.DateFormatter)
+}
+extension UINavigationController {
+  @objc override dynamic open var childForStatusBarStyle: UIKit.UIViewController? {
+    @objc get
+  }
+}
+open class TransformOf<ObjectType, JSONType> : Botter.TransformType {
+  public typealias Object = ObjectType
+  public typealias JSON = JSONType
+  public init(fromJSON: @escaping (JSONType?) -> ObjectType?, toJSON: @escaping (ObjectType?) -> JSONType?)
+  open func transformFromJSON(_ value: Any?) -> ObjectType?
+  open func transformToJSON(_ value: ObjectType?) -> JSONType?
+  @objc deinit
+}
+open class HexColorTransform : Botter.TransformType {
+  public typealias Object = UIKit.UIColor
+  public typealias JSON = Swift.String
+  public init(prefixToJSON: Swift.Bool = false, alphaToJSON: Swift.Bool = false)
+  open func transformFromJSON(_ value: Any?) -> Botter.HexColorTransform.Object?
+  open func transformToJSON(_ value: Botter.HexColorTransform.Object?) -> Botter.HexColorTransform.JSON?
+  @objc deinit
+}
+@objc public protocol ContentSheetDelegate {
+  @objc optional func contentSheetWillAppear(_ sheet: Botter.ContentSheet)
+  @objc optional func contentSheetDidAppear(_ sheet: Botter.ContentSheet)
+  @objc optional func contentSheetWillDisappear(_ sheet: Botter.ContentSheet)
+  @objc optional func contentSheetDidDisappear(_ sheet: Botter.ContentSheet)
+  @objc optional func contentSheetWillShow(_ sheet: Botter.ContentSheet)
+  @objc optional func contentSheetDidShow(_ sheet: Botter.ContentSheet)
+  @objc optional func contentSheetWillHide(_ sheet: Botter.ContentSheet)
+  @objc optional func contentSheetDidHide(_ sheet: Botter.ContentSheet)
+}
+@objc public protocol ContentSheetContentProtocol {
+  @objc var view: UIKit.UIView! { get }
+  @objc optional var navigationItem: UIKit.UINavigationItem { get }
+  @objc optional func contentSheetWillAddContent(_ sheet: Botter.ContentSheet)
+  @objc optional func contentSheetDidAddContent(_ sheet: Botter.ContentSheet)
+  @objc optional func contentSheetWillRemoveContent(_ sheet: Botter.ContentSheet)
+  @objc optional func contentSheetDidRemoveContent(_ sheet: Botter.ContentSheet)
+  @objc optional func collapsedHeight(containedIn contentSheet: Botter.ContentSheet) -> CoreGraphics.CGFloat
+  @objc optional func expandedHeight(containedIn contentSheet: Botter.ContentSheet) -> CoreGraphics.CGFloat
+  @objc optional func scrollViewToObserve(containedIn contentSheet: Botter.ContentSheet) -> UIKit.UIScrollView?
+  @objc optional func prefersStatusBarHidden(contentSheet: Botter.ContentSheet) -> Swift.Bool
+  @objc optional func preferredStatusBarStyle(contentSheet: Botter.ContentSheet) -> UIKit.UIStatusBarStyle
+  @objc optional func preferredStatusBarUpdateAnimation(contentSheet: Botter.ContentSheet) -> UIKit.UIStatusBarAnimation
+}
+@objc public enum ContentSheetState : Swift.UInt {
+  case minimised
+  case collapsed
+  case expanded
+  public typealias RawValue = Swift.UInt
+  public init?(rawValue: Swift.UInt)
+  public var rawValue: Swift.UInt {
+    get
+  }
+}
+@objc public class ContentSheet : UIKit.UIViewController {
+  @objc public var content: Botter.ContentSheetContentProtocol {
+    @objc get
+  }
+  @objc public var backgroundImage: UIKit.UIImage? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var backgroundView: UIKit.UIView? {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var blurBackground: Swift.Bool
+  @objc public var blurStyle: UIKit.UIBlurEffect.Style
+  @objc public var dismissOnTouchOutside: Swift.Bool
+  @objc public var handleKeyboard: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc public var enablePanGesture: Swift.Bool {
+    @objc get
+    @objc set(value)
+  }
+  @objc override dynamic public var shouldAutorotate: Swift.Bool {
+    @objc get
+  }
+  @objc public var state: Botter.ContentSheetState {
+    @objc get
+  }
+  @objc weak public var delegate: Botter.ContentSheetDelegate?
+  @objc public var showDefaultHeader: Swift.Bool
+  @objc public var contentNavigationBar: UIKit.UINavigationBar? {
+    @objc get
+  }
+  @objc public var contentHeader: UIKit.UIView? {
+    @objc get
+  }
+  @objc public var contentNavigationItem: UIKit.UINavigationItem? {
+    @objc get
+  }
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc required public init(content: Botter.ContentSheetContentProtocol)
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func didReceiveMemoryWarning()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public func viewDidDisappear(_ animated: Swift.Bool)
+  @objc override dynamic public var transitioningDelegate: UIKit.UIViewControllerTransitioningDelegate? {
+    @objc get
+    @objc set(newValue)
+  }
+  @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  @objc override dynamic public var preferredStatusBarUpdateAnimation: UIKit.UIStatusBarAnimation {
+    @objc get
+  }
+  @objc public func resetContentSheetHeight(collapsedHeight: CoreGraphics.CGFloat, expandedHeight: CoreGraphics.CGFloat)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+}
+extension ContentSheet {
+  @objc override dynamic public func willMove(toParent parent: UIKit.UIViewController?)
+  @objc override dynamic public func dismiss(animated flag: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+}
+extension ContentSheet {
+  @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+}
+extension ContentSheet : UIKit.UIGestureRecognizerDelegate {
+  @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+extension ContentSheet {
+  @objc public static func contentSheet(content: Botter.ContentSheetContentProtocol) -> Botter.ContentSheet?
+}
+extension ContentSheet : UIKit.UINavigationBarDelegate {
+  @objc dynamic public func position(for bar: UIKit.UIBarPositioning) -> UIKit.UIBarPosition
+}
+extension UIViewController : Botter.ContentSheetContentProtocol {
+  @objc dynamic public func contentSheet() -> Botter.ContentSheet?
+  @objc dynamic public func cs_navigationBar() -> UIKit.UINavigationBar?
+  @objc dynamic open func contentSheetWillAddContent(_ sheet: Botter.ContentSheet)
+  @objc dynamic open func contentSheetDidAddContent(_ sheet: Botter.ContentSheet)
+  @objc dynamic open func contentSheetWillRemoveContent(_ sheet: Botter.ContentSheet)
+  @objc dynamic open func contentSheetDidRemoveContent(_ sheet: Botter.ContentSheet)
+  @objc dynamic open func collapsedHeight(containedIn contentSheet: Botter.ContentSheet) -> CoreGraphics.CGFloat
+  @objc dynamic open func prefersStatusBarHidden(contentSheet: Botter.ContentSheet) -> Swift.Bool
+  @objc dynamic open func preferredStatusBarStyle(contentSheet: Botter.ContentSheet) -> UIKit.UIStatusBarStyle
+  @objc dynamic open func preferredStatusBarUpdateAnimation(contentSheet: Botter.ContentSheet) -> UIKit.UIStatusBarAnimation
+  @objc dynamic open func expandedHeight(containedIn contentSheet: Botter.ContentSheet) -> CoreGraphics.CGFloat
+  @objc dynamic open func scrollViewToObserve(containedIn contentSheet: Botter.ContentSheet) -> UIKit.UIScrollView?
+  @objc dynamic open func present(inContentSheet content: Botter.ContentSheetContentProtocol, animated flag: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @objc dynamic open func dismissContentSheet(animated flag: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+}
+extension UINavigationController {
+  @objc override dynamic open func collapsedHeight(containedIn contentSheet: Botter.ContentSheet) -> CoreGraphics.CGFloat
+  @objc override dynamic open func expandedHeight(containedIn contentSheet: Botter.ContentSheet) -> CoreGraphics.CGFloat
+  @objc override dynamic open func scrollViewToObserve(containedIn contentSheet: Botter.ContentSheet) -> UIKit.UIScrollView?
+  @objc override dynamic open func prefersStatusBarHidden(contentSheet: Botter.ContentSheet) -> Swift.Bool
+  @objc override dynamic open func preferredStatusBarStyle(contentSheet: Botter.ContentSheet) -> UIKit.UIStatusBarStyle
+  @objc override dynamic open func preferredStatusBarUpdateAnimation(contentSheet: Botter.ContentSheet) -> UIKit.UIStatusBarAnimation
+}
+extension UIView : Botter.ContentSheetContentProtocol {
+  @objc dynamic open var view: UIKit.UIView! {
+    @objc get
+  }
+  @objc dynamic open func dismissContentSheet(animated flag: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @objc dynamic public func contentSheet() -> Botter.ContentSheet?
+}
+extension UIView {
+  @objc dynamic public var firstResponder: UIKit.UIView? {
+    @objc get
+  }
+}
+public enum CloseCode : Swift.UInt16 {
+  case normal
+  case goingAway
+  case protocolError
+  case protocolUnhandledType
+  case noStatusReceived
+  case encoding
+  case policyViolated
+  case messageTooBig
+  public typealias RawValue = Swift.UInt16
+  public init?(rawValue: Swift.UInt16)
+  public var rawValue: Swift.UInt16 {
+    get
+  }
+}
+public enum FrameOpCode : Swift.UInt8 {
+  case continueFrame
+  case textFrame
+  case binaryFrame
+  case connectionClose
+  case ping
+  case pong
+  case unknown
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public struct Frame {
+}
+public enum FrameEvent {
+  case frame(Botter.Frame)
+  case error(Swift.Error)
+}
+public protocol FramerEventClient : AnyObject {
+  func frameProcessed(event: Botter.FrameEvent)
+}
+public protocol Framer {
+  func add(data: Foundation.Data)
+  func register(delegate: Botter.FramerEventClient)
+  func createWriteFrame(opcode: Botter.FrameOpCode, payload: Foundation.Data, isCompressed: Swift.Bool) -> Foundation.Data
+  func updateCompression(supports: Swift.Bool)
+  func supportsCompression() -> Swift.Bool
+}
+public class WSFramer : Botter.Framer {
+  public var compressionEnabled: Swift.Bool
+  public init(isServer: Swift.Bool = false)
+  public func updateCompression(supports: Swift.Bool)
+  public func supportsCompression() -> Swift.Bool
+  public func add(data: Foundation.Data)
+  public func register(delegate: Botter.FramerEventClient)
+  public func createWriteFrame(opcode: Botter.FrameOpCode, payload: Foundation.Data, isCompressed: Swift.Bool) -> Foundation.Data
+  @objc deinit
+}
+public protocol MyWSArrayType {
+}
+extension UInt8 : Botter.MyWSArrayType {
+}
+extension Array where Element : Botter.MyWSArrayType, Element : Swift.UnsignedInteger {
+  public func readUint16(offset: Swift.Int) -> Swift.UInt16
+  public func readUint64(offset: Swift.Int) -> Swift.UInt64
+  public func unmaskData(maskStart: Swift.Int, offset: Swift.Int, length: Swift.Int) -> Foundation.Data
+}
+public func writeUint16(_ buffer: inout [Swift.UInt8], offset: Swift.Int, value: Swift.UInt16)
+public func writeUint32(_ buffer: inout [Swift.UInt8], offset: Swift.Int, value: Swift.UInt32)
+public func writeUint64(_ buffer: inout [Swift.UInt8], offset: Swift.Int, value: Swift.UInt64)
+public struct MimeType {
+  public var value: Swift.String {
+    get
+  }
+  public init(path: Swift.String)
+  public init(path: Foundation.NSString)
+  public init(url: Foundation.URL)
+}
+public class StringHTTPHandler : Botter.HTTPHandler {
+  public init()
+  public func convert(request: Foundation.URLRequest) -> Foundation.Data
+  public func parse(data: Foundation.Data) -> Swift.Int
+  public func register(delegate: Botter.HTTPHandlerDelegate)
+  @objc deinit
+}
+infix operator <- : DefaultPrecedence
+infix operator >>> : DefaultPrecedence
+public func <- <T>(left: inout T, right: Botter.Map)
+public func >>> <T>(left: T, right: Botter.Map)
+public func <- <T>(left: inout T?, right: Botter.Map)
+public func >>> <T>(left: T?, right: Botter.Map)
+public func <- <T>(left: inout T, right: Botter.Map) where T : Botter.BaseMappable
+public func >>> <T>(left: T, right: Botter.Map) where T : Botter.BaseMappable
+public func <- <T>(left: inout T?, right: Botter.Map) where T : Botter.BaseMappable
+public func >>> <T>(left: T?, right: Botter.Map) where T : Botter.BaseMappable
+public func <- <T>(left: inout Swift.Dictionary<Swift.String, T>, right: Botter.Map) where T : Botter.BaseMappable
+public func >>> <T>(left: Swift.Dictionary<Swift.String, T>, right: Botter.Map) where T : Botter.BaseMappable
+public func <- <T>(left: inout Swift.Dictionary<Swift.String, T>?, right: Botter.Map) where T : Botter.BaseMappable
+public func >>> <T>(left: Swift.Dictionary<Swift.String, T>?, right: Botter.Map) where T : Botter.BaseMappable
+public func <- <T>(left: inout Swift.Dictionary<Swift.String, [T]>, right: Botter.Map) where T : Botter.BaseMappable
+public func >>> <T>(left: Swift.Dictionary<Swift.String, [T]>, right: Botter.Map) where T : Botter.BaseMappable
+public func <- <T>(left: inout Swift.Dictionary<Swift.String, [T]>?, right: Botter.Map) where T : Botter.BaseMappable
+public func >>> <T>(left: Swift.Dictionary<Swift.String, [T]>?, right: Botter.Map) where T : Botter.BaseMappable
+public func <- <T>(left: inout Swift.Array<T>, right: Botter.Map) where T : Botter.BaseMappable
+public func >>> <T>(left: Swift.Array<T>, right: Botter.Map) where T : Botter.BaseMappable
+public func <- <T>(left: inout Swift.Array<T>?, right: Botter.Map) where T : Botter.BaseMappable
+public func >>> <T>(left: Swift.Array<T>?, right: Botter.Map) where T : Botter.BaseMappable
+public func <- <T>(left: inout Swift.Array<Swift.Array<T>>, right: Botter.Map) where T : Botter.BaseMappable
+public func >>> <T>(left: Swift.Array<Swift.Array<T>>, right: Botter.Map) where T : Botter.BaseMappable
+public func <- <T>(left: inout Swift.Array<Swift.Array<T>>?, right: Botter.Map) where T : Botter.BaseMappable
+public func >>> <T>(left: Swift.Array<Swift.Array<T>>?, right: Botter.Map) where T : Botter.BaseMappable
+public func <- <T>(left: inout Swift.Set<T>, right: Botter.Map) where T : Botter.BaseMappable, T : Swift.Hashable
+public func >>> <T>(left: Swift.Set<T>, right: Botter.Map) where T : Botter.BaseMappable, T : Swift.Hashable
+public func <- <T>(left: inout Swift.Set<T>?, right: Botter.Map) where T : Botter.BaseMappable, T : Swift.Hashable
+public func >>> <T>(left: Swift.Set<T>?, right: Botter.Map) where T : Botter.BaseMappable, T : Swift.Hashable
+extension UILabel {
+  public var substituteFontName: Swift.String {
+    get
+    set(newValue)
+  }
+}
+public protocol TransformType {
+  associatedtype Object
+  associatedtype JSON
+  func transformFromJSON(_ value: Any?) -> Self.Object?
+  func transformToJSON(_ value: Self.Object?) -> Self.JSON?
+}
+@_hasMissingDesignatedInitializers public class FoundationHTTPServerHandler : Botter.HTTPServerHandler {
+  public func register(delegate: Botter.HTTPServerDelegate)
+  public func createResponse(headers: [Swift.String : Swift.String]) -> Foundation.Data
+  public func parse(data: Foundation.Data)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class BotterSettingsManager {
+  public static var AccentColor: UIKit.UIColor
+  public static var FontColor: UIKit.UIColor
+  public static var BotterMessageFontColor: UIKit.UIColor
+  public static var BotterMessageBGColor: UIKit.UIColor
+  public static var ChatTitleColor: UIKit.UIColor
+  public static var ChatTitleText: Swift.String
+  public static var HeadlineMessage: Swift.String
+  public static var WelcomeMessage: Swift.String
+  public static var logo: UIKit.UIImage
+  public static var chatIcon: UIKit.UIImage
+  public static var hasFAQs: Swift.Bool
+  public static var alignLauncherLeft: Swift.Bool
+  public static var bottomMargin: CoreGraphics.CGFloat
+  public struct Font {
+    public static var regularFontName: Swift.String
+    public static var mediumFontName: Swift.String
+    public static var boldFontName: Swift.String
+  }
+  @objc deinit
+}
+public enum FoundationSecurityError : Swift.Error {
+  case invalidRequest
+  public static func == (a: Botter.FoundationSecurityError, b: Botter.FoundationSecurityError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public class FoundationSecurity {
+  public init(allowSelfSigned: Swift.Bool = false)
+  @objc deinit
+}
+extension FoundationSecurity : Botter.CertificatePinning {
+  public func evaluateTrust(trust: Security.SecTrust, domain: Swift.String?, completion: ((Botter.PinningState) -> ()))
+}
+extension FoundationSecurity : Botter.HeaderValidator {
+  public func validate(headers: [Swift.String : Swift.String], key: Swift.String) -> Swift.Error?
+}
+public typealias Metadata = [AVFoundation.AVMetadataItem]
+public protocol AudioPlayerDelegate : AnyObject {
+  func audioPlayer(_ audioPlayer: Botter.AudioPlayer, didChangeStateFrom from: Botter.AudioPlayerState, to state: Botter.AudioPlayerState)
+  func audioPlayer(_ audioPlayer: Botter.AudioPlayer, willStartPlaying item: Botter.AudioItem)
+  func audioPlayer(_ audioPlayer: Botter.AudioPlayer, didUpdateProgressionTo time: Foundation.TimeInterval, percentageRead: Swift.Float)
+  func audioPlayer(_ audioPlayer: Botter.AudioPlayer, didFindDuration duration: Foundation.TimeInterval, for item: Botter.AudioItem)
+  func audioPlayer(_ audioPlayer: Botter.AudioPlayer, didUpdateEmptyMetadataOn item: Botter.AudioItem, withData data: Botter.Metadata)
+  func audioPlayer(_ audioPlayer: Botter.AudioPlayer, didLoad range: Botter.TimeRange, for item: Botter.AudioItem)
+}
+extension AudioPlayerDelegate {
+  public func audioPlayer(_ audioPlayer: Botter.AudioPlayer, didChangeStateFrom from: Botter.AudioPlayerState, to state: Botter.AudioPlayerState)
+  public func audioPlayer(_ audioPlayer: Botter.AudioPlayer, willStartPlaying item: Botter.AudioItem)
+  public func audioPlayer(_ audioPlayer: Botter.AudioPlayer, didUpdateProgressionTo time: Foundation.TimeInterval, percentageRead: Swift.Float)
+  public func audioPlayer(_ audioPlayer: Botter.AudioPlayer, didFindDuration duration: Foundation.TimeInterval, for item: Botter.AudioItem)
+  public func audioPlayer(_ audioPlayer: Botter.AudioPlayer, didUpdateEmptyMetadataOn item: Botter.AudioItem, withData data: Botter.Metadata)
+  public func audioPlayer(_ audioPlayer: Botter.AudioPlayer, didLoad range: Botter.TimeRange, for item: Botter.AudioItem)
+}
+extension UIImage {
+  public convenience init?(color: UIKit.UIColor, size: CoreGraphics.CGSize = CGSize(width: 1, height: 1))
+}
+extension UITextField {
+  public var substituteFontName: Swift.String {
+    get
+    set(newValue)
+  }
+  public var align: UIKit.NSTextAlignment {
+    get
+    set(newValue)
+  }
+}
+public enum MappingType {
+  case fromJSON
+  case toJSON
+  public static func == (a: Botter.MappingType, b: Botter.MappingType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+final public class Mapper<N> where N : Botter.BaseMappable {
+  final public var context: Botter.MapContext?
+  final public var shouldIncludeNilValues: Swift.Bool
+  public init(context: Botter.MapContext? = nil, shouldIncludeNilValues: Swift.Bool = false)
+  final public func map(JSONObject: Any?, toObject object: N) -> N
+  final public func map(JSONString: Swift.String, toObject object: N) -> N
+  final public func map(JSON: [Swift.String : Any], toObject object: N) -> N
+  final public func map(JSONString: Swift.String) -> N?
+  final public func map(JSONObject: Any?) -> N?
+  final public func map(JSON: [Swift.String : Any]) -> N?
+  final public func mapArray(JSONString: Swift.String) -> [N]?
+  final public func mapArray(JSONObject: Any?) -> [N]?
+  final public func mapArray(JSONArray: [[Swift.String : Any]]) -> [N]
+  final public func mapDictionary(JSONString: Swift.String) -> [Swift.String : N]?
+  final public func mapDictionary(JSONObject: Any?) -> [Swift.String : N]?
+  final public func mapDictionary(JSON: [Swift.String : [Swift.String : Any]]) -> [Swift.String : N]?
+  final public func mapDictionary(JSONObject: Any?, toDictionary dictionary: [Swift.String : N]) -> [Swift.String : N]
+  final public func mapDictionary(JSON: [Swift.String : [Swift.String : Any]], toDictionary dictionary: [Swift.String : N]) -> [Swift.String : N]
+  final public func mapDictionaryOfArrays(JSONObject: Any?) -> [Swift.String : [N]]?
+  final public func mapDictionaryOfArrays(JSON: [Swift.String : [[Swift.String : Any]]]) -> [Swift.String : [N]]?
+  final public func mapArrayOfArrays(JSONObject: Any?) -> [[N]]?
+  public static func parseJSONStringIntoDictionary(JSONString: Swift.String) -> [Swift.String : Any]?
+  public static func parseJSONString(JSONString: Swift.String) -> Any?
+  @objc deinit
+}
+extension Mapper {
+  final public func map(JSONfile: Swift.String) -> N?
+  final public func mapArray(JSONfile: Swift.String) -> [N]?
+}
+extension Mapper {
+  final public func toJSON(_ object: N) -> [Swift.String : Any]
+  final public func toJSONArray(_ array: [N]) -> [[Swift.String : Any]]
+  final public func toJSONDictionary(_ dictionary: [Swift.String : N]) -> [Swift.String : [Swift.String : Any]]
+  final public func toJSONDictionaryOfArrays(_ dictionary: [Swift.String : [N]]) -> [Swift.String : [[Swift.String : Any]]]
+  final public func toJSONString(_ object: N, prettyPrint: Swift.Bool = false) -> Swift.String?
+  final public func toJSONString(_ array: [N], prettyPrint: Swift.Bool = false) -> Swift.String?
+  public static func toJSONString(_ JSONObject: Any, prettyPrint: Swift.Bool) -> Swift.String?
+  public static func toJSONData(_ JSONObject: Any, options: Foundation.JSONSerialization.WritingOptions) -> Foundation.Data?
+}
+extension Mapper where N : Swift.Hashable {
+  final public func mapSet(JSONString: Swift.String) -> Swift.Set<N>?
+  final public func mapSet(JSONObject: Any?) -> Swift.Set<N>?
+  final public func mapSet(JSONArray: [[Swift.String : Any]]) -> Swift.Set<N>
+  final public func toJSONSet(_ set: Swift.Set<N>) -> [[Swift.String : Any]]
+  final public func toJSONString(_ set: Swift.Set<N>, prettyPrint: Swift.Bool = false) -> Swift.String?
+}
+open class DateFormatterTransform : Botter.TransformType {
+  public typealias Object = Foundation.Date
+  public typealias JSON = Swift.String
+  final public let dateFormatter: Foundation.DateFormatter
+  public init(dateFormatter: Foundation.DateFormatter)
+  open func transformFromJSON(_ value: Any?) -> Foundation.Date?
+  open func transformToJSON(_ value: Foundation.Date?) -> Swift.String?
+  @objc deinit
+}
+extension UITableView {
+  public func registerCellClass(_ cellClass: Swift.AnyClass)
+  public func registerCellNib(_ cellClass: Swift.AnyClass)
+  public func registerHeaderFooterViewClass(_ viewClass: Swift.AnyClass)
+  public func registerHeaderFooterViewNib(_ viewClass: Swift.AnyClass)
+}
+public class WSEngine : Botter.Engine, Botter.TransportEventClient, Botter.FramerEventClient, Botter.FrameCollectorDelegate, Botter.HTTPHandlerDelegate {
+  public var respondToPingWithPong: Swift.Bool
+  public init(transport: Botter.Transport, certPinner: Botter.CertificatePinning? = nil, headerValidator: Botter.HeaderValidator = FoundationSecurity(), httpHandler: Botter.HTTPHandler = FoundationHTTPHandler(), framer: Botter.Framer = WSFramer(), compressionHandler: Botter.CompressionHandler? = nil)
+  public func register(delegate: Botter.EngineDelegate)
+  public func start(request: Foundation.URLRequest)
+  public func stop(closeCode: Swift.UInt16 = CloseCode.normal.rawValue)
+  public func forceStop()
+  public func write(string: Swift.String, completion: (() -> ())?)
+  public func write(data: Foundation.Data, opcode: Botter.FrameOpCode, completion: (() -> ())?)
+  public func connectionChanged(state: Botter.ConnectionState)
+  public func didReceiveHTTP(event: Botter.HTTPEvent)
+  public func frameProcessed(event: Botter.FrameEvent)
+  public func decompress(data: Foundation.Data, isFinal: Swift.Bool) -> Foundation.Data?
+  public func didForm(event: Botter.FrameCollector.Event)
+  @objc deinit
+}
+public func <- <T>(left: inout T, right: Botter.Map) where T : Swift.RawRepresentable
+public func >>> <T>(left: T, right: Botter.Map) where T : Swift.RawRepresentable
+public func <- <T>(left: inout T?, right: Botter.Map) where T : Swift.RawRepresentable
+public func >>> <T>(left: T?, right: Botter.Map) where T : Swift.RawRepresentable
+public func <- <T>(left: inout [T], right: Botter.Map) where T : Swift.RawRepresentable
+public func >>> <T>(left: [T], right: Botter.Map) where T : Swift.RawRepresentable
+public func <- <T>(left: inout [T]?, right: Botter.Map) where T : Swift.RawRepresentable
+public func >>> <T>(left: [T]?, right: Botter.Map) where T : Swift.RawRepresentable
+public func <- <T>(left: inout [Swift.String : T], right: Botter.Map) where T : Swift.RawRepresentable
+public func >>> <T>(left: [Swift.String : T], right: Botter.Map) where T : Swift.RawRepresentable
+public func <- <T>(left: inout [Swift.String : T]?, right: Botter.Map) where T : Swift.RawRepresentable
+public func >>> <T>(left: [Swift.String : T]?, right: Botter.Map) where T : Swift.RawRepresentable
+public class FoundationHTTPHandler : Botter.HTTPHandler {
+  public init()
+  public func convert(request: Foundation.URLRequest) -> Foundation.Data
+  public func parse(data: Foundation.Data) -> Swift.Int
+  public func register(delegate: Botter.HTTPHandlerDelegate)
+  @objc deinit
+}
+public class WSCompression : Botter.CompressionHandler {
+  public init()
+  public func load(headers: [Swift.String : Swift.String])
+  public func decompress(data: Foundation.Data, isFinal: Swift.Bool) -> Foundation.Data?
+  public func compress(data: Foundation.Data) -> Foundation.Data?
+  @objc deinit
+}
+extension AudioPlayer {
+  public var items: [Botter.AudioItem]? {
+    get
+  }
+  public var currentItemIndexInQueue: Swift.Int? {
+    get
+  }
+  public var hasNext: Swift.Bool {
+    get
+  }
+  public var hasPrevious: Swift.Bool {
+    get
+  }
+  public func play(item: Botter.AudioItem)
+  public func play(items: [Botter.AudioItem], startAtIndex index: Swift.Int = 0)
+  public func add(item: Botter.AudioItem)
+  public func add(items: [Botter.AudioItem])
+  public func removeItem(at index: Swift.Int)
+}
+public protocol MapContext {
+}
+final public class Map {
+  final public let mappingType: Botter.MappingType
+  final public var JSON: [Swift.String : Any] {
+    get
+  }
+  final public var isKeyPresent: Swift.Bool {
+    get
+  }
+  final public var currentValue: Any? {
+    get
+  }
+  final public var currentKey: Swift.String? {
+    get
+  }
+  final public var nestedKeyDelimiter: Swift.String {
+    get
+  }
+  final public var context: Botter.MapContext?
+  final public var shouldIncludeNilValues: Swift.Bool
+  final public let toObject: Swift.Bool
+  public init(mappingType: Botter.MappingType, JSON: [Swift.String : Any], toObject: Swift.Bool = false, context: Botter.MapContext? = nil, shouldIncludeNilValues: Swift.Bool = false)
+  final public subscript(key: Swift.String) -> Botter.Map {
+    get
+  }
+  final public subscript(key: Swift.String, delimiter delimiter: Swift.String) -> Botter.Map {
+    get
+  }
+  final public subscript(key: Swift.String, nested nested: Swift.Bool) -> Botter.Map {
+    get
+  }
+  final public subscript(key: Swift.String, nested nested: Swift.Bool, delimiter delimiter: Swift.String) -> Botter.Map {
+    get
+  }
+  final public subscript(key: Swift.String, ignoreNil ignoreNil: Swift.Bool) -> Botter.Map {
+    get
+  }
+  final public subscript(key: Swift.String, delimiter delimiter: Swift.String, ignoreNil ignoreNil: Swift.Bool) -> Botter.Map {
+    get
+  }
+  final public subscript(key: Swift.String, nested nested: Swift.Bool, ignoreNil ignoreNil: Swift.Bool) -> Botter.Map {
+    get
+  }
+  final public subscript(key: Swift.String, nested nested: Swift.Bool?, delimiter delimiter: Swift.String, ignoreNil ignoreNil: Swift.Bool) -> Botter.Map {
+    get
+  }
+  final public func value<T>() -> T?
+  @objc deinit
+}
+extension Map {
+  final public func value<T>(_ key: Swift.String, default: T.Object, using transform: T) throws -> T.Object where T : Botter.TransformType
+  final public func value<T>(_ key: Swift.String, default: T) throws -> T
+  final public func value<T>(_ key: Swift.String, default: [T]) -> [T] where T : Botter.BaseMappable
+  final public func value<T>(_ key: Swift.String, default: T) throws -> T where T : Botter.BaseMappable
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@available(watchOS, unavailable)
+public class WebSocketServer : Botter.Server, Botter.ConnectionDelegate {
+  public var onEvent: ((Botter.ServerEvent) -> Swift.Void)?
+  public init()
+  public func start(address: Swift.String, port: Swift.UInt16) -> Swift.Error?
+  public func didReceive(event: Botter.ServerEvent)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+public class ServerConnection : Botter.Connection, Botter.HTTPServerDelegate, Botter.FramerEventClient, Botter.FrameCollectorDelegate, Botter.TransportEventClient {
+  public var onEvent: ((Botter.ConnectionEvent) -> Swift.Void)?
+  weak public var gifDelegate: Botter.ConnectionDelegate?
+  public func write(data: Foundation.Data, opcode: Botter.FrameOpCode)
+  public func connectionChanged(state: Botter.ConnectionState)
+  public func didReceive(event: Botter.HTTPEvent)
+  public func frameProcessed(event: Botter.FrameEvent)
+  public func didForm(event: Botter.FrameCollector.Event)
+  public func decompress(data: Foundation.Data, isFinal: Swift.Bool) -> Foundation.Data?
+  @objc deinit
+}
+public enum SecurityErrorCode : Swift.UInt16 {
+  case acceptFailed
+  case pinningFailed
+  public typealias RawValue = Swift.UInt16
+  public init?(rawValue: Swift.UInt16)
+  public var rawValue: Swift.UInt16 {
+    get
+  }
+}
+public enum PinningState {
+  case success
+  case failed(CoreFoundation.CFError?)
+}
+public protocol CertificatePinning : AnyObject {
+  func evaluateTrust(trust: Security.SecTrust, domain: Swift.String?, completion: ((Botter.PinningState) -> ()))
+}
+public protocol HeaderValidator : AnyObject {
+  func validate(headers: [Swift.String : Swift.String], key: Swift.String) -> Swift.Error?
+}
+open class URLTransform : Botter.TransformType {
+  public typealias Object = Foundation.URL
+  public typealias JSON = Swift.String
+  public init(shouldEncodeURLString: Swift.Bool = false, allowedCharacterSet: Foundation.CharacterSet = .urlQueryAllowed)
+  open func transformFromJSON(_ value: Any?) -> Foundation.URL?
+  open func transformToJSON(_ value: Foundation.URL?) -> Swift.String?
+  @objc deinit
+}
+public protocol BaseMappable {
+  mutating func mapping(map: Botter.Map)
+}
+public protocol Mappable : Botter.BaseMappable {
+  init?(map: Botter.Map)
+}
+public protocol StaticMappable : Botter.BaseMappable {
+  static func objectForMapping(map: Botter.Map) -> Botter.BaseMappable?
+}
+extension Mappable {
+  public init?(JSONString: Swift.String, context: Botter.MapContext? = nil)
+  public init?(JSON: [Swift.String : Any], context: Botter.MapContext? = nil)
+}
+extension BaseMappable {
+  public func toJSON() -> [Swift.String : Any]
+  public func toJSONString(prettyPrint: Swift.Bool = false) -> Swift.String?
+}
+extension Array where Element : Botter.BaseMappable {
+  public init?(JSONString: Swift.String, context: Botter.MapContext? = nil)
+  public init(JSONArray: [[Swift.String : Any]], context: Botter.MapContext? = nil)
+  public func toJSON() -> [[Swift.String : Any]]
+  public func toJSONString(prettyPrint: Swift.Bool = false) -> Swift.String?
+}
+extension Set where Element : Botter.BaseMappable {
+  public init?(JSONString: Swift.String, context: Botter.MapContext? = nil)
+  public init?(JSONArray: [[Swift.String : Any]], context: Botter.MapContext? = nil)
+  public func toJSON() -> [[Swift.String : Any]]
+  public func toJSONString(prettyPrint: Swift.Bool = false) -> Swift.String?
+}
+public enum TCPTransportError : Swift.Error {
+  case invalidRequest
+  public static func == (a: Botter.TCPTransportError, b: Botter.TCPTransportError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+public class TCPTransport : Botter.Transport {
+  public var usingTLS: Swift.Bool {
+    get
+  }
+  public init(connection: Network.NWConnection)
+  public init()
+  public func connect(url: Foundation.URL, timeout: Swift.Double = 10, certificatePinning: Botter.CertificatePinning? = nil)
+  public func disconnect()
+  public func register(delegate gifDelegate: Botter.TransportEventClient)
+  public func write(data: Foundation.Data, completion: @escaping ((Swift.Error?) -> ()))
+  @objc deinit
+}
+open class DateTransform : Botter.TransformType {
+  public typealias Object = Foundation.Date
+  public typealias JSON = Swift.Double
+  public enum Unit : Foundation.TimeInterval {
+    case seconds
+    case milliseconds
+    public typealias RawValue = Foundation.TimeInterval
+    public init?(rawValue: Foundation.TimeInterval)
+    public var rawValue: Foundation.TimeInterval {
+      get
+    }
+  }
+  public init(unit: Botter.DateTransform.Unit = .seconds)
+  open func transformFromJSON(_ value: Any?) -> Foundation.Date?
+  open func transformToJSON(_ value: Foundation.Date?) -> Swift.Double?
+  @objc deinit
+}
+public enum HTTPUpgradeError : Swift.Error {
+  case notAnUpgrade(Swift.Int)
+  case invalidData
+}
+public struct HTTPWSHeader {
+  public static func createUpgrade(request: Foundation.URLRequest, supportsCompression: Swift.Bool, secKeyValue: Swift.String) -> Foundation.URLRequest
+  public static func generateWebSocketKey() -> Swift.String
+}
+public enum HTTPEvent {
+  case success([Swift.String : Swift.String])
+  case failure(Swift.Error)
+}
+public protocol HTTPHandlerDelegate : AnyObject {
+  func didReceiveHTTP(event: Botter.HTTPEvent)
+}
+public protocol HTTPHandler {
+  func register(delegate: Botter.HTTPHandlerDelegate)
+  func convert(request: Foundation.URLRequest) -> Foundation.Data
+  func parse(data: Foundation.Data) -> Swift.Int
+}
+public protocol HTTPServerDelegate : AnyObject {
+  func didReceive(event: Botter.HTTPEvent)
+}
+public protocol HTTPServerHandler {
+  func register(delegate: Botter.HTTPServerDelegate)
+  func parse(data: Foundation.Data)
+  func createResponse(headers: [Swift.String : Swift.String]) -> Foundation.Data
+}
+public struct URLParts {
+}
+extension URL {
+  public var isTLSScheme: Swift.Bool {
+    get
+  }
+  public func getParts() -> Botter.URLParts?
+}
+extension UIButton {
+  public var substituteFontName: Swift.String {
+    get
+    set(newValue)
+  }
+}
+public struct AudioPlayerMode : Swift.OptionSet {
+  public let rawValue: Swift.UInt
+  public init(rawValue: Swift.UInt)
+  public static var normal: Botter.AudioPlayerMode
+  public static var shuffle: Botter.AudioPlayerMode
+  public static var `repeat`: Botter.AudioPlayerMode
+  public static var repeatAll: Botter.AudioPlayerMode
+  public typealias Element = Botter.AudioPlayerMode
+  public typealias ArrayLiteralElement = Botter.AudioPlayerMode
+  public typealias RawValue = Swift.UInt
+}
+public struct DictionaryTransform<Key, Value> : Botter.TransformType where Key : Swift.Hashable, Key : Swift.RawRepresentable, Value : Botter.Mappable, Key.RawValue == Swift.String {
+  public init()
+  public func transformFromJSON(_ value: Any?) -> [Key : Value]?
+  public func transformToJSON(_ value: [Key : Value]?) -> Any?
+  public typealias Object = Swift.Dictionary<Key, Value>
+  public typealias JSON = Any
+}
+public enum ConnectionState {
+  case connected
+  case waiting
+  case cancelled
+  case failed(Swift.Error?)
+  case viability(Swift.Bool)
+  case shouldReconnect(Swift.Bool)
+  case receive(Foundation.Data)
+}
+public protocol TransportEventClient : AnyObject {
+  func connectionChanged(state: Botter.ConnectionState)
+}
+public protocol Transport : AnyObject {
+  func register(delegate: Botter.TransportEventClient)
+  func connect(url: Foundation.URL, timeout: Swift.Double, certificatePinning: Botter.CertificatePinning?)
+  func disconnect()
+  func write(data: Foundation.Data, completion: @escaping ((Swift.Error?) -> ()))
+  var usingTLS: Swift.Bool { get }
+}
+public typealias GifLevelOfIntegrity = Swift.Float
+extension Float {
+  public static var highestNoFrameSkipping: Botter.GifLevelOfIntegrity
+  public static var `default`: Botter.GifLevelOfIntegrity
+  public static var lowForManyGifs: Botter.GifLevelOfIntegrity
+  public static var lowForTooManyGifs: Botter.GifLevelOfIntegrity
+  public static var superLowForSlideShow: Botter.GifLevelOfIntegrity
+}
+extension UIImage {
+  public convenience init?(imageData: Foundation.Data, levelOfIntegrity: Botter.GifLevelOfIntegrity = .default) throws
+  public convenience init?(imageName: Swift.String, levelOfIntegrity: Botter.GifLevelOfIntegrity = .default) throws
+}
+extension UIImage {
+  public convenience init(gifData: Foundation.Data, levelOfIntegrity: Botter.GifLevelOfIntegrity = .default) throws
+  public convenience init(gifName: Swift.String, levelOfIntegrity: Botter.GifLevelOfIntegrity = .default) throws
+  public func setGifFromData(_ data: Foundation.Data, levelOfIntegrity: Botter.GifLevelOfIntegrity) throws
+  public func setGif(_ name: Swift.String) throws
+  public func framesCount() -> Swift.Int
+  public func setGif(_ name: Swift.String, levelOfIntegrity: Botter.GifLevelOfIntegrity) throws
+  public func clear()
+}
+extension UIImage {
+  public var imageSource: ImageIO.CGImageSource? {
+    get
+    set(newValue)
+  }
+  public var displayRefreshFactor: Swift.Int? {
+    get
+    set(newValue)
+  }
+  public var imageSize: Swift.Int? {
+    get
+    set(newValue)
+  }
+  public var imageCount: Swift.Int? {
+    get
+    set(newValue)
+  }
+  public var displayOrder: [Swift.Int]? {
+    get
+    set(newValue)
+  }
+  public var imageData: Foundation.Data? {
+    get
+    set(newValue)
+  }
+}
+@objc @_inheritsConvenienceInitializers @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+public class NativeEngine : ObjectiveC.NSObject, Botter.Engine, Foundation.URLSessionDataDelegate, Foundation.URLSessionWebSocketDelegate {
+  public func register(delegate: Botter.EngineDelegate)
+  public func start(request: Foundation.URLRequest)
+  public func stop(closeCode: Swift.UInt16)
+  public func forceStop()
+  public func write(string: Swift.String, completion: (() -> ())?)
+  public func write(data: Foundation.Data, opcode: Botter.FrameOpCode, completion: (() -> ())?)
+  @objc public func urlSession(_ session: Foundation.URLSession, webSocketTask: Foundation.URLSessionWebSocketTask, didOpenWithProtocol protocol: Swift.String?)
+  @objc public func urlSession(_ session: Foundation.URLSession, webSocketTask: Foundation.URLSessionWebSocketTask, didCloseWith closeCode: Foundation.URLSessionWebSocketTask.CloseCode, reason: Foundation.Data?)
+  @objc deinit
+  @objc override dynamic public init()
+}
+public protocol CompressionHandler {
+  func load(headers: [Swift.String : Swift.String])
+  func decompress(data: Foundation.Data, isFinal: Swift.Bool) -> Foundation.Data?
+  func compress(data: Foundation.Data) -> Foundation.Data?
+}
+public func <- <T>(left: inout T, right: Botter.Map) where T : Swift.SignedInteger
+public func <- <T>(left: inout T?, right: Botter.Map) where T : Swift.SignedInteger
+public func <- <T>(left: inout T, right: Botter.Map) where T : Swift.UnsignedInteger
+public func <- <T>(left: inout T?, right: Botter.Map) where T : Swift.UnsignedInteger
+extension UITabBarController {
+  @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+}

@@ -20,7 +20,7 @@ public func show(APIKey : String){
     BotterSettingsManager.BotID = APIKey
 }
 
-public var chatTitle = ""
+//public var chatTitle = ""
 
 public func openChatScreen(APIKey : String){
     let windows = UIApplication.shared.windows

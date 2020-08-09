@@ -24,9 +24,9 @@ class WebLinksViewController: UIViewController , WKNavigationDelegate, WKUIDeleg
         self.webView.navigationDelegate = self
         self.indicator.startAnimating()
         self.loadWebView()
-        if Botter.chatTitle != ""{
-            self.titleLbl.text = Botter.chatTitle
-        }
+//        if Botter.chatTitle != ""{
+//            self.titleLbl.text = Botter.chatTitle
+//        }
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {

@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.0.0-beta.3)
-  - Botter (1.0.2.4):
+  - Botter (1.0.3):
     - Alamofire
     - IQKeyboardManagerSwift
     - LazyImage
@@ -25,7 +25,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 50d6fa7e8cbe7f84559e86ab641ffd029db655f8
-  Botter: be6fc9ff926f2ea15f572e757c37eac54f43b4cf
+  Botter: d0de04727ab9a4b3fb242da27b69ad3f9018dfce
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   LazyImage: 4db5288d8660b28e64e60c57f5b5d414af922160
 

@@ -24,11 +24,13 @@ final class ChatViewController: UIViewController {
     var original : CGFloat = 0
     var currentAudio = -1
     static var botData = BotData()
+    var history = true
     
     // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        history = !SocketManager.first
         registerCells()
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
@@ -56,9 +58,17 @@ final class ChatViewController: UIViewController {
             if isYes{
                 if ChatViewController.botData.endForm.inputs.count > 0 {
                     //                    self.presenter.openEndForm(form: self.botData.endForm)
-                    self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                    if self.history{
+                        self.presentingViewController?.dismiss(animated: true, completion: nil)
+                    }else{
+                        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                    }
                 }else{
-                    self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                    if self.history{
+                        self.presentingViewController?.dismiss(animated: true, completion: nil)
+                    }else{
+                        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
         }

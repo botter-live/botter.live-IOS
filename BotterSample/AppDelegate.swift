@@ -18,19 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // to show chat icon over entir app
         customizeChat()
-        Botter.chatTitle = "Welcome to al dwaa pharmacies\nاهلاً و سهلاً بكم"
-        Botter.show(APIKey: "nKmovPCdWNZdYnIejRnd")
-        
+        Botter.show(APIKey: "9nw32y9gfqf59gye7y7")
+//        "9nw32y9gfqf59gye7y7"
+//        "nKmovPCdWNZdYnIejRnd"
         return true
     }
 //
     
     func customizeChat(){
-        BotterSettingsManager.AccentColor = UIColor.init(colorString: "#97a258")
-        BotterSettingsManager.BotterMessageBGColor = UIColor.init(colorString: "#dbedd5")
+//        BotterSettingsManager.AccentColor = UIColor.init(colorString: "#97a258")
+//        BotterSettingsManager.BotterMessageBGColor = UIColor.init(colorString: "#dbedd5")
         BotterSettingsManager.Font.regularFontName = "Roboto-Regular"
         BotterSettingsManager.Font.mediumFontName = "Roboto-Medium"
-        BotterSettingsManager.alignLauncherLeft = true
+//        BotterSettingsManager.alignLauncherLeft = true
         
     }
     
