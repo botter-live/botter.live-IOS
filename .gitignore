@@ -23,12 +23,13 @@ DerivedData/
 !default.perspectivev3
 
 ## Obj-C/Swift specific
-.hmap
+*.hmap
 
 ## App packaging
 *.ipa
 *.dSYM.zip
 *.dSYM
+Botter/
 
 ## Playgrounds
 timeline.xctimeline
