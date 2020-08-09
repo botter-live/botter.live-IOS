@@ -46,9 +46,9 @@ class BotChatTableViewCell: UserChatTableViewCell {
                     break
                 }
             }else{
-//                self.avatarImg.image = BotterSettingsManager.logo
-//                self.avatarImg.contentMode = .center
-                setAvatar()
+                self.avatarImg.image = BotterSettingsManager.logo
+                self.avatarImg.contentMode = .center
+//                setAvatar()
             }
         }
     }
