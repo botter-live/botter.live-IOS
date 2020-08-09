@@ -30,6 +30,7 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 Botter/
+*.swift
 
 ## Playgrounds
 timeline.xctimeline
