@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   
 
   spec.name         = "Botter"
-  spec.version      = "1.0.3.1"
+  spec.version      = "1.0.3.2"
   spec.summary      = "Botter is an integration with Botter Chatbot"
 
   spec.homepage     = "https://github.com/NoraSayed135/Botter"
@@ -53,7 +53,7 @@ Pod::Spec.new do |spec|
  #:path => '/Users/bluecrunch/Desktop/Projects/Native/BotterSDK'
 #:git => 'https://github.com/NoraSayed135/Botter.git', :tag => spec.version
 
-  spec.source       = { :http => 'https://github.com/NoraSayed135/Botter/archive/1.0.3.1.tar.gz' }
+  spec.source       = { :http => 'https://github.com/NoraSayed135/Botter/archive/1.0.3.2.tar.gz' }
 
   spec.source_files  = "**/*.{swift,h,m}"
   spec.resource_bundles = {
@@ -65,6 +65,7 @@ Pod::Spec.new do |spec|
 
   spec.swift_version = "4.2" 
   spec.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
+  spec.xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => 'Source/Bridging-Header.h' } 
 
 
 end
