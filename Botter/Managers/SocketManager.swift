@@ -235,7 +235,7 @@ class SocketManager : WebSocketDelegate  {
             "type": "message" ,
             "text" : value,
             "user": guid ,
-            "postback": ["title" : title , "payload" : value ]
+            "postback": ["title" : title , "payload" : value ],
             "bot_id": BotterSettingsManager.BotID ,
         ]
         
