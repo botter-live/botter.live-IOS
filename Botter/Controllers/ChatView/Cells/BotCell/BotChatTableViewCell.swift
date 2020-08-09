@@ -17,6 +17,9 @@ class BotChatTableViewCell: UserChatTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        var iFrame = self.avatarImg.frame
+        iFrame.size = CGSize.init(width: 32, height: 32)
+        self.avatarImg.frame = iFrame
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,7 +55,7 @@ class BotChatTableViewCell: UserChatTableViewCell {
     
     func setAvatar(){
         self.avatarImg.image = BotterSettingsManager.agentAvatar
-        self.avatarImg.contentMode = .center
+        self.avatarImg.contentMode = .scaleAspectFit
     }
     
     func setAvatarByUrl(){

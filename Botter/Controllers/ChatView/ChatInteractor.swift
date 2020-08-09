@@ -148,8 +148,11 @@ extension ChatInteractor: ChatInteractorInterface {
     func sendMenuAction(action : MenuItem ,completion:@escaping((BasicMessage)->())){
         let Message = BasicMessage()
         Message.type = "message"
+        Message.slug = "message"
         Message.isBotMsg = false
         Message.text = action.title
+        Message.msgType = .userMsg
+        Message.sender.senderType = .user
         if SocketManager.shared.isConnected{
             SocketManager.shared.sendPostBack(value: action.payload , title: action.title){ isSent in
                 completion(Message)
