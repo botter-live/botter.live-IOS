@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C08E7FF249298E300A2B984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E7FE249298E300A2B984 /* AppDelegate.swift */; };
-		8C08E801249298E300A2B984 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E800249298E300A2B984 /* SceneDelegate.swift */; };
-		8C08E806249298E300A2B984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C08E804249298E300A2B984 /* Main.storyboard */; };
-		8C08E80B249298E500A2B984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C08E809249298E500A2B984 /* LaunchScreen.storyboard */; };
-		8C08E81424929B7400A2B984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E802249298E300A2B984 /* ViewController.swift */; };
-		8C08E81624929BA100A2B984 /* HiddenLauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C08E81524929BA100A2B984 /* HiddenLauncherViewController.swift */; };
 		8C214A7724C75F71008C2225 /* FaqData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7624C75F71008C2225 /* FaqData.swift */; };
 		8C214A7A24C75F91008C2225 /* SearchBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7924C75F91008C2225 /* SearchBox.swift */; };
 		8C214A7E24C75FB9008C2225 /* FaqsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */; };
@@ -23,8 +17,6 @@
 		8C41823024A1CF070097E1A6 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C41822F24A1CF070097E1A6 /* ReachabilityManager.swift */; };
 		8C41823224A1F3AA0097E1A6 /* BotterSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C41823124A1F3AA0097E1A6 /* BotterSettingsManager.swift */; };
 		8C41823424A1FF100097E1A6 /* UIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C41823324A1FF100097E1A6 /* UIManager.swift */; };
-		8C41823C24A3B0150097E1A6 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C41823A24A3B0150097E1A6 /* Roboto-Medium.ttf */; };
-		8C41823D24A3B0150097E1A6 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C41823B24A3B0150097E1A6 /* Roboto-Regular.ttf */; };
 		8C463ACF24BF37BC00B78E96 /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463ACE24BF37BC00B78E96 /* BaseApi.swift */; };
 		8C463AD124BF472600B78E96 /* BotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463AD024BF472600B78E96 /* BotData.swift */; };
 		8C463AD324BF475800B78E96 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463AD224BF475800B78E96 /* Form.swift */; };
@@ -244,7 +236,6 @@
 		8CC4F6E7248D1C3E000692AE /* BotterSDK-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CC4F6E6248D1B77000692AE /* BotterSDK-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CC4F6E8248D24C7000692AE /* Assets.xcassets in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC4F4E0248CFCCA000692AE /* Assets.xcassets */; };
 		8CD7829D249644ED00190FA7 /* TypingIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30DC3024963A8600C497E6 /* TypingIndicatorTableViewCell.swift */; };
-		8CE8351624E0242A0007244E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C08E80C249298E500A2B984 /* Info.plist */; };
 		8CE8351724E0243D0007244E /* BotterInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4F4A7248CFBA4000692AE /* BotterInfo.plist */; };
 		8CFC709F248FC227006C677B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFC709E248FC227006C677B /* WebKit.framework */; };
 		8CFC70A1248FCD64006C677B /* GallaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A0248FCD64006C677B /* GallaryTableViewCell.swift */; };
@@ -252,7 +243,6 @@
 		8CFC70A5248FD19E006C677B /* GalleryItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */; };
 		8CFC70A72490FAE6006C677B /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A62490FAE6006C677B /* AudioHandler.swift */; };
 		8CFC70A9249100BE006C677B /* AudioBotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A8249100BE006C677B /* AudioBotTableViewCell.swift */; };
-		9FD4555FE7341B35AFCD4E18 /* Pods_BotterSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F21A258B57E61B53EC3E018 /* Pods_BotterSample.framework */; };
 		CE72D141D51ED19824878962 /* Pods_Botter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54DF3122E59EAC0D1BB260E7 /* Pods_Botter.framework */; };
 /* End PBXBuildFile section */
 
@@ -261,7 +251,6 @@
 		4901E93C7D08F2DB6FEB29BA /* Pods-Botter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.release.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.release.xcconfig"; sourceTree = "<group>"; };
 		4FCBB7152F884B5123A8DCD7 /* Pods-BotterSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BotterSample.debug.xcconfig"; path = "Target Support Files/Pods-BotterSample/Pods-BotterSample.debug.xcconfig"; sourceTree = "<group>"; };
 		54DF3122E59EAC0D1BB260E7 /* Pods_Botter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C08E7FC249298E300A2B984 /* BotterTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BotterTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C08E7FE249298E300A2B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C08E800249298E300A2B984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C08E802249298E300A2B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -534,14 +523,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8C08E7F9249298E300A2B984 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9FD4555FE7341B35AFCD4E18 /* Pods_BotterSample.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8CC4F4A0248CFBA4000692AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -841,7 +822,6 @@
 			isa = PBXGroup;
 			children = (
 				8CC4F4A3248CFBA4000692AE /* Botter.framework */,
-				8C08E7FC249298E300A2B984 /* BotterTests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1230,24 +1210,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8C08E7FB249298E300A2B984 /* BotterSample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8C08E80D249298E500A2B984 /* Build configuration list for PBXNativeTarget "BotterSample" */;
-			buildPhases = (
-				C1FEDC8CE7FBA1D6D304CFB3 /* [CP] Check Pods Manifest.lock */,
-				8C08E7F8249298E300A2B984 /* Sources */,
-				8C08E7F9249298E300A2B984 /* Frameworks */,
-				8C08E7FA249298E300A2B984 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BotterSample;
-			productName = BotterSample;
-			productReference = 8C08E7FC249298E300A2B984 /* BotterTests.app */;
-			productType = "com.apple.product-type.application";
-		};
 		8CC4F4A2248CFBA4000692AE /* Botter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CC4F4AB248CFBA4000692AE /* Build configuration list for PBXNativeTarget "Botter" */;
@@ -1277,9 +1239,6 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = BlueCrunch;
 				TargetAttributes = {
-					8C08E7FB249298E300A2B984 = {
-						CreatedOnToolsVersion = 11.4.1;
-					};
 					8CC4F4A2248CFBA4000692AE = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
@@ -1299,24 +1258,11 @@
 			projectRoot = "";
 			targets = (
 				8CC4F4A2248CFBA4000692AE /* Botter */,
-				8C08E7FB249298E300A2B984 /* BotterSample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8C08E7FA249298E300A2B984 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8CE8351624E0242A0007244E /* Info.plist in Resources */,
-				8C41823D24A3B0150097E1A6 /* Roboto-Regular.ttf in Resources */,
-				8C41823C24A3B0150097E1A6 /* Roboto-Medium.ttf in Resources */,
-				8C08E80B249298E500A2B984 /* LaunchScreen.storyboard in Resources */,
-				8C08E806249298E300A2B984 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8CC4F4A1248CFBA4000692AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1365,42 +1311,9 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C1FEDC8CE7FBA1D6D304CFB3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BotterSample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8C08E7F8249298E300A2B984 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8C08E7FF249298E300A2B984 /* AppDelegate.swift in Sources */,
-				8C08E81424929B7400A2B984 /* ViewController.swift in Sources */,
-				8C08E81624929BA100A2B984 /* HiddenLauncherViewController.swift in Sources */,
-				8C08E801249298E300A2B984 /* SceneDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8CC4F49F248CFBA4000692AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1653,48 +1566,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8C08E80E249298E500A2B984 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FCBB7152F884B5123A8DCD7 /* Pods-BotterSample.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = BotterSample/BotterTests.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5RLD3B22VC;
-				INFOPLIST_FILE = BotterSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bluecrunch.BotterSample;
-				PRODUCT_NAME = BotterTests;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8C08E80F249298E500A2B984 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF864D1B3566B547D3C622FE /* Pods-BotterSample.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = BotterSample/BotterTests.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5RLD3B22VC;
-				INFOPLIST_FILE = BotterSample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bluecrunch.BotterSample;
-				PRODUCT_NAME = BotterTests;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		8CC4F4A9248CFBA4000692AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1880,15 +1751,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C08E80D249298E500A2B984 /* Build configuration list for PBXNativeTarget "BotterSample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8C08E80E249298E500A2B984 /* Debug */,
-				8C08E80F249298E500A2B984 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8CC4F49D248CFBA4000692AE /* Build configuration list for PBXProject "Botter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

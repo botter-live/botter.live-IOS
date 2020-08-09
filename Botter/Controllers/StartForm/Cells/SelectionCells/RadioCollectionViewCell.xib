@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RadioCollectionViewCell" id="Sgl-n6-Qvf" customClass="RadioCollectionViewCell" customModule="Botter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="272" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="272" height="40"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtr-kM-SW9">
+                        <rect key="frame" x="0.0" y="0.0" width="272" height="40"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="QJB-8c-wVf"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9il-fl-jZI">
+                        <rect key="frame" x="28" y="0.0" width="228" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="p8X-xc-3f6"/>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="vyQ-QE-OCN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_Checkbox_60245" translatesAutoresizingMaskIntoConstraints="NO" id="28d-6N-Q4B" customClass="AccentImage" customModule="Botter" customModuleProvider="target">
+                        <rect key="frame" x="6" y="12" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="6nw-La-nVN"/>
+                            <constraint firstAttribute="width" constant="16" id="6rg-NV-E1G"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="9il-fl-jZI" firstAttribute="top" secondItem="Sgl-n6-Qvf" secondAttribute="top" id="2Lh-U8-0u1"/>
+                <constraint firstItem="vtr-kM-SW9" firstAttribute="height" secondItem="9il-fl-jZI" secondAttribute="height" id="4KL-VW-pJs"/>
+                <constraint firstItem="9il-fl-jZI" firstAttribute="leading" secondItem="28d-6N-Q4B" secondAttribute="trailing" constant="6" id="cVU-mq-SbN"/>
+                <constraint firstAttribute="trailing" secondItem="9il-fl-jZI" secondAttribute="trailing" constant="16" id="ihl-QB-BNZ"/>
+                <constraint firstAttribute="bottom" secondItem="9il-fl-jZI" secondAttribute="bottom" id="kBe-j4-sO4"/>
+                <constraint firstAttribute="trailing" secondItem="vtr-kM-SW9" secondAttribute="trailing" id="lgf-Dj-8cu"/>
+                <constraint firstItem="28d-6N-Q4B" firstAttribute="leading" secondItem="Sgl-n6-Qvf" secondAttribute="leading" constant="6" id="rVX-2p-6Ja"/>
+                <constraint firstItem="vtr-kM-SW9" firstAttribute="leading" secondItem="r5O-Td-TVa" secondAttribute="leading" id="srj-jm-LVB"/>
+                <constraint firstItem="vtr-kM-SW9" firstAttribute="centerY" secondItem="9il-fl-jZI" secondAttribute="centerY" id="uf2-ue-gec"/>
+                <constraint firstItem="28d-6N-Q4B" firstAttribute="centerY" secondItem="Sgl-n6-Qvf" secondAttribute="centerY" id="wOu-LM-VYF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="r5O-Td-TVa"/>
+            <size key="customSize" width="272" height="40"/>
+            <connections>
+                <outlet property="BGView" destination="vtr-kM-SW9" id="2wq-Pb-7Sf"/>
+                <outlet property="iconImg" destination="28d-6N-Q4B" id="NCU-QS-8fo"/>
+                <outlet property="titleLbl" destination="9il-fl-jZI" id="pnJ-CU-cIo"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="noun_Checkbox_60245" width="16" height="16"/>
+    </resources>
+</document>
