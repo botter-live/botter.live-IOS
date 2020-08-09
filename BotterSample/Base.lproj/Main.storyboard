@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZIC-vi-KOj">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="O4y-TU-EVh">
+            <objects>
+                <viewController id="ZIC-vi-KOj" customClass="ViewController" customModule="Botter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dsx-eG-mcK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9O-k4-e2e">
+                                <rect key="frame" x="4" y="421.5" width="406" height="53"/>
+                                <string key="text">Welcome,
+to Botter Mobile</string>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="by7-05-TBD">
+                                <rect key="frame" x="97.5" y="490.5" width="219" height="32"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="   Screen without launcher   ">
+                                    <color key="titleColor" red="0.8980392157" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="action" destination="ZIC-vi-KOj" eventType="touchUpInside" id="DsQ-93-X9f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZA-bN-P4t">
+                                <rect key="frame" x="97.5" y="530.5" width="219" height="32"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="   Toggle Launcher Position   ">
+                                    <color key="titleColor" red="0.8980392157" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleBtnPosition" destination="ZIC-vi-KOj" eventType="touchUpInside" id="aay-eY-01g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="V9O-k4-e2e" firstAttribute="centerX" secondItem="dsx-eG-mcK" secondAttribute="centerX" id="AYb-l9-nkl"/>
+                            <constraint firstItem="V9O-k4-e2e" firstAttribute="leading" secondItem="xao-1u-WIV" secondAttribute="leading" constant="4" id="HaR-sR-xx3"/>
+                            <constraint firstItem="V9O-k4-e2e" firstAttribute="centerY" secondItem="dsx-eG-mcK" secondAttribute="centerY" id="K9z-oQ-Dvp"/>
+                            <constraint firstItem="by7-05-TBD" firstAttribute="centerX" secondItem="dsx-eG-mcK" secondAttribute="centerX" id="Ok4-t7-bFc"/>
+                            <constraint firstItem="by7-05-TBD" firstAttribute="top" secondItem="V9O-k4-e2e" secondAttribute="bottom" constant="16" id="RWu-fc-d2K"/>
+                            <constraint firstItem="cZA-bN-P4t" firstAttribute="top" secondItem="by7-05-TBD" secondAttribute="bottom" constant="8" id="SYU-Dz-VjW"/>
+                            <constraint firstItem="cZA-bN-P4t" firstAttribute="leading" secondItem="by7-05-TBD" secondAttribute="leading" id="eQc-hY-5GB"/>
+                            <constraint firstItem="cZA-bN-P4t" firstAttribute="trailing" secondItem="by7-05-TBD" secondAttribute="trailing" id="szJ-YZ-IBl"/>
+                            <constraint firstItem="xao-1u-WIV" firstAttribute="trailing" secondItem="V9O-k4-e2e" secondAttribute="trailing" constant="4" id="uMf-qP-cyh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xao-1u-WIV"/>
+                    </view>
+                    <connections>
+                        <outlet property="actionBtn" destination="by7-05-TBD" id="Vbf-4e-Ksd"/>
+                        <outlet property="toggelBtn" destination="cZA-bN-P4t" id="Xvh-Ah-s6g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LKl-0z-3ad" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="91"/>
+        </scene>
+        <!--Hidden Launcher View Controller-->
+        <scene sceneID="o08-5W-5Qk">
+            <objects>
+                <viewController storyboardIdentifier="HiddenLauncherViewController" id="DsX-Wr-KwK" customClass="HiddenLauncherViewController" customModule="BotterSample" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1p9-EZ-eTO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5s-JV-CV9">
+                                <rect key="frame" x="4" y="421.5" width="406" height="53"/>
+                                <string key="text">Welcome,
+to Botter Mobile</string>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXD-76-QI0">
+                                <rect key="frame" x="154.5" y="490.5" width="105" height="32"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="   Open Chat   ">
+                                    <color key="titleColor" red="0.8980392157" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openChat" destination="DsX-Wr-KwK" eventType="touchUpInside" id="ZXf-bN-rmt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.94509803920000002" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="vLc-lL-lXw" firstAttribute="trailing" secondItem="B5s-JV-CV9" secondAttribute="trailing" constant="4" id="K6x-PM-hMH"/>
+                            <constraint firstItem="EXD-76-QI0" firstAttribute="centerX" secondItem="1p9-EZ-eTO" secondAttribute="centerX" id="MrR-mN-iIC"/>
+                            <constraint firstItem="EXD-76-QI0" firstAttribute="top" secondItem="B5s-JV-CV9" secondAttribute="bottom" constant="16" id="NPx-45-Pyh"/>
+                            <constraint firstItem="B5s-JV-CV9" firstAttribute="centerY" secondItem="1p9-EZ-eTO" secondAttribute="centerY" id="bWa-ez-kT3"/>
+                            <constraint firstItem="B5s-JV-CV9" firstAttribute="centerX" secondItem="1p9-EZ-eTO" secondAttribute="centerX" id="eS2-oy-yBL"/>
+                            <constraint firstItem="B5s-JV-CV9" firstAttribute="leading" secondItem="vLc-lL-lXw" secondAttribute="leading" constant="4" id="iEG-Vf-yCV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vLc-lL-lXw"/>
+                    </view>
+                    <connections>
+                        <outlet property="openChatBtn" destination="EXD-76-QI0" id="aMZ-ek-UFb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Po9-fZ-kCQ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="90"/>
+        </scene>
+    </scenes>
+</document>
