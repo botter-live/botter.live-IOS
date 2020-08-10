@@ -16,7 +16,7 @@ class b_LoaderManager: NSObject {
     override init() {
         super.init()
         if let bundel = MyFrameworkBundle.bundle{
-            loader = bundel.loadNibNamed("LoaderView", owner: self , options: nil)?.first as? b_LoaderView
+            loader = bundel.loadNibNamed("b_LoaderView", owner: self , options: nil)?.first as? b_LoaderView
             
         }
     }
