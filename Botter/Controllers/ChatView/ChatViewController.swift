@@ -19,6 +19,7 @@ final class b_ChatViewController: UIViewController {
     @IBOutlet weak var chatView : b_TextBoxFeild!
     @IBOutlet weak var bottomConstraint : NSLayoutConstraint!
     @IBOutlet weak var connectionErrorView : UIView!
+    @IBOutlet weak var menuBtn : b_AccentBtn!
     
     var presenter: ChatPresenterInterface!
     var original : CGFloat = 0
@@ -31,6 +32,7 @@ final class b_ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         history = !B_SocketManager.first
+        menuBtn.isHidden = b_ChatViewController.botData.menu.actions.count == 0
         registerCells()
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light

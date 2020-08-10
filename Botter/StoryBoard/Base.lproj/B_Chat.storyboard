@@ -2164,6 +2164,7 @@ itemTitle.alpha = 0</string>
                         <outlet property="chatView" destination="fbO-1Z-HJ8" id="K9T-2C-vwr"/>
                         <outlet property="connectionErrorView" destination="GpK-GP-tZB" id="RQg-eZ-YYj"/>
                         <outlet property="groupedDateLbl" destination="27u-gJ-guB" id="pQL-Tg-4ZI"/>
+                        <outlet property="menuBtn" destination="Dm0-MK-Srm" id="Ldc-6u-OKo"/>
                         <outlet property="tableView" destination="uRS-dj-06M" id="yni-qH-ouO"/>
                     </connections>
                 </viewController>
@@ -2340,6 +2341,7 @@ itemTitle.alpha = 0</string>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="close-1"/>
                                                     <connections>
+                                                        <action selector="b_backDismiss:" destination="EjK-HP-wRY" eventType="touchUpInside" id="OuE-dP-pdp"/>
                                                         <action selector="close:" destination="xbS-79-aG8" eventType="touchUpInside" id="H28-XH-4sB"/>
                                                     </connections>
                                                 </button>
