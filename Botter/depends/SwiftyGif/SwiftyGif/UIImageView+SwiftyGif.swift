@@ -49,7 +49,7 @@ public extension UIImageView {
     /// - Parameter manager: The manager to handle the gif display
     convenience init(gifURL: URL, manager: SwiftyGifManager = .defaultManager, loopCount: Int = -1) {
         self.init()
-        setGifFromURL(gifURL, manager: manager, loopCount: loopCount)
+        b_setGifFromURL(gifURL, manager: manager, loopCount: loopCount)
     }
     
     /// Set a gif image and a manager to an existing UIImageView.
@@ -96,7 +96,7 @@ public extension UIImageView {
     ///     - showLoader: Show UIActivityIndicatorView or not
     /// - Returns: An URL session task. Note: You can cancel the downloading task if it needed.
     @discardableResult
-    func setGifFromURL(_ url: URL,
+    func b_setGifFromURL(_ url: URL,
                        manager: SwiftyGifManager = .defaultManager,
                        loopCount: Int = -1,
                        levelOfIntegrity: GifLevelOfIntegrity = .default,

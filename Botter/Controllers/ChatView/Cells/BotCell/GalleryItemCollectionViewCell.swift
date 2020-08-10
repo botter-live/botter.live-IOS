@@ -53,7 +53,7 @@ class GalleryItemCollectionViewCell: UICollectionViewCell {
             }
             break
         case .gif:
-            self.gifImage?.setGifFromURL(URL.init(string: item.imageUrl)!, manager: SwiftyGifManager.defaultManager , loopCount: 0, levelOfIntegrity: GifLevelOfIntegrity(5), showLoader: true)
+            self.gifImage?.b_setGifFromURL(URL.init(string: item.imageUrl)!, manager: SwiftyGifManager.defaultManager , loopCount: 0, levelOfIntegrity: GifLevelOfIntegrity(5), showLoader: true)
             break
         }
         
