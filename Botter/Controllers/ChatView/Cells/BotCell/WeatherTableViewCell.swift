@@ -45,7 +45,6 @@ class WeatherTableViewCell: BotChatTableViewCell  {
             print(lazyError?.localizedDescription)
         }
     }
-
-   
     
 }
+

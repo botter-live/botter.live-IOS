@@ -17,16 +17,31 @@ class b_tagViewLayOut: UICollectionViewFlowLayout {
         for attributes in attributesForElementsInRect! {
             let refAttributes = attributes
             // assign value if next row
+   
             if (refAttributes.frame.origin.x == self.sectionInset.left) {
                 leftMargin = self.sectionInset.left
-            } else {
+            }else {
                 // set x position of attributes to current margin
                 var newLeftAlignedFrame = refAttributes.frame
                 newLeftAlignedFrame.origin.x = leftMargin
                 refAttributes.frame = newLeftAlignedFrame
             }
             // calculate new value for current margin
-            leftMargin += refAttributes.frame.size.width + 8
+            
+            if refAttributes.frame.maxX > rect.maxX{
+                print("offLimit")
+                var newLeftAlignedFrame = refAttributes.frame
+                newLeftAlignedFrame.origin.x = self.sectionInset.left
+                refAttributes.frame = newLeftAlignedFrame
+                
+                leftMargin = self.sectionInset.left
+            }
+            
+            
+            leftMargin += refAttributes.frame.size.width +  self.sectionInset.right
+            
+            
+            
             newAttributesForElementsInRect.append(refAttributes)
         }
         return newAttributesForElementsInRect

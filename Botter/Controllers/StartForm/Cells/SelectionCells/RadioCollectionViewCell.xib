@@ -24,10 +24,10 @@
                             <constraint firstAttribute="height" constant="40" id="QJB-8c-wVf"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <userDefinedRuntimeAttribute type="color" keyPath="b_borderColor">
                                 <color key="value" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <userDefinedRuntimeAttribute type="number" keyPath="b_borderWidth">
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
