@@ -15,9 +15,9 @@ final class StartFormPresenter {
     
     // MARK: - Private properties -
     
-    var botData : BotData!
+    var botData : b_BotData!
     var dataCells : [UITableViewCell]!
-    var faqsData = [FaqData]()
+    var faqsData = [b_FaqData]()
     
     private unowned let view: StartFormViewInterface
     private let interactor: StartFormInteractorInterface
@@ -29,7 +29,7 @@ final class StartFormPresenter {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
-        self.botData = BotData()
+        self.botData = b_BotData()
         self.dataCells = [UITableViewCell]()
     }
 }
@@ -41,7 +41,7 @@ extension StartFormPresenter: StartFormPresenterInterface {
         self.view.showMsg(msg: error)
     }
     
-    func fetchedFaqsSuccessfully(faqsResponse: [FaqData]) {
+    func fetchedFaqsSuccessfully(faqsResponse: [b_FaqData]) {
         self.faqsData = faqsResponse
         self.view.setFaqsData(faqsData: faqsData)
     }
@@ -70,9 +70,9 @@ extension StartFormPresenter: StartFormPresenterInterface {
     func getCells(){
         dataCells.removeAll()
         var dataList = [UITableViewCell]()
-        if SocketManager.first{
+        if B_SocketManager.first{
             for item in self.botData.startForm.inputs {
-                if let view = self.view as? StartFormViewController {
+                if let view = self.view as? b_StartFormViewController {
                     switch item.type {
                     case .textfield:
                         let cell = view.tableView.dequeueReusableCell(withIdentifier: "TextInputTableViewCell") as? TextInputTableViewCell

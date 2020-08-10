@@ -9,6 +9,13 @@
 import UIKit
 
 extension UIColor {
+    
+    convenience init(hex: Int, alpha: CGFloat = 1.0) {
+        let red   = CGFloat((hex & 0xFF0000) >> 16) / 255.0
+        let green = CGFloat((hex & 0xFF00) >> 8) / 255.0
+        let blue  = CGFloat((hex & 0xFF)) / 255.0
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
 
     convenience init(codeString: String) {
         self.init(codeString: codeString, alpha:1)
@@ -26,7 +33,7 @@ extension UIColor {
         scanner.scanHexInt32(&hexInt)
         
         var r:UInt32!, g:UInt32!, b:UInt32!
-        switch (hexWithoutSymbol.length) {
+        switch (hexWithoutSymbol.count) {
         case 3: // #RGB
             r = ((hexInt >> 4) & 0xf0 | (hexInt >> 8) & 0x0f)
             g = ((hexInt >> 0) & 0xf0 | (hexInt >> 4) & 0x0f)

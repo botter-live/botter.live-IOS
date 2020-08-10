@@ -173,7 +173,7 @@ open class AudioItem: NSObject {
             #if os(OSX)
                 return artwork
             #else
-                return artwork?.image(at: imageSize ?? CGSize(width: 512, height: 512))
+            return artwork?.image(at: imageSize ?? CGSize(width: 512, height: 512))
             #endif
         }
         set {

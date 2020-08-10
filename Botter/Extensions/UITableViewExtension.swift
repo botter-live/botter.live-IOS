@@ -9,29 +9,26 @@ import UIKit
 
 public extension UITableView {
     
-    func registerCellClass(_ cellClass: AnyClass) {
-        let identifier = String.className(cellClass)
+    func b_registerCellClass(_ cellClass: AnyClass) {
+        let identifier = String.b_className(cellClass)
         self.register(cellClass, forCellReuseIdentifier: identifier)
     }
     
-    func registerCellNib(_ cellClass: AnyClass) {
-        let identifier = String.className(cellClass)
+    func b_registerCellNib(_ cellClass: AnyClass) {
+        let identifier = String.b_className(cellClass)
         let nib = UINib(nibName: identifier, bundle: nil)
         self.register(nib, forCellReuseIdentifier: identifier)
     }
     
-    func registerHeaderFooterViewClass(_ viewClass: AnyClass) {
-        let identifier = String.className(viewClass)
+    func b_registerHeaderFooterViewClass(_ viewClass: AnyClass) {
+        let identifier = String.b_className(viewClass)
         self.register(viewClass, forHeaderFooterViewReuseIdentifier: identifier)
     }
     
-    func registerHeaderFooterViewNib(_ viewClass: AnyClass) {
-        let identifier = String.className(viewClass)
+    func b_registerHeaderFooterViewNib(_ viewClass: AnyClass) {
+        let identifier = String.b_className(viewClass)
         let nib = UINib(nibName: identifier, bundle: nil)
         self.register(nib, forHeaderFooterViewReuseIdentifier: identifier)
     }
     
-//    open override func setContentOffset(_ contentOffset: CGPoint, animated: Bool) {
-//        
-//    }
 }

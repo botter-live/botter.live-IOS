@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AttachedFile : Mappable{
+class b_AttachedFile : Mappable{
     var type : String
     var url : String
     var code : Int
@@ -32,7 +32,7 @@ class AttachedFile : Mappable{
         code <- map["code"]
     }
     
-    static func getData(dict : [String : Any])->AttachedFile{
-        return Mapper<AttachedFile>().map(JSON: dict)!
+    static func getData(dict : [String : Any])->b_AttachedFile{
+        return Mapper<b_AttachedFile>().map(JSON: dict)!
     }
 }

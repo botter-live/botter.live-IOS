@@ -11,9 +11,9 @@ import UIKit
 class HeroTableViewCell: BotChatTableViewCell {
 
     @IBOutlet weak var collectionView : CustomCollection!
-    public var flowLayout: tagViewLayOut? {
+    public var flowLayout: b_tagViewLayOut? {
         get {
-            return collectionView.collectionViewLayout as? tagViewLayOut
+            return collectionView.collectionViewLayout as? b_tagViewLayOut
         }
         set {
             if newValue != nil {
@@ -22,7 +22,7 @@ class HeroTableViewCell: BotChatTableViewCell {
         }
     }
     var sizingCell: TagCollectionViewCell?
-    var actionClicked:((Action)->())!
+    var actionClicked:((b_Action)->())!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,7 +40,7 @@ class HeroTableViewCell: BotChatTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func setData(msg: BasicMessage, showIcon: Bool = false) {
+    override func setData(msg: b_BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -51,7 +51,7 @@ class HeroTableViewCell: BotChatTableViewCell {
     }
     
     override func prepareForReuse() {
-        self.msg = BasicMessage()
+        self.msg = b_BasicMessage()
         collectionView.reloadData()
         collectionView.delegate = nil
         collectionView.dataSource = nil

@@ -9,7 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 
-class FloatingBtnController: UIViewController {
+class b_FloatingBtnController: UIViewController {
     
     private(set) var button: UIButton!
     
@@ -28,7 +28,7 @@ class FloatingBtnController: UIViewController {
         window?.floatingButtonController = self
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside =  true
-        IQKeyboardManager.shared.disabledDistanceHandlingClasses = [ChatViewController.self]
+        IQKeyboardManager.shared.disabledDistanceHandlingClasses = [b_ChatViewController.self]
         window?.makeKeyAndVisible()
     }
     
@@ -95,7 +95,7 @@ class FloatingBtnController: UIViewController {
 class FloatingButtonWindow: UIWindow {
     
     var button: UIButton?
-    weak var floatingButtonController: FloatingBtnController?
+    weak var floatingButtonController: b_FloatingBtnController?
     
     init() {
         super.init(frame: UIScreen.main.bounds)
@@ -111,7 +111,7 @@ class FloatingButtonWindow: UIWindow {
     }
     
     internal override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        if  self.visibleViewController is FloatingBtnController{
+        if  self.b_visibleViewController is b_FloatingBtnController{
             guard let button = button else { return false }
             let buttonPoint = convert(point, to: button)
             return button.point(inside: buttonPoint, with: event)
@@ -144,7 +144,7 @@ public final class MyFrameworkBundle {
 
     
     static var bundle:Bundle! {
-        let podBundle = Bundle(for: FloatingBtnController.self)
+        let podBundle = Bundle(for: b_FloatingBtnController.self)
 
         if let bundleURL = podBundle.url(forResource: "Botter", withExtension: "bundle"){
             //        print("bundel : " + (bundleURL!.absoluteString) )

@@ -10,7 +10,7 @@ import UIKit
 
 class RadioInputTableViewCell: BasicFormTableViewCell {
 
-    @IBOutlet weak var titleLbl : BasicRegularLbl!
+    @IBOutlet weak var titleLbl : b_BasicRegularLbl!
     @IBOutlet weak var collectionView : CustomCollection!
     
     var sizingCell: RadioCollectionViewCell?
@@ -31,7 +31,7 @@ class RadioInputTableViewCell: BasicFormTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func setData(input: FormInput) {
+    override func setData(input: b_FormInput) {
         super.setData(input: input)
         titleLbl.text = input.label
         collectionView.delegate = self
@@ -42,7 +42,7 @@ class RadioInputTableViewCell: BasicFormTableViewCell {
     }
   
     override func prepareForReuse() {
-        self.input = FormInput()
+        self.input = b_FormInput()
         collectionView.reloadData()
         collectionView.delegate = nil
         collectionView.dataSource = nil

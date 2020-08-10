@@ -23,7 +23,7 @@ class ElementTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(item : InvoiceElement ){
+    func setData(item : b_InvoiceElement ){
         elementView.setData(item: item)
     }
 

@@ -8,16 +8,16 @@
 
 import UIKit
 
-protocol TextBoxDelegate {
-    func textBoxDidChange(textBox : TextBoxFeild)
-    func shouldChangeTextInRange(textBox : TextBoxFeild)
-    func textBoxDidBeginEditing(textBox : TextBoxFeild)
-    func textBoxDidEndEditing(textBox : TextBoxFeild)
-    func textBoxShouldBeginEditing(textBox : TextBoxFeild)
-    func textBoxShouldEndEditing(textBox : TextBoxFeild)
+protocol b_TextBoxDelegate {
+    func textBoxDidChange(textBox : b_TextBoxFeild)
+    func shouldChangeTextInRange(textBox : b_TextBoxFeild)
+    func textBoxDidBeginEditing(textBox : b_TextBoxFeild)
+    func textBoxDidEndEditing(textBox : b_TextBoxFeild)
+    func textBoxShouldBeginEditing(textBox : b_TextBoxFeild)
+    func textBoxShouldEndEditing(textBox : b_TextBoxFeild)
 }
 
-class TextBoxFeild: UIView {
+class b_TextBoxFeild: UIView {
 
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var titleLbl: UILabel!
@@ -61,7 +61,7 @@ class TextBoxFeild: UIView {
 //            refreshText()
         }
     }
-    var delegate : TextBoxDelegate!
+    var delegate : b_TextBoxDelegate!
 
     
     
@@ -109,7 +109,7 @@ class TextBoxFeild: UIView {
         if errorLabel != nil{
             errorLabel.text = error
             errorLabel.isHidden = false
-            errorLabel.textColor = Colors.red
+            errorLabel.textColor = UIColor.init(codeString: "#ef2323")
         }
     }
     
@@ -129,7 +129,7 @@ class TextBoxFeild: UIView {
     }
     func setText(text: String){
         field.text = text
-        if field.text.length == 0  {
+        if field.text.count == 0  {
             field.text =  placeHolder
             field.tag = 0
             field.textColor = placeHolderColor
@@ -141,7 +141,7 @@ class TextBoxFeild: UIView {
     }
     
     func isEmptyAndNotOptional()->Bool{
-        return self.getText().trim().isEmpty && !optional
+        return self.getText().b_trim().isEmpty && !optional
     }
     
     func validate()->Bool{
@@ -151,19 +151,19 @@ class TextBoxFeild: UIView {
             isValid = false
             self.invalid(error: (errorMsg != "") ?
                 errorMsg :
-                "Feild can't be empty".localize())
+                "Feild can't be empty".b_localize())
         }
         return isValid
     }
 }
-extension TextBoxFeild : UITextViewDelegate{
+extension b_TextBoxFeild : UITextViewDelegate{
     
     func textViewDidChange(_ textView: UITextView) {
         if delegate != nil{
             delegate.textBoxDidChange(textBox: self)
         }
         normal()
-        if textView.text.length == 0  {
+        if textView.text.count == 0  {
             textView.text =  placeHolder
             textView.tag = 0
             textView.textColor = placeHolderColor
@@ -225,7 +225,7 @@ extension TextBoxFeild : UITextViewDelegate{
         }
         _ = validate()
         if textView.tag == 1{
-            if textView.text.trim() == ""
+            if textView.text.b_trim() == ""
             {
                 textView.text = self.placeHolder
                 textView.textColor = self.placeHolderColor

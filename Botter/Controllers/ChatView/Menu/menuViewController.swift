@@ -8,12 +8,12 @@
 
 import UIKit
 
-class menuViewController: UIViewController {
+class b_menuViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
-    var doneActionHandler: ((MenuItem)->Void)?
+    var doneActionHandler: ((b_MenuItem)->Void)?
     
-    var menu = Menu()
+    var menu = b_Menu()
     var selected = -1
 
     override func viewDidLoad() {
@@ -29,9 +29,9 @@ class menuViewController: UIViewController {
     }
     
     
-    static func open(in parent:UIViewController ,menu : Menu, completion:@escaping((MenuItem)->())){
+    static func open(in parent:UIViewController ,menu : b_Menu, completion:@escaping((b_MenuItem)->())){
             let content: ContentSheetContentProtocol
-            let vc = menuViewController.instantiateFromStoryBoard(appStoryBoard: .Main)
+            let vc = b_menuViewController.b_instantiateFromStoryBoard(appStoryBoard: .Main)
         vc.menu = menu
             vc.doneActionHandler = { item in
                
@@ -48,7 +48,7 @@ class menuViewController: UIViewController {
         }
 
 }
-extension menuViewController : UITableViewDataSource{
+extension b_menuViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return menu.actions.count
     }
@@ -79,7 +79,7 @@ extension menuViewController : UITableViewDataSource{
         }
     }
     
-    func actionPressed(action : MenuItem){
+    func actionPressed(action : b_MenuItem){
         if doneActionHandler != nil{
             doneActionHandler!(action)
         }
@@ -96,7 +96,7 @@ extension menuViewController : UITableViewDataSource{
         return UIScreen.main.bounds.height - 50
     }
 }
-extension menuViewController : UITableViewDelegate{
+extension b_menuViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableCell(withIdentifier: "header")
         if let titleLbl = view?.viewWithTag(1) as? UILabel{

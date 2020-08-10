@@ -11,18 +11,18 @@ import  UIKit
 
 public extension UIWindow {
     
-    var visibleViewController: UIViewController? {
-        return UIWindow.getVisibleViewControllerFrom(self.rootViewController)
+    var b_visibleViewController: UIViewController? {
+        return UIWindow.b_getVisibleViewControllerFrom(self.rootViewController)
     }
     
-    static func getVisibleViewControllerFrom(_ vc: UIViewController?) -> UIViewController? {
+    static func b_getVisibleViewControllerFrom(_ vc: UIViewController?) -> UIViewController? {
         if let nc = vc as? UINavigationController {
-            return UIWindow.getVisibleViewControllerFrom(nc.visibleViewController)
+            return UIWindow.b_getVisibleViewControllerFrom(nc.visibleViewController)
         } else if let tc = vc as? UITabBarController {
-            return UIWindow.getVisibleViewControllerFrom(tc.selectedViewController)
+            return UIWindow.b_getVisibleViewControllerFrom(tc.selectedViewController)
         } else {
             if let pvc = vc?.presentedViewController {
-                return UIWindow.getVisibleViewControllerFrom(pvc)
+                return UIWindow.b_getVisibleViewControllerFrom(pvc)
             } else {
                 return vc
             }

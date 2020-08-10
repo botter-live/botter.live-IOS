@@ -25,7 +25,7 @@ extension StartFormInteractor: StartFormInteractorInterface {
             self.presenter.hideLoader()
             switch status {
             case .sucess :
-                 self.presenter.fetchedFaqsSuccessfully(faqsResponse: response as? [FaqData] ?? [])
+                 self.presenter.fetchedFaqsSuccessfully(faqsResponse: response as? [b_FaqData] ?? [])
                 break
             case .error , .networkError :
                 self.presenter.faqsError(error: response as? String ?? "Some thing went wrong")
@@ -41,7 +41,7 @@ extension StartFormInteractor: StartFormInteractorInterface {
         let dataSource = BotterDataSource()
         dataSource.getBotterData { (status, response) in
             self.presenter.hideLoader()
-            self.presenter.botData = response as? BotData ?? BotData()
+            self.presenter.botData = response as? b_BotData ?? b_BotData()
             self.presenter.getCells()
         }
     }
@@ -70,7 +70,7 @@ extension StartFormInteractor: StartFormInteractorInterface {
             }
         }
         if attributes.count > 0{
-            SocketManager.shared.attributes = attributes
+            B_SocketManager.shared.attributes = attributes
         }
         self.presenter.openChat()
         

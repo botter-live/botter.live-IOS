@@ -10,20 +10,20 @@
 
 import Foundation
 
-final class ChatInteractor {
+final class b_ChatInteractor {
     var presenter: ChatPresenterInterface!
 }
 
 // MARK: - Extensions -
 
-extension ChatInteractor: ChatInteractorInterface {
+extension b_ChatInteractor: ChatInteractorInterface {
     
     func openSocket() {
-        SocketManager.shared.connect()
-        SocketManager.shared.messageRecieved = { msg in
+        B_SocketManager.shared.connect()
+        B_SocketManager.shared.messageRecieved = { msg in
             self.presenter.messageReceived(message: msg)
         }
-        SocketManager.shared.historyLoaded = { list in
+        B_SocketManager.shared.historyLoaded = { list in
             var mList = list
             mList.removeAll(where: {$0.slug.lowercased() == ""})
 //            mList.removeAll(where: {$0.type.lowercased() == "welcome_back"})
@@ -35,27 +35,27 @@ extension ChatInteractor: ChatInteractorInterface {
         }
     }
     
-    func resend(msg: BasicMessage , completion:@escaping((Bool)->()))  {
+    func resend(msg: b_BasicMessage , completion:@escaping((Bool)->()))  {
         
-        if SocketManager.shared.isConnected && ReachabilityManager.shared.isNetworkAvailable{
+        if B_SocketManager.shared.isConnected && b_ReachabilityManager.shared.isNetworkAvailable{
             if msg.blockValue != ""{
-                SocketManager.shared.sendMessage(text: msg.blockValue) { (isSent) in
+                B_SocketManager.shared.sendMessage(text: msg.blockValue) { (isSent) in
                     completion(isSent)
                 }
             }else{
-                SocketManager.shared.sendMessage(text: msg.text){ (isSent) in
+                B_SocketManager.shared.sendMessage(text: msg.text){ (isSent) in
                     completion(isSent)
                 }
             }
              
         }else{
-            SocketManager.shared.connect()
+            B_SocketManager.shared.connect()
             completion(false)
         }
     }
     
-    func sendMessage(text : String , completion:@escaping((BasicMessage)->())){
-        let Message = BasicMessage()
+    func sendMessage(text : String , completion:@escaping((b_BasicMessage)->())){
+        let Message = b_BasicMessage()
         Message.type = "message"
         Message.isBotMsg = false
         Message.text = text
@@ -64,39 +64,39 @@ extension ChatInteractor: ChatInteractorInterface {
         Message.sender.senderType = .user
         self.presenter.clearTextBox()
         
-        if SocketManager.shared.isConnected{
-            SocketManager.shared.sendMessage(text: text){ isSent in
+        if B_SocketManager.shared.isConnected{
+            B_SocketManager.shared.sendMessage(text: text){ isSent in
                 completion(Message)
             }
         }else{
-            SocketManager.shared.connect()
+            B_SocketManager.shared.connect()
             Message.msgSent = false
             completion(Message)
         }
         
     }
     
-    func triviaMessage(action : Action , completion:@escaping((BasicMessage)->())){
-        let Message = BasicMessage()
+    func triviaMessage(action : b_Action , completion:@escaping((b_BasicMessage)->())){
+        let Message = b_BasicMessage()
         Message.type = "message"
         Message.slug = "message"
         Message.isBotMsg = false
         Message.text = action.title
         Message.msgType = .userMsg
         Message.sender.senderType = .user
-        if SocketManager.shared.isConnected{
+        if B_SocketManager.shared.isConnected{
             if action.action == .date{
-                SocketManager.shared.sendMessage(text: action.title) { (isSent) in
+                B_SocketManager.shared.sendMessage(text: action.title) { (isSent) in
                     completion(Message)
                 }
             }else{
-                SocketManager.shared.sendPostBack(value: action.value , title: action.title , slug: Message.slug){ isSent in
+                B_SocketManager.shared.sendPostBack(value: action.value , title: action.title , slug: Message.slug){ isSent in
                     completion(Message)
                 }
             }
 //            return true
         }else{
-            SocketManager.shared.connect()
+            B_SocketManager.shared.connect()
             Message.msgSent = false
 //            return false
             Message.blockValue = action.value
@@ -106,7 +106,7 @@ extension ChatInteractor: ChatInteractorInterface {
    
     }
     
-    func actionClicked(action: Action) {
+    func actionClicked(action: b_Action) {
         switch action.action {
         case .call:
             presenter.call(number: action.value)
@@ -115,7 +115,7 @@ extension ChatInteractor: ChatInteractorInterface {
             presenter.openUrl(url: action.value)
             break
         case .postBack:
-            SocketManager.shared.sendPostBack(value: action.value , title: action.title , completion: { isSent in
+            B_SocketManager.shared.sendPostBack(value: action.value , title: action.title , completion: { isSent in
 //                completion(isSent)
             })
             break
@@ -124,41 +124,41 @@ extension ChatInteractor: ChatInteractorInterface {
         }
     }
     
-    func sendAttachment(file: AttachedFile, completion:@escaping((BasicMessage)->())) {
-        let Message = BasicMessage()
+    func sendAttachment(file: b_AttachedFile, completion:@escaping((b_BasicMessage)->())) {
+        let Message = b_BasicMessage()
         Message.type = "attachment"
         Message.isBotMsg = false
         Message.mediaUrl = file.url
         Message.type = file.type
         Message.slug = file.type == "image" ? "image_attachment" : "attachment"
         Message.sender.senderType = .user
-        Message.msgType = MessageType.init(rawValue: Message.slug) ?? .attachment
+        Message.msgType = b_MessageType.init(rawValue: Message.slug) ?? .attachment
         
-        if SocketManager.shared.isConnected{
-            SocketManager.shared.sendAttachment(file: file, completion: { (isSent) in
+        if B_SocketManager.shared.isConnected{
+            B_SocketManager.shared.sendAttachment(file: file, completion: { (isSent) in
                 completion(Message)
             })
         }else{
-            SocketManager.shared.connect()
+            B_SocketManager.shared.connect()
             Message.msgSent = false
             completion(Message)
         }
     }
     
-    func sendMenuAction(action : MenuItem ,completion:@escaping((BasicMessage)->())){
-        let Message = BasicMessage()
+    func sendMenuAction(action : b_MenuItem ,completion:@escaping((b_BasicMessage)->())){
+        let Message = b_BasicMessage()
         Message.type = "message"
         Message.slug = "message"
         Message.isBotMsg = false
         Message.text = action.title
         Message.msgType = .userMsg
         Message.sender.senderType = .user
-        if SocketManager.shared.isConnected{
-            SocketManager.shared.sendPostBack(value: action.payload , title: action.title , slug:Message.slug ){ isSent in
+        if B_SocketManager.shared.isConnected{
+            B_SocketManager.shared.sendPostBack(value: action.payload , title: action.title , slug:Message.slug ){ isSent in
                 completion(Message)
             }
         }else{
-            SocketManager.shared.connect()
+            B_SocketManager.shared.connect()
             Message.msgSent = false
             //            return false
             Message.blockValue = action.payload

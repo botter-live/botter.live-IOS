@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 @IBDesignable
-open class GradientView: UIView {
+open class b_GradientView: UIView {
     @IBInspectable
     public var startColor: UIColor = .clear {
         didSet {
@@ -49,7 +49,7 @@ open class GradientView: UIView {
     }
 }
 @IBDesignable
-public class GradientHView: UIView {
+public class b_GradientHView: UIView {
     private func createGradient() -> CAGradientLayer {
         let gradient = CAGradientLayer()
         gradient.transform = CATransform3DMakeRotation(.pi / 2, 0, 0, 1)
@@ -103,8 +103,8 @@ public class GradientHView: UIView {
     }
 }
 extension UIView {
-    func insertHorizontalGradient(_ color1: UIColor, _ color2: UIColor) -> GradientHView {
-        let gradientView = GradientHView(frame: bounds)
+    func insertHorizontalGradient(_ color1: UIColor, _ color2: UIColor) -> b_GradientHView {
+        let gradientView = b_GradientHView(frame: bounds)
         gradientView.color1 = color1
         gradientView.color2 = color2
         gradientView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

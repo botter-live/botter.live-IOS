@@ -8,18 +8,18 @@
 
 import Foundation
 
-class GallaryItem : Codable , Mappable{
+class b_GallaryItem : Codable , Mappable{
     
-    var actions : [Action]
+    var actions : [b_Action]
     var title : String
     var imageUrl : String
     var desc : String
     var type : String
-    var mediaType : MediaType
+    var mediaType : b_MediaType
     var thumbnail : String
     
     init(){
-        actions = [Action]()
+        actions = [b_Action]()
         title = ""
         imageUrl = ""
         desc = ""
@@ -38,11 +38,11 @@ class GallaryItem : Codable , Mappable{
         imageUrl <- map["url"]
         desc <- map["desc"]
         type <- map["media_type"]
-        mediaType = MediaType.init(rawValue: type) ?? .image
+        mediaType = b_MediaType.init(rawValue: type) ?? .image
         thumbnail <- map["video_thumbnail"]
     }
     
-    enum MediaType : String , Codable{
+    enum b_MediaType : String , Codable{
         case image = "image"
         case gif = "gif"
         case video = "video"

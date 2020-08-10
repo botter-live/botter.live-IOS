@@ -30,10 +30,10 @@ class WeatherTableViewCell: BotChatTableViewCell  {
         // Configure the view for the selected state
     }
     
-    override func setData(msg: BasicMessage, showIcon: Bool = false) {
+    override func setData(msg: b_BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
         areaLbl.text = msg.weather.area
-        dateLbl.text = Date().getWeekDay() + ", " + Date().getWeatherDateString()
+        dateLbl.text = Date().b_getWeekDay() + ", " + Date().b_getWeatherDateString()
         tempLbl.text = msg.weather.temp
 //            + "°C"
         hieghTempLbl.text =  msg.weather.heighTemp

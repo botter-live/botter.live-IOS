@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Weather : Mappable{
+class b_Weather : Mappable{
     var area : String
     var imageUrl : String
     var temp : String

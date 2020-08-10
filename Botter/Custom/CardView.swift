@@ -19,8 +19,8 @@ class CardView: UIView {
     @IBInspectable var shadowOpacity: Float = 0.2
     
     override func layoutSubviews() {
-        layer.cornerRadius = cornerRadius
-        let shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
+        layer.cornerRadius = b_cornerRadius
+        let shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: b_cornerRadius)
         
         layer.masksToBounds = false
         layer.shadowColor = shadowColor?.cgColor

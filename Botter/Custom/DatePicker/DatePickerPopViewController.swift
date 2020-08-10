@@ -9,7 +9,7 @@
 import UIKit
 //import ContentSheet
 
-class DatePickerPopViewController: UIViewController {
+class b_DatePickerPopViewController: UIViewController {
     
     @IBOutlet weak var datePicker : UIDatePicker!
     @IBOutlet weak var titleLbl : UILabel!
@@ -63,12 +63,12 @@ class DatePickerPopViewController: UIViewController {
     
     static func open(in parent:UIViewController , mode : UIDatePicker.Mode , completion:@escaping((String)->())){
         let content: ContentSheetContentProtocol
-        let vc = DatePickerPopViewController.instantiateFromStoryBoard(appStoryBoard: .Main)
+        let vc = b_DatePickerPopViewController.b_instantiateFromStoryBoard(appStoryBoard: .Main)
 //        vc.modalPresentationStyle = .overCurrentContext
         vc.mode = mode
         vc.selectedDate = Date()
         vc.doneActionHandler = { action in
-            let selected = mode == .date ? vc.selectedDate.toString() : vc.selectedDate.toTimeString()
+            let selected = mode == .date ? vc.selectedDate.b_toString() : vc.selectedDate.b_toTimeString()
             completion(selected)
         }
         let contentController = vc

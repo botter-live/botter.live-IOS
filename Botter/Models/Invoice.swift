@@ -8,27 +8,27 @@
 
 import Foundation
 
-class Invoice : Mappable{
+class b_Invoice : Mappable{
      
-    var address : Address
+    var address : b_Address
     var currency : String
     var orderNumber : String
     var paymentMethod : String
     var recipientName : String
-    var summery : InvoiceSummery
-    var elements : [InvoiceElement]
-    var adjustments : [InvoiceAdjusment]
+    var summery : b_InvoiceSummery
+    var elements : [b_InvoiceElement]
+    var adjustments : [b_InvoiceAdjusment]
     var timestamp : String
     
     init(){
-        address = Address()
+        address = b_Address()
         currency = ""
         orderNumber = ""
         paymentMethod = ""
         recipientName = ""
-        summery = InvoiceSummery()
-        elements = [InvoiceElement]()
-        adjustments = [InvoiceAdjusment]()
+        summery = b_InvoiceSummery()
+        elements = [b_InvoiceElement]()
+        adjustments = [b_InvoiceAdjusment]()
         timestamp = ""
     }
     
@@ -49,7 +49,7 @@ class Invoice : Mappable{
     }
 }
 
-class Address : Mappable{
+class b_Address : Mappable{
     var street1 : String
     var street2 : String
     var state : String
@@ -85,7 +85,7 @@ class Address : Mappable{
     }
 }
 
-class InvoiceElement:Mappable{
+class b_InvoiceElement:Mappable{
     
     
     var currency : String
@@ -117,7 +117,8 @@ class InvoiceElement:Mappable{
         title <- map["title"]
     }
 }
-class InvoiceSummery:Mappable{
+
+class b_InvoiceSummery:Mappable{
     
     var shippingCost : Double
     var subTotal : Double
@@ -145,7 +146,7 @@ class InvoiceSummery:Mappable{
     }
 }
 
-class InvoiceAdjusment:Mappable{
+class b_InvoiceAdjusment:Mappable{
     
     var amount : Double
     var name : String

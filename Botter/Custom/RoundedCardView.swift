@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoundedCardView: RoundedView {
+class b_RoundedCardView: b_RoundedView {
 
     @IBInspectable var shadowOffsetWidth: Int = 0
     @IBInspectable var shadowOffsetHeight: Int = 2
@@ -16,8 +16,8 @@ class RoundedCardView: RoundedView {
     @IBInspectable var shadowOpacity: Float = 0.2
     
     override func layoutSubviews() {
-        layer.cornerRadius = cornerRadius
-        let shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
+        layer.cornerRadius = b_cornerRadius
+        let shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: b_cornerRadius)
         
         layer.masksToBounds = false
         layer.shadowColor = shadowColor?.cgColor

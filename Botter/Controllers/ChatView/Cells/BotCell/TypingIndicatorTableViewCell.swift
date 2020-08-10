@@ -10,7 +10,7 @@ import UIKit
 
 class TypingIndicatorTableViewCell: BotChatTableViewCell {
     
-    @IBOutlet weak var typing : TypingIndicatorView!
+    @IBOutlet weak var typing : b_TypingIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,7 @@ class TypingIndicatorTableViewCell: BotChatTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func setData(msg: BasicMessage, showIcon: Bool = false) {
+    override func setData(msg: b_BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
         typing.isHidden = !showIcon
         typing.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner , .layerMaxXMaxYCorner]

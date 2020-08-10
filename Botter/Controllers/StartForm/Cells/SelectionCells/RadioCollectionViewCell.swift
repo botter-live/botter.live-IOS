@@ -21,7 +21,7 @@ class RadioCollectionViewCell: UICollectionViewCell {
     
     func setData(text : String , selected : Bool){
         titleLbl.text = text
-        BGView.borderColor = selected ? BotterSettingsManager.AccentColor.withAlphaComponent(0.7) : UIColor.black.withAlphaComponent(0.5)
+        BGView.b_borderColor = selected ? BotterSettingsManager.AccentColor.withAlphaComponent(0.7) : UIColor.black.withAlphaComponent(0.5)
         titleLbl.textColor = selected ? BotterSettingsManager.AccentColor : UIColor.black
         
         let selectedImage = UIImage(named: "ic_radiobutton_selected", in: MyFrameworkBundle.bundle , compatibleWith: nil)!

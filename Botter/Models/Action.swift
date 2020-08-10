@@ -9,12 +9,12 @@
 import Foundation
 //import  ObjectMapper
 
-class Action : Codable , Mappable{
+class b_Action : Codable , Mappable{
     var type : String
     var title : String
     var block : Int
     var value : String
-    var action : ActionType
+    var action : b_ActionType
     var msgIndex = -1
     
     init(){
@@ -30,7 +30,7 @@ class Action : Codable , Mappable{
         title <- map["title"]
         block <- map["block_id"]
         value <- map["value"]
-        action = ActionType.init(rawValue: type.lowercased()) ?? .none
+        action = b_ActionType.init(rawValue: type.lowercased()) ?? .none
     }
     
     required convenience init?(map: Map) {
@@ -38,7 +38,7 @@ class Action : Codable , Mappable{
     }
 }
 
-enum ActionType : String , Codable{
+enum b_ActionType : String , Codable{
     case postBack = "postback"
     case call = "call"
     case openUrl = "openurl"

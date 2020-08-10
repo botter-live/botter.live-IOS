@@ -20,9 +20,9 @@ class TagCollectionViewCell: UICollectionViewCell {
         self.maxWidth.constant = UIScreen.main.bounds.width - 10 * 2 - 10 * 2
     }
 
-    func setData(action : Action){
+    func setData(action : b_Action){
         titleLbl.text = action.title
-        BGView.borderColor = BotterSettingsManager.AccentColor
+        BGView.b_borderColor = BotterSettingsManager.AccentColor
         titleLbl.textColor = BotterSettingsManager.AccentColor
     }
 }

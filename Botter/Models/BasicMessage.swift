@@ -10,34 +10,34 @@ import Foundation
 //import ObjectMapper
 import LazyImage
 
-class BasicMessage :  Mappable {
+class b_BasicMessage :  Mappable {
     
     var msgIndex = -1
     var type : String
     var text : String
     var isBotMsg : Bool
     var slug : String
-    var msgType : MessageType
+    var msgType : b_MessageType
     var mediaUrl : String
-    var actions : [Action]
-    var galleryItems : [GallaryItem]
+    var actions : [b_Action]
+    var galleryItems : [b_GallaryItem]
     var image : String
     var url : String
-    var weather : Weather
+    var weather : b_Weather
     var player = AudioPlayer()
     var audioDuration : TimeInterval!
     var audioIndex = -1
     var foundDuration : (()->())!
     var hasTime : Bool
     var pickDateTimeTitle : String
-    var location : Location
+    var location : b_Location
     var msgSent = true
     var blockValue = ""
-    var flightInfo : FlightTicket
-    var flighStatus : FlightStatus
-    var invoice : Invoice
+    var flightInfo : b_FlightTicket
+    var flighStatus : b_FlightStatus
+    var invoice : b_Invoice
     var notifyText : String
-    var sender : Sender
+    var sender : b_Sender
     let lazyImage = LazyImage()
     
     init(){
@@ -47,20 +47,20 @@ class BasicMessage :  Mappable {
         slug = ""
         msgType = .text
         mediaUrl = ""
-        actions = [Action]()
-        galleryItems = [GallaryItem]()
+        actions = [b_Action]()
+        galleryItems = [b_GallaryItem]()
         image = ""
         url = ""
         audioDuration = 0
-        weather = Weather()
+        weather = b_Weather()
         hasTime = false
         pickDateTimeTitle = ""
-        location = Location()
-        flightInfo = FlightTicket()
-        flighStatus = FlightStatus()
-        invoice = Invoice()
+        location = b_Location()
+        flightInfo = b_FlightTicket()
+        flighStatus = b_FlightStatus()
+        invoice = b_Invoice()
         notifyText = ""
-        sender = Sender()
+        sender = b_Sender()
     }
     
     func mapping(map: Map) {
@@ -69,7 +69,7 @@ class BasicMessage :  Mappable {
         isBotMsg <- map["isBotMsg"]
         slug <- map["slug"]
 //        slug = slug.replacingOccurrences(of: "-", with: "").lowercased()
-        msgType = MessageType.init(rawValue: slug) ?? .text
+        msgType = b_MessageType.init(rawValue: slug) ?? .text
         mediaUrl <- map["mediaUrl"]
         actions <- map["actions"]
         galleryItems <- map["data"]
@@ -89,7 +89,7 @@ class BasicMessage :  Mappable {
             handleAudio()
         }
         if msgType == .dateTime{
-            let action = Action()
+            let action = b_Action()
             action.title = hasTime ? "Pick Time" : "Pick Date"
             action.action = .date
             actions.append(action)
@@ -110,8 +110,8 @@ class BasicMessage :  Mappable {
         self.init()
     }
     
-    static func getMessage(dict : [String:Any])-> BasicMessage{
-        return Mapper<BasicMessage>().map(JSON: dict)!
+    static func getMessage(dict : [String:Any])-> b_BasicMessage{
+        return Mapper<b_BasicMessage>().map(JSON: dict)!
     }
     
     
@@ -124,7 +124,7 @@ class BasicMessage :  Mappable {
     }
 }
 
-enum MessageType : String , Codable{
+enum b_MessageType : String , Codable{
     case text = "text"
     case flightStatus = "flight-status"
     case flightPassngers = "flight-passngers"
@@ -147,7 +147,7 @@ enum MessageType : String , Codable{
     case userImage = "image_attachment"
 }
 
-extension BasicMessage : AudioPlayerDelegate{
+extension b_BasicMessage : AudioPlayerDelegate{
     func audioPlayer(_ audioPlayer: AudioPlayer, didFindDuration duration: TimeInterval, for item: AudioItem) {
         self.audioDuration = duration
         player.stop()
@@ -162,12 +162,12 @@ extension BasicMessage : AudioPlayerDelegate{
     }
 }
 
-class Sender : Mappable{
+class b_Sender : Mappable{
     
     var senderID : String
     var avatar : String
-    var senderType : SenderType
-    var avatarType : AvatarType
+    var senderType : b_SenderType
+    var avatarType : b_AvatarType
     private var senderTypeStr : String
     private var avatarTypeStr : String
     
@@ -190,20 +190,20 @@ class Sender : Mappable{
         avatarTypeStr <- map["avatar_type"]
         senderTypeStr <- map["sender_type"]
         
-        senderType = SenderType.init(rawValue: senderTypeStr) ?? .bot
-        avatarType = AvatarType.init(rawValue: avatarTypeStr) ?? .empty
+        senderType = b_SenderType.init(rawValue: senderTypeStr) ?? .bot
+        avatarType = b_AvatarType.init(rawValue: avatarTypeStr) ?? .empty
     }
     
     
     
 }
-enum SenderType : String{
+enum b_SenderType : String{
     case user = "USER"
     case agent = "AGENT"
     case bot = "BOT"
 }
 
-enum AvatarType : String{
+enum b_AvatarType : String{
     case url = "url"
     case base64 = "base64"
     case empty = ""

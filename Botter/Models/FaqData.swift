@@ -9,14 +9,14 @@
 
 import Foundation
 
-class FaqData : Mappable{
+class b_FaqData : Mappable{
     var id : Int
-    var body : FaqsItem
+    var body : b_FaqsItem
     var createdAt : String
     
     init() {
         id = -1
-        body = FaqsItem()
+        body = b_FaqsItem()
         createdAt = ""
     }
     
@@ -30,14 +30,14 @@ class FaqData : Mappable{
         createdAt <- map["created_at"]
     }
     
-    static func getFAQS(dict : [[String : Any]])->[FaqData]{
-        return Mapper<FaqData>().mapArray(JSONArray: dict)
+    static func getFAQS(dict : [[String : Any]])->[b_FaqData]{
+        return Mapper<b_FaqData>().mapArray(JSONArray: dict)
     
     }
 }
 
 
-class FaqsItem : Mappable{
+class b_FaqsItem : Mappable{
     var answer : String
     var question : String
     

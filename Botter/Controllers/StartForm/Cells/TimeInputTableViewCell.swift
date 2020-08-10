@@ -21,13 +21,13 @@ class TimeInputTableViewCell: DateIntputTableViewCell {
         // Configure the view for the selected state
     }
 
-    override func setData(input: FormInput , parent : UIViewController) {
+    override func setData(input: b_FormInput , parent : UIViewController) {
         super.setData(input: input , parent: parent)
          textFeild.placeholder = "hh:mm"
     }
     
     override func openPicker() {
-        DatePickerPopViewController.open(in: self.parent, mode:  .time ) { (selected) in
+        b_DatePickerPopViewController.open(in: self.parent, mode:  .time ) { (selected) in
             self.textFeild.text = selected
         }
     }

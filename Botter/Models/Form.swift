@@ -8,14 +8,14 @@
 
 import Foundation
 
-class Form : Mappable{
-    var inputs  : [FormInput]
+class b_Form : Mappable{
+    var inputs  : [b_FormInput]
     var label : String
     var locale : String
     var name : String
     
     init(){
-        inputs = [FormInput]()
+        inputs = [b_FormInput]()
         label = ""
         locale = ""
         name = ""
@@ -34,18 +34,18 @@ class Form : Mappable{
     
 }
 
-class FormInput : Mappable{
+class b_FormInput : Mappable{
     var errorMessage : String
     var key : String
     var label : String
     var regex : String
     var required : Bool
     var multiple : Bool
-    var type : FormInputType = .unknown
+    var type : b_FormInputType = .unknown
     var options : [String]
     private var typeString : String{
         didSet{
-            type = FormInputType.init(rawValue: typeString) ?? .unknown
+            type = b_FormInputType.init(rawValue: typeString) ?? .unknown
         }
     }
     
@@ -79,7 +79,7 @@ class FormInput : Mappable{
     
     
 }
-enum FormInputType : String{
+enum b_FormInputType : String{
     case unknown = ""
     case textfield = "textfield"
     case select = "select"

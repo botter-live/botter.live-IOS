@@ -8,11 +8,11 @@
 
 import UIKit
 
-class InvoiceDetailsViewController: UIViewController {
+class b_InvoiceDetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
 
-    var invoice = Invoice()
+    var invoice = b_Invoice()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +24,8 @@ class InvoiceDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    static func open(in viewController : UIViewController , invoice : Invoice){
-        let vc = InvoiceDetailsViewController.instantiateFromStoryBoard(appStoryBoard: .Main)
+    static func open(in viewController : UIViewController , invoice : b_Invoice){
+        let vc = b_InvoiceDetailsViewController.b_instantiateFromStoryBoard(appStoryBoard: .Main)
         vc.invoice = invoice
         viewController.present(vc, animated: true, completion: nil)
     }
@@ -33,7 +33,7 @@ class InvoiceDetailsViewController: UIViewController {
    
 }
 
-extension InvoiceDetailsViewController : UITableViewDataSource{
+extension b_InvoiceDetailsViewController : UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 6
@@ -104,7 +104,7 @@ extension InvoiceDetailsViewController : UITableViewDataSource{
 
     
 }
-extension InvoiceDetailsViewController : UITableViewDelegate{
+extension b_InvoiceDetailsViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section != 5{
             let header = tableView.dequeueReusableCell(withIdentifier: "header") as? BasicInvoiceItemTableViewCell

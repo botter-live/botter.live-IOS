@@ -10,11 +10,11 @@ import UIKit
 
 class UserChatTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var textLbl : PaddedUILabel!
+    @IBOutlet weak var textLbl : b_PaddedUILabel!
     @IBOutlet weak var BGView : UIView!
     
-    var msg = BasicMessage()
-    var resendAction:((BasicMessage)->())!
+    var msg = b_BasicMessage()
+    var resendAction:((b_BasicMessage)->())!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +27,7 @@ class UserChatTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(msg : BasicMessage , showIcon : Bool = false){
+    func setData(msg : b_BasicMessage , showIcon : Bool = false){
         self.msg = msg
         if textLbl != nil{
             textLbl.text = msg.text

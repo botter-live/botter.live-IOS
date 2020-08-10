@@ -21,7 +21,7 @@ class AttachmentTableViewCell: UserChatTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func setData(msg: BasicMessage, showIcon: Bool = false) {
+    override func setData(msg: b_BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg)
         self.msg = msg
         let urlComponents = self.msg.mediaUrl.components(separatedBy: "/")

@@ -115,7 +115,7 @@ let mimeTypes = [
     "avi": "video/x-msvideo"
 ]
 
-public struct MimeType {
+public struct b_MimeType {
     let ext: String?
     public var value: String {
         guard let ext = ext else {

@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Menu : Mappable{
-    var actions : [MenuItem]
+class b_Menu : Mappable{
+    var actions : [b_MenuItem]
     
     init(){
-        actions = [MenuItem]()
+        actions = [b_MenuItem]()
     }
 
     
@@ -25,17 +25,17 @@ class Menu : Mappable{
     }
 }
 
-class MenuItem : Mappable {
+class b_MenuItem : Mappable {
     var payload : String
     var title : String
     var typeString : String
-    var actions : [MenuItem]
+    var actions : [b_MenuItem]
     
     init(){
         payload = ""
         title = ""
         typeString = ""
-        actions = [MenuItem]()
+        actions = [b_MenuItem]()
         
     }
     

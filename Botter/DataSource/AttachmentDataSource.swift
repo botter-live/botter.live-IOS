@@ -20,14 +20,14 @@ class AttachmentDataSource : BaseDataSource{
                 
             }
             
-            let mime = MimeType.init(url: urlObj)
+            let mime = b_MimeType.init(url: urlObj)
             let nName = name == "" ? urlObj.lastPathComponent : name
             
             if data != nil {
                 upload(data: data! , mime: mime.value , name:  nName) { (json, error) in
                     if json != nil {
                         print(json)
-                        let data = AttachedFile.getData(dict: json ?? [:])
+                        let data = b_AttachedFile.getData(dict: json ?? [:])
                         completion(.sucess , data)
                     }else{
                         if (error != nil){
@@ -58,7 +58,7 @@ class AttachmentDataSource : BaseDataSource{
             upload(data: data! , mime: mime , name: "img\(Date.timeIntervalSinceReferenceDate).\(imageType.contentType)") { (json, error) in
                 if json != nil{
                     print(json)
-                    let data = AttachedFile.getData(dict: json ?? [:])
+                    let data = b_AttachedFile.getData(dict: json ?? [:])
                     completion(.sucess , data)
                 }else{
                     if (error != nil){

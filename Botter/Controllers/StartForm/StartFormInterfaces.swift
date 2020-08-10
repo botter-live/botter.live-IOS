@@ -11,19 +11,19 @@
 import UIKit
 
 protocol StartFormWireframeInterface: WireframeInterface {
-    func openChat(data:BotData)
+    func openChat(data:b_BotData)
 }
 
-protocol StartFormViewInterface: ViewInterface {
+protocol StartFormViewInterface: b_ViewInterface {
     func showLoader()
     func hideLoader()
     func showMsg(msg : String)
     func reload()
-    func setFaqsData(faqsData : [FaqData])
+    func setFaqsData(faqsData : [b_FaqData])
 }
 
-protocol StartFormPresenterInterface: PresenterInterface {
-    var botData : BotData! { get set }
+protocol StartFormPresenterInterface: b_PresenterInterface {
+    var botData : b_BotData! { get set }
     var dataCells : [UITableViewCell]! { get set }
     func loadForms()
     func showLoader()
@@ -33,11 +33,11 @@ protocol StartFormPresenterInterface: PresenterInterface {
     func validateThenSubmitForm()
     func openChat()
     func getFaqsData(searchText : String)
-    func fetchedFaqsSuccessfully(faqsResponse : [FaqData])
+    func fetchedFaqsSuccessfully(faqsResponse : [b_FaqData])
     func faqsError(error : String)
 }
 
-protocol StartFormInteractorInterface: InteractorInterface {
+protocol StartFormInteractorInterface: b_InteractorInterface {
     func loadForms()
     func validateForm()
     func loadFaqs(searchText : String)

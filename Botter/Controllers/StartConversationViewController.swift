@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartConversationViewController: UIViewController {
+class b_StartConversationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class StartConversationViewController: UIViewController {
     }
     
     @IBAction func newConversationClicked(){
-        CommonActions.openChat(parent: self, data: BotData())
+        CommonActions.openChat(parent: self, data: b_BotData())
     }
 
     @IBAction func botterWebsiteClicked (){
@@ -40,8 +40,8 @@ class CommonActions{
         }
     }
     
-    static func openChat(parent : UIViewController , data: BotData){
-        let chatScreen = ChatWireframe.init(botData: data)
+    static func openChat(parent : UIViewController , data: b_BotData){
+        let chatScreen = b_ChatWireframe.init(botData: data)
 //        if #available(iOS 13.0, *) {
 //            chatScreen.viewController.modalPresentationStyle = .automatic
 //        } else {

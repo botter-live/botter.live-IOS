@@ -11,20 +11,20 @@
 import UIKit
 import AVKit
 
-final class ChatWireframe: BaseWireframe {
+final class b_ChatWireframe: b_BaseWireframe {
 
     // MARK: - Private properties -
 
     // MARK: - Module setup -
 
-    init(botData : BotData) {
-        let moduleViewController = ChatViewController.instantiateFromStoryBoard(appStoryBoard: .Main)
+    init(botData : b_BotData) {
+        let moduleViewController = b_ChatViewController.b_instantiateFromStoryBoard(appStoryBoard: .Main)
         super.init(viewController: moduleViewController)
 
-        let interactor = ChatInteractor()
-        let presenter = ChatPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
+        let interactor = b_ChatInteractor()
+        let presenter = b_ChatPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
-        ChatViewController.botData = botData
+        b_ChatViewController.botData = botData
         interactor.presenter = presenter
     }
 
@@ -32,7 +32,7 @@ final class ChatWireframe: BaseWireframe {
 
 // MARK: - Extensions -
 
-extension ChatWireframe: ChatWireframeInterface {
+extension b_ChatWireframe: ChatWireframeInterface {
     
     func openVideo(url: String) {
         if url.isYoutubeLink(){
@@ -48,7 +48,7 @@ extension ChatWireframe: ChatWireframeInterface {
                 if let floatingWindow = windows.last(where:  { (window) -> Bool in
                     window is FloatingButtonWindow
                 }){
-                    if let currentVC = (floatingWindow as? FloatingButtonWindow)?.visibleViewController{
+                    if let currentVC = (floatingWindow as? FloatingButtonWindow)?.b_visibleViewController{
                         currentVC.present(playerViewController, animated: true) {
                             player.play()
                         }
@@ -71,11 +71,11 @@ extension ChatWireframe: ChatWireframeInterface {
     }
     
     func call(number: String) {
-        self.viewController.makePhoneCall(phoneNumber: number)
+        self.viewController.b_makePhoneCall(phoneNumber: number)
     }
     
-    func openEndForm(form: Form) {
-        let vc = EndFormViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
+    func openEndForm(form: b_Form) {
+        let vc = b_EndFormViewController.b_instantiateFromStoryBoard(appStoryBoard: .Forms)
         vc.form = form
         self.viewController.present(vc, animated: true, completion: nil)
     }

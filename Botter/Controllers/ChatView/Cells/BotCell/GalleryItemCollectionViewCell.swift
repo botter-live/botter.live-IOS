@@ -21,11 +21,11 @@ class GalleryItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemActionStack : UIStackView!
     
     var lazyImage = LazyImage()
-    var actionClicked:((Action)->())!
-    var item = GallaryItem()
+    var actionClicked:((b_Action)->())!
+    var item = b_GallaryItem()
     var openVideo : ((String)->())!
     
-    func setData(item : GallaryItem , maxCount : Int){
+    func setData(item : b_GallaryItem , maxCount : Int){
         self.item = item
       
         itemdesc.text = item.desc
@@ -69,7 +69,7 @@ class GalleryItemCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        self.item = GallaryItem()
+        self.item = b_GallaryItem()
         gifImage.image = nil
         itemImage.image = nil
     }

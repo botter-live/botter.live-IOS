@@ -10,7 +10,7 @@ import UIKit
 
 class TextAreaInputTableViewCell: BasicFormTableViewCell {
     
-    @IBOutlet weak var textArea : TextBoxFeild!
+    @IBOutlet weak var textArea : b_TextBoxFeild!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,7 @@ class TextAreaInputTableViewCell: BasicFormTableViewCell {
         // Configure the view for the selected state
     }
 
-    override func setData(input: FormInput) {
+    override func setData(input: b_FormInput) {
         super.setData(input: input)
         textArea.field.font = BotterSettingsManager.Font.getRegularFontForTextArea(feild: textArea.field)
         textArea.field.tintColor = BotterSettingsManager.AccentColor
@@ -31,7 +31,7 @@ class TextAreaInputTableViewCell: BasicFormTableViewCell {
     }
     
     override func evaluateRegex() -> Bool {
-        return evaluateRegex(text: textArea.getText().trim())
+        return evaluateRegex(text: textArea.getText().b_trim())
     }
     
     override func getAnswer() -> Any {

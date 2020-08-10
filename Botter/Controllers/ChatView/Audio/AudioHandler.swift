@@ -8,17 +8,17 @@
 
 import UIKit
 
-class MyAudio : AudioItem{
-    var message = BasicMessage()
+class b_MyAudio : AudioItem{
+    var message = b_BasicMessage()
 }
 
-class AudioHandler{
+class b_AudioHandler{
     
-    static var shared = AudioHandler()
+    static var shared = b_AudioHandler()
     
     var player = AudioPlayer()
     var playPausePressed : ((Int)->())!
-    var audios = [MyAudio]()
+    var audios = [b_MyAudio]()
     var current : AudioBotTableViewCell!
     
     init(){
@@ -26,8 +26,8 @@ class AudioHandler{
         //        player.shouldResumePlaying = true
     }
     
-    func addAudioMessage(msg:BasicMessage){
-        if let item = MyAudio(mediumQualitySoundURL: URL.init(string: msg.mediaUrl)){
+    func addAudioMessage(msg:b_BasicMessage){
+        if let item = b_MyAudio(mediumQualitySoundURL: URL.init(string: msg.mediaUrl)){
             msg.audioIndex = audios.count
             item.message = msg
             audios.append(item)
@@ -59,25 +59,25 @@ class AudioHandler{
         }else if current != nil{
             player.pause()
             current.setDuration()
-            AudioHandler.setImage(state: player.state , cell: current)
+            b_AudioHandler.setImage(state: player.state , cell: current)
             current = cell
             if let item = audios.last(where: {$0.message.msgIndex == cell.msg.msgIndex}){
                 player.play(item: item)
-                AudioHandler.setImage(state: player.state , cell: current)
+                b_AudioHandler.setImage(state: player.state , cell: current)
             }
         }else{
             current = cell
             if let item = audios.last(where: {$0.message.msgIndex == cell.msg.msgIndex}){
                 player.play(item: item)
-                AudioHandler.setImage(state: player.state , cell: current)
+                b_AudioHandler.setImage(state: player.state , cell: current)
             }
         }
     }
 }
-extension AudioHandler : AudioPlayerDelegate{
+extension b_AudioHandler : AudioPlayerDelegate{
     func audioPlayer(_ audioPlayer: AudioPlayer, didChangeStateFrom from: AudioPlayerState, to state: AudioPlayerState) {
         if current != nil{
-            AudioHandler.setImage(state: state, cell: current)
+            b_AudioHandler.setImage(state: state, cell: current)
         }
         
         switch state {
@@ -95,7 +95,7 @@ extension AudioHandler : AudioPlayerDelegate{
         //        MyFrameworkBundle.bundle
         let pause = UIImage(named:  "pauseIcon" , in: MyFrameworkBundle.bundle , compatibleWith: nil)
         let play = UIImage(named:   "playIcon", in: MyFrameworkBundle.bundle, compatibleWith: nil)
-        if AudioHandler.shared.current != nil && cell.msg.msgIndex == AudioHandler.shared.current.msg.msgIndex{
+        if b_AudioHandler.shared.current != nil && cell.msg.msgIndex == b_AudioHandler.shared.current.msg.msgIndex{
             switch state {
             case .buffering , .waitingForConnection:
                 cell.imageBtn.isHidden = true

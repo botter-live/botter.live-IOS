@@ -10,17 +10,17 @@
 
 import UIKit
 
-final class StartFormViewController: StartConversationViewController {
+final class b_StartFormViewController: b_StartConversationViewController {
     
     // MARK: - Public properties -
-    var faqsList = [FaqData]()
+    var faqsList = [b_FaqData]()
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var searchBox : SearchBox!
     
     
     var presenter: StartFormPresenterInterface!
     
-    var loader = LoaderManager()
+    var loader = b_LoaderManager()
     
     // MARK: - Lifecycle -
     
@@ -53,9 +53,9 @@ final class StartFormViewController: StartConversationViewController {
 
 // MARK: - Extensions -
 
-extension StartFormViewController: StartFormViewInterface {
+extension b_StartFormViewController: StartFormViewInterface {
     
-    func setFaqsData(faqsData: [FaqData]) {
+    func setFaqsData(faqsData: [b_FaqData]) {
         searchBox.setFaqsData(faqsData: faqsData)
     }
     
@@ -66,7 +66,7 @@ extension StartFormViewController: StartFormViewInterface {
     }
     
     func showMsg(msg: String) {
-        self.showMessage(msg)
+        self.b_showMessage(msg)
     }
     
     func showLoader() {
@@ -82,7 +82,7 @@ extension StartFormViewController: StartFormViewInterface {
     }
 }
 
-extension StartFormViewController : UITableViewDataSource{
+extension b_StartFormViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.presenter.dataCells.count
     }

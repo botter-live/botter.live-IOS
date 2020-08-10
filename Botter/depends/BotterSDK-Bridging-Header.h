@@ -9,6 +9,6 @@
 #ifndef BotterSDK_Bridging_Header_h
 #define BotterSDK_Bridging_Header_h
 
-#import "UIView+WebCache.h"
+//#import "UIView+WebCache.h"
 
 #endif /* BotterSDK_Bridging_Header_h */

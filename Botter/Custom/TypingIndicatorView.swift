@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TypingIndicatorView: botBubbelView {
+class b_TypingIndicatorView: botBubbelView {
     
     private enum Constants {
         static let width: CGFloat = 8

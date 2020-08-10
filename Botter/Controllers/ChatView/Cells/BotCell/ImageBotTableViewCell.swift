@@ -24,7 +24,7 @@ class ImageBotTableViewCell: BotChatTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func setData(msg: BasicMessage, showIcon: Bool = false) {
+    override func setData(msg: b_BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
         DispatchQueue.main.async {
             self.msg.lazyImage.show(imageView: self.msgImage!, url: msg.mediaUrl) { (lazyError) in

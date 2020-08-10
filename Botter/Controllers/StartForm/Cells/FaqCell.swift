@@ -15,7 +15,7 @@ class FaqCell : UITableViewCell {
     @IBOutlet weak var answerLabel : UILabel!
     
     
-    func setData(faqItem : FaqsItem){
+    func setData(faqItem : b_FaqsItem){
         questionLabel.text = faqItem.question
         answerLabel.text = faqItem.answer
     }

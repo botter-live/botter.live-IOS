@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllSidsCardView: UIView {
+class b_AllSidsCardView: UIView {
     @IBInspectable var shadowOffset: CGFloat = 0
     @IBInspectable var shadowColor: UIColor? = UIColor.black
     @IBInspectable var shadowOpacity: Float = 0.2

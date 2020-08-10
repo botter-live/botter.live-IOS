@@ -12,7 +12,7 @@ class TriviaTableViewCell: HeroTableViewCell {
     
     
     override func prepareForReuse() {
-        self.msg = BasicMessage()
+        self.msg = b_BasicMessage()
         collectionView.reloadData()
         collectionView.reloadInputViews()
         collectionView.layoutSubviews()

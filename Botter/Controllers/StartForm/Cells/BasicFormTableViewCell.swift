@@ -11,7 +11,7 @@ class BasicFormTableViewCell: UITableViewCell {
     
     @IBOutlet weak var errorLbl : UILabel!
     
-    var input = FormInput()
+    var input = b_FormInput()
     var answer = ""
 
     override func awakeFromNib() {
@@ -26,7 +26,7 @@ class BasicFormTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(input : FormInput){
+    func setData(input : b_FormInput){
         self.input = input
         errorLbl.text = self.input.errorMessage
     }

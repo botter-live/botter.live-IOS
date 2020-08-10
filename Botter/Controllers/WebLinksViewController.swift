@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import AVKit
 
-class WebLinksViewController: UIViewController , WKNavigationDelegate, WKUIDelegate {
+class b_WebLinksViewController: UIViewController , WKNavigationDelegate, WKUIDelegate {
 
     @IBOutlet weak var webView : WKWebView!
     @IBOutlet weak var indicator : UIActivityIndicatorView!
@@ -35,7 +35,7 @@ class WebLinksViewController: UIViewController , WKNavigationDelegate, WKUIDeleg
     }
     
     static func openInParent(link : String , parent : UIViewController){
-           let vc = WebLinksViewController.instantiateFromStoryBoard(appStoryBoard: .Main)
+           let vc = b_WebLinksViewController.b_instantiateFromStoryBoard(appStoryBoard: .Main)
            vc.link = link
            parent.present(vc, animated: true, completion: nil)
        }

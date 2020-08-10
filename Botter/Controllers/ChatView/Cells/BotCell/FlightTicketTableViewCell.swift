@@ -15,7 +15,7 @@ class FlightTicketTableViewCell: BotChatTableViewCell {
     @IBOutlet weak var way2TicketInfo : FlightInfoView!
     @IBOutlet weak var bookingNumberLbl : UILabel!
     @IBOutlet weak var totalLbl : UILabel!
-    @IBOutlet weak var ticketNumberView : AccentView!
+    @IBOutlet weak var ticketNumberView : b_AccentView!
     @IBOutlet weak var planeImage : UIImageView!
     
     override func awakeFromNib() {
@@ -34,7 +34,7 @@ class FlightTicketTableViewCell: BotChatTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func setData(msg: BasicMessage, showIcon: Bool = false) {
+    override func setData(msg: b_BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
         way1TicketInfo.isHidden = msg.flightInfo.tickets.count == 0
         way2TicketInfo.isHidden = msg.flightInfo.tickets.count < 2
@@ -65,7 +65,7 @@ class FlightInfoView:UIView{
     @IBOutlet weak var arrAirportLbl : UILabel!
     @IBOutlet weak var dateLbl : UILabel!
     
-    func setData(ticket:TicketInfo){
+    func setData(ticket:b_TicketInfo){
         stopsLbl.text = ticket.stops
         deptCityLbl.text = ticket.depratureAirPort.city
         deptAirportLbl.text = ticket.depratureAirPort.code
@@ -76,7 +76,7 @@ class FlightInfoView:UIView{
 }
 extension UITableView {
     func registerBotterCellNib(_ cellClass: AnyClass) {
-           let identifier = String.className(cellClass)
+           let identifier = String.b_className(cellClass)
            let nib = UINib(nibName: identifier, bundle: MyFrameworkBundle.bundle)
            self.register(nib, forCellReuseIdentifier: identifier)
        }

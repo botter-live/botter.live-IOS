@@ -8,7 +8,7 @@
 
 import UIKit
 
-class tagViewLayOut: UICollectionViewFlowLayout {
+class b_tagViewLayOut: UICollectionViewFlowLayout {
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         let attributesForElementsInRect = super.layoutAttributesForElements(in: rect)
         var newAttributesForElementsInRect = [UICollectionViewLayoutAttributes]()

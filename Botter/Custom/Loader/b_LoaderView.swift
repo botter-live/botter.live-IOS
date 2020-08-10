@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoaderView: UIView {
+class b_LoaderView: UIView {
 
     @IBOutlet weak var loaderIndicator : UIActivityIndicatorView!
     /*

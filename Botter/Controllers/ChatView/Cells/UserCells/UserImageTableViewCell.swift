@@ -25,7 +25,7 @@ class UserImageTableViewCell: UserChatTableViewCell {
         // Configure the view for the selected state
     }
     
-     func setData(msg: BasicMessage) {
+     func setData(msg: b_BasicMessage) {
         super.setData(msg: msg)
         self.msgImage?.image = UIImage()
         msg.lazyImage.setCacheSize(self.msgImage?.frame.size)
@@ -38,7 +38,7 @@ class UserImageTableViewCell: UserChatTableViewCell {
     }
     
     override func prepareForReuse() {
-        self.msg = BasicMessage()
+        self.msg = b_BasicMessage()
         self.msgImage?.image = nil
     }
 }

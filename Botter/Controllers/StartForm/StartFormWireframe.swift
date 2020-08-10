@@ -10,14 +10,14 @@
 
 import UIKit
 
-final class StartFormWireframe: BaseWireframe {
+final class StartFormWireframe: b_BaseWireframe {
 
     // MARK: - Private properties -
 
     // MARK: - Module setup -
 
     init() {
-        let moduleViewController = StartFormViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
+        let moduleViewController = b_StartFormViewController.b_instantiateFromStoryBoard(appStoryBoard: .Forms)
         super.init(viewController: moduleViewController)
 
         let interactor = StartFormInteractor()
@@ -31,7 +31,7 @@ final class StartFormWireframe: BaseWireframe {
 // MARK: - Extensions -
 
 extension StartFormWireframe: StartFormWireframeInterface {
-    func openChat(data:BotData) {
+    func openChat(data:b_BotData) {
         CommonActions.openChat(parent: self.viewController, data: data)
     }
 }

@@ -9,12 +9,12 @@
 import UIKit
 
 
-class FaqsDetailsViewController : UIViewController {
+class b_FaqsDetailsViewController : UIViewController {
     
     @IBOutlet weak var questionLabel : UILabel!
     @IBOutlet weak var answerLabel : UILabel!
     @IBOutlet weak var createdAtLabel : UILabel!
-    var faqItem = FaqData()
+    var faqItem = b_FaqData()
     
     
     override func viewDidLoad() {
@@ -31,8 +31,8 @@ class FaqsDetailsViewController : UIViewController {
     func  setFaqsDetailsData() {
         questionLabel.text = faqItem.body.question
         answerLabel.text = faqItem.body.answer
-        let date = faqItem.createdAt.toDate()
-        createdAtLabel.text = "Updated over " + date.timeAgoDisplay()
+        let date = faqItem.createdAt.b_toDate()
+        createdAtLabel.text = "Updated over " + date.b_timeAgoDisplay()
     }
 
 }

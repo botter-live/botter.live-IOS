@@ -16,7 +16,7 @@ import UIKit
 //
 //}
 public func show(APIKey : String){
-    let floatingButtonController = FloatingBtnController()
+    let floatingButtonController = b_FloatingBtnController()
     BotterSettingsManager.BotID = APIKey
 }
 
@@ -28,7 +28,7 @@ public func openChatScreen(APIKey : String){
         window is FloatingButtonWindow
     }){
         BotterSettingsManager.BotID = APIKey
-       openChat(parent: UIApplication.shared.windows[index].visibleViewController!)
+       openChat(parent: UIApplication.shared.windows[index].b_visibleViewController!)
     }
 }
 
@@ -51,18 +51,12 @@ public func showLauncherButton(){
 }
 
 internal func openChat(parent : UIViewController){
-    if SocketManager.first {
+    if B_SocketManager.first {
         let chatScreen = StartFormWireframe.init()
-        //        StartFormViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
-        //    if #available(iOS 13.0, *) {
-        //        chatScreen.viewController.modalPresentationStyle = .automatic
-        //    } else {
-        //        // Fallback on earlier versions
-        //    }
         parent.present(chatScreen.viewController, animated: true , completion: nil)
         //    WebLinksViewController.openInParent(link: "https://aldawaa.bluecrunch.org/", parent: parent)
     }else{
-        CommonActions.openChat(parent: parent, data: ChatViewController.botData)
+        CommonActions.openChat(parent: parent, data: b_ChatViewController.botData)
     }
 }
 

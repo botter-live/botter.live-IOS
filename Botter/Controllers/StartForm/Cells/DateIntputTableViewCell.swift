@@ -10,7 +10,7 @@ import UIKit
 
 class DateIntputTableViewCell: TextInputTableViewCell {
     
-    @IBOutlet weak var titleLbl : BasicRegularLbl!
+    @IBOutlet weak var titleLbl : b_BasicRegularLbl!
     var parent = UIViewController()
 
     override func awakeFromNib() {
@@ -24,7 +24,7 @@ class DateIntputTableViewCell: TextInputTableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData(input: FormInput , parent : UIViewController) {
+    func setData(input: b_FormInput , parent : UIViewController) {
         super.setData(input:input)
         self.parent = parent
         textFeild.placeholder = "DD/MM/YYYY"
@@ -32,7 +32,7 @@ class DateIntputTableViewCell: TextInputTableViewCell {
     }
     
     @IBAction func openPicker(){
-        DatePickerPopViewController.open(in: parent, mode:  .date ) { (selected) in
+        b_DatePickerPopViewController.open(in: parent, mode:  .date ) { (selected) in
             self.textFeild.text = selected
         }
     }

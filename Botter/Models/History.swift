@@ -8,15 +8,15 @@
 
 import Foundation
 
-class History :  Mappable {
+class b_History :  Mappable {
     
-    var list : [BasicMessage]
-    private var nList : [HistoryItem]
+    var list : [b_BasicMessage]
+    private var nList : [b_HistoryItem]
     
     
     init(){
-        list = [BasicMessage]()
-        nList = [HistoryItem]()
+        list = [b_BasicMessage]()
+        nList = [b_HistoryItem]()
     }
     
     required convenience init?(map: Map) {
@@ -30,16 +30,16 @@ class History :  Mappable {
 //        })
     }
     
-    static func getHistory(dict : [String:Any])-> History{
-        return Mapper<History>().map(JSON: dict)!
+    static func getHistory(dict : [String:Any])-> b_History{
+        return Mapper<b_History>().map(JSON: dict)!
     }
 }
-class HistoryItem :  Mappable{
+class b_HistoryItem :  Mappable{
     
-    var message : BasicMessage
+    var message : b_BasicMessage
     
     init(){
-        message = BasicMessage()
+        message = b_BasicMessage()
     }
     
     required convenience init?(map: Map) {

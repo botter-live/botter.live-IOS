@@ -9,11 +9,11 @@
 import Foundation
 //import Starscream
 
-class SocketManager : WebSocketDelegate  {
+class B_SocketManager : WebSocketDelegate  {
     
-    static var shared : SocketManager! = SocketManager()
-    var messageRecieved:((BasicMessage)->())!
-    var historyLoaded:(([BasicMessage])->())!
+    static var shared : B_SocketManager! = B_SocketManager()
+    var messageRecieved:((b_BasicMessage)->())!
+    var historyLoaded:(([b_BasicMessage])->())!
     var connectionUpdated:(()->())!
     private var socket: WebSocket!
     var timer : Timer!
@@ -33,13 +33,13 @@ class SocketManager : WebSocketDelegate  {
     
     init(){
         guid = getUserId()
-        ReachabilityManager.shared.startMonitoring()
-        ReachabilityManager.shared.reachabilityChangedEvent = {
-            if !self.isConnected && ReachabilityManager.shared.isNetworkAvailable{
+        b_ReachabilityManager.shared.startMonitoring()
+        b_ReachabilityManager.shared.reachabilityChangedEvent = {
+            if !self.isConnected && b_ReachabilityManager.shared.isNetworkAvailable{
                 self.connect()
             }
-            print(ReachabilityManager.shared.isNetworkAvailable)
-            self.isConnected = ReachabilityManager.shared.isNetworkAvailable
+            print(b_ReachabilityManager.shared.isNetworkAvailable)
+            self.isConnected = b_ReachabilityManager.shared.isNetworkAvailable
         }
     }
     
@@ -141,7 +141,7 @@ class SocketManager : WebSocketDelegate  {
     
     deinit {
         socket.disconnect()
-        ReachabilityManager.shared.stopMonitoring()
+        b_ReachabilityManager.shared.stopMonitoring()
     }
     
     func dissConnect() {
@@ -166,14 +166,14 @@ class SocketManager : WebSocketDelegate  {
     func sendOpeningMessage(){
         let msg = ["bot_id": BotterSettingsManager.BotID ,
                    "channel": channel ,
-                   "type": SocketManager.first ? "hello"  : "welcome_back",
+                   "type": B_SocketManager.first ? "hello"  : "welcome_back",
                    "user": guid ,
                    "user_profile": ""]
         let msgString = json(from: msg) ?? ""
         self.socket.write(ping: "PING".data(using: .utf8)!) {
             if self.isConnected{
                 self.socket.write(string: msgString)
-                SocketManager.self.first = false
+                B_SocketManager.self.first = false
                 if self.attributes != nil{
                     self.sendAttrebutes(attributes: self.attributes)
                 }
@@ -196,7 +196,7 @@ class SocketManager : WebSocketDelegate  {
                 self.socket.write(string: msgString) {
                     DispatchQueue.main.async {
                         // your code here
-                        completion(self.isConnected && ReachabilityManager.shared.isNetworkAvailable)
+                        completion(self.isConnected && b_ReachabilityManager.shared.isNetworkAvailable)
                     }
                 }
             }
@@ -204,7 +204,7 @@ class SocketManager : WebSocketDelegate  {
         
     }
     
-    func sendAttachment(file : AttachedFile , completion:@escaping((Bool)->())){
+    func sendAttachment(file : b_AttachedFile , completion:@escaping((Bool)->())){
         let msg = ["bot_id": BotterSettingsManager.BotID ,
                    "channel": channel ,
                    "type": "attachment" ,
@@ -220,7 +220,7 @@ class SocketManager : WebSocketDelegate  {
                 self.socket.write(string: msgString) {
                     DispatchQueue.main.async {
                         // your code here
-                        completion(self.isConnected && ReachabilityManager.shared.isNetworkAvailable)
+                        completion(self.isConnected && b_ReachabilityManager.shared.isNetworkAvailable)
                     }
                 }
             }
@@ -246,7 +246,7 @@ class SocketManager : WebSocketDelegate  {
             self.socket.write(string: msgString) {
                 DispatchQueue.main.async {
                     // your code here
-                    completion(self.isConnected && ReachabilityManager.shared.isNetworkAvailable)
+                    completion(self.isConnected && b_ReachabilityManager.shared.isNetworkAvailable)
                 }
             }
         }
@@ -258,9 +258,9 @@ class SocketManager : WebSocketDelegate  {
     
     func handleMessage(msg : String){
         let messageJson = convertToJSON(text: msg) ?? [:]
-        let msgObj = BasicMessage.getMessage(dict: messageJson)
+        let msgObj = b_BasicMessage.getMessage(dict: messageJson)
         if msgObj.msgType == .none{
-            let history = History.getHistory(dict: messageJson)
+            let history = b_History.getHistory(dict: messageJson)
             if self.historyLoaded != nil{
                 historyLoaded(history.list)
             }

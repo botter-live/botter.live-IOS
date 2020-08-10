@@ -8,12 +8,12 @@
 
 import Foundation
 
-class FlightTicket : Mappable{
+class b_FlightTicket : Mappable{
     var confirmationNumber : String
     var currency : String
     var passengers : [String]
     var total : String
-    var tickets : [TicketInfo]
+    var tickets : [b_TicketInfo]
     
     
     init() {
@@ -21,7 +21,7 @@ class FlightTicket : Mappable{
         currency = ""
         passengers = [String]()
         total = ""
-        tickets = [TicketInfo]()
+        tickets = [b_TicketInfo]()
         
     }
     
@@ -38,16 +38,16 @@ class FlightTicket : Mappable{
         
     }
 }
-class TicketInfo : Mappable{
+class b_TicketInfo : Mappable{
     var stops : String
-    var arrivalAirPort : Airport
-    var depratureAirPort : Airport
+    var arrivalAirPort : b_Airport
+    var depratureAirPort : b_Airport
     var date : String
     
     init(){
         stops = ""
-        arrivalAirPort = Airport()
-        depratureAirPort = Airport()
+        arrivalAirPort = b_Airport()
+        depratureAirPort = b_Airport()
         date = ""
     }
     
@@ -63,7 +63,7 @@ class TicketInfo : Mappable{
     }
 }
 
-class Airport : Mappable{
+class b_Airport : Mappable{
     var code : String
     var city : String
     

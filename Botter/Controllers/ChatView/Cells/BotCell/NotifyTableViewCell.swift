@@ -10,7 +10,7 @@ import UIKit
 
 class NotifyTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var textLbl : BasicRegularLbl!
+    @IBOutlet weak var textLbl : b_BasicRegularLbl!
     
     override func awakeFromNib() {
         super.awakeFromNib()

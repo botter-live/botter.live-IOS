@@ -1,5 +1,5 @@
 //
-//  ReachabilityManager.swift
+//  b_ReachabilityManager.swift
 //  Botter
 //
 //  Created by Nora on 6/23/20.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ReachabilityManager: NSObject {
-    static  let shared = ReachabilityManager()
+class b_ReachabilityManager: NSObject {
+    static  let shared = b_ReachabilityManager()
     // 3. Boolean to track network reachability
     var isNetworkAvailable : Bool {
         return reachabilityStatus != .notReachable

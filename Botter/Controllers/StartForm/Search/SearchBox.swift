@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchBox: AllSidsCardView {
+class SearchBox: b_AllSidsCardView {
     @IBOutlet weak var mainStackView : UIStackView!
     @IBOutlet weak var searchStackView : UIStackView!
     @IBOutlet weak var firstQuestionStackView : UIStackView!
@@ -22,14 +22,14 @@ class SearchBox: AllSidsCardView {
     @IBOutlet weak var noResultLabel : UILabel!
     @IBOutlet weak var btnStack : UIStackView!
     
-    var faqsList = [FaqData]()
+    var faqsList = [b_FaqData]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         prepareStackView()
     }
     
-    var cParent = StartFormViewController()
+    var cParent = b_StartFormViewController()
     
     func prepareStackView(){
            let tap1 = UITapGestureRecognizer(target: self, action: #selector(firstFaqsTapped))
@@ -40,13 +40,13 @@ class SearchBox: AllSidsCardView {
     
     
     @objc func firstFaqsTapped(){
-        let vc =  FaqsDetailsViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
+        let vc =  b_FaqsDetailsViewController.b_instantiateFromStoryBoard(appStoryBoard: .Forms)
         vc.faqItem = faqsList[0]
         cParent.present(vc, animated: true, completion: nil)
     }
     
     @objc func secondFaqsTapped(){
-        let vc =  FaqsDetailsViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
+        let vc =  b_FaqsDetailsViewController.b_instantiateFromStoryBoard(appStoryBoard: .Forms)
         vc.faqItem = faqsList[1]
         cParent.present(vc, animated: true, completion: nil)
     }
@@ -64,12 +64,12 @@ class SearchBox: AllSidsCardView {
     }
     
     @IBAction func showMoreDetailsClicked(_ sender : UIButton){
-        let vc =  FaqsListViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
+        let vc =  b_FaqsListViewController.b_instantiateFromStoryBoard(appStoryBoard: .Forms)
         vc.faqsList = self.faqsList
         cParent.present(vc, animated: true, completion: nil)
     }
     
-    func setFaqsData(faqsData: [FaqData]) {
+    func setFaqsData(faqsData: [b_FaqData]) {
         self.faqsList = faqsData
         if faqsList.count == 0 {
             setupEmptyQuestionView()
@@ -92,7 +92,7 @@ class SearchBox: AllSidsCardView {
     }
     
     
-    func setAllQuestions(faqsData: [FaqData]){
+    func setAllQuestions(faqsData: [b_FaqData]){
         firstResultAnswerLabel.text = faqsData[0].body.answer
         firstResultQuestionLabel.text = faqsData[0].body.question
         secondResultAnswerLabel.text = faqsData[1].body.answer
@@ -111,7 +111,7 @@ class SearchBox: AllSidsCardView {
     }
     
     
-    func setupFirstQuestionView(faqsData: [FaqData]){
+    func setupFirstQuestionView(faqsData: [b_FaqData]){
         firstResultAnswerLabel.text = faqsData[0].body.answer
         firstResultQuestionLabel.text = faqsData[0].body.question
         mainStackView.arrangedSubviews[1].isHidden = false
@@ -126,7 +126,7 @@ class SearchBox: AllSidsCardView {
     }
     
     
-    func setupSecondQuestionView(faqsData: [FaqData]){
+    func setupSecondQuestionView(faqsData: [b_FaqData]){
         mainStackView.arrangedSubviews[1].isHidden = false
         mainStackView.arrangedSubviews[2].isHidden = false
         mainStackView.arrangedSubviews[3].isHidden = true
@@ -140,7 +140,7 @@ class SearchBox: AllSidsCardView {
         mainStackView.layoutIfNeeded()
     }
     
-    func setupAllQuestionView(faqsData: [FaqData]){
+    func setupAllQuestionView(faqsData: [b_FaqData]){
         mainStackView.arrangedSubviews[1].isHidden = false
         mainStackView.arrangedSubviews[2].isHidden = false
         mainStackView.arrangedSubviews[3].isHidden = false

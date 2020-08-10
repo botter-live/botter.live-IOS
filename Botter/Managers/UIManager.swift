@@ -15,14 +15,14 @@ class botBubbelView : UIView{
         backgroundColor = BotterSettingsManager.BotterMessageBGColor
     }
 }
-class AccentView : UIView{
+class b_AccentView : UIView{
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = BotterSettingsManager.AccentColor
     }
 }
 
-class BasicRegularLbl : UILabel{
+class b_BasicRegularLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         let tFont = BotterSettingsManager.Font.getRegularFontForLabel(lbl: self)
@@ -31,7 +31,7 @@ class BasicRegularLbl : UILabel{
     }
 }
 
-class BasicMediumLbl : UILabel{
+class b_BasicMediumLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         let tFont = BotterSettingsManager.Font.getMediumFontForLabel(lbl: self)
@@ -40,7 +40,7 @@ class BasicMediumLbl : UILabel{
     }
 }
 
-class BasicBoldLbl : UILabel{
+class b_BasicBoldLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         let tFont = BotterSettingsManager.Font.getBoldFontForLabel(lbl: self)
@@ -50,7 +50,7 @@ class BasicBoldLbl : UILabel{
 }
 
 
-class UserMesgLbl : BasicRegularLbl{
+class b_UserMesgLbl : b_BasicRegularLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.FontColor
@@ -58,14 +58,14 @@ class UserMesgLbl : BasicRegularLbl{
     }
 }
 
-class BotterMesgLbl : BasicRegularLbl{
+class b_BotterMesgLbl : b_BasicRegularLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.BotterMessageFontColor
     }
 }
 
-class ChatHeader : BasicMediumLbl{
+class b_ChatHeader : b_BasicMediumLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.ChatTitleColor
@@ -73,21 +73,21 @@ class ChatHeader : BasicMediumLbl{
     }
 }
 
-class boldChatText : BasicMediumLbl{
+class b_boldChatText : b_BasicMediumLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.BotterMessageFontColor
     }
 }
 
-class AccentTextLbl : BasicRegularLbl{
+class b_AccentTextLbl : b_BasicRegularLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.AccentColor
     }
 }
 
-class MediumChatText : BasicMediumLbl{
+class b_MediumChatText : b_BasicMediumLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.BotterMessageFontColor
@@ -95,7 +95,7 @@ class MediumChatText : BasicMediumLbl{
 }
 
 
-class ChatHeadLine : BasicMediumLbl{
+class b_ChatHeadLine : b_BasicMediumLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.FontColor
@@ -103,7 +103,7 @@ class ChatHeadLine : BasicMediumLbl{
     }
 }
 
-class ChatWelcomeLbl : BasicRegularLbl{
+class b_ChatWelcomeLbl : b_BasicRegularLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.FontColor
@@ -111,21 +111,21 @@ class ChatWelcomeLbl : BasicRegularLbl{
     }
 }
 
-class AccentBtn : UIButton{
+class b_AccentBtn : UIButton{
     override func awakeFromNib() {
         super.awakeFromNib()
         setTitleColor(BotterSettingsManager.AccentColor, for: .normal)
 //        let tFont = BotterSettingsManager.font.regular
 //         tFont.withSize(font.pointSize)
 //        font = tFont
-        borderColor = BotterSettingsManager.AccentColor
+        b_borderColor = BotterSettingsManager.AccentColor
         tintColor = BotterSettingsManager.AccentColor
     }
     
 }
 
 
-class FontLikeBtn : UIButton{
+class b_FontLikeBtn : UIButton{
     override func awakeFromNib() {
         super.awakeFromNib()
         setTitleColor(BotterSettingsManager.FontColor, for: .normal)
@@ -139,7 +139,7 @@ class FontLikeBtn : UIButton{
     }
 }
 
-class HeaderBtn : UIButton{
+class b_HeaderBtn : UIButton{
     override func awakeFromNib() {
         super.awakeFromNib()
         tintColor = BotterSettingsManager.ChatTitleColor
@@ -148,7 +148,7 @@ class HeaderBtn : UIButton{
     
 }
 
-class HeaderLogo : UIImageView{
+class b_HeaderLogo : UIImageView{
     override func awakeFromNib() {
         super.awakeFromNib()
         tintColor = BotterSettingsManager.AccentColor

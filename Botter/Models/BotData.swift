@@ -8,16 +8,16 @@
 
 import Foundation
 
-class BotData : Mappable{
-    var startForm : Form
-    var endForm : Form
-    var menu : Menu
+class b_BotData : Mappable{
+    var startForm : b_Form
+    var endForm : b_Form
+    var menu : b_Menu
     
     
     init() {
-        startForm = Form()
-        endForm = Form()
-        menu = Menu()
+        startForm = b_Form()
+        endForm = b_Form()
+        menu = b_Menu()
     }
     
     required convenience init?(map: Map) {
@@ -30,7 +30,7 @@ class BotData : Mappable{
         menu <- map["menu"]
     }
     
-    static func getBotterData(dict : [String : Any])->BotData{
-        return Mapper<BotData>().map(JSON: dict)!
+    static func getBotterData(dict : [String : Any])->b_BotData{
+        return Mapper<b_BotData>().map(JSON: dict)!
     }
 }

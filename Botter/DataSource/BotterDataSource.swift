@@ -16,7 +16,7 @@ class BotterDataSource : BaseDataSource{
         BaseAPI(url: Constants.BOTTER_DATA + BotterSettingsManager.BotID  , method: .get , params: nil, headers: nil) { (json, error) in
             if json != nil {
                 print(json)
-                let data = BotData.getBotterData(dict: json ?? [:])
+                let data = b_BotData.getBotterData(dict: json ?? [:])
                 completion(.sucess , data)
             }else{
                 if (error != nil){
@@ -45,7 +45,7 @@ class BotterDataSource : BaseDataSource{
                     print(json)
                     
                     
-                    let data = FaqData.getFAQS(dict: json ?? [[:]])
+                    let data = b_FaqData.getFAQS(dict: json ?? [[:]])
                     
                     
                     completion(.sucess , data)

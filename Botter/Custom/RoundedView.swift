@@ -8,10 +8,10 @@
 
 import UIKit
 
-class RoundedView: UIView {
+class b_RoundedView: UIView {
 
     override func draw(_ rect: CGRect) {
-        self.cornerRadius = self.frame.size.height / 2.0
+        self.b_cornerRadius = self.frame.size.height / 2.0
     }
 
 }

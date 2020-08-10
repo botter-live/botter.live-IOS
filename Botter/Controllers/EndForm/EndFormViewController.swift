@@ -8,11 +8,11 @@
 
 import UIKit
 
-class EndFormViewController: UIViewController {
+class b_EndFormViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
     
-    var form = Form()
+    var form = b_Form()
     var dataCells = [UITableViewCell]()
     
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ class EndFormViewController: UIViewController {
         CommonActions.botterSiteClicked()
     }
     
-    override func backDismiss(_ sender: Any) {
+    override func b_backDismiss(_ sender: Any) {
         self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
@@ -88,7 +88,7 @@ class EndFormViewController: UIViewController {
     }
     
 }
-extension EndFormViewController : UITableViewDataSource{
+extension b_EndFormViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataCells.count
     }

@@ -11,14 +11,14 @@ import AVFoundation
 import MobileCoreServices
 import Photos
 
-class AttachFileViewController: UIViewController {
+class b_AttachFileViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
     
     var actions = ["Camera" , "Gallary" , "File"]
     let imagepicker = UIImagePickerController()
-    var completion : ((AttachedFile)->())!
-    var loader = LoaderManager()
+    var completion : ((b_AttachedFile)->())!
+    var loader = b_LoaderManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,9 @@ class AttachFileViewController: UIViewController {
     }
     
     
-    static func open(in parent:UIViewController , completion:@escaping((AttachedFile)->())){
+    static func open(in parent:UIViewController , completion:@escaping((b_AttachedFile)->())){
         let content: ContentSheetContentProtocol
-        let vc = AttachFileViewController.instantiateFromStoryBoard(appStoryBoard: .Main)
+        let vc = b_AttachFileViewController.b_instantiateFromStoryBoard(appStoryBoard: .Main)
         vc.completion = { item in
             completion(item)
         }
@@ -119,8 +119,8 @@ class AttachFileViewController: UIViewController {
             //                , (kUTTypeVideo as String) , (kUTTypeMovie as String)]
             self.present(self.imagepicker, animated: true, completion: nil)
         }else{
-            let alert = UIAlertController(title: "Can't find photo Library".localize(), message: "This device doesn't have photo Library".localize(), preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK".localize(), style:.default, handler: nil)
+            let alert = UIAlertController(title: "Can't find photo Library".b_localize(), message: "This device doesn't have photo Library".b_localize(), preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK".b_localize(), style:.default, handler: nil)
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
         }
@@ -139,8 +139,8 @@ class AttachFileViewController: UIViewController {
                         self.present(self.imagepicker, animated: true, completion: nil)
                     }
                 }else{
-                    let alert = UIAlertController(title: "Can't find camera".localize(), message: "This device doesn't have camera".localize(), preferredStyle: .alert)
-                    let ok = UIAlertAction(title: "ok".localize(), style:.default, handler: nil)
+                    let alert = UIAlertController(title: "Can't find camera".b_localize(), message: "This device doesn't have camera".b_localize(), preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "ok".b_localize(), style:.default, handler: nil)
                     alert.addAction(ok)
                     self.present(alert, animated: true, completion: nil)
                 }
@@ -168,7 +168,7 @@ class AttachFileViewController: UIViewController {
     }
     
 }
-extension AttachFileViewController : UITableViewDataSource{
+extension b_AttachFileViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return actions.count
@@ -183,7 +183,7 @@ extension AttachFileViewController : UITableViewDataSource{
     }
 }
 
-extension AttachFileViewController : UITableViewDelegate{
+extension b_AttachFileViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
@@ -202,14 +202,14 @@ extension AttachFileViewController : UITableViewDelegate{
     
 }
 
-extension AttachFileViewController : UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+extension b_AttachFileViewController : UIImagePickerControllerDelegate , UINavigationControllerDelegate{
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let imageURL = info[UIImagePickerController.InfoKey.imageURL] as? URL {
-            print(imageURL.typeIdentifier ?? "unknown UTI")
+//            print(imageURL.typeIdentifier ?? "unknown UTI")
             self.dismiss(animated: true) {
                 self.uploadUrl(url: imageURL.absoluteString , name: "img\(Date.timeIntervalSinceReferenceDate)")
             }
@@ -240,7 +240,7 @@ extension AttachFileViewController : UIImagePickerControllerDelegate , UINavigat
             self.hideLoader()
             switch status{
             case .sucess:
-                let file = response as? AttachedFile ?? AttachedFile()
+                let file = response as? b_AttachedFile ?? b_AttachedFile()
                 self.dismiss(animated: true) {
                     if self.completion != nil {
                         self.completion(file)
@@ -248,7 +248,7 @@ extension AttachFileViewController : UIImagePickerControllerDelegate , UINavigat
                 }
                 break
             case .error , .networkError:
-                self.showMessage(response as? String ?? "Something went wrong")
+                self.b_showMessage(response as? String ?? "Something went wrong")
                 break
             }
         }
@@ -261,7 +261,7 @@ extension AttachFileViewController : UIImagePickerControllerDelegate , UINavigat
                self.hideLoader()
                switch status{
                case .sucess:
-                let file = response as? AttachedFile ?? AttachedFile()
+                let file = response as? b_AttachedFile ?? b_AttachedFile()
                 self.dismiss(animated: true) {
                     if self.completion != nil {
                         self.completion(file)
@@ -269,13 +269,13 @@ extension AttachFileViewController : UIImagePickerControllerDelegate , UINavigat
                 }
                    break
                case .error , .networkError:
-                self.showMessage(response as? String ?? "Something went wrong")
+                self.b_showMessage(response as? String ?? "Something went wrong")
                    break
                }
            }
        }
 }
-extension AttachFileViewController : UIDocumentPickerDelegate{
+extension b_AttachFileViewController : UIDocumentPickerDelegate{
     
 
     

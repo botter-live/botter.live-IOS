@@ -10,27 +10,27 @@
 
 import UIKit
 
-final class ChatViewController: UIViewController {
+final class b_ChatViewController: UIViewController {
     
     // MARK: - Public properties -
     
-    @IBOutlet weak var groupedDateLbl : PaddedUILabel!
+    @IBOutlet weak var groupedDateLbl : b_PaddedUILabel!
     @IBOutlet weak var tableView : UITableView!
-    @IBOutlet weak var chatView : TextBoxFeild!
+    @IBOutlet weak var chatView : b_TextBoxFeild!
     @IBOutlet weak var bottomConstraint : NSLayoutConstraint!
     @IBOutlet weak var connectionErrorView : UIView!
     
     var presenter: ChatPresenterInterface!
     var original : CGFloat = 0
     var currentAudio = -1
-    static var botData = BotData()
+    static var botData = b_BotData()
     var history = true
     
     // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        history = !SocketManager.first
+        history = !B_SocketManager.first
         registerCells()
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
@@ -39,7 +39,7 @@ final class ChatViewController: UIViewController {
         }
         self.keyBoardSettings()
         self.presenter.openSocket()
-        AudioHandler.shared = AudioHandler()
+        b_AudioHandler.shared = b_AudioHandler()
         
         
     }
@@ -53,10 +53,10 @@ final class ChatViewController: UIViewController {
         tableView.registerBotterCellNib(AttachmentTableViewCell.self)
     }
     
-    override func backDismiss(_ sender: Any) {
-        self.areYouSureMsg(Msg: "Are you sure you want to end this conversation?") { (isYes) in
+    override func b_backDismiss(_ sender: Any) {
+        self.b_areYouSureMsg(Msg: "Are you sure you want to end this conversation?") { (isYes) in
             if isYes{
-                if ChatViewController.botData.endForm.inputs.count > 0 {
+                if b_ChatViewController.botData.endForm.inputs.count > 0 {
                     //                    self.presenter.openEndForm(form: self.botData.endForm)
                     if self.history{
                         self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -86,13 +86,13 @@ final class ChatViewController: UIViewController {
         CommonActions.botterSiteClicked()
     }
     @IBAction func openMenu (){
-        menuViewController.open(in: self, menu: ChatViewController.botData.menu) { (item) in
+        b_menuViewController.open(in: self, menu: b_ChatViewController.botData.menu) { (item) in
             self.presenter.sendMenuAction(action: item)
         }
     }
     
     @IBAction func openAttachments (){
-        AttachFileViewController.open(in: self) { (file) in
+        b_AttachFileViewController.open(in: self) { (file) in
             self.presenter.sendAttachment(file: file)
         }
     }
@@ -111,14 +111,14 @@ final class ChatViewController: UIViewController {
     }
     
     func showError(errorMsg: String) {
-        self.showMessage(errorMsg)
+        self.b_showMessage(errorMsg)
     }
     
 }
 
 // MARK: - Extensions -
 
-extension ChatViewController: ChatViewInterface {
+extension b_ChatViewController: ChatViewInterface {
     func reload() {
         self.tableView.reloadData()
         if self.presenter.messgesList.count > 0 {
@@ -128,7 +128,7 @@ extension ChatViewController: ChatViewInterface {
 }
 
 
-extension ChatViewController {
+extension b_ChatViewController {
     func keyBoardSettings(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         //
@@ -205,11 +205,11 @@ extension ChatViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        AudioHandler.shared.player.pause()
+        b_AudioHandler.shared.player.pause()
         if (self.isBeingDismissed || self.isMovingFromParent) {
             // clean up code here
-            SocketManager.shared = nil
-            SocketManager.shared = SocketManager()
+            B_SocketManager.shared = nil
+            B_SocketManager.shared = B_SocketManager()
         }
     }
     
@@ -224,28 +224,28 @@ extension ChatViewController {
     
     
 }
-extension ChatViewController : TextBoxDelegate{
-    func textBoxDidChange(textBox: TextBoxFeild) {
+extension b_ChatViewController : b_TextBoxDelegate{
+    func textBoxDidChange(textBox: b_TextBoxFeild) {
         
     }
     
-    func shouldChangeTextInRange(textBox: TextBoxFeild) {
+    func shouldChangeTextInRange(textBox: b_TextBoxFeild) {
         
     }
     
-    func textBoxDidBeginEditing(textBox: TextBoxFeild) {
+    func textBoxDidBeginEditing(textBox: b_TextBoxFeild) {
         
     }
     
-    func textBoxDidEndEditing(textBox: TextBoxFeild) {
+    func textBoxDidEndEditing(textBox: b_TextBoxFeild) {
         
     }
     
-    func textBoxShouldBeginEditing(textBox: TextBoxFeild) {
+    func textBoxShouldBeginEditing(textBox: b_TextBoxFeild) {
         
     }
     
-    func textBoxShouldEndEditing(textBox: TextBoxFeild) {
+    func textBoxShouldEndEditing(textBox: b_TextBoxFeild) {
         
     }
     
@@ -262,15 +262,15 @@ extension ChatViewController : TextBoxDelegate{
         return isLastBotInput
     }
     
-    func openDatePicker(msg : BasicMessage){
-        DatePickerPopViewController.open(in: self, mode: msg.hasTime ? .time : .date) { (selected) in
+    func openDatePicker(msg : b_BasicMessage){
+        b_DatePickerPopViewController.open(in: self, mode: msg.hasTime ? .time : .date) { (selected) in
             msg.actions[0].title = selected
             self.presenter.triviaActionClicked(action: msg.actions[0])
         }
     }
     
 }
-extension ChatViewController : UITableViewDataSource{
+extension b_ChatViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.presenter.messgesList.count
     }
@@ -392,12 +392,12 @@ extension ChatViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.presenter.messgesList[indexPath.row]
         if item.msgType == .receipt{
-            InvoiceDetailsViewController.open(in: self, invoice: item.invoice)
+            b_InvoiceDetailsViewController.open(in: self, invoice: item.invoice)
         }
     }
 }
 
-extension ChatViewController : UITableViewDelegate{
+extension b_ChatViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if presenter.messgesList[indexPath.row].msgType == .typing && !checkIfLastBotInput(index: indexPath.row){
             return 0

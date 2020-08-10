@@ -8,15 +8,15 @@
 
 import UIKit
 
-class LoaderManager: NSObject {
+class b_LoaderManager: NSObject {
     
-    var loader : LoaderView!
+    var loader : b_LoaderView!
     let defaultColor = UIColor.init(codeString: "#2E332F").withAlphaComponent(0.2)
     
     override init() {
         super.init()
         if let bundel = MyFrameworkBundle.bundle{
-            loader = bundel.loadNibNamed("LoaderView", owner: self , options: nil)?.first as? LoaderView
+            loader = bundel.loadNibNamed("LoaderView", owner: self , options: nil)?.first as? b_LoaderView
             
         }
     }
@@ -34,7 +34,7 @@ class LoaderManager: NSObject {
         
         loader.frame = rect
         if radius != nil{
-            loader.cornerRadius = radius ?? 0
+            loader.b_cornerRadius = radius ?? 0
         }
         if #available(iOS 13.0, *) {
             loader.loaderIndicator.style = UIActivityIndicatorView.Style.large

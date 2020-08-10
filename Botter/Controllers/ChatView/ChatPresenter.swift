@@ -10,7 +10,7 @@
 
 import Foundation
 
-final class ChatPresenter {
+final class b_ChatPresenter {
 
     // MARK: - Private properties -
 
@@ -18,7 +18,7 @@ final class ChatPresenter {
     private let interactor: ChatInteractorInterface
     private let wireframe: ChatWireframeInterface
 
-    var messgesList : [BasicMessage]!
+    var messgesList : [b_BasicMessage]!
     
     // MARK: - Lifecycle -
 
@@ -26,30 +26,30 @@ final class ChatPresenter {
         self.view = view
         self.interactor = interactor
         self.wireframe = wireframe
-        self.messgesList = [BasicMessage]()
+        self.messgesList = [b_BasicMessage]()
     }
 }
 
 // MARK: - Extensions -
 
-extension ChatPresenter: ChatPresenterInterface {
+extension b_ChatPresenter: ChatPresenterInterface {
     func openSocket() {
         self.interactor.openSocket()
-        SocketManager.shared.connectionUpdated = {
+        B_SocketManager.shared.connectionUpdated = {
             DispatchQueue.main.async {
-                self.view.connectionUpdated(isConnected: SocketManager.shared.isConnected)
+                self.view.connectionUpdated(isConnected: B_SocketManager.shared.isConnected)
             }
             
         }
     }
     
-    func messageReceived(message: BasicMessage) {
+    func messageReceived(message: b_BasicMessage) {
         messgesList = messgesList.filter { (msg) -> Bool in
             msg.msgType != .typing
         }
         if message.msgType == .flightStatus{
             if message.flighStatus.introMessage != ""{
-                let nMessage = BasicMessage()
+                let nMessage = b_BasicMessage()
 //                nMessage = message
                 nMessage.msgType = .text
                 nMessage.text = message.flighStatus.introMessage
@@ -60,12 +60,12 @@ extension ChatPresenter: ChatPresenterInterface {
         message.msgIndex = messgesList.count
         messgesList.append(message)
         if message.msgType == .audio{
-            AudioHandler.shared.addAudioMessage(msg: message)
+            b_AudioHandler.shared.addAudioMessage(msg: message)
         }
         self.view.reload()
     }
     
-    func historyLoaded(list: [BasicMessage]) {
+    func historyLoaded(list: [b_BasicMessage]) {
         for msg in list{
             messageReceived(message: msg)
         }
@@ -78,7 +78,7 @@ extension ChatPresenter: ChatPresenterInterface {
         })
     }
     
-    func sendAttachment(file: AttachedFile) {
+    func sendAttachment(file: b_AttachedFile) {
         self.interactor.sendAttachment(file: file) { (msg) in
             self.messageReceived(message: msg)
         }
@@ -96,11 +96,11 @@ extension ChatPresenter: ChatPresenterInterface {
         self.wireframe.openVideo(url: url)
     }
     
-    func actionClicked(action: Action) {
+    func actionClicked(action: b_Action) {
         interactor.actionClicked(action: action)
     }
     
-    func triviaActionClicked(action: Action) {
+    func triviaActionClicked(action: b_Action) {
         interactor.triviaMessage(action: action) { (msg) in
             self.messageReceived(message: msg)
 //            if let last = self.messgesList.last{
@@ -114,7 +114,7 @@ extension ChatPresenter: ChatPresenterInterface {
         
     }
     
-    func resend(msg: BasicMessage) {
+    func resend(msg: b_BasicMessage) {
         interactor.resend(msg: msg) { (isSent) in
             self.messgesList[msg.msgIndex].msgSent = isSent
             self.view.reload()
@@ -130,11 +130,11 @@ extension ChatPresenter: ChatPresenterInterface {
         wireframe.call(number: number)
     }
     
-    func openEndForm(form: Form) {
+    func openEndForm(form: b_Form) {
         wireframe.openEndForm(form: form)
     }
     
-    func sendMenuAction(action : MenuItem){
+    func sendMenuAction(action : b_MenuItem){
         self.interactor.sendMenuAction(action: action) { (msg) in
             self.messageReceived(message: msg)
             self.view.reload()

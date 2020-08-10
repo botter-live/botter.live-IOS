@@ -32,7 +32,7 @@ class AudioBotTableViewCell: BotChatTableViewCell {
     }
     
     
-    func setData(msg: BasicMessage, showIcon: Bool = false ,isCurrent: Bool , index : Int){
+    func setData(msg: b_BasicMessage, showIcon: Bool = false ,isCurrent: Bool , index : Int){
         super.setData(msg: msg, showIcon: showIcon)
         imageBtn.tag = index
         seekBar.value = 0
@@ -41,12 +41,12 @@ class AudioBotTableViewCell: BotChatTableViewCell {
             self.setDuration()
         }
         
-        AudioHandler.setImage(state: AudioHandler.shared.player.state, cell: self)
+        b_AudioHandler.setImage(state: b_AudioHandler.shared.player.state, cell: self)
         
     }
     
     @IBAction func buttonTapped(){
-        AudioHandler.shared.playPausePressed(cell: self)
+        b_AudioHandler.shared.playPausePressed(cell: self)
 
     }
 
@@ -64,7 +64,7 @@ class AudioBotTableViewCell: BotChatTableViewCell {
     }
     
     @IBAction func seekBarValueChanded(_ sender : UISlider){
-        AudioHandler.shared.seekTo(sender.value, cell: self)
+        b_AudioHandler.shared.seekTo(sender.value, cell: self)
     }
 
 }

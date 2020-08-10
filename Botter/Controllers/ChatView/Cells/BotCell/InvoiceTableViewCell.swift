@@ -30,7 +30,7 @@ class InvoiceTableViewCell: BotChatTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func setData(msg: BasicMessage, showIcon: Bool = false) {
+    override func setData(msg: b_BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
         let invoice = msg.invoice
         invoiceItem1.isHidden = invoice.elements.count == 0
@@ -60,7 +60,7 @@ class InvoiceItemView : UIView{
     
     var lazyImage = LazyImage()
     
-    func setData(item : InvoiceElement){
+    func setData(item : b_InvoiceElement){
         self.lazyImage.show(imageView: self.itemImage!, url: item.image) { (lazyError) in
         }
         itemTitleLbl.text = item.title

@@ -14,10 +14,10 @@ protocol ChatWireframeInterface: WireframeInterface {
     func openVideo(url : String)
     func openUrl(url : String)
     func call(number: String)
-    func openEndForm(form : Form)
+    func openEndForm(form : b_Form)
 }
 
-protocol ChatViewInterface: ViewInterface {
+protocol ChatViewInterface: b_ViewInterface {
     func reload()
     func clearTextBox()
     func showError(errorMsg : String)
@@ -25,33 +25,33 @@ protocol ChatViewInterface: ViewInterface {
     
 }
 
-protocol ChatPresenterInterface: PresenterInterface {
-    var messgesList : [BasicMessage]! { get set }
+protocol ChatPresenterInterface: b_PresenterInterface {
+    var messgesList : [b_BasicMessage]! { get set }
     func openSocket()
-    func messageReceived(message : BasicMessage)
-    func historyLoaded(list : [BasicMessage])
+    func messageReceived(message : b_BasicMessage)
+    func historyLoaded(list : [b_BasicMessage])
     func sendMessage(text : String)
     func clearTextBox()
     func showError(errorMsg : String)
     func openVideo(url : String)
-    func actionClicked(action : Action)
+    func actionClicked(action : b_Action)
     func openUrl(url : String)
     func call(number: String)
-    func triviaActionClicked(action: Action)
-    func resend(msg : BasicMessage)
-    func openEndForm(form : Form)
-    func sendMenuAction(action : MenuItem)
-    func sendAttachment(file : AttachedFile)
+    func triviaActionClicked(action: b_Action)
+    func resend(msg : b_BasicMessage)
+    func openEndForm(form : b_Form)
+    func sendMenuAction(action : b_MenuItem)
+    func sendAttachment(file : b_AttachedFile)
     
 }
 
-protocol ChatInteractorInterface: InteractorInterface {
+protocol ChatInteractorInterface: b_InteractorInterface {
     func openSocket()
-    func sendMessage(text : String , completion:@escaping((BasicMessage)->()))
-    func actionClicked(action : Action)
-    func triviaMessage(action : Action , completion:@escaping((BasicMessage)->()))
-    func resend(msg: BasicMessage , completion:@escaping((Bool)->()))
-    func sendMenuAction(action : MenuItem ,completion:@escaping((BasicMessage)->()))
-    func sendAttachment(file : AttachedFile,completion:@escaping((BasicMessage)->()))
+    func sendMessage(text : String , completion:@escaping((b_BasicMessage)->()))
+    func actionClicked(action : b_Action)
+    func triviaMessage(action : b_Action , completion:@escaping((b_BasicMessage)->()))
+    func resend(msg: b_BasicMessage , completion:@escaping((Bool)->()))
+    func sendMenuAction(action : b_MenuItem ,completion:@escaping((b_BasicMessage)->()))
+    func sendAttachment(file : b_AttachedFile,completion:@escaping((b_BasicMessage)->()))
     
 }

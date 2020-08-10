@@ -8,10 +8,10 @@
 
 import UIKit
 
-class FaqsListViewController: UIViewController {
+class b_FaqsListViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
-    var faqsList = [FaqData]()
+    var faqsList = [b_FaqData]()
     
     
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class FaqsListViewController: UIViewController {
     
 }
 
-extension FaqsListViewController : UITableViewDelegate , UITableViewDataSource {
+extension b_FaqsListViewController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return faqsList.count
@@ -40,7 +40,7 @@ extension FaqsListViewController : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = FaqsDetailsViewController.instantiateFromStoryBoard(appStoryBoard: .Forms)
+        let vc = b_FaqsDetailsViewController.b_instantiateFromStoryBoard(appStoryBoard: .Forms)
         vc.faqItem = faqsList[indexPath.row]
         self.present(vc, animated: true, completion: nil)
     }

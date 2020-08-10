@@ -13,7 +13,7 @@ class GallaryTableViewCell: BotChatTableViewCell {
     
     @IBOutlet weak var collectionView : UICollectionView!
     
-    var actionClicked:((Action)->())!
+    var actionClicked:((b_Action)->())!
     var openVideo : ((String)->())!
     
     override func awakeFromNib() {
@@ -27,7 +27,7 @@ class GallaryTableViewCell: BotChatTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func setData(msg : BasicMessage , showIcon : Bool = false){
+    override func setData(msg : b_BasicMessage , showIcon : Bool = false){
            super.setData(msg : msg , showIcon: showIcon)
            self.msg = msg
            botIcon.isHidden = !showIcon
@@ -36,7 +36,7 @@ class GallaryTableViewCell: BotChatTableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.msg = BasicMessage()
+        self.msg = b_BasicMessage()
         collectionView.reloadData()
     }
 

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-       @IBInspectable var cornerRadius: CGFloat {
+       @IBInspectable var b_cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
@@ -21,7 +21,7 @@ extension UIView {
         }
     }
     
-    @IBInspectable var drobShadow: Bool {
+    @IBInspectable var b_drobShadow: Bool {
         get{
             return false
         }
@@ -32,7 +32,7 @@ extension UIView {
     }
    
     
-    @IBInspectable var borderWidth: CGFloat {
+    @IBInspectable var b_borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -41,7 +41,7 @@ extension UIView {
         }
     }
     
-    @IBInspectable var borderColor: UIColor? {
+    @IBInspectable var b_borderColor: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor!)
         }
@@ -51,7 +51,7 @@ extension UIView {
     }
     
     
-    func startRotating() {
+    func b_startRotating() {
         self.isHidden = false
         
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations:
@@ -59,7 +59,7 @@ extension UIView {
                 self.transform = self.transform.rotated(by: CGFloat(Double.pi/2))
         }) { (finished) -> Void in
             if self.tag == 10{
-                self.startRotating()
+                self.b_startRotating()
             }else{
                 self.isHidden = true
             }
