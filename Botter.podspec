@@ -53,7 +53,7 @@ Pod::Spec.new do |spec|
  #:path => '/Users/bluecrunch/Desktop/Projects/Native/BotterSDK'
 #:git => 'https://github.com/NoraSayed135/Botter.git', :tag => spec.version
 
-  spec.source       = { :http => 'https://github.com/NoraSayed135/Botter/archive/1.0.8.3.tar.gz' }
+  spec.source       = { :git => 'https://github.com/NoraSayed135/Botter.git', :tag => spec.version }
 
   spec.source_files  = "**/*.{swift,h,m,strings}"
   spec.resource_bundles = {
