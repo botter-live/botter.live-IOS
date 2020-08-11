@@ -96,9 +96,18 @@ extension UIView {
         }
     }
     
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        self.semanticContentAttribute = .forceLeftToRight
-    }
+//    open override func awakeFromNib() {
+//        super.awakeFromNib()
+//        if self is chatView{
+//            self.semanticContentAttribute = .forceLeftToRight
+//        }else{
+//            if BotterSettingsManager.language == .english{
+//                UIView.appearance().semanticContentAttribute = .forceLeftToRight
+//            }else{
+//                UIView.appearance().semanticContentAttribute = .forceRightToLeft
+//            }
+//        }
+//    }
     
 }
+

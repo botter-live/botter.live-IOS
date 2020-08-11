@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Welcome,\nto Botter Mobile"; ObjectID = "B5s-JV-CV9"; */
+"B5s-JV-CV9.text" = "Welcome,\nto Botter Mobile";
+
+/* Class = "UIButton"; normalTitle = "   Open Chat   "; ObjectID = "EXD-76-QI0"; */
+"EXD-76-QI0.normalTitle" = "   Open Chat   ";
+
+/* Class = "UILabel"; text = "Welcome,\nto Botter Mobile"; ObjectID = "V9O-k4-e2e"; */
+"V9O-k4-e2e.text" = "Welcome,\nto Botter Mobile";
+
+/* Class = "UIButton"; normalTitle = "   Screen without launcher   "; ObjectID = "by7-05-TBD"; */
+"by7-05-TBD.normalTitle" = "   Screen without launcher   ";
+
+/* Class = "UIButton"; normalTitle = "   Toggle Launcher Position   "; ObjectID = "cZA-bN-P4t"; */
+"cZA-bN-P4t.normalTitle" = "   Toggle Launcher Position   ";

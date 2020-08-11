@@ -29,6 +29,8 @@ final class b_ChatViewController: UIViewController {
     
     // MARK: - Lifecycle -
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         history = !B_SocketManager.first

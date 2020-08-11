@@ -36,9 +36,9 @@ extension b_ChatPresenter: ChatPresenterInterface {
     func openSocket() {
         self.interactor.openSocket()
         B_SocketManager.shared.connectionUpdated = {
-            DispatchQueue.main.async {
+//            DispatchQueue.main.async {
                 self.view.connectionUpdated(isConnected: B_SocketManager.shared.isConnected)
-            }
+//            }
             
         }
     }

@@ -98,7 +98,9 @@ extension String {
     }
  
     func b_localize() -> String{
+//        return NSLocalizedString(self, bundle: MyFrameworkBundle.bundle, comment: self)
         return NSLocalizedString(self, comment: self)
+//        return NSLoca
     }
 
     func b_height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {

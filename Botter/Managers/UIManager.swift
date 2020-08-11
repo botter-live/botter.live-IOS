@@ -120,6 +120,7 @@ class b_AccentBtn : UIButton{
 //        font = tFont
         b_borderColor = BotterSettingsManager.AccentColor
         tintColor = BotterSettingsManager.AccentColor
+        
     }
     
 }
@@ -158,6 +159,12 @@ class b_HeaderLogo : UIImageView{
     }
 }
 
+class chatView : UIView{
+    override class func awakeFromNib() {
+        self.appearance().semanticContentAttribute = .forceLeftToRight
+    }
+}
+
 class AccentImage : UIImageView{
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -167,3 +174,26 @@ class AccentImage : UIImageView{
 }
 
 
+extension UITextField {
+    open override func awakeFromNib() {
+        if self.textAlignment == .natural{
+            self.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
+        }
+    }
+}
+
+extension UITextView {
+    open override func awakeFromNib() {
+        if self.textAlignment == .natural{
+            self.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
+        }
+    }
+}
+
+extension UILabel {
+    open override func awakeFromNib() {
+        if self.textAlignment == .natural{
+            self.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
+        }
+    }
+}

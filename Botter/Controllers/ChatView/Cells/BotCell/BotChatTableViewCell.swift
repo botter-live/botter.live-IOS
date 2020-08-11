@@ -60,23 +60,23 @@ class BotChatTableViewCell: UserChatTableViewCell {
     
     func setAvatarByUrl(){
         setAvatar()
-        DispatchQueue.main.async {
+//        DispatchQueue.main.async {
             self.msg.lazyImage.show(imageView: self.avatarImg, url: self.msg.sender.avatar) { (error) in
                 if error == nil {
                     self.avatarImg.contentMode = .scaleAspectFill
                 }
             }
-        }
+//        }
     }
     
     func getBase64Imag(){
         if let dataDecoded:NSData = NSData(base64Encoded: self.msg.sender.avatar, options: NSData.Base64DecodingOptions(rawValue: 0)){
             if let decodedimage:UIImage = UIImage(data: dataDecoded as Data){
                 print(decodedimage)
-                DispatchQueue.main.async {
+//                DispatchQueue.main.async {
                     self.avatarImg.image = decodedimage
                     self.avatarImg.contentMode = .scaleAspectFill
-                }
+//                }
             }else{
                 setAvatar()
             }

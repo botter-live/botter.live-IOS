@@ -55,7 +55,7 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :http => 'https://github.com/NoraSayed135/Botter/archive/1.0.8.2.tar.gz' }
 
-  spec.source_files  = "**/*.{swift,h,m}"
+  spec.source_files  = "**/*.{swift,h,m,strings}"
   spec.resource_bundles = {
     'Botter' => ['**/*.{xib,storyboard,xcassets,}']
 }

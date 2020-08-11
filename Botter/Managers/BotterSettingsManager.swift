@@ -20,8 +20,8 @@ public class BotterSettingsManager  {
     public static var ChatTitleColor : UIColor = UIColor.white
     
     public static var ChatTitleText : String = "Botter"
-    public static var HeadlineMessage : String = "Hey there 👋"
-    public static var WelcomeMessage : String = "We’re here to answer your questions about Company. Ask us anything!"
+    public static var HeadlineMessage : String = "Hey there 👋".b_localize()
+    public static var WelcomeMessage : String = "We’re here to answer your questions about Company. Ask us anything!".b_localize()
     
     public static var logo : UIImage = UIImage(named: "botterIcon", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     public static var chatIcon : UIImage = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
@@ -31,6 +31,13 @@ public class BotterSettingsManager  {
     public static var hasFAQs : Bool = true
     public static var  alignLauncherLeft : Bool = false
     public static var bottomMargin : CGFloat = 40
+    
+    public static var language : b_Language = .arabic {
+        didSet{
+//            UserDefaults.standard.set(["ar", "en"], forKey: "AppleLanguages")
+            Bundle.b_setLanguage(language.rawValue)
+        }
+    }
     
     public struct Font {
         public static var regularFontName : String = ""
@@ -79,4 +86,9 @@ public class BotterSettingsManager  {
         }
         
     }
-} 
+}
+
+public enum b_Language : String{
+    case arabic = "ar"
+    case english = "en"
+}

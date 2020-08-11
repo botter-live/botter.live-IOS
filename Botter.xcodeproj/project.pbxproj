@@ -21,7 +21,6 @@
 		8C463AD124BF472600B78E96 /* BotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463AD024BF472600B78E96 /* BotData.swift */; };
 		8C463AD324BF475800B78E96 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463AD224BF475800B78E96 /* Form.swift */; };
 		8C463AD524BF547B00B78E96 /* BotterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463AD424BF547B00B78E96 /* BotterDataSource.swift */; };
-		8C463AD724BF574600B78E96 /* B_Forms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C463AD624BF574600B78E96 /* B_Forms.storyboard */; };
 		8C463AE024BF598200B78E96 /* StartFormInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463ADB24BF598200B78E96 /* StartFormInterfaces.swift */; };
 		8C463AE124BF598200B78E96 /* StartFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463ADC24BF598200B78E96 /* StartFormPresenter.swift */; };
 		8C463AE224BF598200B78E96 /* StartFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463ADD24BF598200B78E96 /* StartFormViewController.swift */; };
@@ -56,6 +55,9 @@
 		8C786A4324E0F04F004A826C /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C786A3D24E0F04E004A826C /* PresenterInterface.swift */; };
 		8C786A4424E0F04F004A826C /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C786A3E24E0F04E004A826C /* ViewInterface.swift */; };
 		8C786A4524E0F04F004A826C /* InteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C786A3F24E0F04E004A826C /* InteractorInterface.swift */; };
+		8C786A5224E298B4004A826C /* NSBundle+Language.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C786A4F24E298B3004A826C /* NSBundle+Language.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C786A5324E298B4004A826C /* NSBundle+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C786A5024E298B3004A826C /* NSBundle+Language.m */; };
+		8C786A6024E2B43C004A826C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C786A6224E2B43C004A826C /* Localizable.strings */; };
 		8C83EE2B24D05C32000F2637 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C83EE2A24D05C32000F2637 /* MimeType.swift */; };
 		8C83EE2D24D0649E000F2637 /* AttachmentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C83EE2C24D0649D000F2637 /* AttachmentDataSource.swift */; };
 		8C83EE2F24D06CB8000F2637 /* AttchedFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C83EE2E24D06CB8000F2637 /* AttchedFile.swift */; };
@@ -199,6 +201,7 @@
 		8CC4F6E5248D18C8000692AE /* WSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4F5E1248D160C000692AE /* WSEngine.swift */; };
 		8CC4F6E7248D1C3E000692AE /* BotterSDK-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CC4F6E6248D1B77000692AE /* BotterSDK-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CC4F6E8248D24C7000692AE /* Assets.xcassets in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC4F4E0248CFCCA000692AE /* Assets.xcassets */; };
+		8CD617E324E2C2160047F8E1 /* B_Forms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CD617E524E2C2160047F8E1 /* B_Forms.storyboard */; };
 		8CD7829D249644ED00190FA7 /* TypingIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30DC3024963A8600C497E6 /* TypingIndicatorTableViewCell.swift */; };
 		8CE8351724E0243D0007244E /* BotterInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4F4A7248CFBA4000692AE /* BotterInfo.plist */; };
 		8CFC709F248FC227006C677B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFC709E248FC227006C677B /* WebKit.framework */; };
@@ -239,7 +242,6 @@
 		8C463AD024BF472600B78E96 /* BotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotData.swift; sourceTree = "<group>"; };
 		8C463AD224BF475800B78E96 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		8C463AD424BF547B00B78E96 /* BotterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotterDataSource.swift; sourceTree = "<group>"; };
-		8C463AD624BF574600B78E96 /* B_Forms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = B_Forms.storyboard; sourceTree = "<group>"; };
 		8C463ADB24BF598200B78E96 /* StartFormInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartFormInterfaces.swift; sourceTree = "<group>"; };
 		8C463ADC24BF598200B78E96 /* StartFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartFormPresenter.swift; sourceTree = "<group>"; };
 		8C463ADD24BF598200B78E96 /* StartFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartFormViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,12 @@
 		8C786A3D24E0F04E004A826C /* PresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
 		8C786A3E24E0F04E004A826C /* ViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
 		8C786A3F24E0F04E004A826C /* InteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
+		8C786A4924E297C1004A826C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/B_Chat.strings; sourceTree = "<group>"; };
+		8C786A4A24E297C2004A826C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		8C786A4B24E297C2004A826C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8C786A4F24E298B3004A826C /* NSBundle+Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Language.h"; sourceTree = "<group>"; };
+		8C786A5024E298B3004A826C /* NSBundle+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Language.m"; sourceTree = "<group>"; };
+		8C786A6124E2B43C004A826C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C83EE2724CF3FF6000F2637 /* BotterTests.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BotterTests.entitlements; sourceTree = "<group>"; };
 		8C83EE2A24D05C32000F2637 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
 		8C83EE2C24D0649D000F2637 /* AttachmentDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentDataSource.swift; sourceTree = "<group>"; };
@@ -440,6 +448,8 @@
 		8CC4F6C9248D180D000692AE /* ContentHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentHeader.swift; sourceTree = "<group>"; };
 		8CC4F6CA248D180D000692AE /* ContentSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSheet.swift; sourceTree = "<group>"; };
 		8CC4F6E6248D1B77000692AE /* BotterSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BotterSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		8CD617E424E2C2160047F8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/B_Forms.storyboard; sourceTree = "<group>"; };
+		8CD617E724E2C21D0047F8E1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/B_Forms.strings; sourceTree = "<group>"; };
 		8CFC709E248FC227006C677B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8CFC70A0248FCD64006C677B /* GallaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryTableViewCell.swift; sourceTree = "<group>"; };
 		8CFC70A2248FCE31006C677B /* GallaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryItem.swift; sourceTree = "<group>"; };
@@ -606,6 +616,16 @@
 			path = "Base VIPER Interfaces";
 			sourceTree = "<group>";
 		};
+		8C786A4624E29765004A826C /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				8C786A6224E2B43C004A826C /* Localizable.strings */,
+				8C786A4F24E298B3004A826C /* NSBundle+Language.h */,
+				8C786A5024E298B3004A826C /* NSBundle+Language.m */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		8C83EE3024D18AAC000F2637 /* UserCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,6 +790,7 @@
 		8CC4F4A5248CFBA4000692AE /* Botter */ = {
 			isa = PBXGroup;
 			children = (
+				8C786A4624E29765004A826C /* Localization */,
 				8C463ACD24BF379B00B78E96 /* DataSource */,
 				8CC4F597248D15E2000692AE /* depends */,
 				8CC4F4E0248CFCCA000692AE /* Assets.xcassets */,
@@ -861,7 +882,7 @@
 		8CC4F4E1248CFCCB000692AE /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				8C463AD624BF574600B78E96 /* B_Forms.storyboard */,
+				8CD617E524E2C2160047F8E1 /* B_Forms.storyboard */,
 				8CC4F4E4248CFCCB000692AE /* B_Chat.storyboard */,
 			);
 			path = StoryBoard;
@@ -1080,6 +1101,7 @@
 				8CA2E8AE249A49C1002ADB42 /* SwiftyGif.h in Headers */,
 				8CC4F4A8248CFBA4000692AE /* Botter.h in Headers */,
 				8CC4F6E7248D1C3E000692AE /* BotterSDK-Bridging-Header.h in Headers */,
+				8C786A5224E298B4004A826C /* NSBundle+Language.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1117,6 +1139,7 @@
 				TargetAttributes = {
 					8CC4F4A2248CFBA4000692AE = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -1127,6 +1150,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 8CC4F499248CFBA4000692AE;
 			productRefGroup = 8CC4F4A4248CFBA4000692AE /* Products */;
@@ -1153,9 +1177,10 @@
 				8CC4F543248CFCCC000692AE /* B_Chat.storyboard in Resources */,
 				8CC4F54B248CFCCC000692AE /* TagCollectionViewCell.xib in Resources */,
 				8C463AF924C0C10200B78E96 /* RadioCollectionViewCell.xib in Resources */,
+				8C786A6024E2B43C004A826C /* Localizable.strings in Resources */,
 				8CC4F541248CFCCC000692AE /* Assets.xcassets in Resources */,
 				8C84B57A24C5D33100996861 /* NotifyTableViewCell.xib in Resources */,
-				8C463AD724BF574600B78E96 /* B_Forms.storyboard in Resources */,
+				8CD617E324E2C2160047F8E1 /* B_Forms.storyboard in Resources */,
 				8C83EE3524D18B90000F2637 /* UserImageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1350,6 +1375,7 @@
 				8CAB89DE24913569009BBAB6 /* AudioPlayerMode.swift in Sources */,
 				8C786A2B24E0ECD3004A826C /* Date.swift in Sources */,
 				8CAB89E324913569009BBAB6 /* MPNowPlayingInfoCenter+AudioItem.swift in Sources */,
+				8C786A5324E298B4004A826C /* NSBundle+Language.m in Sources */,
 				8CC4F680248D17A9000692AE /* DictionaryTransform.swift in Sources */,
 				8CC4F67F248D17A9000692AE /* FromJSON.swift in Sources */,
 				8C41823024A1CF070097E1A6 /* ReachabilityManager.swift in Sources */,
@@ -1383,6 +1409,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8C08E805249298E300A2B984 /* Base */,
+				8C786A4A24E297C2004A826C /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1391,16 +1418,35 @@
 			isa = PBXVariantGroup;
 			children = (
 				8C08E80A249298E500A2B984 /* Base */,
+				8C786A4B24E297C2004A826C /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8C786A6224E2B43C004A826C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C786A6124E2B43C004A826C /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		8CC4F4E4248CFCCB000692AE /* B_Chat.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8CC4F4E5248CFCCB000692AE /* Base */,
+				8C786A4924E297C1004A826C /* ar */,
 			);
 			name = B_Chat.storyboard;
+			sourceTree = "<group>";
+		};
+		8CD617E524E2C2160047F8E1 /* B_Forms.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CD617E424E2C2160047F8E1 /* Base */,
+				8CD617E724E2C21D0047F8E1 /* ar */,
+			);
+			name = B_Forms.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1409,8 +1455,10 @@
 		8CC4F4A9248CFBA4000692AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1442,6 +1490,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1475,8 +1524,10 @@
 		8CC4F4AA248CFBA4000692AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1508,6 +1559,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1536,6 +1588,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4B32C5D0A4773A0FB28F8AB /* Pods-Botter.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5RLD3B22VC;
@@ -1559,6 +1612,8 @@
 				PRODUCT_NAME = Botter;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1568,6 +1623,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4901E93C7D08F2DB6FEB29BA /* Pods-Botter.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5RLD3B22VC;
@@ -1591,6 +1647,7 @@
 				PRODUCT_NAME = Botter;
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,0 +1,138 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0Wy-hV-6jl"; */
+"0Wy-hV-6jl.text" = "Label";
+
+/* Class = "UILabel"; text = "Try another search term"; ObjectID = "0qq-mx-0Gv"; */
+"0qq-mx-0Gv.text" = "جرب كلمة اخري للبحث";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "19T-UU-khR"; */
+"19T-UU-khR.text" = "Label";
+
+/* Class = "UILabel"; text = "Sorry. It looks like there was an issue with your internet connection. Please check your connection and try again."; ObjectID = "1Zl-xZ-4mC"; */
+"1Zl-xZ-4mC.text" = "عفوا، يبدو ان هناك مشكلة باتصالك بالانترنت. برجاء اعادة المحاولة بعد التأكد من اتصالك";
+
+/* Class = "UILabel"; text = "gkglkglfkglfkglfgklgkfglkgkflkgflkglfgkflkgfgfglfkglf"; ObjectID = "61W-CE-lfM"; */
+"61W-CE-lfM.text" = "gkglkglfkglfkglfgklgkfglkgkflkgflkglfgkflkgfgfglfkglf";
+
+/* Class = "UILabel"; text = "Hey there 👋"; ObjectID = "6Uo-Pe-Gq7"; */
+"6Uo-Pe-Gq7.text" = "مرحبا 👋";
+
+/* Class = "UITextField"; placeholder = "Search for articles"; ObjectID = "6VJ-YM-7Fc"; */
+"6VJ-YM-7Fc.placeholder" = "ابحث عن مقالات";
+
+/* Class = "UILabel"; text = "gkglkglfkglfkglfgklgkfglkgkflkgflkglfgkflkgfgfglfkglf"; ObjectID = "6vb-hx-zwG"; */
+"6vb-hx-zwG.text" = "gkglkglfkglfkglfgklgkfglkgkflkgflkglfgkflkgfgfglfkglf";
+
+/* Class = "UILabel"; text = "no results for \"How\""; ObjectID = "6vr-er-EkA"; */
+"6vr-er-EkA.text" = "لا يوجد نتائج \"How\"";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "831-6I-D01"; */
+"831-6I-D01.text" = "Label";
+
+/* Class = "UILabel"; text = "Search results for \"How\""; ObjectID = "A3R-I6-Ycg"; */
+"A3R-I6-Ycg.text" = "لايوجد نتائج \"How\"";
+
+/* Class = "UILabel"; text = "gkglkglfkglfkglfgklgkfglkgkflkgflkglfgkflkgfgfglfkglf"; ObjectID = "B3j-ia-9wT"; */
+"B3j-ia-9wT.text" = "gkglkglfkglfkglfgklgkfglkgkflkgflkglfgkflkgfgfglfkglf";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BSj-rN-0lW"; */
+"BSj-rN-0lW.text" = "Label";
+
+/* Class = "UILabel"; text = "Recuriting Template : Hello Nora Recuriting Template : Hello Nora Recuriting Template : Hello Nora"; ObjectID = "CKX-UW-qx3"; */
+"CKX-UW-qx3.text" = "Recuriting Template : Hello Nora Recuriting Template : Hello Nora Recuriting Template : Hello Nora";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "EMJ-6O-qsg"; */
+"EMJ-6O-qsg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "I1k-Zh-G29"; */
+"I1k-Zh-G29.text" = "Label";
+
+/* Class = "UILabel"; text = "Online"; ObjectID = "JF6-eb-gDs"; */
+"JF6-eb-gDs.text" = "اونلاين";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JWW-Ye-t5W"; */
+"JWW-Ye-t5W.text" = "Label";
+
+/* Class = "UILabel"; text = "We’re here to answer your questions about Company. Ask us anything!"; ObjectID = "Kel-77-Nlg"; */
+"Kel-77-Nlg.text" = "نحن هنا للرد ع استفساراتك عن الشركة. اسال ما تشاء!";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Nkc-Mf-Ti8"; */
+"Nkc-Mf-Ti8.text" = "Label";
+
+/* Class = "UILabel"; text = "Botter"; ObjectID = "QF7-IT-aWh"; */
+"QF7-IT-aWh.text" = "Botter";
+
+/* Class = "UILabel"; text = "Find an answer yourself"; ObjectID = "Rq9-do-T42"; */
+"Rq9-do-T42.text" = "ابحث عن اجاباتك بنفسك";
+
+/* Class = "UILabel"; text = "Recuriting Template : Hello Nora Recuriting Template : Hello Nora Recuriting Template : Hello Nora"; ObjectID = "THn-4n-27o"; */
+"THn-4n-27o.text" = "Recuriting Template : Hello Nora Recuriting Template : Hello Nora Recuriting Template : Hello Nora";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "W7e-gy-rWY"; */
+"W7e-gy-rWY.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Z2D-gi-fyR"; */
+"Z2D-gi-fyR.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "See more results"; ObjectID = "bq4-mD-Ias"; */
+"bq4-mD-Ias.normalTitle" = "المزيد";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eA0-mv-eqb"; */
+"eA0-mv-eqb.text" = "Label";
+
+/* Class = "UILabel"; text = "We Run on Botter"; ObjectID = "eca-hs-0Sf"; */
+"eca-hs-0Sf.text" = "We Run on Botter";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fWt-LD-964"; */
+"fWt-LD-964.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gog-4E-V2L"; */
+"gog-4E-V2L.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hek-78-IOT"; */
+"hek-78-IOT.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lTN-U6-kBT"; */
+"lTN-U6-kBT.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nHe-wL-IOg"; */
+"nHe-wL-IOg.text" = "Label";
+
+/* Class = "UILabel"; text = "Recuriting Template : Hello Nora Recuriting Template : Hello Nora Recuriting Template : Hello Nora"; ObjectID = "o9a-FD-dl0"; */
+"o9a-FD-dl0.text" = "Recuriting Template : Hello Nora Recuriting Template : Hello Nora Recuriting Template : Hello Nora";
+
+/* Class = "UILabel"; text = "Help Center"; ObjectID = "oEP-7Z-Z2a"; */
+"oEP-7Z-Z2a.text" = "مركز المساعدة";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oJj-1Q-BlG"; */
+"oJj-1Q-BlG.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "py8-0K-nYC"; */
+"py8-0K-nYC.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "q5W-8t-qi5"; */
+"q5W-8t-qi5.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rON-s9-BjO"; */
+"rON-s9-BjO.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "     New conversation "; ObjectID = "sm1-1m-5ge"; */
+"sm1-1m-5ge.normalTitle" = "     محادثة جديدة ";
+
+/* Class = "UILabel"; text = "Help Center"; ObjectID = "trt-9E-YrV"; */
+"trt-9E-YrV.text" = "مركز المساعدة";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "urB-Pf-isq"; */
+"urB-Pf-isq.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wDB-Oh-vIs"; */
+"wDB-Oh-vIs.text" = "Label";
+
+/* Class = "UILabel"; text = "We Run on Botter"; ObjectID = "waz-fG-R94"; */
+"waz-fG-R94.text" = "We Run on Botter";
+
+/* Class = "UILabel"; text = "Start a conversation"; ObjectID = "wxM-Wf-f8y"; */
+"wxM-Wf-f8y.text" = "ابدأ المحادثة";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xWO-ow-Arz"; */
+"xWO-ow-Arz.text" = "Label";

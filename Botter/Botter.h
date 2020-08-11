@@ -10,6 +10,8 @@
 //#import "UIView+WebCache.h"
 //#import "UIButton+WebCache.h"
 //#import "UIImageView+WebCache.h"
+#import "NSBundle+Language.h"
+
 
 //! Project version number for BotterSDK.
 FOUNDATION_EXPORT double BotterSDKVersionNumber;

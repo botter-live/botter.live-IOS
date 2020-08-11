@@ -29,10 +29,10 @@ class UserImageTableViewCell: UserChatTableViewCell {
         super.setData(msg: msg)
         self.msgImage?.image = UIImage()
         msg.lazyImage.setCacheSize(self.msgImage?.frame.size)
-        DispatchQueue.main.async {
+//        DispatchQueue.main.async {
             self.msg.lazyImage.show(imageView: self.msgImage!, url: self.msg.mediaUrl) { (lazyError) in
                 //            print(lazyError?.localizedDescription)
-            }
+//            }
         }
         
     }

@@ -1,0 +1,141 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "27u-gJ-guB"; */
+"27u-gJ-guB.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4TZ-Eh-Jav"; */
+"4TZ-Eh-Jav.text" = "Label";
+
+/* Class = "UILabel"; text = "Items"; ObjectID = "5Bj-ag-63b"; */
+"5Bj-ag-63b.text" = "Items";
+
+/* Class = "UILabel"; text = "We Run on Botter"; ObjectID = "6Lh-hU-IzM"; */
+"6Lh-hU-IzM.text" = "We Run on Botter";
+
+/* Class = "UIButton"; normalTitle = "latest"; ObjectID = "7mA-gJ-8y6"; */
+"7mA-gJ-8y6.normalTitle" = "latest";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "AIf-3L-HFJ"; */
+"AIf-3L-HFJ.text" = "Label";
+
+/* Class = "UILabel"; text = "Online"; ObjectID = "AuU-Wi-RXb"; */
+"AuU-Wi-RXb.text" = "اونلاين";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "B2T-Sq-Yg9"; */
+"B2T-Sq-Yg9.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ben-Sz-4Qk"; */
+"Ben-Sz-4Qk.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "D00-2A-p2o"; */
+"D00-2A-p2o.text" = "Label";
+
+/* Class = "UILabel"; text = "Passengers"; ObjectID = "EUk-75-YUb"; */
+"EUk-75-YUb.text" = "المسافرين";
+
+/* Class = "UIButton"; normalTitle = "latest"; ObjectID = "Ejd-ob-F10"; */
+"Ejd-ob-F10.normalTitle" = "latest";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "F8i-af-O02"; */
+"F8i-af-O02.text" = "Label";
+
+/* Class = "UILabel"; text = "Welcome to al dwaa pharmacies\nاهلاً و سهلاً بكم"; ObjectID = "GQB-Qu-4a8"; */
+"GQB-Qu-4a8.text" = "Welcome to al dwaa pharmacies\nاهلاً و سهلاً بكم";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Hfm-sH-FJq"; */
+"Hfm-sH-FJq.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LPZ-Rn-zVb"; */
+"LPZ-Rn-zVb.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "latest"; ObjectID = "LpG-QK-1fF"; */
+"LpG-QK-1fF.normalTitle" = "latest";
+
+/* Class = "UILabel"; text = "Label\nitemTitle.alpha = 0"; ObjectID = "Ng6-o2-czq"; */
+"Ng6-o2-czq.text" = "Label\nitemTitle.alpha = 0";
+
+/* Class = "UILabel"; text = "Botter"; ObjectID = "OhJ-tN-HXW"; */
+"OhJ-tN-HXW.text" = "Botter";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QBh-jZ-W6L"; */
+"QBh-jZ-W6L.text" = "Label";
+
+/* Class = "UILabel"; text = "Order Receipt"; ObjectID = "REP-aJ-fWq"; */
+"REP-aJ-fWq.text" = "ايصال الطلب";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "S0s-qd-1uX"; */
+"S0s-qd-1uX.text" = "Label";
+
+/* Class = "UILabel"; text = "Online"; ObjectID = "Sro-s6-mgF"; */
+"Sro-s6-mgF.text" = "اونلاين";
+
+/* Class = "UILabel"; text = "We Run on Botter"; ObjectID = "T8X-h9-EId"; */
+"T8X-h9-EId.text" = "We Run on Botter";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "UnY-qO-CaR"; */
+"UnY-qO-CaR.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VaI-8O-xIi"; */
+"VaI-8O-xIi.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "W95-Z6-gQv"; */
+"W95-Z6-gQv.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "latest"; ObjectID = "WLY-YX-eZe"; */
+"WLY-YX-eZe.normalTitle" = "latest";
+
+/* Class = "UILabel"; text = "Sorry. It looks like there was an issue with your internet connection. Please check your connection and try again."; ObjectID = "WUA-KK-I0Q"; */
+"WUA-KK-I0Q.text" = "عفوا، يبدو ان هناك مشكلة باتصالك بالانترنت. برجاء اعادة المحاولة بعد التأكد من اتصالك";
+
+/* Class = "UILabel"; text = "12:00"; ObjectID = "axO-Tt-Ja7"; */
+"axO-Tt-Ja7.text" = "12:00";
+
+/* Class = "UILabel"; text = "Welcome,\nto Botter Mobile"; ObjectID = "b8p-2X-qNG"; */
+"b8p-2X-qNG.text" = "Welcome,\nto Botter Mobile";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eiw-WB-gxT"; */
+"eiw-WB-gxT.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fqa-3b-ssp"; */
+"fqa-3b-ssp.text" = "Label";
+
+/* Class = "UILabel"; text = "Start a conversation"; ObjectID = "gVT-gG-X9M"; */
+"gVT-gG-X9M.text" = "ابدأ المحادثة";
+
+/* Class = "UILabel"; text = "Done"; ObjectID = "gmd-eo-raL"; */
+"gmd-eo-raL.text" = "تم";
+
+/* Class = "UILabel"; text = "Perfect day for you?"; ObjectID = "iE8-BD-mDo"; */
+"iE8-BD-mDo.text" = "اليوم المناسب لك؟";
+
+/* Class = "UIButton"; normalTitle = "     New conversation "; ObjectID = "iVu-Ci-zpS"; */
+"iVu-Ci-zpS.normalTitle" = "     محادثة جديدة ";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "lCF-Td-fOs"; */
+"lCF-Td-fOs.normalTitle" = "تم";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lLG-XR-xfj"; */
+"lLG-XR-xfj.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mZw-LI-EBl"; */
+"mZw-LI-EBl.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pAw-TX-1Sv"; */
+"pAw-TX-1Sv.text" = "Label";
+
+/* Class = "UILabel"; text = "Passengers"; ObjectID = "s7H-KB-JWH"; */
+"s7H-KB-JWH.text" = "المسافرين";
+
+/* Class = "UILabel"; text = "Hey there 👋"; ObjectID = "t1F-72-WKh"; */
+"t1F-72-WKh.text" = "مرحبا 👋";
+
+/* Class = "UILabel"; text = "We’re here to answer your questions about Company. Ask us anything!"; ObjectID = "utV-R1-0e6"; */
+"utV-R1-0e6.text" = "نحن هنا للرد ع استفساراتك عن الشركة. اسال ما تشاء!";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uyh-XY-D1u"; */
+"uyh-XY-D1u.text" = "Label";
+
+/* Class = "UILabel"; text = "Pick Your Date"; ObjectID = "xZW-kw-e4O"; */
+"xZW-kw-e4O.text" = "اختر التاريخ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zzx-id-XaK"; */
+"zzx-id-XaK.text" = "Label";

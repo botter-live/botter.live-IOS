@@ -503,7 +503,7 @@ to Botter Mobile</string>
         <scene sceneID="YU8-xr-YnB">
             <objects>
                 <viewController storyboardIdentifier="b_ChatViewController" id="mBd-sT-l3W" customClass="b_ChatViewController" customModule="Botter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="elV-lh-Q1K">
+                    <view key="view" contentMode="scaleToFill" id="elV-lh-Q1K" customClass="chatView" customModule="Botter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -780,7 +780,7 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MapTableViewCell" rowHeight="258" id="SWE-7p-2JH" customClass="MapTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="223.5" width="414" height="258"/>
+                                        <rect key="frame" x="0.0" y="327.5" width="414" height="258"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SWE-7p-2JH" id="W5e-Ra-8HK">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
@@ -894,7 +894,7 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WeatherTableViewCell" rowHeight="164" id="NCP-xd-9Md" customClass="WeatherTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="481.5" width="414" height="164"/>
+                                        <rect key="frame" x="0.0" y="585.5" width="414" height="164"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NCP-xd-9Md" id="w3b-lS-WH2">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="164"/>
@@ -1031,7 +1031,7 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TypingIndicatorTableViewCell" rowHeight="80" id="JQa-hX-qoP" customClass="TypingIndicatorTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="645.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="749.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JQa-hX-qoP" id="2Lj-al-iHN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -1099,7 +1099,7 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AudioBotTableViewCell" rowHeight="80" id="Wsp-4v-oxm" customClass="AudioBotTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="725.5" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="829.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wsp-4v-oxm" id="Od7-TL-QHw">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -1221,7 +1221,7 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HeroTableViewCell" rowHeight="250" id="EUW-L6-T62" customClass="HeroTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="805.5" width="414" height="250"/>
+                                        <rect key="frame" x="0.0" y="909.5" width="414" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EUW-L6-T62" id="d5p-S8-fvB">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
@@ -1405,17 +1405,17 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageBotTableViewCell" id="HGi-Ge-I0K" customClass="ImageBotTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1409.5" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="1409.5" width="414" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HGi-Ge-I0K" id="IMF-c7-TRh">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRo-IS-w9N" customClass="botBubbelView" customModule="Botter" customModuleProvider="target">
-                                                    <rect key="frame" x="56" y="12" width="298" height="20"/>
+                                                    <rect key="frame" x="56" y="12" width="298" height="200"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mFJ-Gd-kpu">
-                                                            <rect key="frame" x="8" y="8" width="282" height="4"/>
+                                                            <rect key="frame" x="8" y="8" width="282" height="184"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.91764705879999997" green="0.94117647059999998" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1428,7 +1428,7 @@ to Botter Mobile</string>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbr-Rl-Tr1" customClass="b_AccentView" customModule="Botter" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="-4" width="36" height="36"/>
+                                                    <rect key="frame" x="16" y="176" width="36" height="36"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bqE-Mf-khI">
                                                             <rect key="frame" x="2" y="2" width="32" height="32"/>
@@ -1476,7 +1476,7 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GifTableViewCell" id="Itc-Rj-QLn" customClass="GifTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1453.5" width="414" height="224"/>
+                                        <rect key="frame" x="0.0" y="1633.5" width="414" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Itc-Rj-QLn" id="Ob6-Lb-Wq1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
@@ -1567,7 +1567,7 @@ to Botter Mobile</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GallaryTableViewCell" rowHeight="344" id="Ish-5G-Ajz" customClass="GallaryTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1677.5" width="414" height="344"/>
+                                        <rect key="frame" x="0.0" y="1857.5" width="414" height="344"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ish-5G-Ajz" id="GXG-aB-mn8">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="344"/>
@@ -1838,7 +1838,7 @@ itemTitle.alpha = 0</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoBotTableViewCell" id="4om-US-p7V" customClass="VideoBotTableViewCell" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="2021.5" width="414" height="224"/>
+                                        <rect key="frame" x="0.0" y="2201.5" width="414" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4om-US-p7V" id="0HF-Do-qYy">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
