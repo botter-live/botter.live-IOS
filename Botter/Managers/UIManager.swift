@@ -56,6 +56,24 @@ class b_UserMesgLbl : b_BasicRegularLbl{
         textColor = BotterSettingsManager.FontColor
         
     }
+    
+    let padding = UIEdgeInsets(top: 0, left: 4 , bottom: 0, right: 8)
+
+    public override func drawText(in rect: CGRect) {
+        let insets = padding
+        super.drawText(in: rect.inset(by: insets))
+    }
+
+    public override var intrinsicContentSize: CGSize {
+        let size = super.intrinsicContentSize
+        return CGSize(width: size.width + padding.left + padding.right,
+                      height: size.height + padding.top + padding.bottom)
+    }
+
+    public override func sizeToFit() {
+        super.sizeThatFits(intrinsicContentSize)
+    }
+    
 }
 
 class b_BotterMesgLbl : b_BasicRegularLbl{
@@ -68,8 +86,9 @@ class b_BotterMesgLbl : b_BasicRegularLbl{
 class b_ChatHeader : b_BasicMediumLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
+        textAlignment = .left
         textColor = BotterSettingsManager.ChatTitleColor
-        text = BotterSettingsManager.ChatTitleText
+        text = BotterSettingsManager.language == .arabic ? CommonActions.loadText(for: BotterSettingsManager.ChatTitleText) : BotterSettingsManager.ChatTitleText
     }
 }
 
@@ -99,7 +118,7 @@ class b_ChatHeadLine : b_BasicMediumLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.FontColor
-        text = BotterSettingsManager.HeadlineMessage
+        text = BotterSettingsManager.language == .arabic ? CommonActions.loadText(for: BotterSettingsManager.HeadlineMessage) : BotterSettingsManager.HeadlineMessage
     }
 }
 
@@ -107,7 +126,7 @@ class b_ChatWelcomeLbl : b_BasicRegularLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
         textColor = BotterSettingsManager.FontColor
-        text = BotterSettingsManager.WelcomeMessage
+        text = BotterSettingsManager.language == .arabic ? CommonActions.loadText(for: BotterSettingsManager.WelcomeMessage) : BotterSettingsManager.WelcomeMessage
     }
 }
 
@@ -162,6 +181,7 @@ class b_HeaderLogo : UIImageView{
 class chatView : UIView{
     override class func awakeFromNib() {
         self.appearance().semanticContentAttribute = .forceLeftToRight
+        
     }
 }
 
@@ -170,6 +190,14 @@ class AccentImage : UIImageView{
         super.awakeFromNib()
         tintColor = BotterSettingsManager.AccentColor
        
+    }
+}
+
+class b_AttachmentImage : UIImageView{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        tintColor = BotterSettingsManager.FontColor
+        
     }
 }
 

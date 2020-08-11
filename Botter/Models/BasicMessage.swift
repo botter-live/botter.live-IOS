@@ -64,6 +64,7 @@ class b_BasicMessage :  Mappable {
     }
     
     func mapping(map: Map) {
+        
         type <- map["type"]
         text <- map["payload"]
         isBotMsg <- map["isBotMsg"]
@@ -95,12 +96,24 @@ class b_BasicMessage :  Mappable {
             actions.append(action)
         }
         
-        if msgType == .image || msgType == .userImage{
-            
-            lazyImage.prefetchImage(url: mediaUrl)
+        if msgType == .userImage &&  msgType == .attachment{
+            print(map.JSON)
         }
         
-        if msgType == .userMsg {
+        if msgType == .userImage{
+            
+            if url != "" && mediaUrl == "" {
+                mediaUrl = url
+            }
+        }
+        
+        if msgType == .image || msgType == .userImage{
+            if mediaUrl != "" {
+                lazyImage.prefetchImage(url: mediaUrl)
+            }
+        }
+        
+        if msgType == .userMsg  || msgType == .attachment{
             text <- map["text"]
         }
     }
@@ -145,6 +158,7 @@ enum b_MessageType : String , Codable{
     case attachment = "attachment"
     case userMsg = "message"
     case userImage = "image_attachment"
+    case userInput = "user_input"
 }
 
 extension b_BasicMessage : AudioPlayerDelegate{

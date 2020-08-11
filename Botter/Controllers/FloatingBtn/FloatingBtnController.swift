@@ -104,15 +104,6 @@ class FloatingButtonWindow: UIWindow {
         isHidden = false
         
         
-        Bundle.b_setLanguage(BotterSettingsManager.language.rawValue)
-        if BotterSettingsManager.language == . arabic{
-            UserDefaults.standard.set(["ar", "en"], forKey: "AppleLanguages")
-//            UIView.appearance().semanticContentAttribute = .forceRightToLeft
-        }else{
-            UserDefaults.standard.set(["en", "ar"], forKey: "AppleLanguages")
-//            UIView.appearance().semanticContentAttribute = .forceLeftToRight
-        }
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

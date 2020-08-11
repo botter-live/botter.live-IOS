@@ -30,12 +30,14 @@ class VideoBotTableViewCell: ImageBotTableViewCell {
     }
     
     override func setData(msg: b_BasicMessage, showIcon: Bool = false) {
-           super.setData(msg: msg, showIcon: showIcon)
-        self.msg.lazyImage.show(imageView: self.msgImage! , url: msg.image) { (lazyError) in
-//               print(lazyError?.localizedDescription)
-           }
-       }
-
+        super.setData(msg: msg, showIcon: showIcon)
+        DispatchQueue.main.async {
+            self.msg.lazyImage.show(imageView: self.msgImage!, url: msg.mediaUrl) { (lazyError) in
+                //            print(lazyError?.localizedDescription)
+            }
+        }
+    }
+    
 }
 extension String{
     func extractYouTubeId() -> String? {

@@ -11,11 +11,11 @@ import AVFoundation
 import MobileCoreServices
 import Photos
 
-class b_AttachFileViewController: UIViewController {
+class b_AttachFileViewController: b_LocalizableViewController {
     
     @IBOutlet weak var tableView : UITableView!
     
-    var actions = ["Camera" , "Gallary" , "File"]
+    var actions = ["Camera" , "Gallery" , "File"]
     let imagepicker = UIImagePickerController()
     var completion : ((b_AttachedFile)->())!
     var loader = b_LoaderManager()
@@ -70,7 +70,7 @@ class b_AttachFileViewController: UIViewController {
         switch status {
         case .authorized:
             //handle authorized status
-            openGallary()
+            openGallery()
         case .denied, .restricted :
             //handle denied status
             galleryAccessDenied()
@@ -80,7 +80,7 @@ class b_AttachFileViewController: UIViewController {
                 switch status {
                 case .authorized:
                     // as above
-                    self.openGallary()
+                    self.openGallery()
                 case .denied, .restricted:
                     // as above
                     self.galleryAccessDenied()
@@ -97,19 +97,19 @@ class b_AttachFileViewController: UIViewController {
     }
     
     func galleryAccessDenied(){
-        let alert = UIAlertController(title: "Gallery", message: "Gallery access is necessary to pick your Media", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Gallery".b_localize(), message: "Gallery access is necessary to pick your Media".b_localize(), preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Open Settings", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "Open Settings".b_localize(), style: .default, handler: { action in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Cancel".b_localize(), style: .cancel, handler: { (action) in
             
         }))
         self.present(alert, animated: true)
     }
     
-    func openGallary()
+    func openGallery()
     {
         
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary)){
@@ -145,13 +145,13 @@ class b_AttachFileViewController: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 }
             } else {
-                let alert = UIAlertController(title: "Camera", message: "Camera access is necessary to capture your Media", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Camera".b_localize(), message: "Camera access is necessary to capture your Media".b_localize(), preferredStyle: .alert)
                 
-                alert.addAction(UIAlertAction(title: "Open Settings", style: .default, handler: { action in
+                alert.addAction(UIAlertAction(title: "Open Settings".b_localize(), style: .default, handler: { action in
                     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                 }))
                 
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                alert.addAction(UIAlertAction(title: "Cancel".b_localize(), style: .cancel, handler: { (action) in
                     
                 }))
                 self.present(alert, animated: true)
@@ -177,7 +177,7 @@ extension b_AttachFileViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         if let titleLbl = cell?.viewWithTag(1) as? UILabel{
-            titleLbl.text = actions[indexPath.row]
+            titleLbl.text = CommonActions.loadText(for: actions[indexPath.row])
         }
         return cell ?? UITableViewCell()
     }
@@ -248,7 +248,7 @@ extension b_AttachFileViewController : UIImagePickerControllerDelegate , UINavig
                 }
                 break
             case .error , .networkError:
-                self.b_showMessage(response as? String ?? "Something went wrong")
+                self.b_showMessage(response as? String ?? "Something went wrong".b_localize())
                 break
             }
         }
@@ -269,7 +269,7 @@ extension b_AttachFileViewController : UIImagePickerControllerDelegate , UINavig
                 }
                    break
                case .error , .networkError:
-                self.b_showMessage(response as? String ?? "Something went wrong")
+                self.b_showMessage(response as? String ?? "Something went wrong".b_localize())
                    break
                }
            }

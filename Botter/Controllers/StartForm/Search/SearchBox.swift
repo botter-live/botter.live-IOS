@@ -55,7 +55,7 @@ class SearchBox: b_AllSidsCardView {
         
         if searchTextField.text?.count ?? 0 > 0 {
             cParent.view.endEditing(true)
-            searchAboutLabel.text = "Search results for \(searchTextField.text ?? "")"
+            searchAboutLabel.text = "\("Search results for".b_localize()) \(searchTextField.text ?? "")"
             cParent.presenter.getFaqsData(searchText: searchTextField.text ?? "")
 
         }
@@ -100,7 +100,7 @@ class SearchBox: b_AllSidsCardView {
     }
     
     func setupEmptyQuestionView(){
-        noResultLabel.text = "No result for \(searchTextField.text ?? "")"
+        noResultLabel.text = "\("No result for") \(searchTextField.text ?? "")"
         mainStackView.arrangedSubviews[1].isHidden = true
         mainStackView.arrangedSubviews[2].isHidden = true
         mainStackView.arrangedSubviews[3].isHidden = true

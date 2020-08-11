@@ -13,7 +13,8 @@ class BotterDataSource : BaseDataSource{
     func getBotterData(completion:@escaping(ResponseStatus,Any)->Void){
 //        let params = ["bot_id" : BotterSettingsManager.BotID]
 //        print(Constants.BOTTER_DATA + BotterSettingsManager.BotID)
-        BaseAPI(url: Constants.BOTTER_DATA + BotterSettingsManager.BotID  , method: .get , params: nil, headers: nil) { (json, error) in
+        let url = Constants.BOTTER_DATA + getLangStr() + "?bot_id=" + BotterSettingsManager.BotID
+        BaseAPI(url: url   , method: .get , params: nil, headers: nil) { (json, error) in
             if json != nil {
                 print(json)
                 let data = b_BotData.getBotterData(dict: json ?? [:])
@@ -23,19 +24,22 @@ class BotterDataSource : BaseDataSource{
                     completion(.networkError , error!.localizedDescription)
                 }
                 else{
-                    completion(.networkError,"Something went wrong!")
+                    completion(.networkError,"Something went wrong".b_localize())
                 }
             }
         }
         
     }
     
+    func getLangStr()->String{
+        return BotterSettingsManager.language == .arabic ? "ar_AR" : "en_US"
+    }
     
     func getFAQsData(searchText: String,completion:@escaping(ResponseStatus,Any)->Void){
     //        let params = ["bot_id" : BotterSettingsManager.BotID]
     //        print(Constants.BOTTER_DATA + BotterSettingsManager.BotID)
         
-        let faqUrl = Constants.FAQ_DATA + BotterSettingsManager.BotID + "&search=" + searchText
+        let faqUrl = Constants.FAQ_DATA + getLangStr() + "?bot_id=" + BotterSettingsManager.BotID + "&search=" + searchText
         
         
          BaseArrayAPI(url: faqUrl , method: .get , params: nil, headers: nil) { (json, error) in

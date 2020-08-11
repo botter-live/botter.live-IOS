@@ -25,11 +25,15 @@ class AttachmentTableViewCell: UserChatTableViewCell {
         super.setData(msg: msg)
         self.msg = msg
         let urlComponents = self.msg.mediaUrl.components(separatedBy: "/")
-        if urlComponents.count > 0{
-            textLbl.text = urlComponents[urlComponents.count - 1]
-        }else{
-            textLbl.text = ""
-        }
+//        if urlComponents.count > 0{
+//            textLbl.textAlignment = .center
+//            textLbl.text = urlComponents[urlComponents.count - 1]
+//        }else{
+//            textLbl.text = ""
+//        }
+        
+        textLbl.textAlignment = .center
+        textLbl.text = msg.text
     }
     
 }

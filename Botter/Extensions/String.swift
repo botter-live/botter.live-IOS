@@ -99,7 +99,8 @@ extension String {
  
     func b_localize() -> String{
 //        return NSLocalizedString(self, bundle: MyFrameworkBundle.bundle, comment: self)
-        return NSLocalizedString(self, comment: self)
+        return CommonActions.loadText(for: self)
+        
 //        return NSLoca
     }
 

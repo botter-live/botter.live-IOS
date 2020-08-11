@@ -26,11 +26,11 @@ class ImageBotTableViewCell: BotChatTableViewCell {
     
     override func setData(msg: b_BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
-//        DispatchQueue.main.async {
+        DispatchQueue.main.async {
             self.msg.lazyImage.show(imageView: self.msgImage!, url: msg.mediaUrl) { (lazyError) in
                 //            print(lazyError?.localizedDescription)
             }
-//        }
+        }
         
     }
 

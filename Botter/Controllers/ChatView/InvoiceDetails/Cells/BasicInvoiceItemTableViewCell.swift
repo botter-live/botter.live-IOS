@@ -26,7 +26,7 @@ class BasicInvoiceItemTableViewCell: UITableViewCell {
     
     func setData(title : String = "" , details : String = ""){
         if titleLbl != nil{
-            titleLbl.text = title
+            titleLbl.text = CommonActions.loadText(for: title)
         }
         if detailsLbl != nil{
             detailsLbl.text = details

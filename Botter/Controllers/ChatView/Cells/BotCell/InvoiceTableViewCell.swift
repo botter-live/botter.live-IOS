@@ -47,7 +47,7 @@ class InvoiceTableViewCell: BotChatTableViewCell {
         addressLbl.text = invoice.address.addressString
         totalLbl.text = "\(invoice.summery.totalCost)"
         
-        moreBtn.setTitle("+\(invoice.elements.count - 2) More", for: .normal)
+        moreBtn.setTitle("+\(invoice.elements.count - 2) \("More".b_localize())", for: .normal)
     }
     
 }
@@ -64,11 +64,11 @@ class InvoiceItemView : UIView{
         self.lazyImage.show(imageView: self.itemImage!, url: item.image) { (lazyError) in
         }
         itemTitleLbl.text = item.title
-        itemQuantityLbl.text = "Qty. \(item.quantity)"
+        itemQuantityLbl.text = "\("Qty.".b_localize()) \(item.quantity)"
         if itemPriceLbl != nil{
             itemPriceLbl.text = item.currency + " \(item.price)"
         }else{
-            itemQuantityLbl.text = item.subtitle + " • " + "Qty. \(item.quantity)" + " • " + item.currency + " \(item.price)"
+            itemQuantityLbl.text = item.subtitle + " • " + "\("Qty.".b_localize()) \(item.quantity)" + " • " + item.currency + " \(item.price)"
         }
     }
 }

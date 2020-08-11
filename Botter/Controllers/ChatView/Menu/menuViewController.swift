@@ -8,7 +8,7 @@
 
 import UIKit
 
-class b_menuViewController: UIViewController {
+class b_menuViewController: b_LocalizableViewController {
     
     @IBOutlet weak var tableView : UITableView!
     var doneActionHandler: ((b_MenuItem)->Void)?
@@ -21,11 +21,7 @@ class b_menuViewController: UIViewController {
         self.tableView.sectionHeaderHeight = UITableView.automaticDimension;
         self.tableView.estimatedSectionHeaderHeight = 25;
         // Do any additional setup after loading the view.
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
-        }
+        
     }
     
     
@@ -105,6 +101,9 @@ extension b_menuViewController : UITableViewDelegate{
         
         if let arrowImage = view?.viewWithTag(2) as? UIImageView{
             arrowImage.isHidden = menu.actions[section].actions.count == 0
+            if BotterSettingsManager.language == .arabic{
+                
+            }
         }
         
         if let actionBtn = view?.viewWithTag(3) as? UIButton{

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class b_InvoiceDetailsViewController: UIViewController {
+class b_InvoiceDetailsViewController: b_LocalizableViewController {
     
     @IBOutlet weak var tableView : UITableView!
 
@@ -16,11 +16,7 @@ class b_InvoiceDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
-        }
+       
         // Do any additional setup after loading the view.
     }
     
@@ -101,7 +97,7 @@ extension b_InvoiceDetailsViewController : UITableViewDataSource{
             return UITableViewCell()
         }
     }
-
+//CommonActions.loadText(for: "Paid with")
     
 }
 extension b_InvoiceDetailsViewController : UITableViewDelegate{
@@ -110,19 +106,19 @@ extension b_InvoiceDetailsViewController : UITableViewDelegate{
             let header = tableView.dequeueReusableCell(withIdentifier: "header") as? BasicInvoiceItemTableViewCell
             switch section {
             case 0:
-                header?.setData(title: "Items".uppercased() )
+                header?.setData(title: CommonActions.loadText(for: "Items").uppercased() )
                 break
             case 1:
-                header?.setData(title: "Ordered on".uppercased() )
+                header?.setData(title: CommonActions.loadText(for: "Ordered on").uppercased() )
                 break
             case 2:
-                header?.setData(title: "Paid with".uppercased() )
+                header?.setData(title: CommonActions.loadText(for: "Paid with").uppercased() )
                 break
             case 3:
-                header?.setData(title: "Ship to".uppercased() )
+                header?.setData(title: CommonActions.loadText(for: "Ship to").uppercased())
                 break
             case 4:
-                header?.setData(title: "Summary".uppercased() )
+                header?.setData(title: CommonActions.loadText(for: "Summary").uppercased() )
                 break
             default:
                 break

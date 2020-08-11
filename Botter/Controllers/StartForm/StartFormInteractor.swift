@@ -28,7 +28,7 @@ extension StartFormInteractor: StartFormInteractorInterface {
                  self.presenter.fetchedFaqsSuccessfully(faqsResponse: response as? [b_FaqData] ?? [])
                 break
             case .error , .networkError :
-                self.presenter.faqsError(error: response as? String ?? "Some thing went wrong")
+                self.presenter.faqsError(error: response as? String ?? "Something went wrong")
                 
             }
              

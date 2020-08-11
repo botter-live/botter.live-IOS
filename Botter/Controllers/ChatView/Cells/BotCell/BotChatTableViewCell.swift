@@ -20,6 +20,9 @@ class BotChatTableViewCell: UserChatTableViewCell {
         var iFrame = self.avatarImg.frame
         iFrame.size = CGSize.init(width: 32, height: 32)
         self.avatarImg.frame = iFrame
+        if textLbl != nil{
+            textLbl.textAlignment = .left
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -60,13 +63,13 @@ class BotChatTableViewCell: UserChatTableViewCell {
     
     func setAvatarByUrl(){
         setAvatar()
-//        DispatchQueue.main.async {
+        DispatchQueue.main.async {
             self.msg.lazyImage.show(imageView: self.avatarImg, url: self.msg.sender.avatar) { (error) in
                 if error == nil {
                     self.avatarImg.contentMode = .scaleAspectFill
                 }
             }
-//        }
+        }
     }
     
     func getBase64Imag(){

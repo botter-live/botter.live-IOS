@@ -22,6 +22,9 @@ class FlightTicketTableViewCell: BotChatTableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        
+        
+        
         ticketNumberView.clipsToBounds = true
         ticketNumberView.layer.cornerRadius = 10
         ticketNumberView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]

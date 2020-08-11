@@ -9,7 +9,7 @@
 import UIKit
 
 
-class b_FaqsDetailsViewController : UIViewController {
+class b_FaqsDetailsViewController : b_LocalizableViewController {
     
     @IBOutlet weak var questionLabel : UILabel!
     @IBOutlet weak var answerLabel : UILabel!
@@ -20,11 +20,7 @@ class b_FaqsDetailsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setFaqsDetailsData()
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
-        }
+       
     }
     
     

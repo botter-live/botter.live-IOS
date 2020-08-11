@@ -64,7 +64,8 @@ class B_SocketManager : WebSocketDelegate  {
         //        }
         let gamma = "wss://botter-gateway-web.gamma.botter.live/"
         let test = "wss://botter-gateway-web.botter.live/"
-        var request = URLRequest(url: URL(string: gamma )!)
+        let prod = "wss://web.gateway.prod.botter.live"
+        var request = URLRequest(url: URL(string: prod )!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
@@ -205,14 +206,22 @@ class B_SocketManager : WebSocketDelegate  {
     }
     
     func sendAttachment(file : b_AttachedFile , completion:@escaping((Bool)->())){
-        let msg = ["bot_id": BotterSettingsManager.BotID ,
+        
+        let dataStr =  ["attachment_type" : file.type ,
+                                    "type": "attachment" ,
+                                    "url" : file.url ,
+                   ]
+        var msg = ["bot_id": BotterSettingsManager.BotID ,
                    "channel": channel ,
-                   "type": "attachment" ,
                    "user": guid ,
-                   "url" : file.url ,
-                   "attachment_type" : file.type ,
+                   "type":"message" ,
+                   "text" : json(from: dataStr) ?? "" ,
                    "slug" : file.type == "image" ? "image_attachment" : "attachment" ,
-                   "user_profile": ""]
+                   "user_profile": ""] as [String : Any]
+        
+        if file.type != "image"{
+           msg["file_name"] = file.name
+        }
         
         let msgString = json(from: msg) ?? ""
         self.socket.write(ping: "PING".data(using: .utf8)!) {

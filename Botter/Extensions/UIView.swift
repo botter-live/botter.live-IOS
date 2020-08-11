@@ -96,8 +96,8 @@ extension UIView {
         }
     }
     
-//    open override func awakeFromNib() {
-//        super.awakeFromNib()
+    open override func awakeFromNib() {
+        super.awakeFromNib()
 //        if self is chatView{
 //            self.semanticContentAttribute = .forceLeftToRight
 //        }else{
@@ -107,7 +107,7 @@ extension UIView {
 //                UIView.appearance().semanticContentAttribute = .forceRightToLeft
 //            }
 //        }
-//    }
+    }
     
 }
 

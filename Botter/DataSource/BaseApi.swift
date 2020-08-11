@@ -12,10 +12,11 @@ import Alamofire
 class BaseDataSource : Any {
     
     struct  Constants {
-        
-        static var BASE_URL = "https://gamma-api.botter.live/"
-        static var BOTTER_DATA = BASE_URL + "widget/data/en_US?bot_id="
-        static var FAQ_DATA = BASE_URL + "widget/faqs/en_US?bot_id="
+        static var STAGING_URL = "https://gamma-api.botter.live/"
+        static var PRODUCTION_URL = "https://prod-api.botter.live/"
+        static var BASE_URL = PRODUCTION_URL
+        static var BOTTER_DATA = BASE_URL + "widget/data/"
+        static var FAQ_DATA = BASE_URL + "widget/faqs/"
         static var UPLOAD_ATTACHMENT = BASE_URL + "api/file/upload"
     }
     

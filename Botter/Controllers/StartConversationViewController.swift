@@ -8,7 +8,7 @@
 
 import UIKit
 
-class b_StartConversationViewController: UIViewController {
+class b_StartConversationViewController: b_LocalizableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,4 +50,31 @@ class CommonActions{
         parent.presentWireframe(chatScreen, animated: true , completion: nil)
     //    WebLinksViewController.openInParent(link: "https://aldawaa.bluecrunch.org/", parent: parent)
     }
+    
+    static func loadText(for key : String)->String{
+         
+        
+//        guard let path = MyFrameworkBundle.bundle.url(forResource: "Localizable", withExtension: "strings", subdirectory: "Localization", localization: "en")else{
+//            return key
+//        }
+//
+////        guard let path = MyFrameworkBundle.bundle.url(forResource: "Localizable", withExtension: "strings" , subdirectory : "Localization/en.lproj")else{
+////            return key
+////        }
+//
+//        guard let dict = NSDictionary(contentsOf: path) else {
+//                return key
+//            }
+//        guard let translation = dict.value(forKey: key) as? String else {
+//                return key
+//            }
+//
+        
+        if let translation = LocalStrings.shared.stringDict[key]{
+            return translation
+        }
+        
+        return key
+    }
 }
+

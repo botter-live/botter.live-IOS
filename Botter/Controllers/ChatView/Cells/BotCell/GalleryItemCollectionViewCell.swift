@@ -45,11 +45,16 @@ class GalleryItemCollectionViewCell: UICollectionViewCell {
         itemImage.isHidden = item.mediaType == .gif
         switch item.mediaType {
         case .image:
-            self.lazyImage.show(imageView: self.itemImage! , url: item.imageUrl) { (lazyError) in
+            DispatchQueue.main.async {
+                self.lazyImage.show(imageView: self.itemImage! , url: item.imageUrl) { (lazyError) in
+                }
             }
             break
         case .video:
-            self.lazyImage.show(imageView: self.itemImage! , url: item.thumbnail) { (lazyError) in
+            DispatchQueue.main.async {
+                self.lazyImage.show(imageView: self.itemImage!, url: item.thumbnail) { (lazyError) in
+                    //            print(lazyError?.localizedDescription)
+                }
             }
             break
         case .gif:

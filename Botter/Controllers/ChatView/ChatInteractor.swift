@@ -130,6 +130,7 @@ extension b_ChatInteractor: ChatInteractorInterface {
         Message.isBotMsg = false
         Message.mediaUrl = file.url
         Message.type = file.type
+        Message.text = file.name
         Message.slug = file.type == "image" ? "image_attachment" : "attachment"
         Message.sender.senderType = .user
         Message.msgType = b_MessageType.init(rawValue: Message.slug) ?? .attachment

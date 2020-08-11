@@ -8,7 +8,7 @@
 
 import UIKit
 
-class b_FaqsListViewController: UIViewController {
+class b_FaqsListViewController: b_LocalizableViewController {
     
     @IBOutlet weak var tableView : UITableView!
     var faqsList = [b_FaqData]()
@@ -17,11 +17,7 @@ class b_FaqsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
-        }
+       
     }
     
     

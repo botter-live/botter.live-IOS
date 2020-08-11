@@ -36,7 +36,7 @@ class BasicFormTableViewCell: UITableViewCell {
         let _ = getAnswer()
         if answer.isEmpty && input.required{
             isValid = false
-            errorLbl.text = "Answer is required"
+            errorLbl.text = "Answer is required".b_localize()
         }else if !answer.isEmpty && !input.regex.isEmpty{
             isValid = evaluateRegex()
             if !isValid{

@@ -13,12 +13,14 @@ class b_AttachedFile : Mappable{
     var url : String
     var code : Int
     var error : String
+    var name : String
     
     init(){
         type = ""
         url = ""
         error = ""
         code = -1
+        name = ""
     }
     
     required convenience init?(map: Map) {
@@ -30,6 +32,7 @@ class b_AttachedFile : Mappable{
         url <- map["url"]
         error <- map["error"]
         code <- map["code"]
+        name <- map["name"]
     }
     
     static func getData(dict : [String : Any])->b_AttachedFile{

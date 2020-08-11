@@ -8,7 +8,7 @@
 
 import UIKit
 
-class b_EndFormViewController: UIViewController {
+class b_EndFormViewController: b_LocalizableViewController {
     
     @IBOutlet weak var tableView : UITableView!
     

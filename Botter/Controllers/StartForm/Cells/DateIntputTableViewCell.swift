@@ -27,7 +27,7 @@ class DateIntputTableViewCell: TextInputTableViewCell {
     func setData(input: b_FormInput , parent : UIViewController) {
         super.setData(input:input)
         self.parent = parent
-        textFeild.placeholder = "DD/MM/YYYY"
+        textFeild.placeholder = "DD/MM/YYYY".b_localize()
         titleLbl.text = input.label
     }
     

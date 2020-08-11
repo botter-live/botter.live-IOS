@@ -23,7 +23,7 @@ class TimeInputTableViewCell: DateIntputTableViewCell {
 
     override func setData(input: b_FormInput , parent : UIViewController) {
         super.setData(input: input , parent: parent)
-         textFeild.placeholder = "hh:mm"
+        textFeild.placeholder = "hh:mm".b_localize()
     }
     
     override func openPicker() {

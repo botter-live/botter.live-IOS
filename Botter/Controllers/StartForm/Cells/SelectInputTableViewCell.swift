@@ -85,4 +85,6 @@ extension SelectInputTableViewCell : UICollectionViewDelegateFlowLayout{
        let w = self.sizingCell!.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).width
         return CGSize.init(width: w, height: 40)
     }
+    
 }
+

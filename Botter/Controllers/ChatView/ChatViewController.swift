@@ -45,7 +45,9 @@ final class b_ChatViewController: UIViewController {
         self.presenter.openSocket()
         b_AudioHandler.shared = b_AudioHandler()
         
-        
+        for v in self.view.subviews{
+            v.semanticContentAttribute = .forceLeftToRight
+        }
     }
     
     func registerCells(){
@@ -58,7 +60,7 @@ final class b_ChatViewController: UIViewController {
     }
     
     override func b_backDismiss(_ sender: Any) {
-        self.b_areYouSureMsg(Msg: "Are you sure you want to end this conversation?") { (isYes) in
+        self.b_areYouSureMsg(Msg: "Are you sure, you want to close the chat?".b_localize()) { (isYes) in
             if isYes{
                 if b_ChatViewController.botData.endForm.inputs.count > 0 {
                     //                    self.presenter.openEndForm(form: self.botData.endForm)
@@ -361,7 +363,7 @@ extension b_ChatViewController : UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "NotifyTableViewCell") as? NotifyTableViewCell
             cell?.setData(text: msg.notifyText)
             return cell ?? UITableViewCell()
-        case .userMsg:
+        case .userMsg , .userInput :
             let cell = tableView.dequeueReusableCell(withIdentifier: msg.msgSent ? "UserChatTableViewCell" : "UserFaildChatTableViewCell") as? UserChatTableViewCell
             
             cell?.setData(msg: msg )

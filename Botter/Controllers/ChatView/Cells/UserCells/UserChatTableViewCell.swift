@@ -19,6 +19,28 @@ class UserChatTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        if textLbl != nil{
+            textLbl.textAlignment = .right
+        }
+        self.setText(tView: self.contentView)
+    }
+    
+    func setText(tView  : UIView){
+        for v in tView.subviews{
+            if let lbl = v as? UILabel{
+                let str = BotterSettingsManager.language == .arabic ? CommonActions.loadText(for: lbl.text ?? "") : lbl.text
+                lbl.text =  str
+            }
+            if let btn = v as? UIButton{
+                let str = btn.title(for: .normal)?.b_localize()
+                btn.setTitle(str, for: .normal)
+            }
+            
+            if !(tView is UICollectionView){
+                setText(tView: v)
+            }
+            
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
