@@ -1598,8 +1598,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "setText(tView:)"
-            landmarkType = "7">
+            landmarkName = "b_LocalizableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

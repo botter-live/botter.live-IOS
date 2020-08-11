@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C1B446C24E34C7C00853B03 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617E824E2E6D00047F8E1 /* BaseViewController.swift */; };
+		8C1B446D24E34C8A00853B03 /* LocalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617F224E2FD420047F8E1 /* LocalStrings.swift */; };
 		8C214A7724C75F71008C2225 /* FaqData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7624C75F71008C2225 /* FaqData.swift */; };
 		8C214A7A24C75F91008C2225 /* SearchBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7924C75F91008C2225 /* SearchBox.swift */; };
 		8C214A7E24C75FB9008C2225 /* FaqsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */; };
@@ -199,9 +201,7 @@
 		8CC4F6E7248D1C3E000692AE /* BotterSDK-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CC4F6E6248D1B77000692AE /* BotterSDK-Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CC4F6E8248D24C7000692AE /* Assets.xcassets in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC4F4E0248CFCCA000692AE /* Assets.xcassets */; };
 		8CD617E324E2C2160047F8E1 /* B_Forms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CD617E524E2C2160047F8E1 /* B_Forms.storyboard */; };
-		8CD617E924E2E6D00047F8E1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617E824E2E6D00047F8E1 /* BaseViewController.swift */; };
 		8CD617EF24E2F4E70047F8E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CD617F124E2F4E70047F8E1 /* Localizable.strings */; };
-		8CD617F324E2FD420047F8E1 /* LocalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617F224E2FD420047F8E1 /* LocalStrings.swift */; };
 		8CD7829D249644ED00190FA7 /* TypingIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30DC3024963A8600C497E6 /* TypingIndicatorTableViewCell.swift */; };
 		8CE8351724E0243D0007244E /* BotterInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4F4A7248CFBA4000692AE /* BotterInfo.plist */; };
 		8CFC709F248FC227006C677B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFC709E248FC227006C677B /* WebKit.framework */; };
@@ -1359,7 +1359,7 @@
 				8CC4F673248D17A9000692AE /* Mappable.swift in Sources */,
 				8CC4F54A248CFCCC000692AE /* HeroTableViewCell.swift in Sources */,
 				8CC4F6E0248D18C8000692AE /* TCPTransport.swift in Sources */,
-				8CD617F324E2FD420047F8E1 /* LocalStrings.swift in Sources */,
+				8C1B446D24E34C8A00853B03 /* LocalStrings.swift in Sources */,
 				8C84B57C24C6015400996861 /* Menu.swift in Sources */,
 				8C786A4324E0F04F004A826C /* PresenterInterface.swift in Sources */,
 				8CC4F687248D17A9000692AE /* DateTransform.swift in Sources */,
@@ -1372,7 +1372,7 @@
 				8CAB89E324913569009BBAB6 /* MPNowPlayingInfoCenter+AudioItem.swift in Sources */,
 				8CC4F680248D17A9000692AE /* DictionaryTransform.swift in Sources */,
 				8CC4F67F248D17A9000692AE /* FromJSON.swift in Sources */,
-				8CD617E924E2E6D00047F8E1 /* BaseViewController.swift in Sources */,
+				8C1B446C24E34C7C00853B03 /* BaseViewController.swift in Sources */,
 				8C41823024A1CF070097E1A6 /* ReachabilityManager.swift in Sources */,
 				8C463AE024BF598200B78E96 /* StartFormInterfaces.swift in Sources */,
 				8C463AEB24C09C8600B78E96 /* TextInputTableViewCell.swift in Sources */,
