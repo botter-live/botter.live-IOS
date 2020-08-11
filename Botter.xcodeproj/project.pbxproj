@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C1B446C24E34C7C00853B03 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617E824E2E6D00047F8E1 /* BaseViewController.swift */; };
 		8C1B446D24E34C8A00853B03 /* LocalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617F224E2FD420047F8E1 /* LocalStrings.swift */; };
+		8C1B446F24E34E4700853B03 /* b_LocalizableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B446E24E34E4700853B03 /* b_LocalizableViewController.swift */; };
 		8C214A7724C75F71008C2225 /* FaqData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7624C75F71008C2225 /* FaqData.swift */; };
 		8C214A7A24C75F91008C2225 /* SearchBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7924C75F91008C2225 /* SearchBox.swift */; };
 		8C214A7E24C75FB9008C2225 /* FaqsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */; };
@@ -225,6 +225,7 @@
 		8C08E80A249298E500A2B984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C08E80C249298E500A2B984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C08E81524929BA100A2B984 /* HiddenLauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenLauncherViewController.swift; sourceTree = "<group>"; };
+		8C1B446E24E34E4700853B03 /* b_LocalizableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b_LocalizableViewController.swift; sourceTree = "<group>"; };
 		8C214A7624C75F71008C2225 /* FaqData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqData.swift; sourceTree = "<group>"; };
 		8C214A7924C75F91008C2225 /* SearchBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBox.swift; sourceTree = "<group>"; };
 		8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqsListViewController.swift; sourceTree = "<group>"; };
@@ -443,7 +444,6 @@
 		8CC4F6CA248D180D000692AE /* ContentSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSheet.swift; sourceTree = "<group>"; };
 		8CC4F6E6248D1B77000692AE /* BotterSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BotterSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		8CD617E424E2C2160047F8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/B_Forms.storyboard; sourceTree = "<group>"; };
-		8CD617E824E2E6D00047F8E1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8CD617F024E2F4E70047F8E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CD617F224E2FD420047F8E1 /* LocalStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStrings.swift; sourceTree = "<group>"; };
 		8CFC709E248FC227006C677B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -894,7 +894,7 @@
 				8CC4F4F5248CFCCB000692AE /* WebLinksViewController.swift */,
 				8CC4F4F6248CFCCB000692AE /* FloatingBtn */,
 				8CA0A6C22497A5860009FEA2 /* StartConversationViewController.swift */,
-				8CD617E824E2E6D00047F8E1 /* BaseViewController.swift */,
+				8C1B446E24E34E4700853B03 /* b_LocalizableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1349,6 +1349,7 @@
 				8CAB89DA24913569009BBAB6 /* AudioPlayer+Queue.swift in Sources */,
 				8C83EE3B24D9AC74000F2637 /* History.swift in Sources */,
 				8CC4F67E248D17A9000692AE /* Map.swift in Sources */,
+				8C1B446F24E34E4700853B03 /* b_LocalizableViewController.swift in Sources */,
 				8CC4F6E3248D18C8000692AE /* WebSocketServer.swift in Sources */,
 				8CC4F6DD248D18C8000692AE /* Security.swift in Sources */,
 				8CAB89E624913569009BBAB6 /* QualityAdjustmentEventProducer.swift in Sources */,
@@ -1372,7 +1373,6 @@
 				8CAB89E324913569009BBAB6 /* MPNowPlayingInfoCenter+AudioItem.swift in Sources */,
 				8CC4F680248D17A9000692AE /* DictionaryTransform.swift in Sources */,
 				8CC4F67F248D17A9000692AE /* FromJSON.swift in Sources */,
-				8C1B446C24E34C7C00853B03 /* BaseViewController.swift in Sources */,
 				8C41823024A1CF070097E1A6 /* ReachabilityManager.swift in Sources */,
 				8C463AE024BF598200B78E96 /* StartFormInterfaces.swift in Sources */,
 				8C463AEB24C09C8600B78E96 /* TextInputTableViewCell.swift in Sources */,
