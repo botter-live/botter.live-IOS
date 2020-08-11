@@ -27,7 +27,9 @@ class b_LocalizableViewController: UIViewController {
         }else{
             //setDirection
             b_SetDirections()
-            setText(tView: self.view)
+            if BotterSettingsManager.language == .arabic{
+                setText(tView: self.view)
+            }
         }
     }
     

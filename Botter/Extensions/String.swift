@@ -99,8 +99,10 @@ extension String {
  
     func b_localize() -> String{
 //        return NSLocalizedString(self, bundle: MyFrameworkBundle.bundle, comment: self)
-        return CommonActions.loadText(for: self)
-        
+        if BotterSettingsManager.language == .arabic{
+            return CommonActions.loadText(for: self)
+        }
+        return self
 //        return NSLoca
     }
 

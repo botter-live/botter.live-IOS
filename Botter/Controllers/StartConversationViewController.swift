@@ -69,11 +69,12 @@ class CommonActions{
 //                return key
 //            }
 //
-        
-        if let translation = LocalStrings.shared.stringDict[key]{
-            return translation
+        if BotterSettingsManager.language == .arabic{
+            
+            if let translation = LocalStrings.shared.stringDict[key]{
+                return translation
+            }
         }
-        
         return key
     }
 }
