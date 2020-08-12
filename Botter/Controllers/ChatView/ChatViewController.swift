@@ -211,6 +211,7 @@ extension b_ChatViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        
         b_AudioHandler.shared.player.pause()
         if (self.isBeingDismissed || self.isMovingFromParent) {
             // clean up code here
@@ -363,7 +364,7 @@ extension b_ChatViewController : UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "NotifyTableViewCell") as? NotifyTableViewCell
             cell?.setData(text: msg.notifyText)
             return cell ?? UITableViewCell()
-        case .userMsg , .userInput :
+        case .userMsg  :
             let cell = tableView.dequeueReusableCell(withIdentifier: msg.msgSent ? "UserChatTableViewCell" : "UserFaildChatTableViewCell") as? UserChatTableViewCell
             
             cell?.setData(msg: msg )

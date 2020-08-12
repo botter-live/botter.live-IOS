@@ -23,6 +23,7 @@ class LocalStrings {
         "We Run on ":"We Run on ",
         "available":"متاح",
         "online":"متصل",
+        "Online":"متصل",
         "Start a conversation" : "بدأ المحادثه",
         "New conversation " : "محادثه جديد",
         "zero_duration" : "0:00",
@@ -79,7 +80,8 @@ class LocalStrings {
         "Updated over " : "تم التعديل ب " ,
         "No result for" : "لا يوجد نتائج ل " ,
         "Answer is required" : "ادخل اجابة" ,
-        "     New conversation " : "   بدأ المحادثة"
+        "     New conversation " : "   بدأ المحادثة" ,
+        "Write something here …" : "اكتب شيئاً..." ,
 //        "Done" : "تم"
     ]
 }

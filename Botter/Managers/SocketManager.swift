@@ -242,6 +242,7 @@ class B_SocketManager : WebSocketDelegate  {
         //        if isConnected {
         let msg : [String : Any] = [
             "type": "message" ,
+            "channel": channel ,
             "slug" : slug ,
             "text" : value,
             "user": guid ,

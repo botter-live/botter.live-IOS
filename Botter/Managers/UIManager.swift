@@ -53,6 +53,9 @@ class b_BasicBoldLbl : UILabel{
 class b_UserMesgLbl : b_BasicRegularLbl{
     override func awakeFromNib() {
         super.awakeFromNib()
+        if tag == 101{
+            text = text?.b_localize()
+        }
         textColor = BotterSettingsManager.FontColor
         
     }

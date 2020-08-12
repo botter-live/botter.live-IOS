@@ -39,8 +39,9 @@ class BotterDataSource : BaseDataSource{
     //        let params = ["bot_id" : BotterSettingsManager.BotID]
     //        print(Constants.BOTTER_DATA + BotterSettingsManager.BotID)
         
-        let faqUrl = Constants.FAQ_DATA + getLangStr() + "?bot_id=" + BotterSettingsManager.BotID + "&search=" + searchText
+        var faqUrl = Constants.FAQ_DATA + getLangStr() + "?bot_id=" + BotterSettingsManager.BotID + "&search=" + searchText
         
+        faqUrl = faqUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? faqUrl
         
          BaseArrayAPI(url: faqUrl , method: .get , params: nil, headers: nil) { (json, error) in
             

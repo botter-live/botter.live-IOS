@@ -46,6 +46,7 @@ class b_TextBoxFeild: UIView {
     @IBInspectable  var placeHolder : String = ""{
         didSet{
 //            field.placeholder = placeHolder
+            
             refreshText()
         }
     }
@@ -91,6 +92,7 @@ class b_TextBoxFeild: UIView {
     }
     
     override func awakeFromNib() {
+        placeHolder = placeHolder.b_localize()
         if appIsArabic(){
             field.textAlignment = .right
         }

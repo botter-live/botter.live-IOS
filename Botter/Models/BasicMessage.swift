@@ -107,15 +107,17 @@ class b_BasicMessage :  Mappable {
             }
         }
         
+        if msgType == .userMsg  || msgType == .attachment{
+            text <- map["text"]
+        }
+        
         if msgType == .image || msgType == .userImage{
             if mediaUrl != "" {
                 lazyImage.prefetchImage(url: mediaUrl)
             }
         }
         
-        if msgType == .userMsg  || msgType == .attachment{
-            text <- map["text"]
-        }
+        
     }
     
     
@@ -159,6 +161,7 @@ enum b_MessageType : String , Codable{
     case userMsg = "message"
     case userImage = "image_attachment"
     case userInput = "user_input"
+    case multiInput = "multi-input"
 }
 
 extension b_BasicMessage : AudioPlayerDelegate{
