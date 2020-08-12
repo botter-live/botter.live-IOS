@@ -383,9 +383,7 @@ extension b_ChatViewController : UITableViewDataSource{
             return cell ?? UITableViewCell()
         case .attachment:
             let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentTableViewCell") as? AttachmentTableViewCell
-            
             cell?.setData(msg: msg)
-            
             return cell ?? UITableViewCell()
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BotChatTableViewCell") as? BotChatTableViewCell

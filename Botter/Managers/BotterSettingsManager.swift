@@ -13,7 +13,11 @@ public class BotterSettingsManager  {
     
     internal static var BotID : String = "nKmovPCdWNZdYnIejRnd"
     
-    public static var AccentColor : UIColor = UIColor.init(codeString: "#642c7a")
+    public static var AccentColor : UIColor = UIColor.init(codeString: "#642c7a"){
+        didSet{
+            Botter.reSet()
+        }
+    }
     public static var FontColor : UIColor = UIColor.white
     public static var BotterMessageFontColor : UIColor = UIColor.black
     public static var BotterMessageBGColor : UIColor = UIColor.init(codeString: "#eaf0f7")
@@ -27,10 +31,14 @@ public class BotterSettingsManager  {
     public static var chatIcon : UIImage = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     public static var agentAvatar : UIImage = UIImage(named: "agent", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     
-
+    
     public static var hasFAQs : Bool = true
     public static var  alignLauncherLeft : Bool = false
-    public static var bottomMargin : CGFloat = 40
+    public static var bottomMargin : CGFloat = 40{
+        didSet{
+            Botter.reSet()
+        }
+    }
     
     public static var language : b_Language = .english {
         didSet{

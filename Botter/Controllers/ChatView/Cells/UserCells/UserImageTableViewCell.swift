@@ -27,7 +27,7 @@ class UserImageTableViewCell: UserChatTableViewCell {
     
      func setData(msg: b_BasicMessage) {
         super.setData(msg: msg)
-        self.msgImage?.image = UIImage()
+        self.msgImage?.image = nil
         msg.lazyImage.setCacheSize(self.msgImage?.frame.size)
 //        DispatchQueue.main.async {
             self.msg.lazyImage.show(imageView: self.msgImage!, url: self.msg.mediaUrl) { (lazyError) in
@@ -37,8 +37,8 @@ class UserImageTableViewCell: UserChatTableViewCell {
         
     }
     
-    override func prepareForReuse() {
-        self.msg = b_BasicMessage()
-        self.msgImage?.image = nil
-    }
+   override func prepareForReuse() {
+          self.msg = b_BasicMessage()
+          self.msgImage?.image = nil
+      }
 }

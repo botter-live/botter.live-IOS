@@ -27,7 +27,8 @@ class GalleryItemCollectionViewCell: UICollectionViewCell {
     
     func setData(item : b_GallaryItem , maxCount : Int){
         self.item = item
-      
+        gifImage.image = nil
+        itemImage.image = nil
         itemdesc.text = item.desc
         
         if item.title == "" {

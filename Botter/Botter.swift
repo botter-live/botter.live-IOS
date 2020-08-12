@@ -70,4 +70,13 @@ public func setLauncherBottomMargin(marginValue value : Float){
     }
 }
 
+public func reSet(){
+    let windows = UIApplication.shared.windows
+    if let floatingWindow = windows.last(where:  { (window) -> Bool in
+        window is FloatingButtonWindow
+    }){
+        (floatingWindow as? FloatingButtonWindow)?.resetButtonPlace()
+    }
+}
+
 //UIWindow.Level.alert + 1

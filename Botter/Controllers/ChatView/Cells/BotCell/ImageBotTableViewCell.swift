@@ -26,6 +26,7 @@ class ImageBotTableViewCell: BotChatTableViewCell {
     
     override func setData(msg: b_BasicMessage, showIcon: Bool = false) {
         super.setData(msg: msg, showIcon: showIcon)
+        self.msgImage?.image = nil
         DispatchQueue.main.async {
             self.msg.lazyImage.show(imageView: self.msgImage!, url: msg.mediaUrl) { (lazyError) in
                 //            print(lazyError?.localizedDescription)
@@ -34,4 +35,9 @@ class ImageBotTableViewCell: BotChatTableViewCell {
         
     }
 
+    
+    override func prepareForReuse() {
+           self.msg = b_BasicMessage()
+           self.msgImage?.image = nil
+       }
 }
