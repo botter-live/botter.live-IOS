@@ -113,11 +113,14 @@ class b_AttachFileViewController: b_LocalizableViewController {
     {
         
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary)){
-            self.imagepicker.allowsEditing = false
-            self.imagepicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            self.imagepicker.mediaTypes = [(kUTTypeImage as String)]
-            //                , (kUTTypeVideo as String) , (kUTTypeMovie as String)]
-            self.present(self.imagepicker, animated: true, completion: nil)
+            
+            DispatchQueue.main.async {
+                self.imagepicker.allowsEditing = false
+                self.imagepicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+                self.imagepicker.mediaTypes = [(kUTTypeImage as String)]
+                //                , (kUTTypeVideo as String) , (kUTTypeMovie as String)]
+                self.present(self.imagepicker, animated: true, completion: nil)
+            }
         }else{
             let alert = UIAlertController(title: "Can't find photo Library".b_localize(), message: "This device doesn't have photo Library".b_localize(), preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK".b_localize(), style:.default, handler: nil)
