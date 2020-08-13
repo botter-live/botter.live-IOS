@@ -9,7 +9,7 @@ target 'Botter' do
 #  pod 'ReachabilitySwift'
   pod 'Alamofire' ,'5.0.0-beta.3'
   pod 'IQKeyboardManagerSwift'
-  pod 'LazyImage'
+#  pod 'LazyImage'
   
 end
 

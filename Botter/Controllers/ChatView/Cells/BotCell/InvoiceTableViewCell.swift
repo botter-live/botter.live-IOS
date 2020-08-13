@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LazyImage
+//import LazyImage
 
 class InvoiceTableViewCell: BotChatTableViewCell {
     
@@ -61,7 +61,9 @@ class InvoiceItemView : UIView{
     var lazyImage = LazyImage()
     
     func setData(item : b_InvoiceElement){
-        self.lazyImage.show(imageView: self.itemImage!, url: item.image) { (lazyError) in
+        DispatchQueue.main.async {
+            self.lazyImage.show(imageView: self.itemImage!, url: item.image) { (lazyError) in
+            }
         }
         itemTitleLbl.text = item.title
         itemQuantityLbl.text = "\("Qty.".b_localize()) \(item.quantity)"

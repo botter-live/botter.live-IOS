@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		8C1B446D24E34C8A00853B03 /* LocalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617F224E2FD420047F8E1 /* LocalStrings.swift */; };
 		8C1B446F24E34E4700853B03 /* b_LocalizableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B446E24E34E4700853B03 /* b_LocalizableViewController.swift */; };
+		8C1B448724E55F3600853B03 /* LazyImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B448024E55F3500853B03 /* LazyImage+Resizing.swift */; };
+		8C1B448824E55F3600853B03 /* LazyImage+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B448124E55F3500853B03 /* LazyImage+Loader.swift */; };
+		8C1B449524E55FD400853B03 /* LazyImage+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B448E24E55FD200853B03 /* LazyImage+Storage.swift */; };
+		8C1B449724E55FD400853B03 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449024E55FD300853B03 /* LazyImageView.swift */; };
+		8C1B449824E55FD400853B03 /* LazyImage+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449124E55FD300853B03 /* LazyImage+Error.swift */; };
+		8C1B449A24E55FD400853B03 /* LazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449324E55FD300853B03 /* LazyImage.swift */; };
+		8C1B449B24E55FD400853B03 /* LazyImage+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449424E55FD400853B03 /* LazyImage+Network.swift */; };
 		8C214A7724C75F71008C2225 /* FaqData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7624C75F71008C2225 /* FaqData.swift */; };
 		8C214A7A24C75F91008C2225 /* SearchBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7924C75F91008C2225 /* SearchBox.swift */; };
 		8C214A7E24C75FB9008C2225 /* FaqsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */; };
@@ -226,6 +233,20 @@
 		8C08E80C249298E500A2B984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C08E81524929BA100A2B984 /* HiddenLauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenLauncherViewController.swift; sourceTree = "<group>"; };
 		8C1B446E24E34E4700853B03 /* b_LocalizableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b_LocalizableViewController.swift; sourceTree = "<group>"; };
+		8C1B447724E55E4100853B03 /* LazyImage.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = LazyImage.modulemap; sourceTree = "<group>"; };
+		8C1B447824E55E4100853B03 /* LazyImage-dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LazyImage-dummy.m"; sourceTree = "<group>"; };
+		8C1B447924E55E4100853B03 /* LazyImage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "LazyImage-Info.plist"; sourceTree = "<group>"; };
+		8C1B447A24E55E4100853B03 /* LazyImage-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LazyImage-prefix.pch"; sourceTree = "<group>"; };
+		8C1B447B24E55E4100853B03 /* LazyImage-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LazyImage-umbrella.h"; sourceTree = "<group>"; };
+		8C1B447C24E55E4100853B03 /* LazyImage.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LazyImage.debug.xcconfig; sourceTree = "<group>"; };
+		8C1B447D24E55E4100853B03 /* LazyImage.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LazyImage.release.xcconfig; sourceTree = "<group>"; };
+		8C1B448024E55F3500853B03 /* LazyImage+Resizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyImage+Resizing.swift"; sourceTree = "<group>"; };
+		8C1B448124E55F3500853B03 /* LazyImage+Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyImage+Loader.swift"; sourceTree = "<group>"; };
+		8C1B448E24E55FD200853B03 /* LazyImage+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyImage+Storage.swift"; sourceTree = "<group>"; };
+		8C1B449024E55FD300853B03 /* LazyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
+		8C1B449124E55FD300853B03 /* LazyImage+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyImage+Error.swift"; sourceTree = "<group>"; };
+		8C1B449324E55FD300853B03 /* LazyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImage.swift; sourceTree = "<group>"; };
+		8C1B449424E55FD400853B03 /* LazyImage+Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyImage+Network.swift"; sourceTree = "<group>"; };
 		8C214A7624C75F71008C2225 /* FaqData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqData.swift; sourceTree = "<group>"; };
 		8C214A7924C75F91008C2225 /* SearchBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBox.swift; sourceTree = "<group>"; };
 		8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqsListViewController.swift; sourceTree = "<group>"; };
@@ -494,6 +515,37 @@
 				8C08E81524929BA100A2B984 /* HiddenLauncherViewController.swift */,
 			);
 			path = BotterSample;
+			sourceTree = "<group>";
+		};
+		8C1B447E24E55E4100853B03 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8C1B447724E55E4100853B03 /* LazyImage.modulemap */,
+				8C1B447824E55E4100853B03 /* LazyImage-dummy.m */,
+				8C1B447924E55E4100853B03 /* LazyImage-Info.plist */,
+				8C1B447A24E55E4100853B03 /* LazyImage-prefix.pch */,
+				8C1B447B24E55E4100853B03 /* LazyImage-umbrella.h */,
+				8C1B447C24E55E4100853B03 /* LazyImage.debug.xcconfig */,
+				8C1B447D24E55E4100853B03 /* LazyImage.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LazyImage";
+			sourceTree = "<group>";
+		};
+		8C1B447F24E55E4100853B03 /* LazyImage */ = {
+			isa = PBXGroup;
+			children = (
+				8C1B449324E55FD300853B03 /* LazyImage.swift */,
+				8C1B449124E55FD300853B03 /* LazyImage+Error.swift */,
+				8C1B448124E55F3500853B03 /* LazyImage+Loader.swift */,
+				8C1B449424E55FD400853B03 /* LazyImage+Network.swift */,
+				8C1B448024E55F3500853B03 /* LazyImage+Resizing.swift */,
+				8C1B448E24E55FD200853B03 /* LazyImage+Storage.swift */,
+				8C1B449024E55FD300853B03 /* LazyImageView.swift */,
+				8C1B447E24E55E4100853B03 /* Support Files */,
+			);
+			name = LazyImage;
+			path = ../../Pods/LazyImage;
 			sourceTree = "<group>";
 		};
 		8C214A7824C75F91008C2225 /* Search */ = {
@@ -958,6 +1010,7 @@
 		8CC4F597248D15E2000692AE /* depends */ = {
 			isa = PBXGroup;
 			children = (
+				8C1B447F24E55E4100853B03 /* LazyImage */,
 				8CA2E8AD249A4862002ADB42 /* SwiftyGif */,
 				8CAB89CF249134BA009BBAB6 /* KDEAudioPlayer */,
 				8CC4F6C5248D180D000692AE /* ContentSheet */,
@@ -1217,6 +1270,7 @@
 				8CAB89E224913569009BBAB6 /* EventProducer.swift in Sources */,
 				8CC4F544248CFCCC000692AE /* ChatWireframe.swift in Sources */,
 				8CA0A6C72497BE4F0009FEA2 /* WeatherTableViewCell.swift in Sources */,
+				8C1B449724E55FD400853B03 /* LazyImageView.swift in Sources */,
 				8CC4F540248CFCCC000692AE /* Action.swift in Sources */,
 				8CAB89D324913569009BBAB6 /* AudioPlayer.swift in Sources */,
 				8C8ACC2A249648CE00A155DB /* TypingIndicatorView.swift in Sources */,
@@ -1255,6 +1309,7 @@
 				8C463AEC24C09D3E00B78E96 /* BasicFormTableViewCell.swift in Sources */,
 				8C77A6B424B6101500549FE2 /* FlightStatusTableViewCell.swift in Sources */,
 				8CC4F6DE248D18C8000692AE /* Server.swift in Sources */,
+				8C1B448724E55F3600853B03 /* LazyImage+Resizing.swift in Sources */,
 				8CAB89D024913569009BBAB6 /* AudioItem.swift in Sources */,
 				8C786A4124E0F04F004A826C /* FormatterInterface.swift in Sources */,
 				8C463ACF24BF37BC00B78E96 /* BaseApi.swift in Sources */,
@@ -1287,10 +1342,12 @@
 				8CC4F555248CFCCC000692AE /* UIView.swift in Sources */,
 				8CC4F6CD248D180D000692AE /* ContentSheetTransitionDelegate.swift in Sources */,
 				8CA2E8B5249A63D8002ADB42 /* MapTableViewCell.swift in Sources */,
+				8C1B449B24E55FD400853B03 /* LazyImage+Network.swift in Sources */,
 				8CC4F53E248CFCCC000692AE /* BaseNibLoader.swift in Sources */,
 				8CC4F571248CFEE5000692AE /* Botter.swift in Sources */,
 				8CAB89D824913569009BBAB6 /* AudioPlayer+PlayerEvent.swift in Sources */,
 				8C463B0124C0C40600B78E96 /* SelectInputTableViewCell.swift in Sources */,
+				8C1B448824E55F3600853B03 /* LazyImage+Loader.swift in Sources */,
 				8CC4F6D8248D18C8000692AE /* FoundationTransport.swift in Sources */,
 				8CC4F529248CFCCC000692AE /* RoundedView.swift in Sources */,
 				8CC4F557248CFCCC000692AE /* UIColor.swift in Sources */,
@@ -1300,9 +1357,11 @@
 				8CC4F674248D17A9000692AE /* CustomDateFormatTransform.swift in Sources */,
 				8C660F3C24B77EBF00CFB577 /* ElementTableViewCell.swift in Sources */,
 				8CA2E8B3249A58CF002ADB42 /* Location.swift in Sources */,
+				8C1B449A24E55FD400853B03 /* LazyImage.swift in Sources */,
 				8CC4F68A248D17A9000692AE /* TransformOf.swift in Sources */,
 				8CC4F675248D17A9000692AE /* HexColorTransform.swift in Sources */,
 				8CC4F6CF248D180D000692AE /* ContentSheet.swift in Sources */,
+				8C1B449824E55FD400853B03 /* LazyImage+Error.swift in Sources */,
 				8CC4F6DA248D18C8000692AE /* Framer.swift in Sources */,
 				8CC4F519248CFCCC000692AE /* tagViewLayOut.swift in Sources */,
 				8C463AE424BF598200B78E96 /* StartFormWireframe.swift in Sources */,
@@ -1365,6 +1424,7 @@
 				8C786A4324E0F04F004A826C /* PresenterInterface.swift in Sources */,
 				8CC4F687248D17A9000692AE /* DateTransform.swift in Sources */,
 				8C83EE3424D18B90000F2637 /* UserImageTableViewCell.swift in Sources */,
+				8C1B449524E55FD400853B03 /* LazyImage+Storage.swift in Sources */,
 				8CC4F6DB248D18C8000692AE /* HTTPHandler.swift in Sources */,
 				8C463AF824C0C10200B78E96 /* RadioCollectionViewCell.swift in Sources */,
 				8CC4F545248CFCCC000692AE /* ChatViewController.swift in Sources */,

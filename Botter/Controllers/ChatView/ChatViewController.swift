@@ -34,6 +34,7 @@ final class b_ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         history = !B_SocketManager.first
+        startListen()
         menuBtn.isHidden = b_ChatViewController.botData.menu.actions.count == 0
         registerCells()
         if #available(iOS 13.0, *) {
@@ -209,6 +210,11 @@ extension b_ChatViewController {
     //        }
     //    }
     
+     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        B_SocketManager.shared.connect()
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
@@ -218,6 +224,19 @@ extension b_ChatViewController {
             B_SocketManager.shared = nil
             B_SocketManager.shared = B_SocketManager()
         }
+    }
+    
+    func startListen() {
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+
+    func stopListen() {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    @objc func applicationWillEnterForeground(_ notification: NSNotification) {
+        print("App moved to foreground!")
+        B_SocketManager.shared.connect()
     }
     
     func removeObservers(){

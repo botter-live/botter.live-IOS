@@ -80,6 +80,7 @@ class B_SocketManager : WebSocketDelegate  {
             }else{
                 self.isConnected = false
                 self.socket.disconnect()
+                self.socket.connect()
             }
         })
         

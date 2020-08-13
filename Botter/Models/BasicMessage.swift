@@ -8,7 +8,7 @@
 
 import Foundation
 //import ObjectMapper
-import LazyImage
+//import LazyImage
 
 class b_BasicMessage :  Mappable {
     

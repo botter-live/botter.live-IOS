@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LazyImage
+//import LazyImage
 
 class GalleryItemCollectionViewCell: UICollectionViewCell {
     
@@ -46,20 +46,26 @@ class GalleryItemCollectionViewCell: UICollectionViewCell {
         itemImage.isHidden = item.mediaType == .gif
         switch item.mediaType {
         case .image:
-            DispatchQueue.main.async {
-                self.lazyImage.show(imageView: self.itemImage! , url: item.imageUrl) { (lazyError) in
+            if item.imageUrl != "" {
+                DispatchQueue.main.async {
+                    self.lazyImage.show(imageView: self.itemImage! , url: item.imageUrl) { (lazyError) in
+                    }
                 }
             }
             break
         case .video:
-            DispatchQueue.main.async {
-                self.lazyImage.show(imageView: self.itemImage!, url: item.thumbnail) { (lazyError) in
-                    //            print(lazyError?.localizedDescription)
+            if item.thumbnail != "" {
+                DispatchQueue.main.async {
+                    self.lazyImage.show(imageView: self.itemImage!, url: item.thumbnail) { (lazyError) in
+                        //            print(lazyError?.localizedDescription)
+                    }
                 }
             }
             break
         case .gif:
+            if item.imageUrl != "" {
             self.gifImage?.b_setGifFromURL(URL.init(string: item.imageUrl)!, manager: SwiftyGifManager.defaultManager , loopCount: 0, levelOfIntegrity: GifLevelOfIntegrity(5), showLoader: true)
+            }
             break
         }
         

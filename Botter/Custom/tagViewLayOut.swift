@@ -14,10 +14,13 @@ class b_tagViewLayOut: UICollectionViewFlowLayout {
         var newAttributesForElementsInRect = [UICollectionViewLayoutAttributes]()
         // use a value to keep track of left margin
         var leftMargin: CGFloat = 0.0;
+        var oldY : CGFloat = 0.0
         for attributes in attributesForElementsInRect! {
             let refAttributes = attributes
             // assign value if next row
-   
+            if oldY == 0{
+                oldY = refAttributes.frame.origin.y
+            }
             if (refAttributes.frame.origin.x == self.sectionInset.left) {
                 leftMargin = self.sectionInset.left
             }else {
@@ -28,7 +31,7 @@ class b_tagViewLayOut: UICollectionViewFlowLayout {
             }
             // calculate new value for current margin
             
-            if refAttributes.frame.maxX > rect.maxX{
+            if refAttributes.frame.maxX > rect.maxX {
                 print("offLimit")
                 var newLeftAlignedFrame = refAttributes.frame
                 newLeftAlignedFrame.origin.x = self.sectionInset.left
@@ -37,9 +40,16 @@ class b_tagViewLayOut: UICollectionViewFlowLayout {
                 leftMargin = self.sectionInset.left
             }
             
+            if oldY != refAttributes.frame.origin.y && refAttributes.frame.origin.x != self.sectionInset.left{
+                var newLeftAlignedFrame = refAttributes.frame
+                newLeftAlignedFrame.origin.x = 0
+                refAttributes.frame = newLeftAlignedFrame
+                
+                leftMargin = self.sectionInset.left
+            }
             
             leftMargin += refAttributes.frame.size.width +  self.sectionInset.right
-            
+            oldY = refAttributes.frame.origin.y
             
             
             newAttributesForElementsInRect.append(refAttributes)

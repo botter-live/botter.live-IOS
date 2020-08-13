@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   
 
   spec.name         = "Botter"
-  spec.version      = "1.0.9.4"
+  spec.version      = "1.0.9.5"
   spec.summary      = "Botter is an integration with Botter Chatbot"
 
   spec.homepage     = "https://github.com/NoraSayed135/Botter"
@@ -45,7 +45,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "11.0"
   spec.ios.framework  = 'WebKit' , 'AVKit' , 'AVFoundation'
   spec.dependency 'Alamofire'
-  spec.dependency 'LazyImage'
+  #spec.dependency 'LazyImage'
   spec.dependency 'IQKeyboardManagerSwift'
 
 
@@ -53,7 +53,7 @@ Pod::Spec.new do |spec|
  #:path => '/Users/bluecrunch/Desktop/Projects/Native/BotterSDK'
 #:git => 'https://github.com/NoraSayed135/Botter.git', :tag => spec.version
 
-  spec.source       = { :http => 'https://github.com/NoraSayed135/Botter/archive/1.0.9.4.tar.gz' }
+  spec.source       = { :http => 'https://github.com/NoraSayed135/Botter/archive/1.0.9.5.tar.gz' }
 
   spec.source_files  = "**/*.{swift,h,m,strings}"
   spec.resource_bundles = {
