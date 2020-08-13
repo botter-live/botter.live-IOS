@@ -5,6 +5,9 @@
 //  Created by Lampros Giampouras on 02/01/2019.
 //
 
+import Foundation
+import UIKit
+
 extension LazyImage {
 
     //MARK: - URL string stripping

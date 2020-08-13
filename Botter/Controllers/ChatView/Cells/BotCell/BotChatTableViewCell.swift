@@ -36,6 +36,10 @@ class BotChatTableViewCell: UserChatTableViewCell {
         self.msg = msg
         botIcon.isHidden = !showIcon
         
+        
+        if textLbl != nil{
+            textLbl.attributedText = TextFormater.shared.formatText(text: msg.text)
+        }
         if avatarImg != nil{
             if showIcon && msg.sender.senderType == .agent{
                 switch msg.sender.avatarType {

@@ -16,6 +16,7 @@
 		8C1B44A724E56FCC00853B03 /* LazyImage+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44A024E56FCC00853B03 /* LazyImage+Storage.swift */; };
 		8C1B44A824E56FCC00853B03 /* LazyImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44A124E56FCC00853B03 /* LazyImage+Resizing.swift */; };
 		8C1B44A924E56FCD00853B03 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44A224E56FCC00853B03 /* LazyImageView.swift */; };
+		8C1B44AB24E5E7AB00853B03 /* TextFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44AA24E5E7AB00853B03 /* TextFormater.swift */; };
 		8C214A7724C75F71008C2225 /* FaqData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7624C75F71008C2225 /* FaqData.swift */; };
 		8C214A7A24C75F91008C2225 /* SearchBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7924C75F91008C2225 /* SearchBox.swift */; };
 		8C214A7E24C75FB9008C2225 /* FaqsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */; };
@@ -244,6 +245,7 @@
 		8C1B44A024E56FCC00853B03 /* LazyImage+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LazyImage+Storage.swift"; path = "Botter/depends/LazyImage/LazyImage+Storage.swift"; sourceTree = SOURCE_ROOT; };
 		8C1B44A124E56FCC00853B03 /* LazyImage+Resizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LazyImage+Resizing.swift"; path = "Botter/depends/LazyImage/LazyImage+Resizing.swift"; sourceTree = SOURCE_ROOT; };
 		8C1B44A224E56FCC00853B03 /* LazyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LazyImageView.swift; path = Botter/depends/LazyImage/LazyImageView.swift; sourceTree = SOURCE_ROOT; };
+		8C1B44AA24E5E7AB00853B03 /* TextFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormater.swift; sourceTree = "<group>"; };
 		8C214A7624C75F71008C2225 /* FaqData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqData.swift; sourceTree = "<group>"; };
 		8C214A7924C75F91008C2225 /* SearchBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBox.swift; sourceTree = "<group>"; };
 		8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqsListViewController.swift; sourceTree = "<group>"; };
@@ -999,6 +1001,7 @@
 			isa = PBXGroup;
 			children = (
 				8CC4F514248CFCCC000692AE /* MyUtils.swift */,
+				8C1B44AA24E5E7AB00853B03 /* TextFormater.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1404,6 +1407,7 @@
 				8C83EE3B24D9AC74000F2637 /* History.swift in Sources */,
 				8CC4F67E248D17A9000692AE /* Map.swift in Sources */,
 				8C1B446F24E34E4700853B03 /* b_LocalizableViewController.swift in Sources */,
+				8C1B44AB24E5E7AB00853B03 /* TextFormater.swift in Sources */,
 				8CC4F6E3248D18C8000692AE /* WebSocketServer.swift in Sources */,
 				8CC4F6DD248D18C8000692AE /* Security.swift in Sources */,
 				8CAB89E624913569009BBAB6 /* QualityAdjustmentEventProducer.swift in Sources */,

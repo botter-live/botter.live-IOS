@@ -8,6 +8,8 @@
 //https://nshipster.com/image-resizing/
 //Optimizing images
 //https://www.swiftjectivec.com/optimizing-images/
+import Foundation
+import UIKit
 
 extension LazyImage {
     
