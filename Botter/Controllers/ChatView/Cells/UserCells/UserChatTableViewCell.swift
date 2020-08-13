@@ -53,6 +53,7 @@ class UserChatTableViewCell: UITableViewCell {
         self.msg = msg
         if textLbl != nil{
             textLbl.text = msg.text
+            textLbl.attributedText = TextFormater.shared.formatText(text: msg.text)
         }
         
         if BGView != nil{
