@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		8C1B446D24E34C8A00853B03 /* LocalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617F224E2FD420047F8E1 /* LocalStrings.swift */; };
 		8C1B446F24E34E4700853B03 /* b_LocalizableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B446E24E34E4700853B03 /* b_LocalizableViewController.swift */; };
-		8C1B448724E55F3600853B03 /* LazyImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B448024E55F3500853B03 /* LazyImage+Resizing.swift */; };
-		8C1B448824E55F3600853B03 /* LazyImage+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B448124E55F3500853B03 /* LazyImage+Loader.swift */; };
-		8C1B449524E55FD400853B03 /* LazyImage+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B448E24E55FD200853B03 /* LazyImage+Storage.swift */; };
-		8C1B449724E55FD400853B03 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449024E55FD300853B03 /* LazyImageView.swift */; };
-		8C1B449824E55FD400853B03 /* LazyImage+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449124E55FD300853B03 /* LazyImage+Error.swift */; };
-		8C1B449A24E55FD400853B03 /* LazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449324E55FD300853B03 /* LazyImage.swift */; };
-		8C1B449B24E55FD400853B03 /* LazyImage+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449424E55FD400853B03 /* LazyImage+Network.swift */; };
+		8C1B44A324E56FCC00853B03 /* LazyImage+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449C24E56FCC00853B03 /* LazyImage+Error.swift */; };
+		8C1B44A424E56FCC00853B03 /* LazyImage+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449D24E56FCC00853B03 /* LazyImage+Network.swift */; };
+		8C1B44A524E56FCC00853B03 /* LazyImage+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449E24E56FCC00853B03 /* LazyImage+Loader.swift */; };
+		8C1B44A624E56FCC00853B03 /* LazyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449F24E56FCC00853B03 /* LazyImage.swift */; };
+		8C1B44A724E56FCC00853B03 /* LazyImage+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44A024E56FCC00853B03 /* LazyImage+Storage.swift */; };
+		8C1B44A824E56FCC00853B03 /* LazyImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44A124E56FCC00853B03 /* LazyImage+Resizing.swift */; };
+		8C1B44A924E56FCD00853B03 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44A224E56FCC00853B03 /* LazyImageView.swift */; };
 		8C214A7724C75F71008C2225 /* FaqData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7624C75F71008C2225 /* FaqData.swift */; };
 		8C214A7A24C75F91008C2225 /* SearchBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7924C75F91008C2225 /* SearchBox.swift */; };
 		8C214A7E24C75FB9008C2225 /* FaqsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */; };
@@ -217,9 +217,11 @@
 		8CFC70A5248FD19E006C677B /* GalleryItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */; };
 		8CFC70A72490FAE6006C677B /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A62490FAE6006C677B /* AudioHandler.swift */; };
 		8CFC70A9249100BE006C677B /* AudioBotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A8249100BE006C677B /* AudioBotTableViewCell.swift */; };
+		E60F48C9E2C2099DF496369B /* Pods_Botter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A793C44B17AEF730CBA72B /* Pods_Botter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22A793C44B17AEF730CBA72B /* Pods_Botter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C08E7FE249298E300A2B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C08E800249298E300A2B984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C08E802249298E300A2B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -235,13 +237,13 @@
 		8C1B447B24E55E4100853B03 /* LazyImage-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LazyImage-umbrella.h"; sourceTree = "<group>"; };
 		8C1B447C24E55E4100853B03 /* LazyImage.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LazyImage.debug.xcconfig; sourceTree = "<group>"; };
 		8C1B447D24E55E4100853B03 /* LazyImage.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LazyImage.release.xcconfig; sourceTree = "<group>"; };
-		8C1B448024E55F3500853B03 /* LazyImage+Resizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyImage+Resizing.swift"; sourceTree = "<group>"; };
-		8C1B448124E55F3500853B03 /* LazyImage+Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyImage+Loader.swift"; sourceTree = "<group>"; };
-		8C1B448E24E55FD200853B03 /* LazyImage+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyImage+Storage.swift"; sourceTree = "<group>"; };
-		8C1B449024E55FD300853B03 /* LazyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
-		8C1B449124E55FD300853B03 /* LazyImage+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyImage+Error.swift"; sourceTree = "<group>"; };
-		8C1B449324E55FD300853B03 /* LazyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImage.swift; sourceTree = "<group>"; };
-		8C1B449424E55FD400853B03 /* LazyImage+Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyImage+Network.swift"; sourceTree = "<group>"; };
+		8C1B449C24E56FCC00853B03 /* LazyImage+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LazyImage+Error.swift"; path = "Botter/depends/LazyImage/LazyImage+Error.swift"; sourceTree = SOURCE_ROOT; };
+		8C1B449D24E56FCC00853B03 /* LazyImage+Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LazyImage+Network.swift"; path = "Botter/depends/LazyImage/LazyImage+Network.swift"; sourceTree = SOURCE_ROOT; };
+		8C1B449E24E56FCC00853B03 /* LazyImage+Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LazyImage+Loader.swift"; path = "Botter/depends/LazyImage/LazyImage+Loader.swift"; sourceTree = SOURCE_ROOT; };
+		8C1B449F24E56FCC00853B03 /* LazyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LazyImage.swift; path = Botter/depends/LazyImage/LazyImage.swift; sourceTree = SOURCE_ROOT; };
+		8C1B44A024E56FCC00853B03 /* LazyImage+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LazyImage+Storage.swift"; path = "Botter/depends/LazyImage/LazyImage+Storage.swift"; sourceTree = SOURCE_ROOT; };
+		8C1B44A124E56FCC00853B03 /* LazyImage+Resizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LazyImage+Resizing.swift"; path = "Botter/depends/LazyImage/LazyImage+Resizing.swift"; sourceTree = SOURCE_ROOT; };
+		8C1B44A224E56FCC00853B03 /* LazyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LazyImageView.swift; path = Botter/depends/LazyImage/LazyImageView.swift; sourceTree = SOURCE_ROOT; };
 		8C214A7624C75F71008C2225 /* FaqData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqData.swift; sourceTree = "<group>"; };
 		8C214A7924C75F91008C2225 /* SearchBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBox.swift; sourceTree = "<group>"; };
 		8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqsListViewController.swift; sourceTree = "<group>"; };
@@ -468,6 +470,8 @@
 		8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CFC70A62490FAE6006C677B /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHandler.swift; sourceTree = "<group>"; };
 		8CFC70A8249100BE006C677B /* AudioBotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBotTableViewCell.swift; sourceTree = "<group>"; };
+		97142E6A2E18135E6EE1D728 /* Pods-Botter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.release.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.release.xcconfig"; sourceTree = "<group>"; };
+		DE287904F82141B651880A70 /* Pods-Botter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.debug.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,6 +481,7 @@
 			files = (
 				8CFC709F248FC227006C677B /* WebKit.framework in Frameworks */,
 				8CC4F6E8248D24C7000692AE /* Assets.xcassets in Frameworks */,
+				E60F48C9E2C2099DF496369B /* Pods_Botter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				8CFC709E248FC227006C677B /* WebKit.framework */,
+				22A793C44B17AEF730CBA72B /* Pods_Botter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -525,13 +531,13 @@
 		8C1B447F24E55E4100853B03 /* LazyImage */ = {
 			isa = PBXGroup;
 			children = (
-				8C1B449324E55FD300853B03 /* LazyImage.swift */,
-				8C1B449124E55FD300853B03 /* LazyImage+Error.swift */,
-				8C1B448124E55F3500853B03 /* LazyImage+Loader.swift */,
-				8C1B449424E55FD400853B03 /* LazyImage+Network.swift */,
-				8C1B448024E55F3500853B03 /* LazyImage+Resizing.swift */,
-				8C1B448E24E55FD200853B03 /* LazyImage+Storage.swift */,
-				8C1B449024E55FD300853B03 /* LazyImageView.swift */,
+				8C1B449F24E56FCC00853B03 /* LazyImage.swift */,
+				8C1B449E24E56FCC00853B03 /* LazyImage+Loader.swift */,
+				8C1B44A124E56FCC00853B03 /* LazyImage+Resizing.swift */,
+				8C1B449C24E56FCC00853B03 /* LazyImage+Error.swift */,
+				8C1B449D24E56FCC00853B03 /* LazyImage+Network.swift */,
+				8C1B44A024E56FCC00853B03 /* LazyImage+Storage.swift */,
+				8C1B44A224E56FCC00853B03 /* LazyImageView.swift */,
 				8C1B447E24E55E4100853B03 /* Support Files */,
 			);
 			name = LazyImage;
@@ -1122,6 +1128,8 @@
 		F954DB11F77578B1EBA192C3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				DE287904F82141B651880A70 /* Pods-Botter.debug.xcconfig */,
+				97142E6A2E18135E6EE1D728 /* Pods-Botter.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1146,6 +1154,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CC4F4AB248CFBA4000692AE /* Build configuration list for PBXNativeTarget "Botter" */;
 			buildPhases = (
+				070E927E4B36668C6630F47E /* [CP] Check Pods Manifest.lock */,
 				8CC4F49E248CFBA4000692AE /* Headers */,
 				8CC4F49F248CFBA4000692AE /* Sources */,
 				8CC4F4A0248CFBA4000692AE /* Frameworks */,
@@ -1219,6 +1228,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		070E927E4B36668C6630F47E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Botter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8CC4F49F248CFBA4000692AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1230,7 +1264,6 @@
 				8CAB89E224913569009BBAB6 /* EventProducer.swift in Sources */,
 				8CC4F544248CFCCC000692AE /* ChatWireframe.swift in Sources */,
 				8CA0A6C72497BE4F0009FEA2 /* WeatherTableViewCell.swift in Sources */,
-				8C1B449724E55FD400853B03 /* LazyImageView.swift in Sources */,
 				8CC4F540248CFCCC000692AE /* Action.swift in Sources */,
 				8CAB89D324913569009BBAB6 /* AudioPlayer.swift in Sources */,
 				8C8ACC2A249648CE00A155DB /* TypingIndicatorView.swift in Sources */,
@@ -1259,22 +1292,24 @@
 				8CC4F562248CFCCC000692AE /* UIWindow.swift in Sources */,
 				8CC4F67C248D17A9000692AE /* DataTransform.swift in Sources */,
 				8CC4F6E2248D18C8000692AE /* WebSocket.swift in Sources */,
+				8C1B44A524E56FCC00853B03 /* LazyImage+Loader.swift in Sources */,
 				8CAB89DB24913569009BBAB6 /* AudioPlayer+RetryEvent.swift in Sources */,
 				8CC4F518248CFCCC000692AE /* SocketManager.swift in Sources */,
 				8CC4F6D4248D18C8000692AE /* Engine.swift in Sources */,
 				8CC4F676248D17A9000692AE /* ISO8601DateTransform.swift in Sources */,
+				8C1B44A824E56FCC00853B03 /* LazyImage+Resizing.swift in Sources */,
 				8CAB89DF24913569009BBAB6 /* AudioPlayerState.swift in Sources */,
 				8CC4F678248D17A9000692AE /* NSDecimalNumberTransform.swift in Sources */,
 				8CAB89D124913569009BBAB6 /* AudioItemEventProducer.swift in Sources */,
 				8C463AEC24C09D3E00B78E96 /* BasicFormTableViewCell.swift in Sources */,
 				8C77A6B424B6101500549FE2 /* FlightStatusTableViewCell.swift in Sources */,
 				8CC4F6DE248D18C8000692AE /* Server.swift in Sources */,
-				8C1B448724E55F3600853B03 /* LazyImage+Resizing.swift in Sources */,
 				8CAB89D024913569009BBAB6 /* AudioItem.swift in Sources */,
 				8C786A4124E0F04F004A826C /* FormatterInterface.swift in Sources */,
 				8C463ACF24BF37BC00B78E96 /* BaseApi.swift in Sources */,
 				8C5592C124B4D8A200B23BCC /* FlightTicket.swift in Sources */,
 				8CC4F548248CFCCC000692AE /* ImageBotTableViewCell.swift in Sources */,
+				8C1B44A924E56FCD00853B03 /* LazyImageView.swift in Sources */,
 				8CC4F683248D17A9000692AE /* ImmutableMappable.swift in Sources */,
 				8CFC70A3248FCE31006C677B /* GallaryItem.swift in Sources */,
 				8C786A4224E0F04F004A826C /* UIStoryboardExtension.swift in Sources */,
@@ -1302,13 +1337,12 @@
 				8CC4F555248CFCCC000692AE /* UIView.swift in Sources */,
 				8CC4F6CD248D180D000692AE /* ContentSheetTransitionDelegate.swift in Sources */,
 				8CA2E8B5249A63D8002ADB42 /* MapTableViewCell.swift in Sources */,
-				8C1B449B24E55FD400853B03 /* LazyImage+Network.swift in Sources */,
 				8CC4F53E248CFCCC000692AE /* BaseNibLoader.swift in Sources */,
 				8CC4F571248CFEE5000692AE /* Botter.swift in Sources */,
 				8CAB89D824913569009BBAB6 /* AudioPlayer+PlayerEvent.swift in Sources */,
 				8C463B0124C0C40600B78E96 /* SelectInputTableViewCell.swift in Sources */,
-				8C1B448824E55F3600853B03 /* LazyImage+Loader.swift in Sources */,
 				8CC4F6D8248D18C8000692AE /* FoundationTransport.swift in Sources */,
+				8C1B44A324E56FCC00853B03 /* LazyImage+Error.swift in Sources */,
 				8CC4F529248CFCCC000692AE /* RoundedView.swift in Sources */,
 				8CC4F557248CFCCC000692AE /* UIColor.swift in Sources */,
 				8CAB89DC24913569009BBAB6 /* AudioPlayer+SeekEvent.swift in Sources */,
@@ -1317,11 +1351,9 @@
 				8CC4F674248D17A9000692AE /* CustomDateFormatTransform.swift in Sources */,
 				8C660F3C24B77EBF00CFB577 /* ElementTableViewCell.swift in Sources */,
 				8CA2E8B3249A58CF002ADB42 /* Location.swift in Sources */,
-				8C1B449A24E55FD400853B03 /* LazyImage.swift in Sources */,
 				8CC4F68A248D17A9000692AE /* TransformOf.swift in Sources */,
 				8CC4F675248D17A9000692AE /* HexColorTransform.swift in Sources */,
 				8CC4F6CF248D180D000692AE /* ContentSheet.swift in Sources */,
-				8C1B449824E55FD400853B03 /* LazyImage+Error.swift in Sources */,
 				8CC4F6DA248D18C8000692AE /* Framer.swift in Sources */,
 				8CC4F519248CFCCC000692AE /* tagViewLayOut.swift in Sources */,
 				8C463AE424BF598200B78E96 /* StartFormWireframe.swift in Sources */,
@@ -1329,6 +1361,7 @@
 				8C83EE2B24D05C32000F2637 /* MimeType.swift in Sources */,
 				8CC4F6DF248D18C8000692AE /* StringHTTPHandler.swift in Sources */,
 				8CC4F679248D17A9000692AE /* Operators.swift in Sources */,
+				8C1B44A624E56FCC00853B03 /* LazyImage.swift in Sources */,
 				8CC4F685248D17A9000692AE /* TransformType.swift in Sources */,
 				8CC4F54E248CFCCC000692AE /* ChatPresenter.swift in Sources */,
 				8CC4F6D6248D18C8000692AE /* FoundationHTTPServerHandler.swift in Sources */,
@@ -1355,12 +1388,14 @@
 				8CC4F688248D17A9000692AE /* DateFormatterTransform.swift in Sources */,
 				8C463AEE24C0ADDE00B78E96 /* TextAreaInputTableViewCell.swift in Sources */,
 				8CC4F559248CFCCC000692AE /* UITableViewExtension.swift in Sources */,
+				8C1B44A724E56FCC00853B03 /* LazyImage+Storage.swift in Sources */,
 				8C463AD124BF472600B78E96 /* BotData.swift in Sources */,
 				8C463AD324BF475800B78E96 /* Form.swift in Sources */,
 				8CAB89D724913569009BBAB6 /* AudioPlayer+NetworkEvent.swift in Sources */,
 				8CC4F6E5248D18C8000692AE /* WSEngine.swift in Sources */,
 				8CAB89D924913569009BBAB6 /* AudioPlayer+QualityAdjustmentEvent.swift in Sources */,
 				8CFC70A72490FAE6006C677B /* AudioHandler.swift in Sources */,
+				8C1B44A424E56FCC00853B03 /* LazyImage+Network.swift in Sources */,
 				8CC4F67A248D17A9000692AE /* EnumOperators.swift in Sources */,
 				8CC4F6D5248D18C8000692AE /* FoundationHTTPHandler.swift in Sources */,
 				8C463AE224BF598200B78E96 /* StartFormViewController.swift in Sources */,
@@ -1384,7 +1419,6 @@
 				8C786A4324E0F04F004A826C /* PresenterInterface.swift in Sources */,
 				8CC4F687248D17A9000692AE /* DateTransform.swift in Sources */,
 				8C83EE3424D18B90000F2637 /* UserImageTableViewCell.swift in Sources */,
-				8C1B449524E55FD400853B03 /* LazyImage+Storage.swift in Sources */,
 				8CC4F6DB248D18C8000692AE /* HTTPHandler.swift in Sources */,
 				8C463AF824C0C10200B78E96 /* RadioCollectionViewCell.swift in Sources */,
 				8CC4F545248CFCCC000692AE /* ChatViewController.swift in Sources */,
@@ -1597,6 +1631,7 @@
 		};
 		8CC4F4AC248CFBA4000692AE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE287904F82141B651880A70 /* Pods-Botter.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1631,6 +1666,7 @@
 		};
 		8CC4F4AD248CFBA4000692AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97142E6A2E18135E6EE1D728 /* Pods-Botter.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
