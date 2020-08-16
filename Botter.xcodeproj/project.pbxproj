@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		663DAA13371A1D6916D58C1B /* Pods_Botter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A585128D031A881F0BAAABE2 /* Pods_Botter.framework */; };
 		8C1B446D24E34C8A00853B03 /* LocalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617F224E2FD420047F8E1 /* LocalStrings.swift */; };
 		8C1B446F24E34E4700853B03 /* b_LocalizableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B446E24E34E4700853B03 /* b_LocalizableViewController.swift */; };
 		8C1B44A324E56FCC00853B03 /* LazyImage+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449C24E56FCC00853B03 /* LazyImage+Error.swift */; };
@@ -223,11 +224,10 @@
 		8CFC70A5248FD19E006C677B /* GalleryItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */; };
 		8CFC70A72490FAE6006C677B /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A62490FAE6006C677B /* AudioHandler.swift */; };
 		8CFC70A9249100BE006C677B /* AudioBotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A8249100BE006C677B /* AudioBotTableViewCell.swift */; };
-		E60F48C9E2C2099DF496369B /* Pods_Botter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A793C44B17AEF730CBA72B /* Pods_Botter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22A793C44B17AEF730CBA72B /* Pods_Botter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78144E4E7280A849B8AFCFFB /* Pods-Botter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.debug.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.debug.xcconfig"; sourceTree = "<group>"; };
 		8C08E7FE249298E300A2B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C08E800249298E300A2B984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C08E802249298E300A2B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -482,8 +482,8 @@
 		8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CFC70A62490FAE6006C677B /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHandler.swift; sourceTree = "<group>"; };
 		8CFC70A8249100BE006C677B /* AudioBotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBotTableViewCell.swift; sourceTree = "<group>"; };
-		97142E6A2E18135E6EE1D728 /* Pods-Botter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.release.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.release.xcconfig"; sourceTree = "<group>"; };
-		DE287904F82141B651880A70 /* Pods-Botter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.debug.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.debug.xcconfig"; sourceTree = "<group>"; };
+		996FA4673AF3028269FBB760 /* Pods-Botter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.release.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.release.xcconfig"; sourceTree = "<group>"; };
+		A585128D031A881F0BAAABE2 /* Pods_Botter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,7 +493,7 @@
 			files = (
 				8CFC709F248FC227006C677B /* WebKit.framework in Frameworks */,
 				8CC4F6E8248D24C7000692AE /* Assets.xcassets in Frameworks */,
-				E60F48C9E2C2099DF496369B /* Pods_Botter.framework in Frameworks */,
+				663DAA13371A1D6916D58C1B /* Pods_Botter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				8CFC709E248FC227006C677B /* WebKit.framework */,
-				22A793C44B17AEF730CBA72B /* Pods_Botter.framework */,
+				A585128D031A881F0BAAABE2 /* Pods_Botter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1154,8 +1154,8 @@
 		F954DB11F77578B1EBA192C3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DE287904F82141B651880A70 /* Pods-Botter.debug.xcconfig */,
-				97142E6A2E18135E6EE1D728 /* Pods-Botter.release.xcconfig */,
+				78144E4E7280A849B8AFCFFB /* Pods-Botter.debug.xcconfig */,
+				996FA4673AF3028269FBB760 /* Pods-Botter.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1180,7 +1180,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CC4F4AB248CFBA4000692AE /* Build configuration list for PBXNativeTarget "Botter" */;
 			buildPhases = (
-				070E927E4B36668C6630F47E /* [CP] Check Pods Manifest.lock */,
+				A5568A25C1ED7636450BF5C9 /* [CP] Check Pods Manifest.lock */,
 				8CC4F49E248CFBA4000692AE /* Headers */,
 				8CC4F49F248CFBA4000692AE /* Sources */,
 				8CC4F4A0248CFBA4000692AE /* Frameworks */,
@@ -1255,7 +1255,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		070E927E4B36668C6630F47E /* [CP] Check Pods Manifest.lock */ = {
+		A5568A25C1ED7636450BF5C9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1663,7 +1663,7 @@
 		};
 		8CC4F4AC248CFBA4000692AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE287904F82141B651880A70 /* Pods-Botter.debug.xcconfig */;
+			baseConfigurationReference = 78144E4E7280A849B8AFCFFB /* Pods-Botter.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1698,7 +1698,7 @@
 		};
 		8CC4F4AD248CFBA4000692AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97142E6A2E18135E6EE1D728 /* Pods-Botter.release.xcconfig */;
+			baseConfigurationReference = 996FA4673AF3028269FBB760 /* Pods-Botter.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
