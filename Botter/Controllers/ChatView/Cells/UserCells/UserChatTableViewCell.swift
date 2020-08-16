@@ -28,7 +28,7 @@ class UserChatTableViewCell: UITableViewCell {
     func setText(tView  : UIView){
         for v in tView.subviews{
             if let lbl = v as? UILabel{
-                let str = BotterSettingsManager.language == .arabic ? CommonActions.loadText(for: lbl.text ?? "") : lbl.text
+                let str = BotterSettingsManager.language == .arabic ? CommonActions.loadText(for: lbl.text ?? "") : CommonActions.loadText(for: lbl.text ?? "")
                 lbl.text =  str
             }
             if let btn = v as? UIButton{

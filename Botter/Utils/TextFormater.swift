@@ -13,11 +13,13 @@ class TextFormater{
     
     static var shared = TextFormater()
     
-    func formatText (text : String) -> NSMutableAttributedString  {
-        let attributedString = NSMutableAttributedString(string: text as String, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
-         var newText = replaceSpecialChars(text: attributedString,char: "*")
-         newText = replaceSpecialChars(text: attributedString,char: "_")
-         newText = replaceSpecialChars(text: attributedString,char: "~")
+    func formatText (text : String) -> NSAttributedString  {
+//        let attributedString = NSMutableAttributedString(string: text as String, attributes: [NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15.0)])
+//         var newText = replaceSpecialChars(text: attributedString,char: "*")
+//         newText = replaceSpecialChars(text: attributedString,char: "_")
+//         newText = replaceSpecialChars(text: attributedString,char: "~")
+        let renderer = MarkupRenderer(baseFont: BotterSettingsManager.Font.getRegularFontForParsing())
+        let newText = renderer.render(text: text)
          return newText
     }
     
@@ -54,8 +56,13 @@ class TextFormater{
             let italicFontAttribute = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 15.0)]
             let boldText = text.string[range]
             text.addAttributes(italicFontAttribute, range: text.mutableString.range(of: String(boldText)))
-            text.replaceCharacters(in: NSRange(location: startIndex, length: 1), with: " ")
-            text.replaceCharacters(in: NSRange(location: endIndex, length: 1), with: " ")
+            print(text.string.unicodeScalars.count)
+            let ftempIndex  = text.string.firstIndex(of: "_")
+            text.replaceCharacters(in: NSRange(location: ftempIndex?.distance(in: text.string) ?? startIndex , length: 1), with: " ")
+            let tempIndex  = text.string.firstIndex(of: "_")
+            print(tempIndex?.distance(in: text.string) ?? 0)
+            text.replaceCharacters(in: NSRange(location: tempIndex?.distance(in: text.string) ?? endIndex, length: 1), with: " ")
+            
         }else if char == "~" {
             let strikethrough = text.string[range]
             let somePartStringRange = (text.string as NSString).range(of: String(strikethrough))
@@ -64,4 +71,7 @@ class TextFormater{
             text.replaceCharacters(in: NSRange(location: endIndex, length: 1), with: " ")
         }
     }
+}
+extension String.Index {
+    func distance<S: StringProtocol>(in string: S) -> Int { string.distance(from: string.startIndex, to: self) }
 }

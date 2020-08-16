@@ -59,6 +59,13 @@ public class BotterSettingsManager  {
             return UIFont.systemFont(ofSize: lbl.font.pointSize)
         }
         
+        static func getRegularFontForParsing()->UIFont{
+            if let regularFont = UIFont.init(name: regularFontName , size: 16){
+                return regularFont
+            }
+            return UIFont.systemFont(ofSize: 16)
+        }
+        
         static func getRegularFontForFeild(feild : UITextField)->UIFont{
             if let regularFont = UIFont.init(name: regularFontName , size: feild.font?.pointSize ?? 13){
                 return regularFont

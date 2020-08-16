@@ -17,6 +17,11 @@
 		8C1B44A824E56FCC00853B03 /* LazyImage+Resizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44A124E56FCC00853B03 /* LazyImage+Resizing.swift */; };
 		8C1B44A924E56FCD00853B03 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44A224E56FCC00853B03 /* LazyImageView.swift */; };
 		8C1B44AB24E5E7AB00853B03 /* TextFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44AA24E5E7AB00853B03 /* TextFormater.swift */; };
+		8C1B44B224E98A5400853B03 /* MarkupParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44AD24E98A5400853B03 /* MarkupParser.swift */; };
+		8C1B44B324E98A5400853B03 /* MarkupNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44AE24E98A5400853B03 /* MarkupNode.swift */; };
+		8C1B44B424E98A5400853B03 /* MarkupToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44AF24E98A5400853B03 /* MarkupToken.swift */; };
+		8C1B44B524E98A5400853B03 /* MarkupRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44B024E98A5400853B03 /* MarkupRenderer.swift */; };
+		8C1B44B624E98A5400853B03 /* MarkupTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B44B124E98A5400853B03 /* MarkupTokenizer.swift */; };
 		8C214A7724C75F71008C2225 /* FaqData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7624C75F71008C2225 /* FaqData.swift */; };
 		8C214A7A24C75F91008C2225 /* SearchBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7924C75F91008C2225 /* SearchBox.swift */; };
 		8C214A7E24C75FB9008C2225 /* FaqsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */; };
@@ -246,6 +251,11 @@
 		8C1B44A124E56FCC00853B03 /* LazyImage+Resizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LazyImage+Resizing.swift"; path = "Botter/depends/LazyImage/LazyImage+Resizing.swift"; sourceTree = SOURCE_ROOT; };
 		8C1B44A224E56FCC00853B03 /* LazyImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LazyImageView.swift; path = Botter/depends/LazyImage/LazyImageView.swift; sourceTree = SOURCE_ROOT; };
 		8C1B44AA24E5E7AB00853B03 /* TextFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormater.swift; sourceTree = "<group>"; };
+		8C1B44AD24E98A5400853B03 /* MarkupParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupParser.swift; sourceTree = "<group>"; };
+		8C1B44AE24E98A5400853B03 /* MarkupNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupNode.swift; sourceTree = "<group>"; };
+		8C1B44AF24E98A5400853B03 /* MarkupToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupToken.swift; sourceTree = "<group>"; };
+		8C1B44B024E98A5400853B03 /* MarkupRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupRenderer.swift; sourceTree = "<group>"; };
+		8C1B44B124E98A5400853B03 /* MarkupTokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupTokenizer.swift; sourceTree = "<group>"; };
 		8C214A7624C75F71008C2225 /* FaqData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqData.swift; sourceTree = "<group>"; };
 		8C214A7924C75F91008C2225 /* SearchBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBox.swift; sourceTree = "<group>"; };
 		8C214A7C24C75FB9008C2225 /* FaqsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqsListViewController.swift; sourceTree = "<group>"; };
@@ -544,6 +554,18 @@
 			);
 			name = LazyImage;
 			path = ../../Pods/LazyImage;
+			sourceTree = "<group>";
+		};
+		8C1B44AC24E98A5400853B03 /* Markup */ = {
+			isa = PBXGroup;
+			children = (
+				8C1B44AD24E98A5400853B03 /* MarkupParser.swift */,
+				8C1B44AE24E98A5400853B03 /* MarkupNode.swift */,
+				8C1B44AF24E98A5400853B03 /* MarkupToken.swift */,
+				8C1B44B024E98A5400853B03 /* MarkupRenderer.swift */,
+				8C1B44B124E98A5400853B03 /* MarkupTokenizer.swift */,
+			);
+			path = Markup;
 			sourceTree = "<group>";
 		};
 		8C214A7824C75F91008C2225 /* Search */ = {
@@ -1009,6 +1031,7 @@
 		8CC4F597248D15E2000692AE /* depends */ = {
 			isa = PBXGroup;
 			children = (
+				8C1B44AC24E98A5400853B03 /* Markup */,
 				8C1B447F24E55E4100853B03 /* LazyImage */,
 				8CA2E8AD249A4862002ADB42 /* SwiftyGif */,
 				8CAB89CF249134BA009BBAB6 /* KDEAudioPlayer */,
@@ -1271,9 +1294,11 @@
 				8CAB89D324913569009BBAB6 /* AudioPlayer.swift in Sources */,
 				8C8ACC2A249648CE00A155DB /* TypingIndicatorView.swift in Sources */,
 				8CAB89E924913569009BBAB6 /* SeekEventProducer.swift in Sources */,
+				8C1B44B224E98A5400853B03 /* MarkupParser.swift in Sources */,
 				8CC4F549248CFCCC000692AE /* TagCollectionViewCell.swift in Sources */,
 				8C463AE124BF598200B78E96 /* StartFormPresenter.swift in Sources */,
 				8CC4F55E248CFCCC000692AE /* String.swift in Sources */,
+				8C1B44B524E98A5400853B03 /* MarkupRenderer.swift in Sources */,
 				8C84B57924C5D33100996861 /* NotifyTableViewCell.swift in Sources */,
 				8C463AE324BF598200B78E96 /* StartFormInteractor.swift in Sources */,
 				8CC4F551248CFCCC000692AE /* FloatingBtnController.swift in Sources */,
@@ -1355,6 +1380,7 @@
 				8C660F3C24B77EBF00CFB577 /* ElementTableViewCell.swift in Sources */,
 				8CA2E8B3249A58CF002ADB42 /* Location.swift in Sources */,
 				8CC4F68A248D17A9000692AE /* TransformOf.swift in Sources */,
+				8C1B44B424E98A5400853B03 /* MarkupToken.swift in Sources */,
 				8CC4F675248D17A9000692AE /* HexColorTransform.swift in Sources */,
 				8CC4F6CF248D180D000692AE /* ContentSheet.swift in Sources */,
 				8CC4F6DA248D18C8000692AE /* Framer.swift in Sources */,
@@ -1431,6 +1457,7 @@
 				8CAB89E324913569009BBAB6 /* MPNowPlayingInfoCenter+AudioItem.swift in Sources */,
 				8CC4F680248D17A9000692AE /* DictionaryTransform.swift in Sources */,
 				8CC4F67F248D17A9000692AE /* FromJSON.swift in Sources */,
+				8C1B44B324E98A5400853B03 /* MarkupNode.swift in Sources */,
 				8C41823024A1CF070097E1A6 /* ReachabilityManager.swift in Sources */,
 				8C463AE024BF598200B78E96 /* StartFormInterfaces.swift in Sources */,
 				8C463AEB24C09C8600B78E96 /* TextInputTableViewCell.swift in Sources */,
@@ -1452,6 +1479,7 @@
 				8C463AFF24C0C3F400B78E96 /* RadioInputTableViewCell.swift in Sources */,
 				8CC4F684248D17A9000692AE /* IntegerOperators.swift in Sources */,
 				8CAB89E724913569009BBAB6 /* Reachability.swift in Sources */,
+				8C1B44B624E98A5400853B03 /* MarkupTokenizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
