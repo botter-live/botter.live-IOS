@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		663DAA13371A1D6916D58C1B /* Pods_Botter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A585128D031A881F0BAAABE2 /* Pods_Botter.framework */; };
 		8C1B446D24E34C8A00853B03 /* LocalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617F224E2FD420047F8E1 /* LocalStrings.swift */; };
 		8C1B446F24E34E4700853B03 /* b_LocalizableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B446E24E34E4700853B03 /* b_LocalizableViewController.swift */; };
 		8C1B44A324E56FCC00853B03 /* LazyImage+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449C24E56FCC00853B03 /* LazyImage+Error.swift */; };
@@ -53,6 +52,8 @@
 		8C463AFD24C0C11E00B78E96 /* SelectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C463AFB24C0C11E00B78E96 /* SelectCollectionViewCell.xib */; };
 		8C463AFF24C0C3F400B78E96 /* RadioInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463AFE24C0C3F400B78E96 /* RadioInputTableViewCell.swift */; };
 		8C463B0124C0C40600B78E96 /* SelectInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C463B0024C0C40600B78E96 /* SelectInputTableViewCell.swift */; };
+		8C4BDF2F24FD2FE400CCAA16 /* ChatSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BDF2E24FD2FE400CCAA16 /* ChatSessionManager.swift */; };
+		8C4BDF3224FE693700CCAA16 /* RateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4BDF3024FE693600CCAA16 /* RateTableViewCell.swift */; };
 		8C5592BE24B47C6800B23BCC /* FlightTicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5592BC24B47C6800B23BCC /* FlightTicketTableViewCell.swift */; };
 		8C5592BF24B47C6800B23BCC /* FlightTicketTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5592BD24B47C6800B23BCC /* FlightTicketTableViewCell.xib */; };
 		8C5592C124B4D8A200B23BCC /* FlightTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5592C024B4D8A200B23BCC /* FlightTicket.swift */; };
@@ -224,10 +225,13 @@
 		8CFC70A5248FD19E006C677B /* GalleryItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */; };
 		8CFC70A72490FAE6006C677B /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A62490FAE6006C677B /* AudioHandler.swift */; };
 		8CFC70A9249100BE006C677B /* AudioBotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A8249100BE006C677B /* AudioBotTableViewCell.swift */; };
+		B1F748F0283E195666A22F9D /* Pods_Botter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5247F0D3A14775DD496094C5 /* Pods_Botter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		78144E4E7280A849B8AFCFFB /* Pods-Botter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.debug.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.debug.xcconfig"; sourceTree = "<group>"; };
+		15650C863BD6CB72862189F0 /* Pods-Botter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.debug.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.debug.xcconfig"; sourceTree = "<group>"; };
+		5247F0D3A14775DD496094C5 /* Pods_Botter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B6B16FB1650DEB300BFA812 /* Pods-Botter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.release.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.release.xcconfig"; sourceTree = "<group>"; };
 		8C08E7FE249298E300A2B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C08E800249298E300A2B984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C08E802249298E300A2B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +293,8 @@
 		8C463AFB24C0C11E00B78E96 /* SelectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCollectionViewCell.xib; sourceTree = "<group>"; };
 		8C463AFE24C0C3F400B78E96 /* RadioInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioInputTableViewCell.swift; sourceTree = "<group>"; };
 		8C463B0024C0C40600B78E96 /* SelectInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectInputTableViewCell.swift; sourceTree = "<group>"; };
+		8C4BDF2E24FD2FE400CCAA16 /* ChatSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSessionManager.swift; sourceTree = "<group>"; };
+		8C4BDF3024FE693600CCAA16 /* RateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTableViewCell.swift; sourceTree = "<group>"; };
 		8C5592BC24B47C6800B23BCC /* FlightTicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTicketTableViewCell.swift; sourceTree = "<group>"; };
 		8C5592BD24B47C6800B23BCC /* FlightTicketTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightTicketTableViewCell.xib; sourceTree = "<group>"; };
 		8C5592C024B4D8A200B23BCC /* FlightTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTicket.swift; sourceTree = "<group>"; };
@@ -482,8 +488,6 @@
 		8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CFC70A62490FAE6006C677B /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHandler.swift; sourceTree = "<group>"; };
 		8CFC70A8249100BE006C677B /* AudioBotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBotTableViewCell.swift; sourceTree = "<group>"; };
-		996FA4673AF3028269FBB760 /* Pods-Botter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.release.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.release.xcconfig"; sourceTree = "<group>"; };
-		A585128D031A881F0BAAABE2 /* Pods_Botter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,7 +497,7 @@
 			files = (
 				8CFC709F248FC227006C677B /* WebKit.framework in Frameworks */,
 				8CC4F6E8248D24C7000692AE /* Assets.xcassets in Frameworks */,
-				663DAA13371A1D6916D58C1B /* Pods_Botter.framework in Frameworks */,
+				B1F748F0283E195666A22F9D /* Pods_Botter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				8CFC709E248FC227006C677B /* WebKit.framework */,
-				A585128D031A881F0BAAABE2 /* Pods_Botter.framework */,
+				5247F0D3A14775DD496094C5 /* Pods_Botter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -629,6 +633,7 @@
 		8C463AE924C09B2C00B78E96 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8C4BDF3024FE693600CCAA16 /* RateTableViewCell.swift */,
 				8C214A8024C75FE2008C2225 /* FaqCell.swift */,
 				8C463AF324C0C07600B78E96 /* SelectionCells */,
 				8C463AE824C09B2C00B78E96 /* BasicFormTableViewCell.swift */,
@@ -882,6 +887,7 @@
 				8C41822F24A1CF070097E1A6 /* ReachabilityManager.swift */,
 				8C41823124A1F3AA0097E1A6 /* BotterSettingsManager.swift */,
 				8C41823324A1FF100097E1A6 /* UIManager.swift */,
+				8C4BDF2E24FD2FE400CCAA16 /* ChatSessionManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1154,8 +1160,8 @@
 		F954DB11F77578B1EBA192C3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				78144E4E7280A849B8AFCFFB /* Pods-Botter.debug.xcconfig */,
-				996FA4673AF3028269FBB760 /* Pods-Botter.release.xcconfig */,
+				15650C863BD6CB72862189F0 /* Pods-Botter.debug.xcconfig */,
+				6B6B16FB1650DEB300BFA812 /* Pods-Botter.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1180,7 +1186,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CC4F4AB248CFBA4000692AE /* Build configuration list for PBXNativeTarget "Botter" */;
 			buildPhases = (
-				A5568A25C1ED7636450BF5C9 /* [CP] Check Pods Manifest.lock */,
+				046B05299534F8780A115E2F /* [CP] Check Pods Manifest.lock */,
 				8CC4F49E248CFBA4000692AE /* Headers */,
 				8CC4F49F248CFBA4000692AE /* Sources */,
 				8CC4F4A0248CFBA4000692AE /* Frameworks */,
@@ -1255,7 +1261,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A5568A25C1ED7636450BF5C9 /* [CP] Check Pods Manifest.lock */ = {
+		046B05299534F8780A115E2F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1313,6 +1319,7 @@
 				8CAB89D624913569009BBAB6 /* AudioPlayer+CurrentItem.swift in Sources */,
 				8CC4F538248CFCCC000692AE /* AllSidsCardView.swift in Sources */,
 				8CC4F6CE248D180D000692AE /* ContentHeader.swift in Sources */,
+				8C4BDF3224FE693700CCAA16 /* RateTableViewCell.swift in Sources */,
 				8CC4F520248CFCCC000692AE /* CardView.swift in Sources */,
 				8CA0A6C52497B85A0009FEA2 /* Weather.swift in Sources */,
 				8CC4F56C248CFCCC000692AE /* MyUtils.swift in Sources */,
@@ -1446,6 +1453,7 @@
 				8CC4F6E0248D18C8000692AE /* TCPTransport.swift in Sources */,
 				8C1B446D24E34C8A00853B03 /* LocalStrings.swift in Sources */,
 				8C84B57C24C6015400996861 /* Menu.swift in Sources */,
+				8C4BDF2F24FD2FE400CCAA16 /* ChatSessionManager.swift in Sources */,
 				8C786A4324E0F04F004A826C /* PresenterInterface.swift in Sources */,
 				8CC4F687248D17A9000692AE /* DateTransform.swift in Sources */,
 				8C83EE3424D18B90000F2637 /* UserImageTableViewCell.swift in Sources */,
@@ -1663,7 +1671,7 @@
 		};
 		8CC4F4AC248CFBA4000692AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78144E4E7280A849B8AFCFFB /* Pods-Botter.debug.xcconfig */;
+			baseConfigurationReference = 15650C863BD6CB72862189F0 /* Pods-Botter.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1698,7 +1706,7 @@
 		};
 		8CC4F4AD248CFBA4000692AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 996FA4673AF3028269FBB760 /* Pods-Botter.release.xcconfig */;
+			baseConfigurationReference = 6B6B16FB1650DEB300BFA812 /* Pods-Botter.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

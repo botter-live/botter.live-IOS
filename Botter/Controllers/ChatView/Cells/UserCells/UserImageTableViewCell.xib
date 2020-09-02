@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,14 +22,24 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cta-r1-uub">
                                 <rect key="frame" x="8" y="8" width="292" height="184"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2F-Fr-Hb1">
+                                <rect key="frame" x="8" y="8" width="292" height="184"/>
+                                <connections>
+                                    <action selector="openMaps" destination="EER-t3-p4D" eventType="touchUpInside" id="lWb-Np-VSt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.94117647059999998" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="R2F-Fr-Hb1" firstAttribute="top" secondItem="hWB-26-fdH" secondAttribute="top" constant="8" id="B5R-hT-Cfq"/>
+                            <constraint firstAttribute="trailing" secondItem="R2F-Fr-Hb1" secondAttribute="trailing" constant="8" id="ER0-SH-4sw"/>
                             <constraint firstItem="Cta-r1-uub" firstAttribute="top" secondItem="hWB-26-fdH" secondAttribute="top" constant="8" id="LRI-EW-lI6"/>
                             <constraint firstItem="Cta-r1-uub" firstAttribute="leading" secondItem="hWB-26-fdH" secondAttribute="leading" constant="8" id="Ss4-bh-9YP"/>
+                            <constraint firstItem="R2F-Fr-Hb1" firstAttribute="leading" secondItem="hWB-26-fdH" secondAttribute="leading" constant="8" id="dCM-Xr-Slf"/>
                             <constraint firstAttribute="height" constant="200" id="eiM-X0-mH1"/>
                             <constraint firstAttribute="trailing" secondItem="Cta-r1-uub" secondAttribute="trailing" constant="8" id="uyX-wx-cUG"/>
                             <constraint firstAttribute="bottom" secondItem="Cta-r1-uub" secondAttribute="bottom" constant="8" id="xVF-Gd-h79"/>
+                            <constraint firstAttribute="bottom" secondItem="R2F-Fr-Hb1" secondAttribute="bottom" constant="8" id="ySO-Ja-j07"/>
                         </constraints>
                     </view>
                 </subviews>

@@ -40,7 +40,7 @@ public class BotterSettingsManager  {
         }
     }
     
-    public static var language : b_Language = .english {
+    public static var language : b_Language = .arabic {
         didSet{
 //            UserDefaults.standard.set(["ar", "en"], forKey: "AppleLanguages")
 //            Bundle.b_setLanguage(language.rawValue)
@@ -106,4 +106,6 @@ public class BotterSettingsManager  {
 public enum b_Language : String{
     case arabic = "ar"
     case english = "en"
+    case french = "fr"
+
 }

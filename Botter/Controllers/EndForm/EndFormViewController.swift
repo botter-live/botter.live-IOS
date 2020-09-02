@@ -27,6 +27,19 @@ class b_EndFormViewController: b_LocalizableViewController {
         // Do any additional setup after loading the self.
     }
     
+    func validateForm(){
+           var isValid = true
+           for cell in self.dataCells{
+               if let mCell = cell as? BasicFormTableViewCell{
+                   isValid = mCell.validateFormInput() && isValid
+               }
+           }
+           
+           if isValid {
+//               submitForm()
+           }
+       }
+    
     @IBAction func botterWebsiteClicked (){
         CommonActions.botterSiteClicked()
     }

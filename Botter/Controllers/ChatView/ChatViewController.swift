@@ -61,23 +61,41 @@ final class b_ChatViewController: UIViewController {
     }
     
     override func b_backDismiss(_ sender: Any) {
-        self.b_areYouSureMsg(Msg: "Are you sure, you want to close the chat?".b_localize()) { (isYes) in
-            if isYes{
-                if b_ChatViewController.botData.endForm.inputs.count > 0 {
-                    //                    self.presenter.openEndForm(form: self.botData.endForm)
-                    if self.history{
-                        self.presentingViewController?.dismiss(animated: true, completion: nil)
-                    }else{
-                        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-                    }
-                }else{
-                    if self.history{
-                        self.presentingViewController?.dismiss(animated: true, completion: nil)
-                    }else{
-                        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-                    }
-                }
-            }
+        
+        let alert = UIAlertController(title: "Are you sure, you want to close the chat?".b_localize() , message: "" , preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel".b_localize() , style: UIAlertAction.Style.cancel , handler: {(UIAlertAction) in
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Will come back later".b_localize() , style: UIAlertAction.Style.default , handler: {(UIAlertAction) in
+            self.close()
+        }
+            
+        ))
+        alert.addAction(UIAlertAction(title: "End Session".b_localize() , style: UIAlertAction.Style.default , handler: {(UIAlertAction) in
+            self.endSession()
+        }
+            
+        ))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func endSession(){
+        self.presenter.endSession()
+        ChatSessionManager.shared.setActiveSession(active: false)
+        if b_ChatViewController.botData.endForm.inputs.count > 0 {
+            self.presenter.openEndForm(form: b_ChatViewController.botData.endForm)
+        }else{
+            close()
+        }
+    }
+    
+    func close(){
+        if self.history{
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        }else{
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -101,7 +119,7 @@ final class b_ChatViewController: UIViewController {
     @IBAction func openAttachments (){
         b_AttachFileViewController.open(in: self) { (file) in
             self.presenter.sendAttachment(file: file)
-        }
+      }
     }
     
     @IBAction func sendMesg(){
@@ -385,16 +403,15 @@ extension b_ChatViewController : UITableViewDataSource{
             return cell ?? UITableViewCell()
         case .userMsg  :
             let cell = tableView.dequeueReusableCell(withIdentifier: msg.msgSent ? "UserChatTableViewCell" : "UserFaildChatTableViewCell") as? UserChatTableViewCell
-            
             cell?.setData(msg: msg )
             cell?.resendAction = { myMsg in
                 self.presenter.resend(msg: myMsg)
             }
             return cell ?? UITableViewCell()
-        case .userImage :
+        case .userImage, .userLocation:
             let cell = tableView.dequeueReusableCell(withIdentifier:  "UserImageTableViewCell" ) as? UserImageTableViewCell
             
-            cell?.setData(msg: msg )
+            cell?.setData(msg: msg)
             //                cell?.resendAction = { myMsg in
             //                    self.presenter.resend(msg: myMsg)
             //                }
@@ -427,6 +444,12 @@ extension b_ChatViewController : UITableViewDelegate{
             return 0
         }
         return UITableView.automaticDimension
+    }
+}
+
+extension b_ChatViewController : UserLoadationDelegate {
+    func shareUserLocation(latitude: Double, langtuide: Double) {
+            presenter.sendUserLocation(latitude: latitude, langtuide: langtuide)
     }
 }
 

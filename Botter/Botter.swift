@@ -51,9 +51,10 @@ public func showLauncherButton(){
 }
 
 internal func openChat(parent : UIViewController){
+//    let isFirst = B_SocketManager.first && !ChatSessionManager.shared.hasActiveSession()
     if B_SocketManager.first {
-        let chatScreen = StartFormWireframe.init()
-        parent.present(chatScreen.viewController, animated: true , completion: nil)
+        let startForm = StartFormWireframe.init()
+        parent.present(startForm.viewController, animated: true , completion: nil)
         //    WebLinksViewController.openInParent(link: "https://aldawaa.bluecrunch.org/", parent: parent)
     }else{
         CommonActions.openChat(parent: parent, data: b_ChatViewController.botData)

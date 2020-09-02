@@ -39,6 +39,10 @@ class b_BasicMessage :  Mappable {
     var notifyText : String
     var sender : b_Sender
     let lazyImage = LazyImage()
+    var latitude : Double?
+    var langtude : Double?
+
+    
     
     init(){
         type = ""
@@ -85,6 +89,9 @@ class b_BasicMessage :  Mappable {
         invoice <- map["data"]
         notifyText <- map["notify_text"]
         sender <- map["sender"]
+        latitude <- map["latitude"]
+        langtude <- map["langtude"]
+
         
         if msgType == .audio{
             handleAudio()
@@ -162,6 +169,7 @@ enum b_MessageType : String , Codable{
     case userImage = "image_attachment"
     case userInput = "user_input"
     case multiInput = "multi-input"
+    case userLocation = "user_location"
 }
 
 extension b_BasicMessage : AudioPlayerDelegate{

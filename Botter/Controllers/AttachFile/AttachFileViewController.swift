@@ -10,15 +10,20 @@ import UIKit
 import AVFoundation
 import MobileCoreServices
 import Photos
+import CoreLocation
 
 class b_AttachFileViewController: b_LocalizableViewController {
     
     @IBOutlet weak var tableView : UITableView!
-    
-    var actions = ["Camera" , "Gallery" , "File"]
+
+    var actions = ["Camera" , "Gallery" , "File","Current location"]
     let imagepicker = UIImagePickerController()
     var completion : ((b_AttachedFile)->())!
     var loader = b_LoaderManager()
+    var locationManager: CLLocationManager!
+    var userLocationDelegate : UserLoadationDelegate?
+    var latitude : Double?
+    var longitude: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +34,10 @@ class b_AttachFileViewController: b_LocalizableViewController {
         } else {
             // Fallback on earlier versions
         }
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
     }
     
     
@@ -38,6 +47,7 @@ class b_AttachFileViewController: b_LocalizableViewController {
         vc.completion = { item in
             completion(item)
         }
+        vc.userLocationDelegate = parent as! b_ChatViewController
         let contentController = vc
         content = contentController
         let contentSheet = ContentSheet(content: content)
@@ -50,11 +60,11 @@ class b_AttachFileViewController: b_LocalizableViewController {
     }
     
     override func collapsedHeight(containedIn contentSheet: ContentSheet) -> CGFloat {
-           return 300
+           return 350
        }
        
        override func expandedHeight(containedIn contentSheet: ContentSheet) -> CGFloat {
-           return 300
+           return 350
        }
     
     func showLoader() {
@@ -198,9 +208,39 @@ extension b_AttachFileViewController : UITableViewDelegate{
         case 2:
             pickFile()
             break
+        case 3:
+            checkUserLocationPermission()
+            break
         default:
             break
         }
+    }
+    
+    func checkUserLocationPermission()  {
+        
+        if CLLocationManager.locationServicesEnabled()
+            {
+                switch(CLLocationManager.authorizationStatus())
+                {
+                  case .notDetermined:
+                        locationManager.requestWhenInUseAuthorization()
+                        break
+                  case .authorizedWhenInUse, .authorizedAlways :
+                             // If authorized when in use
+                            userLocationDelegate?.shareUserLocation(latitude: latitude ?? 0.0, langtuide: longitude ?? 0.0)
+                            self.dismiss(animated: true, completion: nil)
+                             break
+                         case .restricted:
+                             // If restricted by e.g. parental controls. User can't enable Location Services
+                             break
+                         case .denied:
+                            // grant access from Settings.app
+                                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                             break
+                         default:
+                             break
+                }
+            }
     }
     
 }
@@ -298,10 +338,23 @@ extension b_AttachFileViewController : UIDocumentPickerDelegate{
          uploadUrl(url: url.absoluteString)
     }
 
-
-
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         print("view was cancelled")
         dismiss(animated: true, completion: nil)
     }
+}
+
+extension b_AttachFileViewController : CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let userLocation: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        self.latitude = userLocation.latitude
+        self.longitude = userLocation.longitude
+        print("locations = \(userLocation.latitude) \(userLocation.longitude)")
+
+    }
+}
+
+protocol UserLoadationDelegate {
+    func shareUserLocation(latitude : Double, langtuide : Double)
 }

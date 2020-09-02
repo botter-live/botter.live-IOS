@@ -166,4 +166,31 @@ extension b_ChatInteractor: ChatInteractorInterface {
             completion(Message)
         }
     }
+    
+    func sendUserLocation(latitude : Double ,langtuide langtude : Double, completion:@escaping((b_BasicMessage)->())){
+          let Message = b_BasicMessage()
+          Message.type = "message"
+          Message.isBotMsg = false
+          Message.latitude = latitude
+          Message.langtude = langtude
+          Message.slug = "user_location"
+          Message.msgType = .userLocation
+          Message.sender.senderType = .user
+          self.presenter.clearTextBox()
+          
+          if B_SocketManager.shared.isConnected{
+              B_SocketManager.shared.sendUserLocation(latitude: latitude, langtude: langtude) { isSent in
+                  completion(Message)
+              }
+          }else{
+              B_SocketManager.shared.connect()
+              Message.msgSent = false
+              completion(Message)
+          }
+    }
+    
+    func endSession() {
+        B_SocketManager.shared.endSession()
+    }
+        
 }
