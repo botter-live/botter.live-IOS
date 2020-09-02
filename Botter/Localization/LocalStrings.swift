@@ -82,6 +82,10 @@ class LocalStrings {
         "Answer is required" : "ادخل اجابة" ,
         "     New conversation " : "   بدأ المحادثة" ,
         "Write something here …" : "اكتب شيئاً..." ,
+        "Will come back later" : "سأعود لاحقاً" ,
+        "End Session" : "انهى المحادثة" ,
+        "Last conversation" : "اخر محادثة" ,
+        "    Continue conversation " : "  اكمل المحادثة",
 //        "Done" : "تم"
     ]
 }

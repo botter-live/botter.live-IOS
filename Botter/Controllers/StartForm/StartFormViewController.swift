@@ -15,6 +15,7 @@ final class b_StartFormViewController: b_StartConversationViewController {
     // MARK: - Public properties -
     var faqsList = [b_FaqData]()
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var continueSessionView : b_AllSidsCardView!
     @IBOutlet weak var searchBox : SearchBox!
     
     
@@ -26,6 +27,13 @@ final class b_StartFormViewController: b_StartConversationViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if ChatSessionManager.shared.hasActiveSession(){
+            updateHeaderHeight(height: 400)
+            continueSessionView.isHidden = false
+        }else{
+            updateHeaderHeight(height: 268)
+            continueSessionView.isHidden = true
+        }
         presenter.loadForms()
         searchBox.cParent = self
         searchBox.isHidden = !BotterSettingsManager.hasFAQs
@@ -42,9 +50,12 @@ final class b_StartFormViewController: b_StartConversationViewController {
     
    
     
-   
+   @IBAction func continueConversationClicked(){
+       CommonActions.openChat(parent: self, data: b_BotData())
+   }
     
     override func newConversationClicked() {
+        ChatSessionManager.shared.setActiveSession(active: false)
         self.presenter.validateThenSubmitForm()
     }
     
@@ -62,6 +73,12 @@ extension b_StartFormViewController: StartFormViewInterface {
     func updateFooterHeight(height : Int){
         
         tableView.tableFooterView?.frame.size = CGSize(width: tableView.frame.width, height: CGFloat(height))
+        tableView.reloadData()
+    }
+    
+    func updateHeaderHeight(height : Int){
+        
+        tableView.tableHeaderView?.frame.size = CGSize(width: tableView.frame.width, height: CGFloat(height))
         tableView.reloadData()
     }
     

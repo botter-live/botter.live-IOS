@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 //import Starscream
 
 class B_SocketManager : WebSocketDelegate  {
@@ -20,6 +21,7 @@ class B_SocketManager : WebSocketDelegate  {
     var pingCheck = true
     var channel = "mobile-ios"
     var attributes : [[String:Any]]!
+    var sendOpening = true
     var isConnected = false {
         didSet{
             if !isConnected{
@@ -49,13 +51,14 @@ class B_SocketManager : WebSocketDelegate  {
     static var first = true
     
     func getUserId()->String{
-        if let id = UserDefaults.standard.value(forKey: "guid") as? String{
-            return id
-        }else{
-            let id = UUID().uuidString
-            UserDefaults.standard.set(id, forKey: "guid")
-            return id
-        }
+        //        if let id = UserDefaults.standard.value(forKey: "guid") as? String{
+        //            return id
+        //        }else{
+        //            let id = UUID().uuidString
+        //            UserDefaults.standard.set(id, forKey: "guid")
+        //            return id
+        //        }
+        return UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
     }
     
     func connect(){
@@ -65,7 +68,7 @@ class B_SocketManager : WebSocketDelegate  {
         let gamma = "wss://botter-gateway-web.gamma.botter.live/"
         let test = "wss://botter-gateway-web.botter.live/"
         let prod = "wss://web.gateway.prod.botter.live"
-        var request = URLRequest(url: URL(string: prod )!)
+        var request = URLRequest(url: URL(string: gamma )!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
@@ -99,7 +102,10 @@ class B_SocketManager : WebSocketDelegate  {
             isConnected = true
             pingCheck = true
             print("websocket is connected: \(headers)")
-            sendOpeningMessage()
+            if sendOpening {
+                sendOpeningMessage()
+                sendOpening = false
+            }
             
         case .disconnected(let reason, let code):
             isConnected = false
@@ -141,8 +147,11 @@ class B_SocketManager : WebSocketDelegate  {
     }
     
     
+    
     deinit {
-        socket.disconnect()
+        if socket != nil{
+            socket.disconnect()
+        }
         b_ReachabilityManager.shared.stopMonitoring()
     }
     
@@ -160,18 +169,20 @@ class B_SocketManager : WebSocketDelegate  {
         self.socket.write(ping: "PING".data(using: .utf8)!) {
             if self.isConnected{
                 self.socket.write(string: msgString)
-//                self.sendOpeningMessage()
+                //                self.sendOpeningMessage()
             }
         }
     }
     
     func sendOpeningMessage(){
+        let isFirst = B_SocketManager.first && !ChatSessionManager.shared.hasActiveSession()
         let msg = ["bot_id": BotterSettingsManager.BotID ,
                    "channel": channel ,
-                   "type": B_SocketManager.first ? "hello"  : "welcome_back",
+                   "type": isFirst  ? "hello"  : "welcome_back",
                    "user": guid ,
                    "user_profile": ""]
         let msgString = json(from: msg) ?? ""
+        ChatSessionManager.shared.setActiveSession(active: true)
         self.socket.write(ping: "PING".data(using: .utf8)!) {
             if self.isConnected{
                 self.socket.write(string: msgString)
@@ -181,6 +192,22 @@ class B_SocketManager : WebSocketDelegate  {
                 }
             }
         }
+    }
+    
+    func endSession(){
+        let msg = ["bot_id": BotterSettingsManager.BotID ,
+                   "channel": channel ,
+                   "type":  "end_conversation",
+                   "user": guid ,
+                   "user_profile": ""]
+        let msgString = json(from: msg) ?? ""
+        self.socket.write(ping: "PING".data(using: .utf8)!) {
+            if self.isConnected{
+                self.socket.write(string: msgString)
+            }
+        }
+        B_SocketManager.first = true
+        B_SocketManager.shared = B_SocketManager()
     }
     
     func sendMessage(text : String , completion:@escaping((Bool)->())){
@@ -206,12 +233,37 @@ class B_SocketManager : WebSocketDelegate  {
         
     }
     
+    func sendUserLocation(latitude : Double , langtude : Double,  completion:@escaping((Bool)->())){
+        let msg = [
+            "bot_id": BotterSettingsManager.BotID ,
+            "channel": channel ,
+            "type": "message" ,
+            "latitude" : latitude,
+            "langtude": langtude,
+            "user": guid ,
+            "slug" : "user_location" ,
+            "user_profile": ""] as [String : Any]
+        
+        let msgString = json(from: msg) ?? ""
+        self.socket.write(ping: "PING".data(using: .utf8)!) {
+            if self.isConnected {
+                self.socket.write(string: msgString) {
+                    DispatchQueue.main.async {
+                        // your code here
+                        completion(self.isConnected && b_ReachabilityManager.shared.isNetworkAvailable)
+                    }
+                }
+            }
+        }
+        
+    }
+    
     func sendAttachment(file : b_AttachedFile , completion:@escaping((Bool)->())){
         
         let dataStr =  ["attachment_type" : file.type ,
-                                    "type": "attachment" ,
-                                    "url" : file.url ,
-                   ]
+                        "type": "attachment" ,
+                        "url" : file.url ,
+        ]
         var msg = ["bot_id": BotterSettingsManager.BotID ,
                    "channel": channel ,
                    "user": guid ,
@@ -221,7 +273,7 @@ class B_SocketManager : WebSocketDelegate  {
                    "user_profile": ""] as [String : Any]
         
         if file.type != "image"{
-           msg["file_name"] = file.name
+            msg["file_name"] = file.name
         }
         
         let msgString = json(from: msg) ?? ""
@@ -237,7 +289,7 @@ class B_SocketManager : WebSocketDelegate  {
         }
         
     }
-
+    
     
     func sendPostBack(value : String , title : String , slug : String = "" , completion:@escaping((Bool)->())){
         //        if isConnected {

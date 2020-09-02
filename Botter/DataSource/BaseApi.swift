@@ -13,10 +13,16 @@ class BaseDataSource : Any {
     
     struct  Constants {
         static var STAGING_URL = "https://gamma-api.botter.live/"
+        static var STAGING_UPLOAD = "https://uploads.gamma.botter.live/api/file/upload"
+        
         static var PRODUCTION_URL = "https://prod-api.botter.live/"
+        static var PROD_UPLOAD = "https://uploads.prod.botter.live/api/file/upload"
+        
         static var BASE_URL = PRODUCTION_URL
         static var BOTTER_DATA = BASE_URL + "widget/data/"
         static var FAQ_DATA = BASE_URL + "widget/faqs/"
+        static var UPLOAD_URL = PROD_UPLOAD
+        
         static var UPLOAD_ATTACHMENT = BASE_URL + "api/file/upload"
     }
     
@@ -74,7 +80,7 @@ class BaseDataSource : Any {
         let headers: HTTPHeaders
         headers = ["Content-type": "multipart/form-data",
                    "Accept" : "application/json"]
-        let url = try! URLRequest.init(url: "https://uploads.gamma.botter.live/api/file/upload", method: .post, headers: headers)
+        let url = try! URLRequest.init(url: Constants.UPLOAD_URL, method: .post, headers: headers)
         
         
         AF.upload(multipartFormData: { (form) in

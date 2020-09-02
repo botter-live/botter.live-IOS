@@ -42,7 +42,8 @@ protocol ChatPresenterInterface: b_PresenterInterface {
     func openEndForm(form : b_Form)
     func sendMenuAction(action : b_MenuItem)
     func sendAttachment(file : b_AttachedFile)
-    
+    func sendUserLocation(latitude : Double, langtuide: Double)
+    func endSession()
 }
 
 protocol ChatInteractorInterface: b_InteractorInterface {
@@ -53,5 +54,6 @@ protocol ChatInteractorInterface: b_InteractorInterface {
     func resend(msg: b_BasicMessage , completion:@escaping((Bool)->()))
     func sendMenuAction(action : b_MenuItem ,completion:@escaping((b_BasicMessage)->()))
     func sendAttachment(file : b_AttachedFile,completion:@escaping((b_BasicMessage)->()))
-    
+    func sendUserLocation(latitude : Double, langtuide: Double ,completion:@escaping((b_BasicMessage)->()))
+    func endSession()
 }

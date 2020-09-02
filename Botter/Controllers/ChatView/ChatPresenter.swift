@@ -11,17 +11,17 @@
 import Foundation
 
 final class b_ChatPresenter {
-
+    
     // MARK: - Private properties -
-
+    
     private unowned let view: ChatViewInterface
     private let interactor: ChatInteractorInterface
     private let wireframe: ChatWireframeInterface
-
+    
     var messgesList : [b_BasicMessage]!
     
     // MARK: - Lifecycle -
-
+    
     init(view: ChatViewInterface, interactor: ChatInteractorInterface, wireframe: ChatWireframeInterface) {
         self.view = view
         self.interactor = interactor
@@ -33,12 +33,14 @@ final class b_ChatPresenter {
 // MARK: - Extensions -
 
 extension b_ChatPresenter: ChatPresenterInterface {
+    
+    
     func openSocket() {
         self.interactor.openSocket()
         B_SocketManager.shared.connectionUpdated = {
-//            DispatchQueue.main.async {
-                self.view.connectionUpdated(isConnected: B_SocketManager.shared.isConnected)
-//            }
+            //            DispatchQueue.main.async {
+            self.view.connectionUpdated(isConnected: B_SocketManager.shared.isConnected)
+            //            }
             
         }
     }
@@ -50,7 +52,7 @@ extension b_ChatPresenter: ChatPresenterInterface {
         if message.msgType == .flightStatus{
             if message.flighStatus.introMessage != ""{
                 let nMessage = b_BasicMessage()
-//                nMessage = message
+                //                nMessage = message
                 nMessage.msgType = .text
                 nMessage.text = message.flighStatus.introMessage
                 nMessage.msgIndex = messgesList.count
@@ -103,11 +105,11 @@ extension b_ChatPresenter: ChatPresenterInterface {
     func triviaActionClicked(action: b_Action) {
         interactor.triviaMessage(action: action) { (msg) in
             self.messageReceived(message: msg)
-//            if let last = self.messgesList.last{
-//                if last.msgType != .dateTime{
-//                    self.messgesList[action.msgIndex].actions.removeAll()
-//                }
-//            }
+            //            if let last = self.messgesList.last{
+            //                if last.msgType != .dateTime{
+            //                    self.messgesList[action.msgIndex].actions.removeAll()
+            //                }
+            //            }
             self.messgesList[action.msgIndex].actions.removeAll()
             self.view.reload()
         }
@@ -119,7 +121,7 @@ extension b_ChatPresenter: ChatPresenterInterface {
             self.messgesList[msg.msgIndex].msgSent = isSent
             self.view.reload()
         }
-       
+        
     }
     
     func openUrl(url: String) {
@@ -139,5 +141,15 @@ extension b_ChatPresenter: ChatPresenterInterface {
             self.messageReceived(message: msg)
             self.view.reload()
         }
+    }
+    
+    func sendUserLocation(latitude: Double, langtuide: Double) {
+        self.interactor.sendUserLocation(latitude: latitude, langtuide: langtuide) { (Message) in
+            self.messageReceived(message: Message)
+        }
+    }
+    
+    func endSession() {
+        self.interactor.endSession()
     }
 }
