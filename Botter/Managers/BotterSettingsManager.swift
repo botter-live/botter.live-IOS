@@ -28,6 +28,7 @@ public class BotterSettingsManager  {
     public static var WelcomeMessage : String = "We’re here to answer your questions about Company. Ask us anything!"
     
     public static var logo : UIImage = UIImage(named: "botterIcon", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
+    public static var welcomeBrandLogo : UIImage = UIImage(named: "botterIcon", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     public static var chatIcon : UIImage = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     public static var agentAvatar : UIImage = UIImage(named: "agent", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     
@@ -40,7 +41,7 @@ public class BotterSettingsManager  {
         }
     }
     
-    public static var language : b_Language = .arabic {
+    public static var language : b_Language = .english {
         didSet{
 //            UserDefaults.standard.set(["ar", "en"], forKey: "AppleLanguages")
 //            Bundle.b_setLanguage(language.rawValue)

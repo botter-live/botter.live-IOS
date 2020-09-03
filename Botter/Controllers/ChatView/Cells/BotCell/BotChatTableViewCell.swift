@@ -54,6 +54,8 @@ class BotChatTableViewCell: UserChatTableViewCell {
                 }
             }else{
                 self.avatarImg.image = BotterSettingsManager.logo
+//                let image = BotterSettingsManager.logo.resize(scaledToWidth: self.avatarImg.frame.width)
+//                self.avatarImg.image = image
                 self.avatarImg.contentMode = .center
 //                setAvatar()
             }
@@ -92,4 +94,32 @@ class BotChatTableViewCell: UserChatTableViewCell {
         }
     }
     
+}
+extension UIImage {
+
+    func resize(targetSize: CGSize) -> UIImage {
+        return UIGraphicsImageRenderer(size:targetSize).image { _ in
+            self.draw(in: CGRect(origin: .zero, size: targetSize))
+        }
+    }
+    
+    func resize(scaledToWidth desiredWidth: CGFloat) -> UIImage {
+        let oldWidth = size.width
+        let scaleFactor = desiredWidth / oldWidth
+
+        let newHeight = size.height * scaleFactor
+        let newWidth = oldWidth * scaleFactor
+        let newSize = CGSize(width: newWidth, height: newHeight)
+
+        return resize(targetSize: newSize)
+    }
+
+    func resize(scaledToHeight desiredHeight: CGFloat) -> UIImage {
+        let scaleFactor = desiredHeight / size.height
+        let newWidth = size.width * scaleFactor
+        let newSize = CGSize(width: newWidth, height: desiredHeight)
+
+        return resize(targetSize: newSize)
+    }
+
 }

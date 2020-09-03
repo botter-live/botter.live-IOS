@@ -15,8 +15,8 @@ import CoreLocation
 class b_AttachFileViewController: b_LocalizableViewController {
     
     @IBOutlet weak var tableView : UITableView!
-
-    var actions = ["Camera" , "Gallery" , "File","Current location"]
+//,"Current location"
+    var actions = ["Camera" , "Gallery" , "File"]
     let imagepicker = UIImagePickerController()
     var completion : ((b_AttachedFile)->())!
     var loader = b_LoaderManager()

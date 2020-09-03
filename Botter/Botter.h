@@ -10,6 +10,7 @@
 //#import "UIView+WebCache.h"
 //#import "UIButton+WebCache.h"
 //#import "UIImageView+WebCache.h"
+#import "UIImageViewAligned.h"
 
 
 //! Project version number for BotterSDK.

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C016D4925010D7A000E2DC3 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C016D4825010D7A000E2DC3 /* HeaderTableViewCell.swift */; };
+		8C016D4D250118B7000E2DC3 /* UIImageViewAligned.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C016D4B250118B7000E2DC3 /* UIImageViewAligned.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C016D4E250118B7000E2DC3 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C016D4C250118B7000E2DC3 /* UIImageViewAligned.m */; };
 		8C1B446D24E34C8A00853B03 /* LocalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617F224E2FD420047F8E1 /* LocalStrings.swift */; };
 		8C1B446F24E34E4700853B03 /* b_LocalizableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B446E24E34E4700853B03 /* b_LocalizableViewController.swift */; };
 		8C1B44A324E56FCC00853B03 /* LazyImage+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449C24E56FCC00853B03 /* LazyImage+Error.swift */; };
@@ -232,6 +235,9 @@
 		15650C863BD6CB72862189F0 /* Pods-Botter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.debug.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.debug.xcconfig"; sourceTree = "<group>"; };
 		5247F0D3A14775DD496094C5 /* Pods_Botter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6B16FB1650DEB300BFA812 /* Pods-Botter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.release.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.release.xcconfig"; sourceTree = "<group>"; };
+		8C016D4825010D7A000E2DC3 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		8C016D4B250118B7000E2DC3 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
+		8C016D4C250118B7000E2DC3 /* UIImageViewAligned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAligned.m; sourceTree = "<group>"; };
 		8C08E7FE249298E300A2B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C08E800249298E300A2B984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C08E802249298E300A2B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -513,6 +519,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8C016D4A250118B7000E2DC3 /* UIImageViewAligned */ = {
+			isa = PBXGroup;
+			children = (
+				8C016D4B250118B7000E2DC3 /* UIImageViewAligned.h */,
+				8C016D4C250118B7000E2DC3 /* UIImageViewAligned.m */,
+			);
+			path = UIImageViewAligned;
+			sourceTree = "<group>";
+		};
 		8C08E7FD249298E300A2B984 /* BotterSample */ = {
 			isa = PBXGroup;
 			children = (
@@ -643,6 +658,7 @@
 				8C463AF124C0B6E400B78E96 /* TimeInputTableViewCell.swift */,
 				8C463AFE24C0C3F400B78E96 /* RadioInputTableViewCell.swift */,
 				8C463B0024C0C40600B78E96 /* SelectInputTableViewCell.swift */,
+				8C016D4825010D7A000E2DC3 /* HeaderTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -895,6 +911,7 @@
 		8CC4F4B0248CFCCA000692AE /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				8C016D4A250118B7000E2DC3 /* UIImageViewAligned */,
 				8C786A3924E0F04E004A826C /* Base VIPER Interfaces */,
 				8C83EE2A24D05C32000F2637 /* MimeType.swift */,
 				8CC4F4B1248CFCCA000692AE /* tagViewLayOut.swift */,
@@ -1175,6 +1192,7 @@
 			files = (
 				8CA2E8AE249A49C1002ADB42 /* SwiftyGif.h in Headers */,
 				8CC4F4A8248CFBA4000692AE /* Botter.h in Headers */,
+				8C016D4D250118B7000E2DC3 /* UIImageViewAligned.h in Headers */,
 				8CC4F6E7248D1C3E000692AE /* BotterSDK-Bridging-Header.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1369,6 +1387,7 @@
 				8C84B57F24C725AE00996861 /* menuViewController.swift in Sources */,
 				8CAB89E824913569009BBAB6 /* RetryEventProducer.swift in Sources */,
 				8CC4F681248D17A9000692AE /* TransformOperators.swift in Sources */,
+				8C016D4E250118B7000E2DC3 /* UIImageViewAligned.m in Sources */,
 				8CC4F555248CFCCC000692AE /* UIView.swift in Sources */,
 				8CC4F6CD248D180D000692AE /* ContentSheetTransitionDelegate.swift in Sources */,
 				8CA2E8B5249A63D8002ADB42 /* MapTableViewCell.swift in Sources */,
@@ -1473,6 +1492,7 @@
 				8CC4F561248CFCCC000692AE /* UIViewController.swift in Sources */,
 				8CC4F6E1248D18C8000692AE /* Transport.swift in Sources */,
 				8C5592BE24B47C6800B23BCC /* FlightTicketTableViewCell.swift in Sources */,
+				8C016D4925010D7A000E2DC3 /* HeaderTableViewCell.swift in Sources */,
 				8CC4F53F248CFCCC000692AE /* BasicMessage.swift in Sources */,
 				8C83EE2F24D06CB8000F2637 /* AttchedFile.swift in Sources */,
 				8C214A7A24C75F91008C2225 /* SearchBox.swift in Sources */,
