@@ -175,11 +175,31 @@ class b_HeaderLogo : UIImageView{
     override func awakeFromNib() {
         super.awakeFromNib()
         tintColor = BotterSettingsManager.AccentColor
-        if BotterSettingsManager.logo != nil {
-            image = BotterSettingsManager.logo
+        if self.tag == 101{
+            if BotterSettingsManager.welcomeBrandLogo != nil {
+                image = BotterSettingsManager.welcomeBrandLogo
+            }
+        }else if self.tag == 100{
+            
+        }else{
+            if BotterSettingsManager.logo != nil {
+                image = BotterSettingsManager.logo
+            }
         }
     }
 }
+
+class b_WelcomeHeaderLogo : UIImageViewAligned{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        tintColor = BotterSettingsManager.AccentColor
+        if BotterSettingsManager.welcomeBrandLogo != nil {
+            image = BotterSettingsManager.welcomeBrandLogo
+        }
+        self.alignLeft = true
+    }
+}
+
 
 class chatView : UIView{
     override class func awakeFromNib() {
