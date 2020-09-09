@@ -18,6 +18,7 @@ final class b_ChatViewController: UIViewController {
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var chatView : b_TextBoxFeild!
     @IBOutlet weak var bottomConstraint : NSLayoutConstraint!
+    @IBOutlet weak var heightConstraint : NSLayoutConstraint!
     @IBOutlet weak var connectionErrorView : UIView!
     @IBOutlet weak var menuBtn : b_AccentBtn!
     
@@ -58,6 +59,8 @@ final class b_ChatViewController: UIViewController {
         tableView.registerBotterCellNib(NotifyTableViewCell.self)
         tableView.registerBotterCellNib(UserImageTableViewCell.self)
         tableView.registerBotterCellNib(AttachmentTableViewCell.self)
+        tableView.registerBotterCellNib(TextInputCardTableViewCell.self)
+        tableView.registerBotterCellNib(AttachmentInputCardTableViewCell.self)
     }
     
     override func b_backDismiss(_ sender: Any) {
@@ -83,12 +86,14 @@ final class b_ChatViewController: UIViewController {
     
     func endSession(){
         self.presenter.endSession()
-        ChatSessionManager.shared.setActiveSession(active: false)
-        if b_ChatViewController.botData.endForm.inputs.count > 0 {
-            self.presenter.openEndForm(form: b_ChatViewController.botData.endForm)
-        }else{
-            close()
-        }
+        ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
+//        if b_ChatViewController.botData.endForm.inputs.count > 0 {
+//            self.presenter.openEndForm(form: b_ChatViewController.botData.endForm, isHistory : self.history)
+//
+//        }else{
+//            close()
+//        }
+          close()
     }
     
     func close(){
@@ -119,7 +124,7 @@ final class b_ChatViewController: UIViewController {
     @IBAction func openAttachments (){
         b_AttachFileViewController.open(in: self) { (file) in
             self.presenter.sendAttachment(file: file)
-      }
+        }
     }
     
     @IBAction func sendMesg(){
@@ -148,8 +153,13 @@ extension b_ChatViewController: ChatViewInterface {
         self.tableView.reloadData()
         if self.presenter.messgesList.count > 0 {
             self.tableView.scrollToRow(at: IndexPath.init(row: self.presenter.messgesList.count - 1 , section: 0), at: .bottom, animated: false)
+            
         }
+        
+        
     }
+    
+    
 }
 
 
@@ -228,7 +238,7 @@ extension b_ChatViewController {
     //        }
     //    }
     
-     override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         B_SocketManager.shared.connect()
     }
@@ -247,11 +257,11 @@ extension b_ChatViewController {
     func startListen() {
         NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
-
+    
     func stopListen() {
         NotificationCenter.default.removeObserver(self)
     }
-
+    
     @objc func applicationWillEnterForeground(_ notification: NSNotification) {
         print("App moved to foreground!")
         B_SocketManager.shared.connect()
@@ -322,6 +332,16 @@ extension b_ChatViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let msg = presenter.messgesList[indexPath.row]
+        if (msg.msgType == .userInput && indexPath.row == presenter.messgesList.count - 1) || (msg.msgType == .triviaQuestion && indexPath.row == presenter.messgesList.count - 1){
+            if heightConstraint.constant == 65{
+                self.view.endEditing(true)
+            }
+            heightConstraint.constant = 0
+            
+        }else{
+            heightConstraint.constant = 65
+        }
+        ChatSessionManager.shared.setActiveSessionMessage(msg: msg)
         switch msg.msgType {
         case .image:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageBotTableViewCell") as? ImageBotTableViewCell
@@ -421,6 +441,20 @@ extension b_ChatViewController : UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentTableViewCell") as? AttachmentTableViewCell
             cell?.setData(msg: msg)
             return cell ?? UITableViewCell()
+        case .userInput:
+            if msg.prompt.typeString.lowercased() == "file"{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentInputCardTableViewCell") as? AttachmentInputCardTableViewCell
+                cell?.setData(msg: msg, showIcon: checkIfLastBotInput(index: indexPath.row), completion: {
+                    self.openAttachments()
+                })
+                return cell ?? UITableViewCell()
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TextInputCardTableViewCell") as? TextInputCardTableViewCell
+                cell?.setData(msg: msg, showIcon: checkIfLastBotInput(index: indexPath.row), completion: { (answer) in
+                    self.presenter.sendMessage(text: answer)
+                })
+                return cell ?? UITableViewCell()
+            }
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BotChatTableViewCell") as? BotChatTableViewCell
             cell?.setData(msg: msg , showIcon: checkIfLastBotInput(index: indexPath.row))
@@ -449,7 +483,7 @@ extension b_ChatViewController : UITableViewDelegate{
 
 extension b_ChatViewController : UserLoadationDelegate {
     func shareUserLocation(latitude: Double, langtuide: Double) {
-            presenter.sendUserLocation(latitude: latitude, langtuide: langtuide)
+        presenter.sendUserLocation(latitude: latitude, langtuide: langtuide)
     }
 }
 

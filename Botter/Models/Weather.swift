@@ -8,7 +8,7 @@
 
 import Foundation
 
-class b_Weather : Mappable{
+class b_Weather : Mappable , Codable{
     var area : String
     var imageUrl : String
     var temp : String

@@ -17,19 +17,23 @@ final class b_StartFormViewController: b_StartConversationViewController {
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var continueSessionView : b_AllSidsCardView!
     @IBOutlet weak var searchBox : SearchBox!
-    
+    @IBOutlet weak var oldConvName : b_BasicMediumLbl!
+    @IBOutlet weak var oldConvText : b_BasicMediumLbl!
     
     var presenter: StartFormPresenterInterface!
     
     var loader = b_LoaderManager()
+    
     
     // MARK: - Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if ChatSessionManager.shared.hasActiveSession(){
-            updateHeaderHeight(height: 400)
+            updateHeaderHeight(height: 420)
             continueSessionView.isHidden = false
+            oldConvName.text = BotterSettingsManager.ChatTitleText
+            oldConvText.text = ChatSessionManager.shared.getActiveSessionMsg()
         }else{
             updateHeaderHeight(height: 268)
             continueSessionView.isHidden = true
@@ -55,9 +59,10 @@ final class b_StartFormViewController: b_StartConversationViewController {
    }
     
     override func newConversationClicked() {
-        ChatSessionManager.shared.setActiveSession(active: false)
+        ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
         self.presenter.validateThenSubmitForm()
     }
+    
     
     
 }

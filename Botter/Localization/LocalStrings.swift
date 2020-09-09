@@ -86,6 +86,11 @@ class LocalStrings {
         "End Session" : "انهى المحادثة" ,
         "Last conversation" : "اخر محادثة" ,
         "    Continue conversation " : "  اكمل المحادثة",
+        "Agent" : "العامل" ,
+        "Bot" : "المساعد الذكى" ,
+        "You" : "انت" ,
+        "Attachment" : "ملف مرفق" ,
+        "Continue the conversation" : "اكمل المحادثة" ,
 //        "Done" : "تم"
     ]
 }

@@ -14,6 +14,7 @@ class b_EndFormViewController: b_LocalizableViewController {
     
     var form = b_Form()
     var dataCells = [UITableViewCell]()
+    var history = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,11 @@ class b_EndFormViewController: b_LocalizableViewController {
     }
     
     override func b_backDismiss(_ sender: Any) {
-        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        if history{
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        }else{
+            self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
     }
     
     func getCells(){

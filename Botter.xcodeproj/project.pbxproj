@@ -10,6 +10,7 @@
 		8C016D4925010D7A000E2DC3 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C016D4825010D7A000E2DC3 /* HeaderTableViewCell.swift */; };
 		8C016D4D250118B7000E2DC3 /* UIImageViewAligned.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C016D4B250118B7000E2DC3 /* UIImageViewAligned.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C016D4E250118B7000E2DC3 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C016D4C250118B7000E2DC3 /* UIImageViewAligned.m */; };
+		8C016D5025016014000E2DC3 /* CachingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C016D4F25016014000E2DC3 /* CachingModel.swift */; };
 		8C1B446D24E34C8A00853B03 /* LocalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD617F224E2FD420047F8E1 /* LocalStrings.swift */; };
 		8C1B446F24E34E4700853B03 /* b_LocalizableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B446E24E34E4700853B03 /* b_LocalizableViewController.swift */; };
 		8C1B44A324E56FCC00853B03 /* LazyImage+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B449C24E56FCC00853B03 /* LazyImage+Error.swift */; };
@@ -61,6 +62,11 @@
 		8C5592BF24B47C6800B23BCC /* FlightTicketTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5592BD24B47C6800B23BCC /* FlightTicketTableViewCell.xib */; };
 		8C5592C124B4D8A200B23BCC /* FlightTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5592C024B4D8A200B23BCC /* FlightTicket.swift */; };
 		8C5B39BB24966AD500C3CFF2 /* TriviaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5B39BA24966AD500C3CFF2 /* TriviaTableViewCell.swift */; };
+		8C5D4A34250544C600B082B1 /* Prombet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5D4A33250544C600B082B1 /* Prombet.swift */; };
+		8C5D4A372505463D00B082B1 /* TextInputCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5D4A352505463D00B082B1 /* TextInputCardTableViewCell.swift */; };
+		8C5D4A382505463D00B082B1 /* TextInputCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5D4A362505463D00B082B1 /* TextInputCardTableViewCell.xib */; };
+		8C5D4A3F2506869300B082B1 /* AttachmentInputCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5D4A3D2506869300B082B1 /* AttachmentInputCardTableViewCell.swift */; };
+		8C5D4A402506869300B082B1 /* AttachmentInputCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5D4A3E2506869300B082B1 /* AttachmentInputCardTableViewCell.xib */; };
 		8C660F3824B77E8700CFB577 /* InvoiceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C660F3724B77E8700CFB577 /* InvoiceDetailsViewController.swift */; };
 		8C660F3C24B77EBF00CFB577 /* ElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C660F3B24B77EBF00CFB577 /* ElementTableViewCell.swift */; };
 		8C660F3E24B77F3600CFB577 /* BasicInvoiceItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C660F3D24B77F3600CFB577 /* BasicInvoiceItemTableViewCell.swift */; };
@@ -238,6 +244,7 @@
 		8C016D4825010D7A000E2DC3 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		8C016D4B250118B7000E2DC3 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
 		8C016D4C250118B7000E2DC3 /* UIImageViewAligned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAligned.m; sourceTree = "<group>"; };
+		8C016D4F25016014000E2DC3 /* CachingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingModel.swift; sourceTree = "<group>"; };
 		8C08E7FE249298E300A2B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C08E800249298E300A2B984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C08E802249298E300A2B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -305,6 +312,11 @@
 		8C5592BD24B47C6800B23BCC /* FlightTicketTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightTicketTableViewCell.xib; sourceTree = "<group>"; };
 		8C5592C024B4D8A200B23BCC /* FlightTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTicket.swift; sourceTree = "<group>"; };
 		8C5B39BA24966AD500C3CFF2 /* TriviaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaTableViewCell.swift; sourceTree = "<group>"; };
+		8C5D4A33250544C600B082B1 /* Prombet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prombet.swift; sourceTree = "<group>"; };
+		8C5D4A352505463D00B082B1 /* TextInputCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputCardTableViewCell.swift; sourceTree = "<group>"; };
+		8C5D4A362505463D00B082B1 /* TextInputCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextInputCardTableViewCell.xib; sourceTree = "<group>"; };
+		8C5D4A3D2506869300B082B1 /* AttachmentInputCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentInputCardTableViewCell.swift; sourceTree = "<group>"; };
+		8C5D4A3E2506869300B082B1 /* AttachmentInputCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttachmentInputCardTableViewCell.xib; sourceTree = "<group>"; };
 		8C660F3724B77E8700CFB577 /* InvoiceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceDetailsViewController.swift; sourceTree = "<group>"; };
 		8C660F3B24B77EBF00CFB577 /* ElementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTableViewCell.swift; sourceTree = "<group>"; };
 		8C660F3D24B77F3600CFB577 /* BasicInvoiceItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInvoiceItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -674,6 +686,17 @@
 			path = SelectionCells;
 			sourceTree = "<group>";
 		};
+		8C5D4A2A25052FAC00B082B1 /* InputCards */ = {
+			isa = PBXGroup;
+			children = (
+				8C5D4A3D2506869300B082B1 /* AttachmentInputCardTableViewCell.swift */,
+				8C5D4A3E2506869300B082B1 /* AttachmentInputCardTableViewCell.xib */,
+				8C5D4A352505463D00B082B1 /* TextInputCardTableViewCell.swift */,
+				8C5D4A362505463D00B082B1 /* TextInputCardTableViewCell.xib */,
+			);
+			path = InputCards;
+			sourceTree = "<group>";
+		};
 		8C660F3924B77E9C00CFB577 /* InvoiceDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -965,6 +988,7 @@
 				8C84B57B24C6015400996861 /* Menu.swift */,
 				8C83EE2E24D06CB8000F2637 /* AttchedFile.swift */,
 				8C83EE3A24D9AC74000F2637 /* History.swift */,
+				8C5D4A33250544C600B082B1 /* Prombet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1013,6 +1037,7 @@
 		8CC4F4EA248CFCCB000692AE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8C5D4A2A25052FAC00B082B1 /* InputCards */,
 				8C83EE3124D18ACA000F2637 /* BotCell */,
 				8C83EE3024D18AAC000F2637 /* UserCells */,
 			);
@@ -1045,6 +1070,7 @@
 		8CC4F512248CFCCC000692AE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8C016D4F25016014000E2DC3 /* CachingModel.swift */,
 				8CC4F514248CFCCC000692AE /* MyUtils.swift */,
 				8C1B44AA24E5E7AB00853B03 /* TextFormater.swift */,
 			);
@@ -1259,6 +1285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CE8351724E0243D0007244E /* BotterInfo.plist in Resources */,
+				8C5D4A382505463D00B082B1 /* TextInputCardTableViewCell.xib in Resources */,
 				8C5592BF24B47C6800B23BCC /* FlightTicketTableViewCell.xib in Resources */,
 				8CC4F534248CFCCC000692AE /* b_LoaderView.xib in Resources */,
 				8C77A6B524B6101500549FE2 /* FlightStatusTableViewCell.xib in Resources */,
@@ -1267,6 +1294,7 @@
 				8CAACE0424B721220012C078 /* InvoiceTableViewCell.xib in Resources */,
 				8CC4F543248CFCCC000692AE /* B_Chat.storyboard in Resources */,
 				8CC4F54B248CFCCC000692AE /* TagCollectionViewCell.xib in Resources */,
+				8C5D4A402506869300B082B1 /* AttachmentInputCardTableViewCell.xib in Resources */,
 				8C463AF924C0C10200B78E96 /* RadioCollectionViewCell.xib in Resources */,
 				8CD617EF24E2F4E70047F8E1 /* Localizable.strings in Resources */,
 				8CC4F541248CFCCC000692AE /* Assets.xcassets in Resources */,
@@ -1366,6 +1394,7 @@
 				8CC4F683248D17A9000692AE /* ImmutableMappable.swift in Sources */,
 				8CFC70A3248FCE31006C677B /* GallaryItem.swift in Sources */,
 				8C786A4224E0F04F004A826C /* UIStoryboardExtension.swift in Sources */,
+				8C016D5025016014000E2DC3 /* CachingModel.swift in Sources */,
 				8C463AFC24C0C11E00B78E96 /* SelectCollectionViewCell.swift in Sources */,
 				8CFC70A5248FD19E006C677B /* GalleryItemCollectionViewCell.swift in Sources */,
 				8CAB89D224913569009BBAB6 /* AudioItemQueue.swift in Sources */,
@@ -1400,6 +1429,7 @@
 				8CC4F529248CFCCC000692AE /* RoundedView.swift in Sources */,
 				8CC4F557248CFCCC000692AE /* UIColor.swift in Sources */,
 				8CAB89DC24913569009BBAB6 /* AudioPlayer+SeekEvent.swift in Sources */,
+				8C5D4A34250544C600B082B1 /* Prombet.swift in Sources */,
 				8CAB89D424913569009BBAB6 /* AudioPlayer+AudioItemEvent.swift in Sources */,
 				8C41823424A1FF100097E1A6 /* UIManager.swift in Sources */,
 				8CC4F674248D17A9000692AE /* CustomDateFormatTransform.swift in Sources */,
@@ -1449,6 +1479,7 @@
 				8CAB89D724913569009BBAB6 /* AudioPlayer+NetworkEvent.swift in Sources */,
 				8CC4F6E5248D18C8000692AE /* WSEngine.swift in Sources */,
 				8CAB89D924913569009BBAB6 /* AudioPlayer+QualityAdjustmentEvent.swift in Sources */,
+				8C5D4A3F2506869300B082B1 /* AttachmentInputCardTableViewCell.swift in Sources */,
 				8CFC70A72490FAE6006C677B /* AudioHandler.swift in Sources */,
 				8C1B44A424E56FCC00853B03 /* LazyImage+Network.swift in Sources */,
 				8CC4F67A248D17A9000692AE /* EnumOperators.swift in Sources */,
@@ -1458,6 +1489,7 @@
 				8CAB89DA24913569009BBAB6 /* AudioPlayer+Queue.swift in Sources */,
 				8C83EE3B24D9AC74000F2637 /* History.swift in Sources */,
 				8CC4F67E248D17A9000692AE /* Map.swift in Sources */,
+				8C5D4A372505463D00B082B1 /* TextInputCardTableViewCell.swift in Sources */,
 				8C1B446F24E34E4700853B03 /* b_LocalizableViewController.swift in Sources */,
 				8C1B44AB24E5E7AB00853B03 /* TextFormater.swift in Sources */,
 				8CC4F6E3248D18C8000692AE /* WebSocketServer.swift in Sources */,

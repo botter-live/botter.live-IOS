@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class b_FlightStatus : Mappable{
+class b_FlightStatus : Mappable {
     var arrivalAirportCode : String
     var arrivalAirportName : String
     var arrivalGate : String

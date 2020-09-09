@@ -182,7 +182,7 @@ class B_SocketManager : WebSocketDelegate  {
                    "user": guid ,
                    "user_profile": ""]
         let msgString = json(from: msg) ?? ""
-        ChatSessionManager.shared.setActiveSession(active: true)
+//        ChatSessionManager.shared.setActiveSession(active: true)
         self.socket.write(ping: "PING".data(using: .utf8)!) {
             if self.isConnected{
                 self.socket.write(string: msgString)
