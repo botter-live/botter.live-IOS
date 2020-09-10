@@ -65,6 +65,14 @@ final class b_ChatViewController: UIViewController {
     
     override func b_backDismiss(_ sender: Any) {
         
+        if BotterSettingsManager.showOnClosePopup{
+            self.showOnClosePopup()
+        }else{
+            close()
+        }
+    }
+    
+    func showOnClosePopup(){
         let alert = UIAlertController(title: "Are you sure, you want to close the chat?".b_localize() , message: "" , preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "Cancel".b_localize() , style: UIAlertAction.Style.cancel , handler: {(UIAlertAction) in
