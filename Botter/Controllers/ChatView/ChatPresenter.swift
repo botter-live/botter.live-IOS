@@ -82,7 +82,7 @@ extension b_ChatPresenter: ChatPresenterInterface {
                 messgesList[messgesList.count - 1].prompt.answerText = newMsg.mediaUrl
             }
         }else{
-            
+            messgesList[messgesList.count - 1].prompt.answerText = newMsg.text
         }
         messgesList[messgesList.count - 1].prompt.answered = msg.msgSent
     }

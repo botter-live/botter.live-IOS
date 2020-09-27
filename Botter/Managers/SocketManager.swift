@@ -65,10 +65,8 @@ class B_SocketManager : WebSocketDelegate  {
         //        if socket != nil{
         //            socket.disconnect()
         //        }
-        let gamma = "wss://botter-gateway-web.gamma.botter.live/"
-        let test = "wss://botter-gateway-web.botter.live/"
-        let prod = "wss://web.gateway.prod.botter.live"
-        var request = URLRequest(url: URL(string: gamma )!)
+        
+        var request = URLRequest(url: URL(string: BaseDataSource.Constants.SOCKET_URL)!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
@@ -206,6 +204,7 @@ class B_SocketManager : WebSocketDelegate  {
                 self.socket.write(string: msgString)
             }
         }
+        
         B_SocketManager.first = true
         B_SocketManager.shared = B_SocketManager()
     }

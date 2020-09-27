@@ -18,6 +18,12 @@ class BaseDataSource : Any {
         static var PRODUCTION_URL = "https://prod-api.botter.live/"
         static var PROD_UPLOAD = "https://uploads.prod.botter.live/api/file/upload"
         
+        static let gamma = "wss://botter-gateway-web.gamma.botter.live/"
+        static let test = "wss://botter-gateway-web.botter.live/"
+        static let prod = "wss://web.gateway.prod.botter.live"
+        
+        static var SOCKET_URL = gamma
+        
         static var BASE_URL = STAGING_URL
         static var BOTTER_DATA = BASE_URL + "widget/data/"
         static var FAQ_DATA = BASE_URL + "widget/faqs/"

@@ -160,8 +160,12 @@ extension b_ChatViewController: ChatViewInterface {
     func reload() {
         self.tableView.reloadData()
         if self.presenter.messgesList.count > 0 {
+//            let msg = presenter.messgesList[presenter.messgesList.count - 1]
             self.tableView.scrollToRow(at: IndexPath.init(row: self.presenter.messgesList.count - 1 , section: 0), at: .bottom, animated: false)
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                // your code here
+                self.tableView.scrollToRow(at: IndexPath.init(row: self.presenter.messgesList.count - 1 , section: 0), at: .bottom, animated: false)
+            }
         }
         
         
@@ -338,17 +342,21 @@ extension b_ChatViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let msg = presenter.messgesList[indexPath.row]
-        if (msg.msgType == .userInput && indexPath.row == presenter.messgesList.count - 1) || (msg.msgType == .triviaQuestion && indexPath.row == presenter.messgesList.count - 1){
-            if heightConstraint.constant == 65{
-                self.view.endEditing(true)
+        var msg = b_BasicMessage()
+        if indexPath.row < presenter.messgesList.count{
+            msg = presenter.messgesList[indexPath.row]
+            let last = presenter.messgesList[presenter.messgesList.count - 1]
+            if (last.msgType == .userInput && !last.prompt.answered) || last.msgType == .triviaQuestion{
+                if heightConstraint.constant == 65{
+                    self.view.endEditing(true)
+                }
+                heightConstraint.constant = 0
+            }else{
+                heightConstraint.constant = 65
+                
             }
-            heightConstraint.constant = 0
-            
-        }else{
-            heightConstraint.constant = 65
         }
+        
         ChatSessionManager.shared.setActiveSessionMessage(msg: msg)
         switch msg.msgType {
         case .image:
@@ -461,6 +469,9 @@ extension b_ChatViewController : UITableViewDataSource{
                 cell?.setData(msg: msg, showIcon: checkIfLastBotInput(index: indexPath.row), completion: { (answer) in
                     self.presenter.sendMessage(text: answer)
                 })
+                cell?.answerChanged = { (msg) in
+                    self.presenter.messgesList[msg.msgIndex].prompt.tempAnswer = msg.prompt.tempAnswer
+                }
                 return cell ?? UITableViewCell()
             }
         default:
