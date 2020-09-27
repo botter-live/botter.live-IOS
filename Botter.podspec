@@ -46,7 +46,7 @@ Pod::Spec.new do |spec|
   spec.ios.framework  = 'WebKit' , 'AVKit' , 'AVFoundation'
   spec.dependency 'Alamofire'
   #spec.dependency 'LazyImage'
-  spec.dependency 'IQKeyboardManagerSwift'
+  #spec.dependency 'IQKeyboardManagerSwift'
 
 
 
@@ -63,8 +63,8 @@ Pod::Spec.new do |spec|
 #['Botter/BotterSample/Base.lproj/Main.storyboard' , 'Botter/BotterSample/Base.lproj/#LaunchScreen.storyboard' , 'Botter/BotterSample/Assets.xcassets']
 
 
-  spec.swift_version = "4.2" 
-  spec.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
+  spec.swift_version = "5" 
+  spec.pod_target_xcconfig = { 'SWIFT_VERSION' => '5' }
 
 
 end

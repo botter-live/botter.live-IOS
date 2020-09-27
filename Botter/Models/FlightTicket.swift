@@ -8,7 +8,7 @@
 
 import Foundation
 
-class b_FlightTicket : Mappable{
+class b_FlightTicket : Mappable , Codable{
     var confirmationNumber : String
     var currency : String
     var passengers : [String]
@@ -38,7 +38,7 @@ class b_FlightTicket : Mappable{
         
     }
 }
-class b_TicketInfo : Mappable{
+class b_TicketInfo : Mappable , Codable{
     var stops : String
     var arrivalAirPort : b_Airport
     var depratureAirPort : b_Airport
@@ -63,7 +63,7 @@ class b_TicketInfo : Mappable{
     }
 }
 
-class b_Airport : Mappable{
+class b_Airport : Mappable , Codable{
     var code : String
     var city : String
     

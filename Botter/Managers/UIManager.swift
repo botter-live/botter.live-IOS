@@ -22,7 +22,7 @@ class b_AccentView : UIView{
     }
 }
 
-class b_BasicRegularLbl : UILabel{
+class b_BasicRegularLbl : b_PaddedUILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         let tFont = BotterSettingsManager.Font.getRegularFontForLabel(lbl: self)
@@ -175,7 +175,7 @@ class b_HeaderLogo : UIImageView{
     override func awakeFromNib() {
         super.awakeFromNib()
         tintColor = BotterSettingsManager.AccentColor
-        if self.tag == 101{
+        if self.tag == 104{
             if BotterSettingsManager.welcomeBrandLogo != nil {
                 image = BotterSettingsManager.welcomeBrandLogo
             }
@@ -196,7 +196,8 @@ class b_WelcomeHeaderLogo : UIImageViewAligned{
         if BotterSettingsManager.welcomeBrandLogo != nil {
             image = BotterSettingsManager.welcomeBrandLogo
         }
-        self.alignLeft = true
+        self.alignLeft = BotterSettingsManager.language == .english
+        self.alignRight = BotterSettingsManager.language == .arabic
     }
 }
 

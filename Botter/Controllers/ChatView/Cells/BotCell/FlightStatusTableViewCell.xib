@@ -39,13 +39,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="204" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-4S-86K" customClass="b_BasicRegularLbl" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="110.5" y="14" width="81.5" height="17"/>
+                                        <rect key="frame" x="110.5" y="8" width="81.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNY-We-mA8" customClass="b_BasicRegularLbl" customModule="Botter" customModuleProvider="target">
-                                        <rect key="frame" x="77" y="31" width="115" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Booking Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNY-We-mA8" customClass="b_BasicRegularLbl" customModule="Botter" customModuleProvider="target">
+                                        <rect key="frame" x="77" y="37" width="115" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -63,12 +63,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Lel-4S-86K" firstAttribute="top" secondItem="OGb-zo-40D" secondAttribute="top" constant="14" id="8Dy-he-uZH"/>
+                                    <constraint firstItem="Lel-4S-86K" firstAttribute="top" secondItem="OGb-zo-40D" secondAttribute="top" constant="8" id="8Dy-he-uZH"/>
                                     <constraint firstAttribute="trailing" secondItem="Lel-4S-86K" secondAttribute="trailing" constant="12" id="Ejh-oO-tZa"/>
                                     <constraint firstItem="KNY-We-mA8" firstAttribute="top" secondItem="Lel-4S-86K" secondAttribute="bottom" id="LOO-3O-Z2Z"/>
                                     <constraint firstAttribute="height" constant="64" id="XUA-wl-Yis"/>
                                     <constraint firstItem="5e9-G2-MNh" firstAttribute="centerY" secondItem="OGb-zo-40D" secondAttribute="centerY" id="YeO-v9-wdr"/>
                                     <constraint firstAttribute="bottom" secondItem="guh-Fm-nE1" secondAttribute="bottom" id="fSi-JR-zQz"/>
+                                    <constraint firstItem="guh-Fm-nE1" firstAttribute="top" secondItem="KNY-We-mA8" secondAttribute="bottom" constant="8" id="glw-l2-4rz"/>
                                     <constraint firstItem="guh-Fm-nE1" firstAttribute="leading" secondItem="OGb-zo-40D" secondAttribute="leading" constant="12" id="isS-eX-Fqe"/>
                                     <constraint firstItem="5e9-G2-MNh" firstAttribute="leading" secondItem="OGb-zo-40D" secondAttribute="leading" constant="12" id="k3z-ro-EU9"/>
                                     <constraint firstItem="KNY-We-mA8" firstAttribute="trailing" secondItem="Lel-4S-86K" secondAttribute="trailing" id="n2O-Vy-09J"/>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class b_Location : Mappable{
+class b_Location : Mappable , Codable{
     var title : String
     var imageUrl : String
     var lat : Double

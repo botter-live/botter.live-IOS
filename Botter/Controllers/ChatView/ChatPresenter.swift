@@ -60,11 +60,31 @@ extension b_ChatPresenter: ChatPresenterInterface {
             }
         }
         message.msgIndex = messgesList.count
-        messgesList.append(message)
+        if messgesList.count > 0 && messgesList[messgesList.count - 1].msgType == .userInput && !messgesList[messgesList.count - 1].prompt.answered {
+            setUserInputAnswer(newMsg: message)
+        }else{
+            messgesList.append(message)
+        }
+        
         if message.msgType == .audio{
             b_AudioHandler.shared.addAudioMessage(msg: message)
         }
         self.view.reload()
+    }
+    
+    func setUserInputAnswer(newMsg : b_BasicMessage){
+        let msg = messgesList[messgesList.count - 1]
+        if msg.prompt.typeString.lowercased() == "file"{
+            msg.prompt.type = newMsg.msgType
+            if newMsg.msgType == .attachment{
+                messgesList[messgesList.count - 1].prompt.answerText = newMsg.text
+            }else{
+                messgesList[messgesList.count - 1].prompt.answerText = newMsg.mediaUrl
+            }
+        }else{
+            messgesList[messgesList.count - 1].prompt.answerText = newMsg.text
+        }
+        messgesList[messgesList.count - 1].prompt.answered = msg.msgSent
     }
     
     func historyLoaded(list: [b_BasicMessage]) {
@@ -132,8 +152,8 @@ extension b_ChatPresenter: ChatPresenterInterface {
         wireframe.call(number: number)
     }
     
-    func openEndForm(form: b_Form) {
-        wireframe.openEndForm(form: form)
+    func openEndForm(form: b_Form , isHistory : Bool) {
+        wireframe.openEndForm(form: form, isHistory: isHistory)
     }
     
     func sendMenuAction(action : b_MenuItem){

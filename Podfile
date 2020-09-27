@@ -8,7 +8,7 @@ target 'Botter' do
   # Pods for BotterSDK
 #  pod 'ReachabilitySwift'
   pod 'Alamofire' ,'5.0.0-beta.3'
-  pod 'IQKeyboardManagerSwift'
+#  pod 'b_IQKeyboardManagerSwift'
 #  pod 'LazyImage'
   
 end

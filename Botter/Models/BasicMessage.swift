@@ -10,7 +10,7 @@ import Foundation
 //import ObjectMapper
 //import LazyImage
 
-class b_BasicMessage :  Mappable {
+class b_BasicMessage :  Mappable  {
     
     var msgIndex = -1
     var type : String
@@ -41,6 +41,7 @@ class b_BasicMessage :  Mappable {
     let lazyImage = LazyImage()
     var latitude : Double?
     var langtude : Double?
+    var prompt : Prombet
 
     
     
@@ -65,6 +66,7 @@ class b_BasicMessage :  Mappable {
         invoice = b_Invoice()
         notifyText = ""
         sender = b_Sender()
+        prompt = Prombet()
     }
     
     func mapping(map: Map) {
@@ -91,7 +93,7 @@ class b_BasicMessage :  Mappable {
         sender <- map["sender"]
         latitude <- map["latitude"]
         langtude <- map["langtude"]
-
+        prompt <- map["prompt"]
         
         if msgType == .audio{
             handleAudio()
@@ -167,7 +169,7 @@ enum b_MessageType : String , Codable{
     case attachment = "attachment"
     case userMsg = "message"
     case userImage = "image_attachment"
-    case userInput = "user_input"
+    case userInput = "user-input"
     case multiInput = "multi-input"
     case userLocation = "user_location"
 }
@@ -187,7 +189,7 @@ extension b_BasicMessage : AudioPlayerDelegate{
     }
 }
 
-class b_Sender : Mappable{
+class b_Sender : Mappable , Codable{
     
     var senderID : String
     var avatar : String
@@ -222,14 +224,33 @@ class b_Sender : Mappable{
     
     
 }
-enum b_SenderType : String{
+enum b_SenderType : String , Codable{
     case user = "USER"
     case agent = "AGENT"
     case bot = "BOT"
 }
 
-enum b_AvatarType : String{
+enum b_AvatarType : String , Codable{
     case url = "url"
     case base64 = "base64"
     case empty = ""
+}
+
+class miniMessage : Codable{
+    var sender : b_Sender!
+    var text : String!
+    var type : b_MessageType!
+    
+    
+    init(){
+        sender = b_Sender()
+        text = ""
+        type = .text
+    }
+    
+    init(msg : b_BasicMessage){
+        sender = msg.sender
+        text = msg.text
+        type = msg.msgType
+    }
 }

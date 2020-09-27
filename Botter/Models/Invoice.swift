@@ -8,7 +8,7 @@
 
 import Foundation
 
-class b_Invoice : Mappable{
+class b_Invoice : Mappable , Codable{
      
     var address : b_Address
     var currency : String
@@ -49,7 +49,7 @@ class b_Invoice : Mappable{
     }
 }
 
-class b_Address : Mappable{
+class b_Address : Mappable , Codable{
     var street1 : String
     var street2 : String
     var state : String
@@ -85,7 +85,7 @@ class b_Address : Mappable{
     }
 }
 
-class b_InvoiceElement:Mappable{
+class b_InvoiceElement:Mappable , Codable{
     
     
     var currency : String
@@ -118,7 +118,7 @@ class b_InvoiceElement:Mappable{
     }
 }
 
-class b_InvoiceSummery:Mappable{
+class b_InvoiceSummery:Mappable , Codable{
     
     var shippingCost : Double
     var subTotal : Double
@@ -146,7 +146,7 @@ class b_InvoiceSummery:Mappable{
     }
 }
 
-class b_InvoiceAdjusment:Mappable{
+class b_InvoiceAdjusment:Mappable , Codable{
     
     var amount : Double
     var name : String

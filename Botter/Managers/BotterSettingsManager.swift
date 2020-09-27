@@ -35,6 +35,8 @@ public class BotterSettingsManager  {
     
     public static var hasFAQs : Bool = true
     public static var  alignLauncherLeft : Bool = false
+    public static var showOnClosePopup : Bool = true
+    
     public static var bottomMargin : CGFloat = 40{
         didSet{
             Botter.reSet()
@@ -101,6 +103,63 @@ public class BotterSettingsManager  {
              return UIFont.boldSystemFont(ofSize: lbl.font.pointSize)
         }
         
+    }
+    
+    public static func setBotID(id : String , clear : Bool = false){
+        if id != BotterSettingsManager.BotID{
+            if clear{
+                ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
+                B_SocketManager.first = true
+                B_SocketManager.shared = B_SocketManager()
+            }
+            BotterSettingsManager.BotID = id
+        }
+    }
+    
+    public static func setBotBase(url : String , clear : Bool = false){
+        if url != BaseDataSource.Constants.BASE_URL && url != ""{
+            if clear{
+                ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
+                B_SocketManager.first = true
+                B_SocketManager.shared = B_SocketManager()
+            }
+            BaseDataSource.Constants.BASE_URL = url
+        }
+    }
+    
+    public static func setBotUpload(url : String , clear : Bool = false){
+        if url != BaseDataSource.Constants.UPLOAD_URL && url != ""{
+            if clear{
+                ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
+                B_SocketManager.first = true
+                B_SocketManager.shared = B_SocketManager()
+            }
+            BaseDataSource.Constants.UPLOAD_URL = url
+        }
+    }
+    
+    public static func setBotSocket(url : String, clear : Bool = false){
+        if url != BaseDataSource.Constants.SOCKET_URL && url != ""{
+            if clear{
+                ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
+                B_SocketManager.first = true
+                B_SocketManager.shared = B_SocketManager()
+            }
+            BaseDataSource.Constants.SOCKET_URL = url
+        }
+    }
+    
+    
+    public static func getBotBase()->String{
+        return BaseDataSource.Constants.BASE_URL
+    }
+    
+    public static func getBotUpload()->String{
+        return BaseDataSource.Constants.UPLOAD_URL
+    }
+    
+    public static func getBotSocket()->String{
+        return BaseDataSource.Constants.SOCKET_URL
     }
 }
 

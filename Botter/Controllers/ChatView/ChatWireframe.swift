@@ -74,9 +74,10 @@ extension b_ChatWireframe: ChatWireframeInterface {
         self.viewController.b_makePhoneCall(phoneNumber: number)
     }
     
-    func openEndForm(form: b_Form) {
+    func openEndForm(form: b_Form , isHistory : Bool) {
         let vc = b_EndFormViewController.b_instantiateFromStoryBoard(appStoryBoard: .Forms)
         vc.form = form
+        vc.history = isHistory
         self.viewController.present(vc, animated: true, completion: nil)
     }
 }

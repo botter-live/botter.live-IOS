@@ -15,6 +15,7 @@ class TextInputTableViewCell: BasicFormTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        textFeild.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,6 +27,7 @@ class TextInputTableViewCell: BasicFormTableViewCell {
     override func setData(input: b_FormInput) {
         super.setData(input: input)
         textFeild.font = BotterSettingsManager.Font.getRegularFontForFeild(feild: textFeild)
+        textFeild.delegate = self
         textFeild.tintColor = BotterSettingsManager.AccentColor
         textFeild.placeholder = input.label
         
@@ -39,4 +41,16 @@ class TextInputTableViewCell: BasicFormTableViewCell {
         self.answer = textFeild.text?.b_trim() ?? ""
         return textFeild.text?.b_trim() ?? ""
        }
+}
+extension TextInputTableViewCell : UITextFieldDelegate{
+    @objc func editingChanged(_ textFeild : UITextField){
+        errorLbl.isHidden = true
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        errorLbl.isHidden = true
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let _ = evaluateRegex()
+    }
 }

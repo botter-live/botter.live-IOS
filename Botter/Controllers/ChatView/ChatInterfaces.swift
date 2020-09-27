@@ -14,7 +14,7 @@ protocol ChatWireframeInterface: WireframeInterface {
     func openVideo(url : String)
     func openUrl(url : String)
     func call(number: String)
-    func openEndForm(form : b_Form)
+    func openEndForm(form : b_Form , isHistory : Bool)
 }
 
 protocol ChatViewInterface: b_ViewInterface {
@@ -39,7 +39,7 @@ protocol ChatPresenterInterface: b_PresenterInterface {
     func call(number: String)
     func triviaActionClicked(action: b_Action)
     func resend(msg : b_BasicMessage)
-    func openEndForm(form : b_Form)
+    func openEndForm(form : b_Form , isHistory : Bool)
     func sendMenuAction(action : b_MenuItem)
     func sendAttachment(file : b_AttachedFile)
     func sendUserLocation(latitude : Double, langtuide: Double)

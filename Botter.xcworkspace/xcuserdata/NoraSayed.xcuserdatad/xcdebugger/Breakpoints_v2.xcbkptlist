@@ -52,7 +52,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "86635DA3-0FC9-40D0-97DD-50C46C8896E2 - 25b6841ca7b5fc69"
+                  uuid = "86635DA3-0FC9-40D0-97DD-50C46C8896E2 - 91c12a40dca192b9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -67,7 +67,7 @@
                   offsetFromSymbolStart = "52">
                </Location>
                <Location
-                  uuid = "86635DA3-0FC9-40D0-97DD-50C46C8896E2 - 9b038ebbc089763d"
+                  uuid = "86635DA3-0FC9-40D0-97DD-50C46C8896E2 - 2f7420e7bb9d190a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -132,7 +132,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "CF77EA21-C56F-4AF2-A477-48214700CA9A - a2a663ae5d69b46"
+                  uuid = "CF77EA21-C56F-4AF2-A477-48214700CA9A - 8e40732bc35f1e9b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -147,7 +147,7 @@
                   offsetFromSymbolStart = "56">
                </Location>
                <Location
-                  uuid = "CF77EA21-C56F-4AF2-A477-48214700CA9A - e7d063b2a849c930"
+                  uuid = "CF77EA21-C56F-4AF2-A477-48214700CA9A - 63ba76a38ec04c8c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -238,8 +238,8 @@
             filePath = "Botter/Managers/SocketManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
+            startingLineNumber = "297"
+            endingLineNumber = "297"
             landmarkName = "sendPostBack(value:title:slug:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -254,8 +254,8 @@
             filePath = "Botter/Managers/SocketManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "sendPostBack(value:title:slug:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "Botter/Managers/SocketManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "sendOpeningMessage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,13 +286,13 @@
             filePath = "Botter/Managers/SocketManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "sendOpeningMessage()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "920B1E85-CC3F-4FFC-A506-CE842E79F331 - caf1c0c6748e9e29"
+                  uuid = "920B1E85-CC3F-4FFC-A506-CE842E79F331 - 7e53d0b7dafcdc49"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -307,7 +307,7 @@
                   offsetFromSymbolStart = "1137">
                </Location>
                <Location
-                  uuid = "920B1E85-CC3F-4FFC-A506-CE842E79F331 - 940229a7c3065ef5"
+                  uuid = "920B1E85-CC3F-4FFC-A506-CE842E79F331 - 20a039d66d741cb4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -334,8 +334,8 @@
             filePath = "Botter/Managers/SocketManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "sendOpeningMessage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,8 +350,8 @@
             filePath = "Botter/Managers/SocketManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "sendAttrebutes(attributes:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,8 +366,8 @@
             filePath = "Botter/Managers/SocketManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "sendOpeningMessage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,8 +398,8 @@
             filePath = "Botter/Controllers/ChatView/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "437"
-            endingLineNumber = "437"
+            startingLineNumber = "487"
+            endingLineNumber = "487"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -478,8 +478,8 @@
             filePath = "Botter/Controllers/StartForm/StartFormViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "updateFooterHeight(height:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -510,8 +510,8 @@
             filePath = "Botter/Controllers/StartForm/Cells/BasicFormTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "evaluateRegex(text:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -526,8 +526,8 @@
             filePath = "Botter/Controllers/StartForm/Cells/BasicFormTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "evaluateRegex(text:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -542,8 +542,8 @@
             filePath = "Botter/Controllers/StartForm/Cells/BasicFormTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "evaluateRegex(text:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -622,8 +622,8 @@
             filePath = "Botter/DataSource/BaseApi.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "upload(data:mime:name:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -632,38 +632,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4E2B6400-698B-4705-A60B-77451A3E9911"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Botter/DataSource/BaseApi.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "upload(data:mime:name:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "95D6719E-CEAF-4262-B9FD-3C84D66DD730"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Botter/DataSource/BaseApi.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "upload(data:mime:name:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CF529D91-23F4-4AF7-A422-FE380AC508B0"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -679,7 +647,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3E9E4DC3-8D7D-4059-A544-E3BB9E0E57EA"
+            uuid = "95D6719E-CEAF-4262-B9FD-3C84D66DD730"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -690,9 +658,41 @@
             endingLineNumber = "86"
             landmarkName = "upload(data:mime:name:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF529D91-23F4-4AF7-A422-FE380AC508B0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Botter/DataSource/BaseApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "upload(data:mime:name:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E9E4DC3-8D7D-4059-A544-E3BB9E0E57EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Botter/DataSource/BaseApi.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "upload(data:mime:name:completion:)"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3E9E4DC3-8D7D-4059-A544-E3BB9E0E57EA - b614b36f9de47897"
+                  uuid = "3E9E4DC3-8D7D-4059-A544-E3BB9E0E57EA - 60b9ac3bb808ee44"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -707,7 +707,7 @@
                   offsetFromSymbolStart = "784">
                </Location>
                <Location
-                  uuid = "3E9E4DC3-8D7D-4059-A544-E3BB9E0E57EA - 1866b91d63235957"
+                  uuid = "3E9E4DC3-8D7D-4059-A544-E3BB9E0E57EA - cecba64946cfcfa7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -734,13 +734,13 @@
             filePath = "Botter/DataSource/BaseApi.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "upload(data:mime:name:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D2D6B8F6-B70F-41EE-BB4F-50D61C330DD0 - b614b36f9de47897"
+                  uuid = "D2D6B8F6-B70F-41EE-BB4F-50D61C330DD0 - 60b9ac3bb808ee44"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -755,7 +755,7 @@
                   offsetFromSymbolStart = "784">
                </Location>
                <Location
-                  uuid = "D2D6B8F6-B70F-41EE-BB4F-50D61C330DD0 - 1866b91d63235957"
+                  uuid = "D2D6B8F6-B70F-41EE-BB4F-50D61C330DD0 - cecba64946cfcfa7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -820,7 +820,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "FD5BFC6F-4CB7-4780-9465-1B8BBD02BC9C - 68953e4a2262fe71"
+                  uuid = "FD5BFC6F-4CB7-4780-9465-1B8BBD02BC9C - 43884826f0ab19b9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -835,7 +835,7 @@
                   offsetFromSymbolStart = "700">
                </Location>
                <Location
-                  uuid = "FD5BFC6F-4CB7-4780-9465-1B8BBD02BC9C - 15ea666bd4d34acc"
+                  uuid = "FD5BFC6F-4CB7-4780-9465-1B8BBD02BC9C - 3ef71007061aad2b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -926,8 +926,8 @@
             filePath = "Botter/Managers/SocketManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "didReceive(event:client:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -980,7 +980,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "14897677-B071-444A-9A2F-B859DC84AA72 - 7017f9a5c0fdc1a8"
+                  uuid = "14897677-B071-444A-9A2F-B859DC84AA72 - 44e990c17032d933"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -995,7 +995,7 @@
                   offsetFromSymbolStart = "960">
                </Location>
                <Location
-                  uuid = "14897677-B071-444A-9A2F-B859DC84AA72 - e77440bd78b6b71a"
+                  uuid = "14897677-B071-444A-9A2F-B859DC84AA72 - d38a29d9c879afa6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1054,8 +1054,8 @@
             filePath = "Botter/Controllers/ChatView/ChatPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "messageReceived(message:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1070,8 +1070,8 @@
             filePath = "Botter/Controllers/ChatView/ChatPresenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "historyLoaded(list:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1086,13 +1086,13 @@
             filePath = "Botter/Managers/SocketManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
             landmarkName = "sendPostBack(value:title:slug:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "248950A2-72F4-4EA1-9070-DDF0CD61D814 - 782ae901f2105d7e"
+                  uuid = "248950A2-72F4-4EA1-9070-DDF0CD61D814 - cc88f9705c63ec30"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1107,7 +1107,7 @@
                   offsetFromSymbolStart = "943">
                </Location>
                <Location
-                  uuid = "248950A2-72F4-4EA1-9070-DDF0CD61D814 - 782ae901f2105d7e"
+                  uuid = "248950A2-72F4-4EA1-9070-DDF0CD61D814 - cc88f9705c63ec30"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1134,8 +1134,8 @@
             filePath = "Botter/Managers/SocketManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "sendOpeningMessage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1156,7 +1156,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "E64B372B-3D77-488A-A492-2B8D51C45CF1 - 125b0becb3e885fe"
+                  uuid = "E64B372B-3D77-488A-A492-2B8D51C45CF1 - 8658d8f78a22a582"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1171,7 +1171,7 @@
                   offsetFromSymbolStart = "300">
                </Location>
                <Location
-                  uuid = "E64B372B-3D77-488A-A492-2B8D51C45CF1 - 404caab24f79ed61"
+                  uuid = "E64B372B-3D77-488A-A492-2B8D51C45CF1 - d44f79a976b3cd3c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1220,7 +1220,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "30DB04EB-94C4-423A-88E0-3F5EB213A108 - 4e0bee920fd517d8"
+                  uuid = "30DB04EB-94C4-423A-88E0-3F5EB213A108 - faa9fee3a1a743ab"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1235,7 +1235,7 @@
                   offsetFromSymbolStart = "96">
                </Location>
                <Location
-                  uuid = "30DB04EB-94C4-423A-88E0-3F5EB213A108 - 4e0bee920fd517d8"
+                  uuid = "30DB04EB-94C4-423A-88E0-3F5EB213A108 - faa9fee3a1a743ab"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1262,8 +1262,8 @@
             filePath = "Botter/Managers/SocketManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "sendOpeningMessage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1284,7 +1284,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F1FB539A-11FC-4CDA-9DFB-485C0BC6050D - 125b0becb3e885fe"
+                  uuid = "F1FB539A-11FC-4CDA-9DFB-485C0BC6050D - 8658d8f78a22a465"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1299,7 +1299,7 @@
                   offsetFromSymbolStart = "34">
                </Location>
                <Location
-                  uuid = "F1FB539A-11FC-4CDA-9DFB-485C0BC6050D - 125b0becb3e885fe"
+                  uuid = "F1FB539A-11FC-4CDA-9DFB-485C0BC6050D - 8658d8f78a22a465"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1332,7 +1332,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "247A348E-F8D3-484C-810F-23E4C6C27436 - d95e4797d993f2a4"
+                  uuid = "247A348E-F8D3-484C-810F-23E4C6C27436 - f24331fb0b5a0140"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1347,7 +1347,7 @@
                   offsetFromSymbolStart = "80">
                </Location>
                <Location
-                  uuid = "247A348E-F8D3-484C-810F-23E4C6C27436 - 711c5e2f76fd14c9"
+                  uuid = "247A348E-F8D3-484C-810F-23E4C6C27436 - 5a012843a434e72d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1362,7 +1362,7 @@
                   offsetFromSymbolStart = "28">
                </Location>
                <Location
-                  uuid = "247A348E-F8D3-484C-810F-23E4C6C27436 - d95e4797d993f2a4"
+                  uuid = "247A348E-F8D3-484C-810F-23E4C6C27436 - f24331fb0b5a0140"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1377,7 +1377,7 @@
                   offsetFromSymbolStart = "87">
                </Location>
                <Location
-                  uuid = "247A348E-F8D3-484C-810F-23E4C6C27436 - 711c5e2f76fd14c9"
+                  uuid = "247A348E-F8D3-484C-810F-23E4C6C27436 - 5a012843a434e72d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1436,8 +1436,8 @@
             filePath = "Botter/Controllers/ChatView/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "445"
-            endingLineNumber = "445"
+            startingLineNumber = "495"
+            endingLineNumber = "495"
             landmarkName = "tableView(_:heightForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1484,8 +1484,8 @@
             filePath = "Botter/Controllers/ChatView/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1612,8 +1612,8 @@
             filePath = "Botter/DataSource/BaseApi.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "upload(data:mime:name:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1628,8 +1628,8 @@
             filePath = "Botter/Models/BasicMessage.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "mapping(map:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1644,8 +1644,8 @@
             filePath = "Botter/Controllers/ChatView/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "removeObservers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1692,9 +1692,89 @@
             filePath = "Botter/Controllers/ChatView/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "endSession()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F74E111C-B87C-41E1-894B-DAFE804F0C65"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Botter/Models/BasicMessage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
+            landmarkName = "init(msg:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A0F7BD1-6330-4116-915B-96AD05F5921F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Botter/Controllers/ChatView/ChatPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "setUserInputAnswer(newMsg:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8817CF5-015B-44D4-9AD6-7C5EF6247B14"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Botter/Controllers/ChatView/Cells/InputCards/AttachmentInputCardTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "setData(msg:showIcon:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E480D08E-232B-44C7-9C6D-7E9F2C911276"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Botter/Controllers/ChatView/ChatPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "messageReceived(message:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F901462-D05C-446A-8AE6-2B5AF705F1F4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Botter/Controllers/ChatView/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "359"
+            endingLineNumber = "359"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
