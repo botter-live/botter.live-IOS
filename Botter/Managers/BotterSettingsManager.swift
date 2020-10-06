@@ -28,6 +28,7 @@ public class BotterSettingsManager  {
             Botter.reSet()
         }
     }
+    
     public static var FontColor : UIColor = UIColor.white
     public static var BotterMessageFontColor : UIColor = UIColor.black
     public static var BotterMessageBGColor : UIColor = UIColor.init(codeString: "#eaf0f7")
