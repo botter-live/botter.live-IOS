@@ -1,4 +1,3 @@
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/ic_botter.png" alt="Botter">
 
 ## Onboard, retain and support mobile users at scale
 Engage customers with in‑app messages and support them with an integrated knowledge base and help desk.  
@@ -7,15 +6,6 @@ Engage customers with in‑app messages and support them with an integrated know
 The [Botter Messenger](https://botter.ai/) enables you to use it like a Messenger in your app, have conversations with your customers, send rich outbound messages, and track events.
 The Botter SDK is the home for the conversations your customers have with you, and the place where they can self-serve for support or to learn more about your product.
 You can open Botter from a persistent button that sits over your app’s UI, From there, your customer can  start a conversation, replies in both directions happen in real time.
-
-## Screenshots
-<p float="left">
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/sample_black.png" width="200" alt="sample1">
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/sample_blue.png" width="200" alt="sample2">
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/sample_orange.png" width="200" alt="sample3">
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/sample_green.png" width="200" alt="sample4">
-</p>
-
 
 
 ## Contents
@@ -70,29 +60,18 @@ If you already have a Firebase project with notifications enabled you can skip t
 
 Give the project a name and click <strong>‘Create Project’</strong>.
 
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/fcm_create_project.png" alt="fcm_create">
-
 Once your project is set up, scroll down and select the <strong>‘Cloud Messaging’</strong> card.
-
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/fcm_cloud_messaging.png" alt="fcm_cloud_messaging">
 
 In the center of the project overview page, click the iOS icon to launch the setup workflow.
 
 Enter your app’s Bundle identifier and click <strong>‘Register App’</strong>.
-
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/fcm_register_app.png" alt="fcm_register_app">
-
 
  
 ### Step :two:: Setup Application With Firebase
 
 Click the button <strong>"Download GoogleService-Info.plist"</strong> to download the config file. You’ll need to move that file into the root of your Xcode project.
 
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/fcm_plist_file.png" alt="fcm_plist_file">
-
 Click <strong>"next"</strong> and then in your app podfile add <strong>"Firebase SDK"</strong> then install pods
-
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/install_pods.png" alt="install_pods">
 
 To connect Firebase when your app starts up, add the initialization code below to your main AppDelegate class.
 
@@ -123,20 +102,12 @@ Click the <strong>Next</strong> button and then skip the verification step.
 Finally, click the settings icon on top left and select <strong>‘Project settings’</strong>, then <strong>‘Cloud Messaging tab’</strong> and copy your Server key.
 
 
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/fcm_server_key.png" alt="fcm_server_key">
-
-
 Open your Botter app’s dashboard and select <strong>‘Settings -> Configure Notifications’</strong>. Then find the <strong>‘Server Key’</strong> field. Here you'll be able to paste and save your Server API key.
-
-
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/fcm_dashboard_settings.png" alt="fcm_settings">
 
 
 ### Step :four:: Configure Notifications in Application
 
 in app target <strong>"signing & capabilities"</strong> click <strong>"+capability"</strong> and select <strong>"Push Notifications"</strong>
-
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/capability.png" alt="capability">
 
 in <strong>"apple developer"</strong> website in <strong>"certificates identifiers & profiles"</strong> section add notification certifications with types <strong>"APNs Development iOS"</strong> and <strong>"Apple Push Services"</strong> then generate p12 files and upload it to your firebase project <strong>"project settings"</strong> > <strong>"Cloud Messaging"</strong> 
 
