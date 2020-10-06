@@ -21,7 +21,7 @@ extension b_ChatInteractor: ChatInteractorInterface {
     func openSocket() {
         B_SocketManager.shared.connect()
         B_SocketManager.shared.messageRecieved = { msg in
-            self.presenter.messageReceived(message: msg)
+            self.presenter.messageReceived(message: msg, isHistory: false)
         }
         B_SocketManager.shared.historyLoaded = { list in
             var mList = list

@@ -25,6 +25,7 @@ class b_FloatingBtnController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         window?.rootViewController = self
         window?.button = self.button
+        window?.fView = self.view
         window?.floatingButtonController = self
         b_IQKeyboardManager.shared.enable = true
         b_IQKeyboardManager.shared.shouldResignOnTouchOutside =  true
@@ -36,6 +37,8 @@ class b_FloatingBtnController: UIViewController {
         window?.windowLevel = UIWindow.Level(rawValue: 0)
         window?.windowLevel = UIWindow.Level.alert + 1
     }
+    
+//    vieww
     
     override func loadView() {
         let view = UIView()
@@ -68,10 +71,27 @@ class b_FloatingBtnController: UIViewController {
         button.frame = CGRect(origin: CGPoint(x: x , y: (screenSpecs.height - BotterSettingsManager.bottomMargin - bottomInset - height)), size: CGSize.init(width: mWidth , height: height ))
         button.autoresizingMask = []
         view.addSubview(button)
+        
+        let notificationCount = NotificationManager.shared.getNotificationCount()
+        if notificationCount > 0 {
+            let notificationView = b_RoundedView.init(frame: CGRect.init(x: button.frame.origin.x + mWidth - 12  , y: button.frame.origin.y + 2  , width: 24, height: 24))
+            notificationView.backgroundColor = .red
+            let lbl = UILabel.init(frame: notificationView.frame)
+            lbl.textAlignment = .center
+            lbl.text = "\(notificationCount)"
+            lbl.textColor = .white
+            lbl.font = UIFont.systemFont(ofSize: 11)
+            lbl.font = BotterSettingsManager.Font.getRegularFontForLabel(lbl: lbl)
+            lbl.backgroundColor = .clear
+            notificationView.addSubview(lbl)
+            view.addSubview(notificationView)
+            view.addSubview(lbl)
+        }
         self.view = view
         self.button = button
         self.button.addTarget(self, action: #selector(floatingButtonWasTapped), for: .touchUpInside)
-        window?.button = button
+        window?.button =  self.button
+        window?.fView = self.view
     }
     
     @objc func floatingButtonWasTapped() {
@@ -95,6 +115,7 @@ class b_FloatingBtnController: UIViewController {
 class FloatingButtonWindow: UIWindow {
     
     var button: UIButton?
+    var fView : UIView?
     weak var floatingButtonController: b_FloatingBtnController?
     
     init() {

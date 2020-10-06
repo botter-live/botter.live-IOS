@@ -27,6 +27,7 @@ class TypingIndicatorTableViewCell: BotChatTableViewCell {
         super.setData(msg: msg, showIcon: showIcon)
         typing.isHidden = !showIcon
         typing.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner , .layerMaxXMaxYCorner]
+        
     }
     
 }

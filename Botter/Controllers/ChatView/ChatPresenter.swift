@@ -14,9 +14,9 @@ final class b_ChatPresenter {
     
     // MARK: - Private properties -
     
-    private unowned let view: ChatViewInterface
-    private let interactor: ChatInteractorInterface
-    private let wireframe: ChatWireframeInterface
+    private unowned var view: ChatViewInterface
+    private var interactor: ChatInteractorInterface
+    private var wireframe: ChatWireframeInterface
     
     var messgesList : [b_BasicMessage]!
     
@@ -27,6 +27,13 @@ final class b_ChatPresenter {
         self.interactor = interactor
         self.wireframe = wireframe
         self.messgesList = [b_BasicMessage]()
+    }
+    
+
+    func close(){
+        interactor = b_ChatInteractor()
+        wireframe = b_ChatWireframe(botData: b_BotData())
+        B_SocketManager.shared.messageRecieved = nil
     }
 }
 
@@ -45,7 +52,8 @@ extension b_ChatPresenter: ChatPresenterInterface {
         }
     }
     
-    func messageReceived(message: b_BasicMessage) {
+    func messageReceived(message: b_BasicMessage , isHistory : Bool = false) {
+        
         messgesList = messgesList.filter { (msg) -> Bool in
             msg.msgType != .typing
         }
@@ -69,7 +77,17 @@ extension b_ChatPresenter: ChatPresenterInterface {
         if message.msgType == .audio{
             b_AudioHandler.shared.addAudioMessage(msg: message)
         }
+        
         self.view.reload()
+        
+        
+        if isHistory{
+            
+        }else if message.msgType == .typing{
+            PlaySound.typing()
+        }else if message.sender.senderType != .user{
+            PlaySound.incomingMsg()
+        }
     }
     
     func setUserInputAnswer(newMsg : b_BasicMessage){
@@ -89,7 +107,8 @@ extension b_ChatPresenter: ChatPresenterInterface {
     
     func historyLoaded(list: [b_BasicMessage]) {
         for msg in list{
-            messageReceived(message: msg)
+            NotificationManager.shared.clear()
+            messageReceived(message: msg , isHistory: true)
         }
     }
     

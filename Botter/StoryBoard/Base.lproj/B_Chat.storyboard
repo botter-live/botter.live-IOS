@@ -29,7 +29,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8p-2X-qNG">
                                 <rect key="frame" x="4" y="421.5" width="406" height="53"/>
                                 <string key="text">Welcome,
-to Botter Mobile</string>
+to BOTTER Mobile</string>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -99,20 +99,20 @@ to Botter Mobile</string>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NxU-q7-Pfa">
-                                <rect key="frame" x="132" y="818" width="150" height="36"/>
+                                <rect key="frame" x="127" y="818" width="160" height="36"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rLa-UE-dcb" customClass="b_HeaderLogo" customModule="Botter" customModuleProvider="target">
                                         <rect key="frame" x="12" y="10.5" width="15" height="15"/>
                                         <color key="tintColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We Run on Botter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-hU-IzM">
-                                        <rect key="frame" x="39" y="10.5" width="99" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We Run on BOTTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-hU-IzM">
+                                        <rect key="frame" x="37" y="10.5" width="111" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MM-xR-rwP">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="36"/>
                                         <connections>
                                             <action selector="botterWebsiteClicked" destination="doQ-LX-xpz" eventType="touchUpInside" id="POq-IG-Y9e"/>
                                         </connections>
@@ -129,7 +129,7 @@ to Botter Mobile</string>
                                     <constraint firstAttribute="trailing" secondItem="6Lh-hU-IzM" secondAttribute="trailing" constant="12" id="atb-BP-GNm"/>
                                     <constraint firstItem="2MM-xR-rwP" firstAttribute="centerX" secondItem="NxU-q7-Pfa" secondAttribute="centerX" id="ddE-KO-SVh"/>
                                     <constraint firstItem="6Lh-hU-IzM" firstAttribute="centerY" secondItem="NxU-q7-Pfa" secondAttribute="centerY" id="rLH-II-gMg"/>
-                                    <constraint firstAttribute="width" constant="150" id="tK3-za-BpW"/>
+                                    <constraint firstAttribute="width" constant="160" id="tK3-za-BpW"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwY-OS-e9W" customClass="b_AllSidsCardView" customModule="Botter" customModuleProvider="target">
@@ -514,7 +514,7 @@ to Botter Mobile</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Olx-3d-3Dm">
                                         <rect key="frame" x="0.0" y="34" width="414" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Botter" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhJ-tN-HXW" customClass="b_ChatHeader" customModule="Botter" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOTTER" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhJ-tN-HXW" customClass="b_ChatHeader" customModule="Botter" customModuleProvider="target">
                                                 <rect key="frame" x="72" y="5" width="264" height="26"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2111,7 +2111,7 @@ itemTitle.alpha = 0</string>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="eTX-FM-DZ2">
-                                <rect key="frame" x="132" y="761" width="150" height="36"/>
+                                <rect key="frame" x="127" y="761" width="160" height="36"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="epT-mK-IEv" customClass="b_HeaderLogo" customModule="Botter" customModuleProvider="target">
                                         <rect key="frame" x="12" y="10.5" width="15" height="15"/>
@@ -2121,14 +2121,14 @@ itemTitle.alpha = 0</string>
                                             <constraint firstAttribute="width" constant="15" id="Zwg-aI-NdB"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We Run on Botter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8X-h9-EId">
-                                        <rect key="frame" x="39" y="11" width="99" height="14.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We Run on BOTTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8X-h9-EId">
+                                        <rect key="frame" x="37" y="11" width="111" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fm-xO-fTi">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="36"/>
                                         <connections>
                                             <action selector="botterWebsiteClicked" destination="mBd-sT-l3W" eventType="touchUpInside" id="g0M-5c-s8Q"/>
                                         </connections>
@@ -2143,7 +2143,7 @@ itemTitle.alpha = 0</string>
                                     <constraint firstItem="epT-mK-IEv" firstAttribute="leading" secondItem="eTX-FM-DZ2" secondAttribute="leading" constant="12" id="LyQ-sa-J1r"/>
                                     <constraint firstItem="5fm-xO-fTi" firstAttribute="centerY" secondItem="eTX-FM-DZ2" secondAttribute="centerY" id="UEp-bN-ZyP"/>
                                     <constraint firstItem="5fm-xO-fTi" firstAttribute="width" secondItem="eTX-FM-DZ2" secondAttribute="width" id="aeV-bq-bgs"/>
-                                    <constraint firstAttribute="width" constant="150" id="pTI-rZ-0lQ"/>
+                                    <constraint firstAttribute="width" constant="160" id="pTI-rZ-0lQ"/>
                                     <constraint firstAttribute="height" constant="36" id="sJo-Pz-fGW"/>
                                     <constraint firstItem="5fm-xO-fTi" firstAttribute="centerX" secondItem="eTX-FM-DZ2" secondAttribute="centerX" id="w7v-w4-L5g"/>
                                 </constraints>

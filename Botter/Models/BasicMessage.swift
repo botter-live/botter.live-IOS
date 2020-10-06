@@ -43,6 +43,7 @@ class b_BasicMessage :  Mappable  {
     var langtude : Double?
     var prompt : Prombet
 
+    var playTone = false
     
     
     init(){
@@ -172,6 +173,10 @@ enum b_MessageType : String , Codable{
     case userInput = "user-input"
     case multiInput = "multi-input"
     case userLocation = "user_location"
+    case promptInput = "prompt-input"
+    case promptDate = "prompt-date"
+    case promptMultiInput = "prompt-multi-input"
+
 }
 
 extension b_BasicMessage : AudioPlayerDelegate{

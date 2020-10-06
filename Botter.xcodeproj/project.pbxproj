@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2CC4BAFB93B00722FC9A1474 /* Pods_Botter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B317499B9C95161004D27935 /* Pods_Botter.framework */; };
 		8C016D4925010D7A000E2DC3 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C016D4825010D7A000E2DC3 /* HeaderTableViewCell.swift */; };
 		8C016D4D250118B7000E2DC3 /* UIImageViewAligned.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C016D4B250118B7000E2DC3 /* UIImageViewAligned.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C016D4E250118B7000E2DC3 /* UIImageViewAligned.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C016D4C250118B7000E2DC3 /* UIImageViewAligned.m */; };
@@ -241,6 +240,10 @@
 		8CCECCC12517B13600157D31 /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCECC9F2517AF9600157D31 /* IQTextView.swift */; };
 		8CCECCC22517B13600157D31 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCECCA42517AF9600157D31 /* IQUIView+Hierarchy.swift */; };
 		8CCECCC32517B13600157D31 /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCECC9E2517AF9600157D31 /* IQPreviousNextView.swift */; };
+		8CCECDAE2522158A00157D31 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCECDAD2522158900157D31 /* NotificationManager.swift */; };
+		8CCED1192524EB4500157D31 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCED1182524EB4500157D31 /* PlaySound.swift */; };
+		8CCED12F2524EE4700157D31 /* incoming.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CCED12E2524EE3700157D31 /* incoming.mp3 */; };
+		8CCED1302524EE4700157D31 /* typing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8CCED12D2524EE3700157D31 /* typing.mp3 */; };
 		8CD617E324E2C2160047F8E1 /* B_Forms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CD617E524E2C2160047F8E1 /* B_Forms.storyboard */; };
 		8CD617EF24E2F4E70047F8E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CD617F124E2F4E70047F8E1 /* Localizable.strings */; };
 		8CD7829D249644ED00190FA7 /* TypingIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30DC3024963A8600C497E6 /* TypingIndicatorTableViewCell.swift */; };
@@ -251,10 +254,12 @@
 		8CFC70A5248FD19E006C677B /* GalleryItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */; };
 		8CFC70A72490FAE6006C677B /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A62490FAE6006C677B /* AudioHandler.swift */; };
 		8CFC70A9249100BE006C677B /* AudioBotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A8249100BE006C677B /* AudioBotTableViewCell.swift */; };
+		B165FA993377270EB24266EB /* Pods_Botter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4358D065C690954E8798DE33 /* Pods_Botter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F6144823E14C02509313F24 /* Pods-Botter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.debug.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.debug.xcconfig"; sourceTree = "<group>"; };
+		4358D065C690954E8798DE33 /* Pods_Botter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72CFAE06F02240FD162B7297 /* Pods-Botter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.debug.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.debug.xcconfig"; sourceTree = "<group>"; };
 		8C016D4825010D7A000E2DC3 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		8C016D4B250118B7000E2DC3 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
 		8C016D4C250118B7000E2DC3 /* UIImageViewAligned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAligned.m; sourceTree = "<group>"; };
@@ -534,6 +539,10 @@
 		8CCECCAB2517AF9600157D31 /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "IQKeyboardManagerSwift-umbrella.h"; path = "Botter/depends/Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		8CCECCAC2517AF9600157D31 /* IQKeyboardManagerSwift.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = IQKeyboardManagerSwift.debug.xcconfig; path = "Botter/depends/Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		8CCECCAD2517AF9600157D31 /* IQKeyboardManagerSwift.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = IQKeyboardManagerSwift.release.xcconfig; path = "Botter/depends/Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.release.xcconfig"; sourceTree = "<group>"; };
+		8CCECDAD2522158900157D31 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		8CCED1182524EB4500157D31 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
+		8CCED12D2524EE3700157D31 /* typing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = typing.mp3; sourceTree = "<group>"; };
+		8CCED12E2524EE3700157D31 /* incoming.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = incoming.mp3; sourceTree = "<group>"; };
 		8CD617E424E2C2160047F8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/B_Forms.storyboard; sourceTree = "<group>"; };
 		8CD617F024E2F4E70047F8E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CD617F224E2FD420047F8E1 /* LocalStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStrings.swift; sourceTree = "<group>"; };
@@ -543,8 +552,7 @@
 		8CFC70A4248FD19E006C677B /* GalleryItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		8CFC70A62490FAE6006C677B /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHandler.swift; sourceTree = "<group>"; };
 		8CFC70A8249100BE006C677B /* AudioBotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBotTableViewCell.swift; sourceTree = "<group>"; };
-		B317499B9C95161004D27935 /* Pods_Botter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Botter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6B6D6F4A527BDA296815F71 /* Pods-Botter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.release.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.release.xcconfig"; sourceTree = "<group>"; };
+		C2A2D2AF7502F962B66ACFA1 /* Pods-Botter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Botter.release.xcconfig"; path = "Target Support Files/Pods-Botter/Pods-Botter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -554,7 +562,7 @@
 			files = (
 				8CFC709F248FC227006C677B /* WebKit.framework in Frameworks */,
 				8CC4F6E8248D24C7000692AE /* Assets.xcassets in Frameworks */,
-				2CC4BAFB93B00722FC9A1474 /* Pods_Botter.framework in Frameworks */,
+				B165FA993377270EB24266EB /* Pods_Botter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				8CFC709E248FC227006C677B /* WebKit.framework */,
-				B317499B9C95161004D27935 /* Pods_Botter.framework */,
+				4358D065C690954E8798DE33 /* Pods_Botter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -940,6 +948,8 @@
 		8CC4F4A5248CFBA4000692AE /* Botter */ = {
 			isa = PBXGroup;
 			children = (
+				8CCED12E2524EE3700157D31 /* incoming.mp3 */,
+				8CCED12D2524EE3700157D31 /* typing.mp3 */,
 				8C786A4624E29765004A826C /* Localization */,
 				8C463ACD24BF379B00B78E96 /* DataSource */,
 				8CC4F597248D15E2000692AE /* depends */,
@@ -961,11 +971,13 @@
 		8CC4F4AE248CFCC9000692AE /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				8CCED1182524EB4500157D31 /* PlaySound.swift */,
 				8CC4F4AF248CFCC9000692AE /* SocketManager.swift */,
 				8C41822F24A1CF070097E1A6 /* ReachabilityManager.swift */,
 				8C41823124A1F3AA0097E1A6 /* BotterSettingsManager.swift */,
 				8C41823324A1FF100097E1A6 /* UIManager.swift */,
 				8C4BDF2E24FD2FE400CCAA16 /* ChatSessionManager.swift */,
+				8CCECDAD2522158900157D31 /* NotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1282,8 +1294,8 @@
 		F954DB11F77578B1EBA192C3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5F6144823E14C02509313F24 /* Pods-Botter.debug.xcconfig */,
-				B6B6D6F4A527BDA296815F71 /* Pods-Botter.release.xcconfig */,
+				72CFAE06F02240FD162B7297 /* Pods-Botter.debug.xcconfig */,
+				C2A2D2AF7502F962B66ACFA1 /* Pods-Botter.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1309,7 +1321,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CC4F4AB248CFBA4000692AE /* Build configuration list for PBXNativeTarget "Botter" */;
 			buildPhases = (
-				999D4297867133AF1B14468C /* [CP] Check Pods Manifest.lock */,
+				D0D88DA7968D266DC21694FC /* [CP] Check Pods Manifest.lock */,
 				8CC4F49E248CFBA4000692AE /* Headers */,
 				8CC4F49F248CFBA4000692AE /* Sources */,
 				8CC4F4A0248CFBA4000692AE /* Frameworks */,
@@ -1363,6 +1375,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCED12F2524EE4700157D31 /* incoming.mp3 in Resources */,
+				8CCED1302524EE4700157D31 /* typing.mp3 in Resources */,
 				8CE8351724E0243D0007244E /* BotterInfo.plist in Resources */,
 				8C5D4A382505463D00B082B1 /* TextInputCardTableViewCell.xib in Resources */,
 				8C5592BF24B47C6800B23BCC /* FlightTicketTableViewCell.xib in Resources */,
@@ -1386,7 +1400,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		999D4297867133AF1B14468C /* [CP] Check Pods Manifest.lock */ = {
+		D0D88DA7968D266DC21694FC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1458,6 +1472,7 @@
 				8CC4F67C248D17A9000692AE /* DataTransform.swift in Sources */,
 				8CC4F6E2248D18C8000692AE /* WebSocket.swift in Sources */,
 				8C1B44A524E56FCC00853B03 /* LazyImage+Loader.swift in Sources */,
+				8CCED1192524EB4500157D31 /* PlaySound.swift in Sources */,
 				8CAB89DB24913569009BBAB6 /* AudioPlayer+RetryEvent.swift in Sources */,
 				8CC4F518248CFCCC000692AE /* SocketManager.swift in Sources */,
 				8CC4F6D4248D18C8000692AE /* Engine.swift in Sources */,
@@ -1603,6 +1618,7 @@
 				8C83EE3424D18B90000F2637 /* UserImageTableViewCell.swift in Sources */,
 				8CC4F6DB248D18C8000692AE /* HTTPHandler.swift in Sources */,
 				8C463AF824C0C10200B78E96 /* RadioCollectionViewCell.swift in Sources */,
+				8CCECDAE2522158A00157D31 /* NotificationManager.swift in Sources */,
 				8CC4F545248CFCCC000692AE /* ChatViewController.swift in Sources */,
 				8CAB89DE24913569009BBAB6 /* AudioPlayerMode.swift in Sources */,
 				8C786A2B24E0ECD3004A826C /* Date.swift in Sources */,
@@ -1820,7 +1836,7 @@
 		};
 		8CC4F4AC248CFBA4000692AE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F6144823E14C02509313F24 /* Pods-Botter.debug.xcconfig */;
+			baseConfigurationReference = 72CFAE06F02240FD162B7297 /* Pods-Botter.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1855,7 +1871,7 @@
 		};
 		8CC4F4AD248CFBA4000692AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6B6D6F4A527BDA296815F71 /* Pods-Botter.release.xcconfig */;
+			baseConfigurationReference = C2A2D2AF7502F962B66ACFA1 /* Pods-Botter.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

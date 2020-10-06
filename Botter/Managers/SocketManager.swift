@@ -207,6 +207,8 @@ class B_SocketManager : WebSocketDelegate  {
         
         B_SocketManager.first = true
         B_SocketManager.shared = B_SocketManager()
+//        B_SocketManager.shared.socket.disconnect()
+        NotificationManager.shared.clear()
     }
     
     func sendMessage(text : String , completion:@escaping((Bool)->())){

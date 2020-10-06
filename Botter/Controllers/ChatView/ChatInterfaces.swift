@@ -28,7 +28,7 @@ protocol ChatViewInterface: b_ViewInterface {
 protocol ChatPresenterInterface: b_PresenterInterface {
     var messgesList : [b_BasicMessage]! { get set }
     func openSocket()
-    func messageReceived(message : b_BasicMessage)
+    func messageReceived(message: b_BasicMessage , isHistory : Bool)
     func historyLoaded(list : [b_BasicMessage])
     func sendMessage(text : String)
     func clearTextBox()
@@ -44,6 +44,7 @@ protocol ChatPresenterInterface: b_PresenterInterface {
     func sendAttachment(file : b_AttachedFile)
     func sendUserLocation(latitude : Double, langtuide: Double)
     func endSession()
+    func close()
 }
 
 protocol ChatInteractorInterface: b_InteractorInterface {
