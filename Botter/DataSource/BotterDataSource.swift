@@ -67,7 +67,30 @@ class BotterDataSource : BaseDataSource{
         }
     
     
-    
+    func sendToken(completion:@escaping(ResponseStatus,Any)->Void){
+
+        let params = ["gateway_id": UIDevice.current.identifierForVendor?.uuidString ?? "",
+                      "bot_id" : BotterSettingsManager.BotID ,
+                      "token" : BotterSettingsManager.FCMToken ]
+        
+        print(params as? AnyObject)
+        
+        BaseAPI(url: Constants.SEND_TOKEN , method: .put , params: params, headers: nil) { (json, error) in
+                if json != nil {
+                    print(json)
+//                    let data = b_FaqData.getFAQS(dict: json ?? [[:]])
+                    completion(.sucess , "")
+                }else{
+                    if (error != nil){
+                        completion(.networkError , error!.localizedDescription)
+                    }
+                    else{
+                        completion(.networkError,"Something went wrong!")
+                    }
+                }
+            }
+            
+        }
     
     
 }

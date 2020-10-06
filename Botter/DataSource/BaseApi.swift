@@ -27,9 +27,11 @@ class BaseDataSource : Any {
         static var BASE_URL = STAGING_URL
         static var BOTTER_DATA = BASE_URL + "widget/data/"
         static var FAQ_DATA = BASE_URL + "widget/faqs/"
-        static var UPLOAD_URL = STAGING_UPLOAD
+        static var SEND_TOKEN = SOCKET_URL.replacingOccurrences(of: "wss", with: "https") + "notification/user-token"
         
+        static var UPLOAD_URL = STAGING_UPLOAD
         static var UPLOAD_ATTACHMENT = BASE_URL + "api/file/upload"
+        
     }
     
     public enum ResponseStatus: String {

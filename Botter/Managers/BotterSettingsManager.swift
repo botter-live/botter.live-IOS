@@ -11,7 +11,17 @@ import UIKit
 
 public class BotterSettingsManager  {
     
-    internal static var BotID : String = "nKmovPCdWNZdYnIejRnd"
+    internal static var BotID : String = "nKmovPCdWNZdYnIejRnd"{
+        didSet{
+            NotificationManager.shared.sendToken()
+        }
+    }
+    internal static var FCMToken : String = ""{
+        didSet{
+            //sendToken
+            NotificationManager.shared.sendToken()
+        }
+    }
     
     public static var AccentColor : UIColor = UIColor.init(codeString: "#642c7a"){
         didSet{
@@ -23,7 +33,7 @@ public class BotterSettingsManager  {
     public static var BotterMessageBGColor : UIColor = UIColor.init(codeString: "#eaf0f7")
     public static var ChatTitleColor : UIColor = UIColor.white
     
-    public static var ChatTitleText : String = "Botter"
+    public static var ChatTitleText : String = "BOTTER"
     public static var HeadlineMessage : String = "Hey there 👋"
     public static var WelcomeMessage : String = "We’re here to answer your questions about Company. Ask us anything!"
     
@@ -111,6 +121,7 @@ public class BotterSettingsManager  {
                 ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
                 B_SocketManager.first = true
                 B_SocketManager.shared = B_SocketManager()
+                NotificationManager.shared.clear()
             }
             BotterSettingsManager.BotID = id
         }
@@ -122,6 +133,7 @@ public class BotterSettingsManager  {
                 ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
                 B_SocketManager.first = true
                 B_SocketManager.shared = B_SocketManager()
+                NotificationManager.shared.clear()
             }
             BaseDataSource.Constants.BASE_URL = url
         }
@@ -133,6 +145,7 @@ public class BotterSettingsManager  {
                 ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
                 B_SocketManager.first = true
                 B_SocketManager.shared = B_SocketManager()
+                NotificationManager.shared.clear()
             }
             BaseDataSource.Constants.UPLOAD_URL = url
         }
@@ -144,6 +157,7 @@ public class BotterSettingsManager  {
                 ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
                 B_SocketManager.first = true
                 B_SocketManager.shared = B_SocketManager()
+                NotificationManager.shared.clear()
             }
             BaseDataSource.Constants.SOCKET_URL = url
         }

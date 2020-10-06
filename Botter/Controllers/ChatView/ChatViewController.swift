@@ -105,6 +105,7 @@ final class b_ChatViewController: UIViewController {
     }
     
     func close(){
+        self.presenter.close()
         if self.history{
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         }else{
@@ -263,6 +264,7 @@ extension b_ChatViewController {
             // clean up code here
             B_SocketManager.shared = nil
             B_SocketManager.shared = B_SocketManager()
+            NotificationManager.shared.clear()
         }
     }
     

@@ -25,6 +25,7 @@ class NotifyTableViewCell: UITableViewCell {
     
     func setData(text : String){
         textLbl?.text = text
+//        PlaySound.incomingMsg()
     }
     
 }

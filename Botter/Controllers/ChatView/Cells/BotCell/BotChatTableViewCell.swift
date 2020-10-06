@@ -60,6 +60,7 @@ class BotChatTableViewCell: UserChatTableViewCell {
 //                setAvatar()
             }
         }
+        
     }
     
     func setAvatar(){
