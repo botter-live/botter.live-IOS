@@ -13,7 +13,7 @@ class b_tagViewLayOut: UICollectionViewFlowLayout {
         let attributesForElementsInRect = super.layoutAttributesForElements(in: rect)
         var newAttributesForElementsInRect = [UICollectionViewLayoutAttributes]()
         // use a value to keep track of left margin
-        var leftMargin: CGFloat = 0.0;
+        var leftMargin: CGFloat = self.sectionInset.left;
         var oldY : CGFloat = 0.0
         for attributes in attributesForElementsInRect! {
             let refAttributes = attributes
@@ -42,7 +42,7 @@ class b_tagViewLayOut: UICollectionViewFlowLayout {
             
             if oldY != refAttributes.frame.origin.y && refAttributes.frame.origin.x != self.sectionInset.left{
                 var newLeftAlignedFrame = refAttributes.frame
-                newLeftAlignedFrame.origin.x = 0
+                newLeftAlignedFrame.origin.x = self.sectionInset.left
                 refAttributes.frame = newLeftAlignedFrame
                 
                 leftMargin = self.sectionInset.left

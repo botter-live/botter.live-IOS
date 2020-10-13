@@ -22,7 +22,7 @@ class b_AccentView : UIView{
     }
 }
 
-class b_BasicRegularLbl : b_PaddedUILabel{
+class b_BasicRegularLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
         let tFont = BotterSettingsManager.Font.getRegularFontForLabel(lbl: self)
