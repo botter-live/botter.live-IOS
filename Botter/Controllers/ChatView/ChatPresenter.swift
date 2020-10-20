@@ -85,6 +85,8 @@ extension b_ChatPresenter: ChatPresenterInterface {
             
         }else if message.msgType == .typing{
             PlaySound.typing()
+        }else if message.msgType == .hero{
+            PlaySound.textToSpeech(text: message.text)
         }else if message.sender.senderType != .user{
             PlaySound.incomingMsg()
         }

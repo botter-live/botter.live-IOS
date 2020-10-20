@@ -136,7 +136,11 @@ public class BotterSettingsManager  {
                 B_SocketManager.shared = B_SocketManager()
                 NotificationManager.shared.clear()
             }
-            BaseDataSource.Constants.BASE_URL = url
+            if url.last != "/" {
+                BaseDataSource.Constants.BASE_URL = url + "/"
+            }else{
+                BaseDataSource.Constants.BASE_URL = url
+            }
         }
     }
     
@@ -160,7 +164,12 @@ public class BotterSettingsManager  {
                 B_SocketManager.shared = B_SocketManager()
                 NotificationManager.shared.clear()
             }
-            BaseDataSource.Constants.SOCKET_URL = url
+            
+            if url.last != "/" {
+                BaseDataSource.Constants.SOCKET_URL = url + "/"
+            }else{
+                BaseDataSource.Constants.SOCKET_URL = url
+            }
         }
     }
     

@@ -56,4 +56,40 @@ class PlaySound{
             print(error.localizedDescription)
         }
     }
+    
+    static func textToSpeech(text : String){
+        let dataSource = TextToSpeechDataSource()
+        dataSource.getVoiceFile(text: text) { (status, response) in
+            switch status {
+            case .sucess:
+                let fileStr = response as? String ?? ""
+                playAudio(audioStr: fileStr)
+                break
+            case .networkError , .error:
+                break
+            }
+        }
+    }
+    
+    private static func playAudio(audioStr : String){
+        do {
+                let audioData: Data! = Data(base64Encoded: audioStr, options: .ignoreUnknownCharacters)
+                //print(track)
+                if audioData != nil {
+                    player = try AVAudioPlayer(data: audioData)
+                    guard let player = player else { return }
+                    player.play()
+                    print("is playing:", player.isPlaying)
+                    print(player.duration)
+                }
+                else {
+                    print("Data Not Exist")
+                }
+            }
+            catch {
+                print("didnt work 2")
+                NSLog("Unresolved error \(error.localizedDescription)")
+                // SHOW ALERT OR SOMETHING
+            }
+    }
 }
