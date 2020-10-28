@@ -125,6 +125,7 @@ final class b_ChatViewController: UIViewController {
     
     func close(){
         self.presenter.close()
+        PlaySound.stop()
         if self.history{
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         }else{
