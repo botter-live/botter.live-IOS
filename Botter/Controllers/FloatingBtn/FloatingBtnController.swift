@@ -48,7 +48,7 @@ class b_FloatingBtnController: UIViewController {
         let button = UIButton(type: .custom)
         button.setTitle("", for: .normal)
         button.setTitleColor(UIColor.green, for: .normal)
-        button.backgroundColor = BotterSettingsManager.AccentColor
+        button.backgroundColor = BotterSettingsManager.LauncherColor
     
         var image = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
         if BotterSettingsManager.chatIcon != nil{
@@ -56,6 +56,7 @@ class b_FloatingBtnController: UIViewController {
         }
         button.setImage(image , for: .normal)
         button.layer.shadowColor = UIColor.black.cgColor
+        button.tintColor = BotterSettingsManager.FontColor
         button.layer.shadowRadius = 3
         button.layer.cornerRadius = 30
         button.layer.shadowOpacity = 0.8

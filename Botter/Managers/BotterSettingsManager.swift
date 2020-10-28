@@ -23,12 +23,16 @@ public class BotterSettingsManager  {
         }
     }
     
-    public static var AccentColor : UIColor = UIColor.init(codeString: "#642c7a"){
+    public static var AccentColor : UIColor = UIColor.init(codeString: "#642c7a")
+    
+    public static var LauncherColor : UIColor = AccentColor{
         didSet{
             Botter.reSet()
         }
     }
     
+    public static var UserMessageBGColor : UIColor = AccentColor
+    public static var HeaderColor : UIColor = AccentColor
     public static var FontColor : UIColor = UIColor.white
     public static var BotterMessageFontColor : UIColor = UIColor.black
     public static var BotterMessageBGColor : UIColor = UIColor.init(codeString: "#eaf0f7")
@@ -40,6 +44,7 @@ public class BotterSettingsManager  {
     
     public static var logo : UIImage = UIImage(named: "botterIcon", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     public static var welcomeBrandLogo : UIImage = UIImage(named: "botterIcon", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
+    public static var chatHeaderLogo : UIImage = UIImage(named: "botterIcon", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     public static var chatIcon : UIImage = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     public static var agentAvatar : UIImage = UIImage(named: "agent", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
     

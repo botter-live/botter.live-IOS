@@ -19,6 +19,7 @@ final class b_StartFormViewController: b_StartConversationViewController {
     @IBOutlet weak var searchBox : SearchBox!
     @IBOutlet weak var oldConvName : b_BasicMediumLbl!
     @IBOutlet weak var oldConvText : b_BasicMediumLbl!
+    @IBOutlet weak var logoImage : UIImageView!
     
     var presenter: StartFormPresenterInterface!
     
@@ -34,6 +35,15 @@ final class b_StartFormViewController: b_StartConversationViewController {
             continueSessionView.isHidden = false
             oldConvName.text = BotterSettingsManager.ChatTitleText
             oldConvText.text = ChatSessionManager.shared.getActiveSessionMsg()
+            logoImage.tintColor = BotterSettingsManager.FontColor
+            logoImage.image = BotterSettingsManager.logo
+            let logo : UIImage = UIImage(named: "botterIcon", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
+            
+            if BotterSettingsManager.logo == logo{
+                self.logoImage.contentMode = .center
+            }else{
+                self.logoImage.contentMode = .scaleAspectFit
+            }
         }else{
             updateHeaderHeight(height: 268)
             continueSessionView.isHidden = true

@@ -53,7 +53,7 @@ to BOTTER Mobile</string>
         <scene sceneID="yh5-U9-WyS">
             <objects>
                 <viewController storyboardIdentifier="b_StartConversationViewController" id="doQ-LX-xpz" customClass="b_StartConversationViewController" customModule="Botter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JJc-nd-Etp" customClass="b_AccentView" customModule="Botter" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="JJc-nd-Etp" customClass="b_HeaderView" customModule="Botter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -508,7 +508,7 @@ to BOTTER Mobile</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="cnj-ya-FOi" customClass="b_AccentView" customModule="Botter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="cnj-ya-FOi" customClass="b_HeaderView" customModule="Botter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Olx-3d-3Dm">
@@ -548,12 +548,9 @@ to BOTTER Mobile</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmg-7A-12u" customClass="b_RoundedView" customModule="Botter" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="10" width="40" height="40"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="logo-footer-green" translatesAutoresizingMaskIntoConstraints="NO" id="Oit-IZ-sSi" customClass="b_HeaderLogo" customModule="Botter" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="scaleAspectFit" image="logo-footer-green" translatesAutoresizingMaskIntoConstraints="NO" id="Oit-IZ-sSi" customClass="b_HeaderLogo" customModule="Botter" customModuleProvider="target">
                                                         <rect key="frame" x="6" y="6" width="28" height="28"/>
                                                         <color key="tintColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="28" id="fLp-7y-Gls"/>
-                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="10"/>
@@ -561,7 +558,7 @@ to BOTTER Mobile</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="Oit-IZ-sSi" secondAttribute="trailing" constant="6" id="4s6-nR-XlS"/>
                                                     <constraint firstItem="Oit-IZ-sSi" firstAttribute="leading" secondItem="bmg-7A-12u" secondAttribute="leading" constant="6" id="8ll-pf-VXm"/>
@@ -621,7 +618,7 @@ to BOTTER Mobile</string>
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-AY-cfX" customClass="b_AccentView" customModule="Botter" customModuleProvider="target">
+                                                <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJM-AY-cfX" customClass="userBubbelView" customModule="Botter" customModuleProvider="target">
                                                     <rect key="frame" x="319.5" y="12" width="72.5" height="56"/>
                                                     <color key="backgroundColor" red="0.3921568627" green="0.17254901959999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
@@ -2567,7 +2564,7 @@ itemTitle.alpha = 0</string>
                                     <constraint firstAttribute="trailing" secondItem="xZW-kw-e4O" secondAttribute="trailing" constant="28" id="sck-rb-VK7"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Xi-vw-qzD" customClass="b_AccentView" customModule="Botter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Xi-vw-qzD" customClass="b_HeaderView" customModule="Botter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close-1" translatesAutoresizingMaskIntoConstraints="NO" id="Boa-mf-8JY">
@@ -2755,78 +2752,6 @@ itemTitle.alpha = 0</string>
     <designables>
         <designable name="27u-gJ-guB">
             <size key="intrinsicContentSize" width="34.5" height="18.5"/>
-        </designable>
-        <designable name="4TZ-Eh-Jav">
-            <size key="intrinsicContentSize" width="35.5" height="17"/>
-        </designable>
-        <designable name="5Bj-ag-63b">
-            <size key="intrinsicContentSize" width="38" height="18"/>
-        </designable>
-        <designable name="AIf-3L-HFJ">
-            <size key="intrinsicContentSize" width="33" height="16"/>
-        </designable>
-        <designable name="AuU-Wi-RXb">
-            <size key="intrinsicContentSize" width="36.5" height="14.5"/>
-        </designable>
-        <designable name="B2T-Sq-Yg9">
-            <size key="intrinsicContentSize" width="34.5" height="16.5"/>
-        </designable>
-        <designable name="EUk-75-YUb">
-            <size key="intrinsicContentSize" width="79.5" height="18"/>
-        </designable>
-        <designable name="F8i-af-O02">
-            <size key="intrinsicContentSize" width="34.5" height="16.5"/>
-        </designable>
-        <designable name="Hfm-sH-FJq">
-            <size key="intrinsicContentSize" width="34.5" height="16.5"/>
-        </designable>
-        <designable name="LPZ-Rn-zVb">
-            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
-        </designable>
-        <designable name="Ng6-o2-czq">
-            <size key="intrinsicContentSize" width="119" height="33.5"/>
-        </designable>
-        <designable name="QBh-jZ-W6L">
-            <size key="intrinsicContentSize" width="34.5" height="16.5"/>
-        </designable>
-        <designable name="S0s-qd-1uX">
-            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
-        </designable>
-        <designable name="Sro-s6-mgF">
-            <size key="intrinsicContentSize" width="36.5" height="14.5"/>
-        </designable>
-        <designable name="UnY-qO-CaR">
-            <size key="intrinsicContentSize" width="36" height="17"/>
-        </designable>
-        <designable name="VaI-8O-xIi">
-            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
-        </designable>
-        <designable name="W95-Z6-gQv">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-        <designable name="eiw-WB-gxT">
-            <size key="intrinsicContentSize" width="26.5" height="12"/>
-        </designable>
-        <designable name="fqa-3b-ssp">
-            <size key="intrinsicContentSize" width="26.5" height="12"/>
-        </designable>
-        <designable name="gmd-eo-raL">
-            <size key="intrinsicContentSize" width="34.5" height="17"/>
-        </designable>
-        <designable name="lLG-XR-xfj">
-            <size key="intrinsicContentSize" width="57" height="27.5"/>
-        </designable>
-        <designable name="mZw-LI-EBl">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-        <designable name="s7H-KB-JWH">
-            <size key="intrinsicContentSize" width="79.5" height="18"/>
-        </designable>
-        <designable name="utV-R1-0e6">
-            <size key="intrinsicContentSize" width="466" height="17"/>
-        </designable>
-        <designable name="uyh-XY-D1u">
-            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
         </designable>
     </designables>
     <resources>

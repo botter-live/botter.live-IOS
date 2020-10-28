@@ -56,7 +56,13 @@ class BotChatTableViewCell: UserChatTableViewCell {
                 self.avatarImg.image = BotterSettingsManager.logo
 //                let image = BotterSettingsManager.logo.resize(scaledToWidth: self.avatarImg.frame.width)
 //                self.avatarImg.image = image
-                self.avatarImg.contentMode = .center
+                let logo : UIImage = UIImage(named: "botterIcon", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
+                
+                if BotterSettingsManager.logo == logo{
+                    self.avatarImg.contentMode = .center
+                }else{
+                    self.avatarImg.contentMode = .scaleAspectFit
+                }
 //                setAvatar()
             }
         }
