@@ -113,7 +113,8 @@ extension b_ChatViewController : SFSpeechRecognizerDelegate {
                         if BotterSettingsManager.language == .arabic{
                             self.detectedStr = detectedStr.stripDiacritics
                         }
-                        self.presenter.sendMessage(text: self.detectedStr.b_trim())
+                        print(self.detectedStr)
+                        self.presenter.sendMessage(text: self.detectedStr)
                     }
                     self.keyBoardBtn.sendActions(for: .touchUpInside)
                    
@@ -227,6 +228,6 @@ extension String {
         for i in vowels{
             str = self.replacingOccurrences(of: "\(i)", with: "")
         }
-        return str.filter { $0.isLetter }
+        return str
     }
 }

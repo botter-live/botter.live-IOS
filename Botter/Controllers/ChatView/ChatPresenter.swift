@@ -57,6 +57,7 @@ extension b_ChatPresenter: ChatPresenterInterface {
         messgesList = messgesList.filter { (msg) -> Bool in
             msg.msgType != .typing
         }
+        
         if message.msgType == .flightStatus{
             if message.flighStatus.introMessage != ""{
                 let nMessage = b_BasicMessage()
@@ -78,6 +79,10 @@ extension b_ChatPresenter: ChatPresenterInterface {
             b_AudioHandler.shared.addAudioMessage(msg: message)
         }
         
+        messgesList = messgesList.filter { (msg) -> Bool in
+            msg.msgType != .multiInput
+        }
+        
         self.view.reload()
         
         
@@ -87,7 +92,7 @@ extension b_ChatPresenter: ChatPresenterInterface {
             PlaySound.typing()
         }else if message.msgType == .hero{
             PlaySound.textToSpeech(text: message.text)
-        }else if message.sender.senderType != .user{
+        }else if message.sender.senderType != .user && message.msgType != .multiInput{
             PlaySound.incomingMsg()
         }
     }
