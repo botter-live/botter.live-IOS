@@ -50,7 +50,11 @@ public class BotterSettingsManager  {
     
     
     public static var hasFAQs : Bool = true
-    public static var  alignLauncherLeft : Bool = false
+    public static var  alignLauncherLeft : Bool = false{
+        didSet{
+            Botter.reSet()
+        }
+    }
     public static var showOnClosePopup : Bool = true
     
     public static var bottomMargin : CGFloat = 40{

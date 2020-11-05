@@ -91,8 +91,11 @@ class b_FloatingBtnController: UIViewController {
         self.view = view
         self.button = button
         self.button.addTarget(self, action: #selector(floatingButtonWasTapped), for: .touchUpInside)
+        
         window?.button =  self.button
+        self.view.isHidden = hideLauncher()
         window?.fView = self.view
+        
     }
     
     @objc func floatingButtonWasTapped() {
@@ -103,6 +106,21 @@ class b_FloatingBtnController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+    }
+    
+    func hideLauncher()->Bool{
+        let windows = UIApplication.shared.windows
+        if let window = windows.last(where:  { (window) -> Bool in
+            !(window is FloatingButtonWindow)
+        }){
+            if let visible = window.b_visibleViewController{
+                return visible is BotterControllerWithHiddenLauncher
+            }
+            
+            return false
+        }
+        
+        return false
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -157,8 +175,27 @@ open class BotterControllerWithHiddenLauncher : UIViewController  {
     
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        Botter.showLauncherButton()
+        if !hideLauncher(){
+            Botter.showLauncherButton()
+        }else{
+            Botter.hideLauncherButton()
+        }
         
+    }
+    
+    func hideLauncher()->Bool{
+        let windows = UIApplication.shared.windows
+        if let window = windows.last(where:  { (window) -> Bool in
+            !(window is FloatingButtonWindow)
+        }){
+            if let visible = window.b_visibleViewController{
+                return visible is BotterControllerWithHiddenLauncher
+            }
+            
+            return false
+        }
+        
+        return false
     }
 }
 
@@ -180,3 +217,4 @@ public final class MyFrameworkBundle {
     
     
 }
+
