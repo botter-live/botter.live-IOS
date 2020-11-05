@@ -29,6 +29,10 @@ public func openChatScreen(APIKey : String){
     }){
         BotterSettingsManager.BotID = APIKey
        openChat(parent: UIApplication.shared.windows[index].b_visibleViewController!)
+    }else{
+        if let window = UIApplication.shared.keyWindow{
+            openChat(parent: window.b_visibleViewController!)
+        }
     }
 }
 
