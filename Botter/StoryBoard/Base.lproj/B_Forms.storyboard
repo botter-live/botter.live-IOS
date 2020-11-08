@@ -14,7 +14,7 @@
         <scene sceneID="wcX-yB-bYA">
             <objects>
                 <viewController storyboardIdentifier="b_StartFormViewController" id="igo-tf-aqN" customClass="b_StartFormViewController" customModule="Botter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rLM-3i-IHA" customClass="b_AccentView" customModule="Botter" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="rLM-3i-IHA" customClass="b_HeaderView" customModule="Botter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1631,6 +1631,7 @@
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="continueSessionView" destination="laK-GH-La2" id="7Xs-Xy-nzd"/>
+                        <outlet property="logoImage" destination="x2p-ji-aZF" id="E1Z-XK-1Fo"/>
                         <outlet property="oldConvName" destination="aqe-oA-zDR" id="CsZ-2K-s3I"/>
                         <outlet property="oldConvText" destination="3y0-ZN-8mw" id="xYz-Ci-vaU"/>
                         <outlet property="searchBox" destination="4Ck-O4-4LT" id="oxu-Qs-gxs"/>
@@ -1649,7 +1650,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMp-wf-8yy" customClass="b_AccentView" customModule="Botter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMp-wf-8yy" customClass="b_HeaderView" customModule="Botter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NQ-Fo-7Kv">
@@ -2440,7 +2441,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfX-Z1-cgH" customClass="b_AccentView" customModule="Botter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfX-Z1-cgH" customClass="b_HeaderView" customModule="Botter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5a-Ec-pKY">
@@ -2552,7 +2553,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aa6-gm-UiP" customClass="b_AccentView" customModule="Botter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aa6-gm-UiP" customClass="b_HeaderView" customModule="Botter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZA-nN-1H5">
@@ -2678,68 +2679,6 @@
             <point key="canvasLocation" x="2846.376811594203" y="756.69642857142856"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="61W-CE-lfM">
-            <size key="intrinsicContentSize" width="326.5" height="17"/>
-        </designable>
-        <designable name="6vb-hx-zwG">
-            <size key="intrinsicContentSize" width="326.5" height="17"/>
-        </designable>
-        <designable name="B3j-ia-9wT">
-            <size key="intrinsicContentSize" width="326.5" height="17"/>
-        </designable>
-        <designable name="BSj-rN-0lW">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-        <designable name="CKX-UW-qx3">
-            <size key="intrinsicContentSize" width="632" height="17"/>
-        </designable>
-        <designable name="I1k-Zh-G29">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-        <designable name="IDo-3T-vaf">
-            <size key="intrinsicContentSize" width="466" height="17"/>
-        </designable>
-        <designable name="JF6-eb-gDs">
-            <size key="intrinsicContentSize" width="36.5" height="14.5"/>
-        </designable>
-        <designable name="Kel-77-Nlg">
-            <size key="intrinsicContentSize" width="466" height="17"/>
-        </designable>
-        <designable name="NCv-4I-1Og">
-            <size key="intrinsicContentSize" width="36.5" height="14.5"/>
-        </designable>
-        <designable name="PRQ-Go-SQo">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-        <designable name="Rq9-do-T42">
-            <size key="intrinsicContentSize" width="171" height="19.5"/>
-        </designable>
-        <designable name="THn-4n-27o">
-            <size key="intrinsicContentSize" width="632" height="17"/>
-        </designable>
-        <designable name="W7e-gy-rWY">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-        <designable name="fWt-LD-964">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-        <designable name="nHe-wL-IOg">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-        <designable name="o9a-FD-dl0">
-            <size key="intrinsicContentSize" width="632" height="17"/>
-        </designable>
-        <designable name="oJj-1Q-BlG">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-        <designable name="urB-Pf-isq">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-        <designable name="wDB-Oh-vIs">
-            <size key="intrinsicContentSize" width="37.5" height="18"/>
-        </designable>
-    </designables>
     <resources>
         <image name="arrowRight" width="8.5" height="13.5"/>
         <image name="arrowRight1" width="8.5" height="13.5"/>

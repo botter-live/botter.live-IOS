@@ -48,7 +48,7 @@ class b_FloatingBtnController: UIViewController {
         let button = UIButton(type: .custom)
         button.setTitle("", for: .normal)
         button.setTitleColor(UIColor.green, for: .normal)
-        button.backgroundColor = BotterSettingsManager.AccentColor
+        button.backgroundColor = BotterSettingsManager.LauncherColor
     
         var image = UIImage(named: "ic-chat", in: MyFrameworkBundle.bundle , compatibleWith: nil)!
         if BotterSettingsManager.chatIcon != nil{
@@ -56,6 +56,7 @@ class b_FloatingBtnController: UIViewController {
         }
         button.setImage(image , for: .normal)
         button.layer.shadowColor = UIColor.black.cgColor
+        button.tintColor = BotterSettingsManager.FontColor
         button.layer.shadowRadius = 3
         button.layer.cornerRadius = 30
         button.layer.shadowOpacity = 0.8
@@ -90,8 +91,11 @@ class b_FloatingBtnController: UIViewController {
         self.view = view
         self.button = button
         self.button.addTarget(self, action: #selector(floatingButtonWasTapped), for: .touchUpInside)
+        
         window?.button =  self.button
+        self.view.isHidden = hideLauncher()
         window?.fView = self.view
+        
     }
     
     @objc func floatingButtonWasTapped() {
@@ -102,6 +106,21 @@ class b_FloatingBtnController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+    }
+    
+    func hideLauncher()->Bool{
+        let windows = UIApplication.shared.windows
+        if let window = windows.last(where:  { (window) -> Bool in
+            !(window is FloatingButtonWindow)
+        }){
+            if let visible = window.b_visibleViewController{
+                return visible is BotterControllerWithHiddenLauncher
+            }
+            
+            return false
+        }
+        
+        return false
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -154,10 +173,29 @@ open class BotterControllerWithHiddenLauncher : UIViewController  {
         Botter.hideLauncherButton()
     }
     
-    open override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        Botter.showLauncherButton()
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if !hideLauncher(){
+            Botter.showLauncherButton()
+        }else{
+            Botter.hideLauncherButton()
+        }
         
+    }
+    
+    func hideLauncher()->Bool{
+        let windows = UIApplication.shared.windows
+        if let window = windows.last(where:  { (window) -> Bool in
+            !(window is FloatingButtonWindow)
+        }){
+            if let visible = window.b_visibleViewController{
+                return visible is BotterControllerWithHiddenLauncher
+            }
+            
+            return false
+        }
+        
+        return false
     }
 }
 
@@ -179,3 +217,4 @@ public final class MyFrameworkBundle {
     
     
 }
+

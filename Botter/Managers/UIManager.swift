@@ -15,10 +15,25 @@ class botBubbelView : UIView{
         backgroundColor = BotterSettingsManager.BotterMessageBGColor
     }
 }
+
+class userBubbelView : UIView{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor = BotterSettingsManager.UserMessageBGColor
+    }
+}
+
 class b_AccentView : UIView{
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = BotterSettingsManager.AccentColor
+    }
+}
+
+class b_HeaderView : UIView{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor = BotterSettingsManager.HeaderColor
     }
 }
 
@@ -155,7 +170,7 @@ class b_FontLikeBtn : UIButton{
 //        let tFont = BotterSettingsManager.font.regular
 //        tFont.pointSize = font.pointSize
 //        font = tFont
-        
+        self.titleLabel?.font = BotterSettingsManager.Font.getRegularFontForLabel(lbl: self.titleLabel!)
         backgroundColor = BotterSettingsManager.AccentColor
         tintColor = BotterSettingsManager.FontColor
         titleLabel?.textColor = BotterSettingsManager.FontColor
@@ -178,12 +193,15 @@ class b_HeaderLogo : UIImageView{
         if self.tag == 104{
             if BotterSettingsManager.welcomeBrandLogo != nil {
                 image = BotterSettingsManager.welcomeBrandLogo
+                //tintColor = BotterSettingsManager.FontColor
             }
-        }else if self.tag == 100{
+        }
+        else if self.tag == 100{
             
         }else{
             if BotterSettingsManager.logo != nil {
-                image = BotterSettingsManager.logo
+                tintColor = BotterSettingsManager.FontColor
+                image = BotterSettingsManager.chatHeaderLogo
             }
         }
     }
@@ -192,9 +210,10 @@ class b_HeaderLogo : UIImageView{
 class b_WelcomeHeaderLogo : UIImageViewAligned{
     override func awakeFromNib() {
         super.awakeFromNib()
-        tintColor = BotterSettingsManager.AccentColor
+        tintColor = BotterSettingsManager.HeaderColor
         if BotterSettingsManager.welcomeBrandLogo != nil {
             image = BotterSettingsManager.welcomeBrandLogo
+            tintColor = BotterSettingsManager.FontColor
         }
         self.alignLeft = BotterSettingsManager.language == .english
         self.alignRight = BotterSettingsManager.language == .arabic
