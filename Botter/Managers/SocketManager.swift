@@ -174,20 +174,23 @@ class B_SocketManager : WebSocketDelegate  {
     
     func sendOpeningMessage(){
         let isFirst = B_SocketManager.first && !ChatSessionManager.shared.hasActiveSession()
-        let msg = ["bot_id": BotterSettingsManager.BotID ,
+        var msg : [String : Any] = ["bot_id": BotterSettingsManager.BotID ,
                    "channel": channel ,
                    "type": isFirst  ? "hello"  : "welcome_back",
                    "user": guid ,
                    "user_profile": ""]
+        if self.attributes != nil{
+            msg["attributes"] = attributes
+        }
         let msgString = json(from: msg) ?? ""
 //        ChatSessionManager.shared.setActiveSession(active: true)
         self.socket.write(ping: "PING".data(using: .utf8)!) {
             if self.isConnected{
                 self.socket.write(string: msgString)
                 B_SocketManager.self.first = false
-                if self.attributes != nil{
-                    self.sendAttrebutes(attributes: self.attributes)
-                }
+//                if self.attributes != nil{
+//                    self.sendAttrebutes(attributes: self.attributes)
+//                }
             }
         }
     }
