@@ -139,37 +139,58 @@ public class BotterSettingsManager  {
     
     public static func setBotBase(url : String , clear : Bool = false){
         if url != BaseDataSource.Constants.BASE_URL && url != ""{
-            if clear{
-                ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
-                B_SocketManager.first = true
-                B_SocketManager.shared = B_SocketManager()
-                NotificationManager.shared.clear()
+            if url.lowercased().hasPrefix("http"){
+                if clear{
+                    ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
+                    B_SocketManager.first = true
+                    B_SocketManager.shared = B_SocketManager()
+                    NotificationManager.shared.clear()
+                }
+                if !(url.hasSuffix("/")){
+                    BaseDataSource.Constants.BASE_URL = url + "/"
+                }else{
+                    BaseDataSource.Constants.BASE_URL = url
+                }
+            }else{
+                print("Error: Invalid URL")
             }
-            BaseDataSource.Constants.BASE_URL = url
         }
     }
     
     public static func setBotUpload(url : String , clear : Bool = false){
         if url != BaseDataSource.Constants.UPLOAD_URL && url != ""{
-            if clear{
-                ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
-                B_SocketManager.first = true
-                B_SocketManager.shared = B_SocketManager()
-                NotificationManager.shared.clear()
+            if url.lowercased().hasPrefix("http"){
+                if clear{
+                    ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
+                    B_SocketManager.first = true
+                    B_SocketManager.shared = B_SocketManager()
+                    NotificationManager.shared.clear()
+                }
+                BaseDataSource.Constants.UPLOAD_URL = url
+            }else{
+                print("Error: Invalid URL")
             }
-            BaseDataSource.Constants.UPLOAD_URL = url
         }
     }
     
     public static func setBotSocket(url : String, clear : Bool = false){
         if url != BaseDataSource.Constants.SOCKET_URL && url != ""{
-            if clear{
-                ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
-                B_SocketManager.first = true
-                B_SocketManager.shared = B_SocketManager()
-                NotificationManager.shared.clear()
+            if url.lowercased().hasPrefix("ws"){
+                if clear{
+                    ChatSessionManager.shared.setActiveSessionMessage(msg: nil)
+                    B_SocketManager.first = true
+                    B_SocketManager.shared = B_SocketManager()
+                    NotificationManager.shared.clear()
+                }
+                if !(url.hasSuffix("/")){
+                    BaseDataSource.Constants.SOCKET_URL = url + "/"
+                }else{
+                    BaseDataSource.Constants.SOCKET_URL = url
+                }
             }
-            BaseDataSource.Constants.SOCKET_URL = url
+            else{
+                print("Error: Invalid URL")
+            }
         }
     }
     

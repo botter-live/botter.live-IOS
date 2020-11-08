@@ -20,14 +20,14 @@ class BaseDataSource : Any {
         
         static let gamma = "wss://botter-gateway-web.gamma.botter.live/"
         static let test = "wss://botter-gateway-web.botter.live/"
-        static let prod = "wss://web.gateway.prod.botter.live"
+        static let prod = "wss://web.gateway.prod.botter.live/"
         
         static var SOCKET_URL = prod
         
         static var BASE_URL = PRODUCTION_URL
         static var BOTTER_DATA = BASE_URL + "widget/data/"
         static var FAQ_DATA = BASE_URL + "widget/faqs/"
-        static var SEND_TOKEN = SOCKET_URL.replacingOccurrences(of: "wss", with: "https") + "notification/user-token"
+        static var SEND_TOKEN = SOCKET_URL.replacingOccurrences(of: "ws", with: "http") + "notification/user-token"
         
         static var UPLOAD_URL = PROD_UPLOAD
         static var UPLOAD_ATTACHMENT = BASE_URL + "api/file/upload"

@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   
 
   spec.name         = "Botter"
-  spec.version      = "1.0.15"
+  spec.version      = "1.0.16"
   spec.summary      = "Botter is an integration with Botter Chatbot"
 
   spec.homepage     = "https://github.com/NoraSayed135/Botter"
@@ -53,7 +53,7 @@ Pod::Spec.new do |spec|
  #:path => '/Users/bluecrunch/Desktop/Projects/Native/BotterSDK'
 #:git => 'https://github.com/NoraSayed135/Botter.git', :tag => spec.version
 
-  spec.source       = { :http => 'https://github.com/NoraSayed135/Botter/archive/1.0.15.tar.gz' }
+  spec.source       = { :http => 'https://github.com/NoraSayed135/Botter/archive/1.0.16.tar.gz' }
 
   spec.source_files  = "**/*.{swift,h,m,strings}"
   spec.resource_bundles = {
