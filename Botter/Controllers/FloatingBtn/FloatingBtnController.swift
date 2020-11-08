@@ -175,11 +175,12 @@ open class BotterControllerWithHiddenLauncher : UIViewController  {
     
     open override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if !hideLauncher(){
-            Botter.showLauncherButton()
-        }else{
-            Botter.hideLauncherButton()
-        }
+//        if !hideLauncher(){
+//            Botter.showLauncherButton()
+//        }else{
+//            Botter.hideLauncherButton()
+//        }
+        Botter.showLauncherButton()
         
     }
     
