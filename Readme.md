@@ -4,7 +4,7 @@ Engage customers with in‑app messages and support them with an integrated know
 
 ## The Botter Messenger
 The [Botter Messenger](https://botter.ai/) enables you to use it like a Messenger in your app, have conversations with your customers, send rich outbound messages, and track events.
-The Botter SDK is the home for the conversations your customers have with you, and the place where they can self-serve for support or to learn more about your product.
+The Botter SDK is the home for the conversations your customers have with you, and the place where they can self-serve for support or to learn more about your product.botter.live-IOS
 You can open Botter from a persistent button that sits over your app’s UI, From there, your customer can  start a conversation, replies in both directions happen in real time.
 
 
@@ -16,6 +16,7 @@ You can open Botter from a persistent button that sits over your app’s UI, Fro
 - [Customer support](#Customer-support)
 - [Push Notifications (FCM)](#Push-Notifications-FCM)
 - [Customizations](#Customizations)
+- [On-premise extra customizations](#On-premise-extra-customizations)
 - [Customization parameters table](#Customizations-guidance-table)
 - [Licence](#Licence)
 
@@ -37,6 +38,33 @@ pod Botter
   
 ```
 Botter.show(APIKey: "your API key")
+```
+<p>for the launcher to be visible thourghout the entire app you will need to follow these steps:</p>
+
+> 1. remove _Scene Manifest_ from info.plist file
+> 2. comment scene configuration functions in App delegate 
+> 3. add this line in App Delegate class :
+
+ ```swift
+ var  window: UIWindow?
+ ```
+ 
+ <p>you trigger open chat action on your custom button </p>
+
+```swift
+@IBAction func openChat(){
+  
+       Botter.openChatScreen(APIKey: "nKmovPCdWNZ")
+   }
+```
+
+<p>Add Needed Permissions in your info.plist file</p>
+
+```html
+<key>NSCameraUsageDescription</key>
+<string>This app requires to access your photo library to send image via chat</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>This app requires to access your photo library to send image via chat</string>
 ```
 
 ## Supported integration languages
@@ -75,7 +103,7 @@ Click <strong>"next"</strong> and then in your app podfile add <strong>"Firebase
 
 To connect Firebase when your app starts up, add the initialization code below to your main AppDelegate class.
 
-```
+```swift
 import UIKit
 import Firebase
 
@@ -113,7 +141,7 @@ in <strong>"apple developer"</strong> website in <strong>"certificates identifie
 
 in appDelegate use the code below to <strong>"register"</strong> for remote notifications after this line <strong>"FirebaseApp.configure()"</strong> 
 
-```
+```swift
  if #available(iOS 10.0, *) {
           // For iOS 10 display notification (sent via APNS)
           UNUserNotificationCenter.current().delegate = self
@@ -144,7 +172,7 @@ in appDelegate use the code below to <strong>"register"</strong> for remote noti
 ```
 add delegate methods to receive notifications and pass it to <strong>"Botter SDK"</strong> to handle
 
-```
+```swift
 extension AppDelegate : UNUserNotificationCenterDelegate{
     func application(application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
@@ -177,7 +205,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate{
 
 send fcm token whenever token is refreshed
 
-```
+```swift
 extension AppDelegate : MessagingDelegate{
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print(fcmToken)
@@ -192,31 +220,31 @@ extension AppDelegate : MessagingDelegate{
 ## Customizations
 if you want anytime at any screen hide the Botter chat icon, just write the below line inside <strong>viewWillAppear</strong> method : 
 
-```
+```swift
 Botter.hideLauncherButton()
 ```
 
 and you can show it anytime using the below line at <strong>viewWillAppear</strong> also :
 
-```
+```swift
 Botter.showLauncherButton()
 ```
 
 You can also change bottom margin of the launcher button using : 
 
-```
+```swift
 BotterSettingsManager.bottomMargin  = 40
 ```
 
 If you have your custom button , and want to show chat screen directly then you can use the below line:
 
-```
+```swift
 Botter.openChatScreen(APIKey: "Your Api key")
 ```
 
 You can customize Botter with your preferred settings, when you initialize Botter instance inside <strong>didFinishLaunchingWithOptions</strong> method of your AppDelegate class like below : 
 
-```
+```swift
 BotterSettingsManager.AccentColor = UIColor.init(codeString: "#72962C")
 BotterSettingsManager.FontColor = UIColor.white
 BotterSettingsManager.BotterMessageFontColor = UIColor.black
@@ -235,18 +263,27 @@ BotterSettingsManager.logo = UIImage()
 BotterSettingsManager.language  = .english
 ```
 
+## On-premise extra customizations
+for on-premise servers you can easily set (socket, API and upload) URLs calling these methods:
+
+```swift
+BotterSettingsManager.setBotSocket(url: "wss://...")
+BotterSettingsManager.setBotBase(url: "https://...")
+BotterSettingsManager.setBotUpload(url: "https://...")
+```
+
 ## Customization parameters table:
 | Name  | Description | Screenshot |
 | ------------- | ------------- | ------------- |
 | BotterSettingsManager.alignLauncherLeft | To set the launcher to the true/false | 
 | BotterSettingsManager.language | To set the default bot language either .english/.arabic. | 
-| setLauncherIcon | To change the launcher icon. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/1.jpg" alt="1">|
-| BotterSettingsManager.logo | To set the chat main logo. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/2.jpg" alt="2">|
-| BotterSettingsManager.AccentColor | This is the main color used all over the chat like launcher bg color, welcome screen top area bg color, chat header, ect… I.e. in the image accent color is purple. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/main_color.jpg" alt="main_color">|
-| BotterSettingsManager.HeadlineMessage ,  BotterSettingsManager.ChatTitleColor | Used to set the welcome screen header title text and color. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/4.jpg" alt="4">|
-| BotterSettingsManager.WelcomeMessage | Used to set the welcome screen header subtitle text. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/3.jpg" alt="3">|
-|BotterSettingsManager.ChatTitleText , BotterSettingsManager.ChatTitleColor | Used to set the main chat header title text and color | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/6.jpg" alt="6">|
-| BotterSettingsManager.BotterMessageBGColor , BotterSettingsManager.BotterMessageFontColor | Used to set the botter message bubble bg color and it’s text color. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/7.jpg" alt="7">
+| setLauncherIcon | To change the launcher icon. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/1.jpg" alt="1">|
+| BotterSettingsManager.logo | To set the chat main logo. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/2.jpg" alt="2">|
+| BotterSettingsManager.AccentColor | This is the main color used all over the chat like launcher bg color, welcome screen top area bg color, chat header, ect… I.e. in the image accent color is purple. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/main_color.jpg" alt="main_color">|
+| BotterSettingsManager.HeadlineMessage ,  BotterSettingsManager.ChatTitleColor | Used to set the welcome screen header title text and color. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/4.jpg" alt="4">|
+| BotterSettingsManager.WelcomeMessage | Used to set the welcome screen header subtitle text. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/3.jpg" alt="3">|
+|BotterSettingsManager.ChatTitleText , BotterSettingsManager.ChatTitleColor | Used to set the main chat header title text and color | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/6.jpg" alt="6">|
+| BotterSettingsManager.BotterMessageBGColor , BotterSettingsManager.BotterMessageFontColor | Used to set the botter message bubble bg color and it’s text color. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/7.jpg" alt="7">
 | BotterSettingsManager.Font.regularFontName | Used to set the primary font all over the chat. |
 | BotterSettingsManager.Font.boldFontName | Used to set the secondary font all over the chat. |
 
