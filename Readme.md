@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/ic_botter.png" alt="Botter">
+<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/ic_botter.png" alt="Botter">
 
 ## Onboard, retain and support mobile users at scale
 Engage customers with in‑app messages and support them with an integrated knowledge base and help desk.  
@@ -10,10 +10,10 @@ You can open BOTTER from a persistent button that sits over your app’s UI, Fro
 
 ## Screenshots
 <p float="left">
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/sample_black.png" width="200" alt="sample1">
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/sample_blue.png" width="200" alt="sample2">
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/sample_orange.png" width="200" alt="sample3">
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/sample_green.png" width="200" alt="sample4">
+<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/sample_black.jpg" width="200" alt="sample1">
+<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/sample_blue.jpg" width="200" alt="sample2">
+<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/sample_orange.jpg" width="200" alt="sample3">
+<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/sample_green.jpg" width="200" alt="sample4">
 </p>
 
 
@@ -109,7 +109,7 @@ In the center of the project overview page, click the iOS icon to launch the set
 
 Enter your app’s Bundle identifier and click <strong>‘Register App’</strong>.
 
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/fcm_register_app.png" alt="fcm_register_app">
+<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/fcm_register_app.png" alt="fcm_register_app">
 
 
  
@@ -117,11 +117,11 @@ Enter your app’s Bundle identifier and click <strong>‘Register App’</stron
 
 Click the button <strong>"Download GoogleService-Info.plist"</strong> to download the config file. You’ll need to move that file into the root of your Xcode project.
 
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/fcm_plist_file.png" alt="fcm_plist_file">
+<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/.github/images/fcm_plist_file.png" alt="fcm_plist_file">
 
 Click <strong>"next"</strong> and then in your app podfile add <strong>"Firebase SDK"</strong> then install pods
 
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/install_pods.png" alt="install_pods">
+<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/install_pods.png" alt="install_pods">
 
 To connect Firebase when your app starts up, add the initialization code below to your main AppDelegate class.
 
@@ -165,7 +165,7 @@ Open your BOTTER app’s dashboard and select <strong>‘Settings -> Configure N
 
 in app target <strong>"signing & capabilities"</strong> click <strong>"+capability"</strong> and select <strong>"Push Notifications"</strong>
 
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/capability.png" alt="capability">
+<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/capability.png" alt="capability">
 
 in <strong>"apple developer"</strong> website in <strong>"certificates identifiers & profiles"</strong> section add notification certifications with types <strong>"APNs Development iOS"</strong> and <strong>"Apple Push Services"</strong> then generate p12 files and upload it to your firebase project <strong>"project settings"</strong> > <strong>"Cloud Messaging"</strong> 
 
@@ -307,13 +307,13 @@ BotterSettingsManager.setBotUpload(url: "https://...")
 | ------------- | ------------- | ------------- |
 | BotterSettingsManager.alignLauncherLeft | To set the launcher to the true/false | 
 | BotterSettingsManager.language | To set the default bot language either .english/.arabic. | 
-| setLauncherIcon | To change the launcher icon. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/1.jpg" alt="1">|
-| BotterSettingsManager.logo | To set the chat main logo. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/2.jpg" alt="2">|
-| BotterSettingsManager.AccentColor | This is the main color used all over the chat like launcher bg color, welcome screen top area bg color, chat header, ect… I.e. in the image accent color is purple. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/main_color.jpg" alt="main_color">|
-| BotterSettingsManager.HeadlineMessage ,  BotterSettingsManager.ChatTitleColor | Used to set the welcome screen header title text and color. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/4.jpg" alt="4">|
-| BotterSettingsManager.WelcomeMessage | Used to set the welcome screen header subtitle text. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/3.jpg" alt="3">|
-|BotterSettingsManager.ChatTitleText , BotterSettingsManager.ChatTitleColor | Used to set the main chat header title text and color | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/6.jpg" alt="6">|
-| BotterSettingsManager.BotterMessageBGColor , BotterSettingsManager.BotterMessageFontColor | Used to set the botter message bubble bg color and it’s text color. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-IOS/master/.github/images/7.jpg" alt="7">
+| setLauncherIcon | To change the launcher icon. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/1.jpg" alt="1">|
+| BotterSettingsManager.logo | To set the chat main logo. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/2.jpg" alt="2">|
+| BotterSettingsManager.AccentColor | This is the main color used all over the chat like launcher bg color, welcome screen top area bg color, chat header, ect… I.e. in the image accent color is purple. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/main_color.jpg" alt="main_color">|
+| BotterSettingsManager.HeadlineMessage ,  BotterSettingsManager.ChatTitleColor | Used to set the welcome screen header title text and color. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/4.jpg" alt="4">|
+| BotterSettingsManager.WelcomeMessage | Used to set the welcome screen header subtitle text. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/3.jpg" alt="3">|
+|BotterSettingsManager.ChatTitleText , BotterSettingsManager.ChatTitleColor | Used to set the main chat header title text and color | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/6.jpg" alt="6">|
+| BotterSettingsManager.BotterMessageBGColor , BotterSettingsManager.BotterMessageFontColor | Used to set the botter message bubble bg color and it’s text color. | <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/7.jpg" alt="7">
 | BotterSettingsManager.Font.regularFontName | Used to set the primary font all over the chat. |
 | BotterSettingsManager.Font.boldFontName | Used to set the secondary font all over the chat. |
 
