@@ -13,6 +13,7 @@ class PlaySound : NSObject{
     private static var player: AVAudioPlayer?
     private static var shared = PlaySound()
     private static var waitingList = [String]()
+    private static var isLoading = false
     
     static func incomingMsg(){
         guard let url = MyFrameworkBundle.bundle.url(forResource: "incoming" , withExtension: "mp3") else { return }
@@ -51,7 +52,7 @@ class PlaySound : NSObject{
     private static func playSound(url : URL) {
 
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default , options: [.mixWithOthers])
             try AVAudioSession.sharedInstance().setActive(true)
 
             /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
@@ -88,6 +89,8 @@ class PlaySound : NSObject{
     
     private static func playAudio(audioStr : String){
         do {
+                try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default , options: [.mixWithOthers])
+                try AVAudioSession.sharedInstance().setActive(true)
                 let audioData: Data! = Data(base64Encoded: audioStr, options: .ignoreUnknownCharacters)
                 //print(track)
                 if audioData != nil {
@@ -115,5 +118,13 @@ extension PlaySound : AVAudioPlayerDelegate{
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         PlaySound.stop()
         B_SocketManager.shared.checkWaitingList()
+    }
+    
+    func audioPlayerBeginInterruption(_ player: AVAudioPlayer){
+        print("audioPlayerBeginInterruption")
+    }
+    
+    func audioPlayerEndInterruption(_ player: AVAudioPlayer, withOptions flags: Int){
+        print("audioPlayerEndInterruption")
     }
 }

@@ -242,6 +242,7 @@ extension UITextView {
     }
 }
 
+
 extension UILabel {
     open override func awakeFromNib() {
         if self.textAlignment == .natural{

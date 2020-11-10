@@ -333,8 +333,10 @@ public class AudioPlayer: NSObject {
     /// - Parameter active: A boolean value indicating whether the audio session should be set to active or not.
     func setAudioSession(active: Bool) {
         #if os(iOS) || os(tvOS)
-        _ = try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        if !PlaySound.isPlaying(){
+            _ = try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
             _ = try? AVAudioSession.sharedInstance().setActive(active)
+        }
         #endif
     }
 
