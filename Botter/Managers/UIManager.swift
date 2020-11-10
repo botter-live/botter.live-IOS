@@ -40,6 +40,9 @@ class b_HeaderView : UIView{
 class b_BasicRegularLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
+        if self.textAlignment == .natural{
+            self.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
+        }
         let tFont = BotterSettingsManager.Font.getRegularFontForLabel(lbl: self)
         tFont.withSize(font.pointSize)
         font = tFont
@@ -49,6 +52,9 @@ class b_BasicRegularLbl : UILabel{
 class b_BasicMediumLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
+        if self.textAlignment == .natural{
+            self.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
+        }
         let tFont = BotterSettingsManager.Font.getMediumFontForLabel(lbl: self)
         tFont.withSize(font.pointSize)
         font = tFont
@@ -58,6 +64,9 @@ class b_BasicMediumLbl : UILabel{
 class b_BasicBoldLbl : UILabel{
     override func awakeFromNib() {
         super.awakeFromNib()
+        if self.textAlignment == .natural{
+            self.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
+        }
         let tFont = BotterSettingsManager.Font.getBoldFontForLabel(lbl: self)
         tFont.withSize(font.pointSize)
         font = tFont
@@ -263,8 +272,6 @@ extension UITextView {
 
 extension UILabel {
     open override func awakeFromNib() {
-        if self.textAlignment == .natural{
-            self.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
-        }
+       
     }
 }
