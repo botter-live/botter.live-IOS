@@ -14,6 +14,7 @@ class B_SocketManager : WebSocketDelegate  {
     
     static var shared : B_SocketManager! = B_SocketManager()
     var messageRecieved:((b_BasicMessage)->())!
+    var waitingList = [b_BasicMessage]()
     var historyLoaded:(([b_BasicMessage])->())!
     var connectionUpdated:(()->())!
     private var socket: WebSocket!
@@ -333,7 +334,21 @@ class B_SocketManager : WebSocketDelegate  {
             }
         }else{
             if self.messageRecieved != nil{
-                messageRecieved(msgObj)
+                if !PlaySound.playerIsBusy(){
+                    messageRecieved(msgObj)
+                }else{
+                    waitingList.append(msgObj)
+                }
+            }
+        }
+    }
+    
+    func checkWaitingList(){
+        if self.waitingList.count > 0{
+            let msg = self.waitingList[0]
+            self.waitingList.remove(at: 0)
+            if self.messageRecieved != nil{
+                messageRecieved(msg)
             }
         }
     }

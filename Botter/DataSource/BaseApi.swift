@@ -22,15 +22,17 @@ class BaseDataSource : Any {
         static let test = "wss://botter-gateway-web.botter.live/"
         static let prod = "wss://web.gateway.prod.botter.live/"
         
-        static var SOCKET_URL = prod
+        static var SOCKET_URL = gamma
         
-        static var BASE_URL = PRODUCTION_URL
+        static var BASE_URL = STAGING_URL
         static var BOTTER_DATA = BASE_URL + "widget/data/"
         static var FAQ_DATA = BASE_URL + "widget/faqs/"
         static var SEND_TOKEN = SOCKET_URL.replacingOccurrences(of: "ws", with: "http") + "notification/user-token"
         
-        static var UPLOAD_URL = PROD_UPLOAD
+        static var UPLOAD_URL = STAGING_UPLOAD
         static var UPLOAD_ATTACHMENT = BASE_URL + "api/file/upload"
+        
+        static var TEXT_TO_SPEECH = "https://texttospeech.googleapis.com/v1/text:synthesize"
         
     }
     

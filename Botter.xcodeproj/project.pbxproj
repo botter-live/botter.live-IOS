@@ -247,6 +247,9 @@
 		8CD617E324E2C2160047F8E1 /* B_Forms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CD617E524E2C2160047F8E1 /* B_Forms.storyboard */; };
 		8CD617EF24E2F4E70047F8E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CD617F124E2F4E70047F8E1 /* Localizable.strings */; };
 		8CD7829D249644ED00190FA7 /* TypingIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30DC3024963A8600C497E6 /* TypingIndicatorTableViewCell.swift */; };
+		8CD99B792535D749004F917E /* VoiceRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD99B782535D748004F917E /* VoiceRecognition.swift */; };
+		8CD99C2025373F05004F917E /* AudioVisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD99C1F25373F04004F917E /* AudioVisualizerView.swift */; };
+		8CD99D58253C6E53004F917E /* TextToSpeechDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD99D57253C6E52004F917E /* TextToSpeechDataSource.swift */; };
 		8CE8351724E0243D0007244E /* BotterInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4F4A7248CFBA4000692AE /* BotterInfo.plist */; };
 		8CFC709F248FC227006C677B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFC709E248FC227006C677B /* WebKit.framework */; };
 		8CFC70A1248FCD64006C677B /* GallaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC70A0248FCD64006C677B /* GallaryTableViewCell.swift */; };
@@ -546,6 +549,9 @@
 		8CD617E424E2C2160047F8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/B_Forms.storyboard; sourceTree = "<group>"; };
 		8CD617F024E2F4E70047F8E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CD617F224E2FD420047F8E1 /* LocalStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStrings.swift; sourceTree = "<group>"; };
+		8CD99B782535D748004F917E /* VoiceRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognition.swift; sourceTree = "<group>"; };
+		8CD99C1F25373F04004F917E /* AudioVisualizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizerView.swift; sourceTree = "<group>"; };
+		8CD99D57253C6E52004F917E /* TextToSpeechDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechDataSource.swift; sourceTree = "<group>"; };
 		8CFC709E248FC227006C677B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8CFC70A0248FCD64006C677B /* GallaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryTableViewCell.swift; sourceTree = "<group>"; };
 		8CFC70A2248FCE31006C677B /* GallaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryItem.swift; sourceTree = "<group>"; };
@@ -686,6 +692,7 @@
 				8C463ACE24BF37BC00B78E96 /* BaseApi.swift */,
 				8C463AD424BF547B00B78E96 /* BotterDataSource.swift */,
 				8C83EE2C24D0649D000F2637 /* AttachmentDataSource.swift */,
+				8CD99D57253C6E52004F917E /* TextToSpeechDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -1072,6 +1079,7 @@
 		8CC4F4E7248CFCCB000692AE /* ChatView */ = {
 			isa = PBXGroup;
 			children = (
+				8CD99C1E25373EE3004F917E /* Visualizer */,
 				8C84B57D24C7032900996861 /* Menu */,
 				8C660F3924B77E9C00CFB577 /* InvoiceDetails */,
 				8CC16659249FB1D4001B71D1 /* Audio */,
@@ -1081,6 +1089,7 @@
 				8CC4F4F2248CFCCB000692AE /* ChatInteractor.swift */,
 				8CC4F4F3248CFCCB000692AE /* ChatPresenter.swift */,
 				8CC4F4F4248CFCCB000692AE /* ChatInterfaces.swift */,
+				8CD99B782535D748004F917E /* VoiceRecognition.swift */,
 			);
 			path = ChatView;
 			sourceTree = "<group>";
@@ -1291,6 +1300,14 @@
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
+		8CD99C1E25373EE3004F917E /* Visualizer */ = {
+			isa = PBXGroup;
+			children = (
+				8CD99C1F25373F04004F917E /* AudioVisualizerView.swift */,
+			);
+			path = Visualizer;
+			sourceTree = "<group>";
+		};
 		F954DB11F77578B1EBA192C3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1477,6 +1494,7 @@
 				8CC4F518248CFCCC000692AE /* SocketManager.swift in Sources */,
 				8CC4F6D4248D18C8000692AE /* Engine.swift in Sources */,
 				8CC4F676248D17A9000692AE /* ISO8601DateTransform.swift in Sources */,
+				8CD99B792535D749004F917E /* VoiceRecognition.swift in Sources */,
 				8C1B44A824E56FCC00853B03 /* LazyImage+Resizing.swift in Sources */,
 				8CAB89DF24913569009BBAB6 /* AudioPlayerState.swift in Sources */,
 				8CC4F678248D17A9000692AE /* NSDecimalNumberTransform.swift in Sources */,
@@ -1507,6 +1525,7 @@
 				8CAB89E424913569009BBAB6 /* NetworkEventProducer.swift in Sources */,
 				8C77A6B724B620A700549FE2 /* FlightStatus.swift in Sources */,
 				8CA2E8AF249A49C1002ADB42 /* SwiftyGifManager.swift in Sources */,
+				8CD99C2025373F05004F917E /* AudioVisualizerView.swift in Sources */,
 				8CC4F547248CFCCC000692AE /* UserChatTableViewCell.swift in Sources */,
 				8CAACE0324B721220012C078 /* InvoiceTableViewCell.swift in Sources */,
 				8CCECCB52517B13600157D31 /* IQKeyboardManager.swift in Sources */,
@@ -1554,6 +1573,7 @@
 				8CC4F679248D17A9000692AE /* Operators.swift in Sources */,
 				8C1B44A624E56FCC00853B03 /* LazyImage.swift in Sources */,
 				8CC4F685248D17A9000692AE /* TransformType.swift in Sources */,
+				8CD99D58253C6E53004F917E /* TextToSpeechDataSource.swift in Sources */,
 				8CC4F54E248CFCCC000692AE /* ChatPresenter.swift in Sources */,
 				8CC4F6D6248D18C8000692AE /* FoundationHTTPServerHandler.swift in Sources */,
 				8CC4F54D248CFCCC000692AE /* ChatInteractor.swift in Sources */,

@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import Speech
 
 final class b_ChatViewController: UIViewController {
     
@@ -21,6 +22,10 @@ final class b_ChatViewController: UIViewController {
     @IBOutlet weak var heightConstraint : NSLayoutConstraint!
     @IBOutlet weak var connectionErrorView : UIView!
     @IBOutlet weak var menuBtn : b_AccentBtn!
+    @IBOutlet weak var miceBtn : UIButton!
+    @IBOutlet weak var keyBoardBtn : UIButton!
+    @IBOutlet weak var micView : UIView!
+    @IBOutlet weak var audioGraphView : AudioVisualizerView!
     
     var presenter: ChatPresenterInterface!
     var original : CGFloat = 0
@@ -28,12 +33,26 @@ final class b_ChatViewController: UIViewController {
     static var botData = b_BotData()
     var history = true
     
+    
+    // MARK: - Voice Recognition Variables -
+    
+    let audioEngine = AVAudioEngine()
+    var speechRecognizer: SFSpeechRecognizer? = SFSpeechRecognizer()
+    var request = SFSpeechAudioBufferRecognitionRequest()
+    var recognitionTask: SFSpeechRecognitionTask?
+    var isRecording = false
+    var renderTs: Double = 0
+    var recordingTs: Double = 0
+    var silenceTs: Double = 0
+    var speechTimer : Timer! = nil
+    var detectedStr : String = ""
+    
+    
     // MARK: - Lifecycle -
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestSpeechAuthorization()
         history = !B_SocketManager.first
         startListen()
         menuBtn.isHidden = b_ChatViewController.botData.menu.actions.count == 0
@@ -106,6 +125,7 @@ final class b_ChatViewController: UIViewController {
     
     func close(){
         self.presenter.close()
+        PlaySound.stop()
         if self.history{
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         }else{
@@ -349,12 +369,12 @@ extension b_ChatViewController : UITableViewDataSource{
             msg = presenter.messgesList[indexPath.row]
             let last = presenter.messgesList[presenter.messgesList.count - 1]
             if (last.msgType == .userInput && !last.prompt.answered) || last.msgType == .triviaQuestion{
-                if heightConstraint.constant == 65{
+                if heightConstraint.constant == 100{
                     self.view.endEditing(true)
                 }
                 heightConstraint.constant = 0
             }else{
-                heightConstraint.constant = 65
+                heightConstraint.constant = 100
                 
             }
         }

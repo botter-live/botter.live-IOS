@@ -608,7 +608,7 @@ to BOTTER Mobile</string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="uRS-dj-06M">
-                                <rect key="frame" x="0.0" y="100" width="414" height="661"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="626"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserChatTableViewCell" rowHeight="80" id="mDg-0s-5zt" customClass="UserChatTableViewCell" customModule="Botter" customModuleProvider="target">
@@ -1960,7 +1960,7 @@ itemTitle.alpha = 0</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Ux-RT-jdn">
-                                <rect key="frame" x="0.0" y="761" width="414" height="0.0"/>
+                                <rect key="frame" x="0.0" y="726" width="414" height="0.0"/>
                                 <subviews>
                                     <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GpK-GP-tZB">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -2001,8 +2001,32 @@ itemTitle.alpha = 0</string>
                                 </constraints>
                             </stackView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="fbO-1Z-HJ8" customClass="b_TextBoxFeild" customModule="Botter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="797" width="414" height="65"/>
+                                <rect key="frame" x="0.0" y="762" width="414" height="100"/>
                                 <subviews>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdQ-am-ReM">
+                                        <rect key="frame" x="172" y="70" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="DAd-qd-NbM"/>
+                                            <constraint firstAttribute="height" constant="30" id="yzd-1Q-zuz"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="ic_mice"/>
+                                        <connections>
+                                            <action selector="miceButtonTapped:" destination="mBd-sT-l3W" eventType="touchUpInside" id="AcP-jH-X2K"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6i8-e5-Hxy">
+                                        <rect key="frame" x="212" y="70" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="OPR-cq-lK9"/>
+                                            <constraint firstAttribute="width" constant="30" id="uq5-z5-PMd"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="ic_keyboard"/>
+                                        <connections>
+                                            <action selector="keyboardButtonTapped:" destination="mBd-sT-l3W" eventType="touchUpInside" id="dam-E5-r80"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pET-7t-zmD">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
                                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2011,7 +2035,7 @@ itemTitle.alpha = 0</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsQ-9V-oRq">
-                                        <rect key="frame" x="8" y="13" width="384" height="40"/>
+                                        <rect key="frame" x="8" y="13" width="384" height="53"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyL-pM-xen" customClass="b_AccentBtn" customModule="Botter" customModuleProvider="target">
                                                 <rect key="frame" x="346" y="10.5" width="30" height="30"/>
@@ -2047,7 +2071,7 @@ itemTitle.alpha = 0</string>
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HFT-ZM-5nD">
-                                                <rect key="frame" x="44" y="6" width="262" height="28"/>
+                                                <rect key="frame" x="44" y="6" width="262" height="47"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2062,7 +2086,7 @@ itemTitle.alpha = 0</string>
                                             <constraint firstItem="zuX-KU-BeN" firstAttribute="leading" secondItem="HFT-ZM-5nD" secondAttribute="trailing" constant="6" id="BqQ-N0-moe"/>
                                             <constraint firstItem="Dm0-MK-Srm" firstAttribute="centerY" secondItem="OyL-pM-xen" secondAttribute="centerY" id="GHb-yD-qtP"/>
                                             <constraint firstItem="OyL-pM-xen" firstAttribute="leading" secondItem="zuX-KU-BeN" secondAttribute="trailing" constant="4" id="Hlq-0z-T7Y"/>
-                                            <constraint firstAttribute="bottom" secondItem="HFT-ZM-5nD" secondAttribute="bottom" constant="6" id="YZG-uU-oat"/>
+                                            <constraint firstAttribute="bottom" secondItem="HFT-ZM-5nD" secondAttribute="bottom" id="YZG-uU-oat"/>
                                             <constraint firstItem="HFT-ZM-5nD" firstAttribute="top" secondItem="gsQ-9V-oRq" secondAttribute="top" constant="6" id="f4k-aC-v1C"/>
                                             <constraint firstAttribute="trailing" secondItem="OyL-pM-xen" secondAttribute="trailing" constant="8" id="gYo-ke-vc5"/>
                                             <constraint firstItem="zuX-KU-BeN" firstAttribute="centerY" secondItem="OyL-pM-xen" secondAttribute="centerY" id="r34-vl-53Q"/>
@@ -2088,17 +2112,41 @@ itemTitle.alpha = 0</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWX-8C-NFK">
+                                        <rect key="frame" x="8" y="13" width="384" height="53"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owR-51-kBw" customClass="AudioVisualizerView" customModule="Botter" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="-4" width="324" height="53"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="owR-51-kBw" firstAttribute="top" secondItem="IWX-8C-NFK" secondAttribute="top" constant="-4" id="7C6-ba-X1C"/>
+                                            <constraint firstAttribute="trailing" secondItem="owR-51-kBw" secondAttribute="trailing" constant="30" id="KW2-pX-tTt"/>
+                                            <constraint firstItem="owR-51-kBw" firstAttribute="leading" secondItem="IWX-8C-NFK" secondAttribute="leading" constant="30" id="ZK3-VY-sUI"/>
+                                            <constraint firstAttribute="bottom" secondItem="owR-51-kBw" secondAttribute="bottom" constant="4" id="cLl-7g-cE8"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="gsQ-9V-oRq" secondAttribute="bottom" constant="12" id="02F-Kp-KEj"/>
                                     <constraint firstItem="gsQ-9V-oRq" firstAttribute="top" secondItem="pET-7t-zmD" secondAttribute="bottom" constant="12" id="6y9-4O-KCf"/>
+                                    <constraint firstItem="6i8-e5-Hxy" firstAttribute="centerY" secondItem="gdQ-am-ReM" secondAttribute="centerY" id="8ff-d7-NSP"/>
                                     <constraint firstItem="gsQ-9V-oRq" firstAttribute="leading" secondItem="fbO-1Z-HJ8" secondAttribute="leading" constant="8" id="Atc-Bc-e2I"/>
+                                    <constraint firstItem="IWX-8C-NFK" firstAttribute="width" secondItem="gsQ-9V-oRq" secondAttribute="width" id="J0u-xW-vhy"/>
                                     <constraint firstItem="pET-7t-zmD" firstAttribute="leading" secondItem="fbO-1Z-HJ8" secondAttribute="leading" id="JLu-Cl-Ob7"/>
                                     <constraint firstItem="pET-7t-zmD" firstAttribute="top" secondItem="fbO-1Z-HJ8" secondAttribute="top" id="SJC-L4-1zp"/>
-                                    <constraint firstAttribute="height" constant="65" id="ebs-2o-GKE"/>
+                                    <constraint firstItem="IWX-8C-NFK" firstAttribute="centerY" secondItem="gsQ-9V-oRq" secondAttribute="centerY" id="Yc4-Zn-lQb"/>
+                                    <constraint firstAttribute="bottom" secondItem="gdQ-am-ReM" secondAttribute="bottom" id="dP6-nc-3Cg"/>
+                                    <constraint firstAttribute="height" constant="100" id="ebs-2o-GKE"/>
+                                    <constraint firstItem="gdQ-am-ReM" firstAttribute="top" secondItem="gsQ-9V-oRq" secondAttribute="bottom" constant="4" id="ehA-bC-GXn"/>
+                                    <constraint firstItem="IWX-8C-NFK" firstAttribute="height" secondItem="gsQ-9V-oRq" secondAttribute="height" id="eyq-aD-QD0"/>
+                                    <constraint firstItem="gdQ-am-ReM" firstAttribute="centerX" secondItem="fbO-1Z-HJ8" secondAttribute="centerX" constant="-20" id="k8j-0W-CR3"/>
                                     <constraint firstAttribute="trailing" secondItem="pET-7t-zmD" secondAttribute="trailing" id="ksm-RO-Mbq"/>
+                                    <constraint firstItem="6i8-e5-Hxy" firstAttribute="centerX" secondItem="fbO-1Z-HJ8" secondAttribute="centerX" constant="20" id="tuV-zt-Pyw"/>
                                     <constraint firstAttribute="trailing" secondItem="gsQ-9V-oRq" secondAttribute="trailing" constant="22" id="xVN-3Y-Zp2"/>
+                                    <constraint firstItem="IWX-8C-NFK" firstAttribute="centerX" secondItem="gsQ-9V-oRq" secondAttribute="centerX" id="ysu-ys-10O"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="Write something here …"/>
@@ -2108,7 +2156,7 @@ itemTitle.alpha = 0</string>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="eTX-FM-DZ2">
-                                <rect key="frame" x="127" y="761" width="160" height="36"/>
+                                <rect key="frame" x="127" y="726" width="160" height="36"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="epT-mK-IEv" customClass="b_HeaderLogo" customModule="Botter" customModuleProvider="target">
                                         <rect key="frame" x="12" y="10.5" width="15" height="15"/>
@@ -2169,12 +2217,16 @@ itemTitle.alpha = 0</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="audioGraphView" destination="owR-51-kBw" id="A2H-hH-zng"/>
                         <outlet property="bottomConstraint" destination="RoG-WM-yBL" id="7PG-9y-WmT"/>
                         <outlet property="chatView" destination="fbO-1Z-HJ8" id="K9T-2C-vwr"/>
                         <outlet property="connectionErrorView" destination="GpK-GP-tZB" id="RQg-eZ-YYj"/>
                         <outlet property="groupedDateLbl" destination="27u-gJ-guB" id="pQL-Tg-4ZI"/>
                         <outlet property="heightConstraint" destination="ebs-2o-GKE" id="sZF-m6-eXz"/>
+                        <outlet property="keyBoardBtn" destination="6i8-e5-Hxy" id="dcy-58-gAh"/>
                         <outlet property="menuBtn" destination="Dm0-MK-Srm" id="Ldc-6u-OKo"/>
+                        <outlet property="micView" destination="IWX-8C-NFK" id="dKT-tE-UJp"/>
+                        <outlet property="miceBtn" destination="gdQ-am-ReM" id="fcH-KK-fVn"/>
                         <outlet property="tableView" destination="uRS-dj-06M" id="yni-qH-ouO"/>
                     </connections>
                 </viewController>
@@ -2766,6 +2818,8 @@ itemTitle.alpha = 0</string>
         <image name="ic-send" width="16" height="16"/>
         <image name="ic-send-1" width="16" height="16"/>
         <image name="ic_gif" width="21" height="21"/>
+        <image name="ic_keyboard" width="170" height="170"/>
+        <image name="ic_mice" width="170" height="170"/>
         <image name="logo-footer-green" width="135" height="56"/>
         <image name="menuIcon" width="21" height="21"/>
         <image name="play-circle" width="54" height="54"/>

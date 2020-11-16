@@ -154,6 +154,11 @@ public class BotterSettingsManager  {
             }else{
                 print("Error: Invalid URL")
             }
+            if url.last != "/" {
+                BaseDataSource.Constants.BASE_URL = url + "/"
+            }else{
+                BaseDataSource.Constants.BASE_URL = url
+            }
         }
     }
     
@@ -190,6 +195,12 @@ public class BotterSettingsManager  {
             }
             else{
                 print("Error: Invalid URL")
+            }
+            
+            if url.last != "/" {
+                BaseDataSource.Constants.SOCKET_URL = url + "/"
+            }else{
+                BaseDataSource.Constants.SOCKET_URL = url
             }
         }
     }
