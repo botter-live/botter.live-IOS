@@ -331,7 +331,7 @@ class B_SocketManager : WebSocketDelegate  {
             }
         }else{
             if self.messageRecieved != nil{
-                if !PlaySound.isPlaying(){
+                if !PlaySound.playerIsBusy(){
                     messageRecieved(msgObj)
                 }else{
                     waitingList.append(msgObj)

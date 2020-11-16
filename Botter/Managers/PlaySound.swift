@@ -45,8 +45,12 @@ class PlaySound : NSObject{
         }
     }
     
-    static func isPlaying()->Bool{
+    private static func isPlaying()->Bool{
       return player != nil && (player?.isPlaying ?? false)
+    }
+    
+    static func playerIsBusy()->Bool{
+        return isPlaying() || isLoading
     }
     
     private static func playSound(url : URL) {
@@ -72,8 +76,10 @@ class PlaySound : NSObject{
     }
     
     static func textToSpeech(text : String){
+        isLoading = true
         let dataSource = TextToSpeechDataSource()
         dataSource.getVoiceFile(text: text) { (status, response) in
+            isLoading = false
             switch status {
             case .sucess:
                 let fileStr = response as? String ?? ""
