@@ -61,6 +61,7 @@ extension StartFormInteractor: StartFormInteractorInterface {
     
     func submitForm(){
         var attributes = [[String : Any]]()
+        attributes.append(["lang" : BotterSettingsManager.language == .arabic ? "ar" : "en"])
         for cell in self.presenter.dataCells{
             if let mCell = cell as? BasicFormTableViewCell{
                 var tAttribute = [String : Any]()
