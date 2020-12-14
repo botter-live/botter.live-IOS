@@ -182,7 +182,25 @@ extension b_ChatViewController {
         //
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(inputModeDidChange), name: UITextInputMode.currentInputModeDidChangeNotification , object: nil)
+        
         original = bottomConstraint.constant
+    }
+    
+    @objc func inputModeDidChange(_ notification: Notification) {
+   
+        if let inputMode = chatView.field.textInputMode{
+            if let lang = inputMode.primaryLanguage{
+                print(lang)
+                if chatView.field.text.b_trim() == "" || chatView.field.tag == 0{
+                    if lang.contains("ar"){
+                        chatView.field.textAlignment = .right
+                    }else if lang.contains("en") {
+                        chatView.field.textAlignment = .left
+                    }
+                }
+            }
+        }
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

@@ -11,6 +11,11 @@ target 'Botter' do
   pod 'Firebase/Messaging'
 #  pod 'b_IQKeyboardManagerSwift'
 #  pod 'LazyImage'
+
+target 'BotterTests' do
+       inherit! :search_paths
+       # Pods for testing
+   end
   
 end
 

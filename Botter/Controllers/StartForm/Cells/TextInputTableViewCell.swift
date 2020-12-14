@@ -16,6 +16,8 @@ class TextInputTableViewCell: BasicFormTableViewCell {
         super.awakeFromNib()
         // Initialization code
         textFeild.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
+        refreshTextAlignment()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,6 +32,7 @@ class TextInputTableViewCell: BasicFormTableViewCell {
         textFeild.delegate = self
         textFeild.tintColor = BotterSettingsManager.AccentColor
         textFeild.placeholder = input.label
+        refreshTextAlignment()
         
     }
 
@@ -41,10 +44,19 @@ class TextInputTableViewCell: BasicFormTableViewCell {
         self.answer = textFeild.text?.b_trim() ?? ""
         return textFeild.text?.b_trim() ?? ""
        }
+    
+    func refreshTextAlignment(){
+        if textFeild.text == ""{
+            textFeild.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
+        }else{
+            textFeild.textAlignment = .natural
+        }
+    }
 }
 extension TextInputTableViewCell : UITextFieldDelegate{
     @objc func editingChanged(_ textFeild : UITextField){
         errorLbl.isHidden = true
+        refreshTextAlignment()
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         errorLbl.isHidden = true

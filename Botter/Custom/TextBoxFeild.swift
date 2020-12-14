@@ -78,24 +78,30 @@ class b_TextBoxFeild: UIView {
         normal()
     }
     
-    func refreshText(){
+    func refreshText(isEnding : Bool = false){
         if field != nil {
             if field.tag == 0 || field.text == "" || field.text == placeHolder {
-                field.text =  placeHolder
+                if isEnding{
+                    field.text =  placeHolder
+                    if field.tag == 0 {
+                        field.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
+                    }else{
+                        field.textAlignment = .natural
+                    }
+                }
                 field.tag = 0
                 field.textColor = placeHolderColor
             }else{
                 field.textColor = textColor
                 field.tag = 1
+                
             }
+            refreshTextAlignment()
         }
     }
     
     override func awakeFromNib() {
         placeHolder = placeHolder.b_localize()
-        if appIsArabic(){
-            field.textAlignment = .right
-        }
         if errorLabel != nil{
             if errorLabel.text != "" || errorLabel.text != "Label" {
                 errorMsg = errorLabel.text!
@@ -104,7 +110,8 @@ class b_TextBoxFeild: UIView {
         field.delegate = self
         diffrence = self.frame.size.height - field.frame.size.height
         
-        self.normal()
+        self.normal(ending: true)
+        refreshTextAlignment()
     }
     
     func invalid(error: String) {
@@ -115,8 +122,8 @@ class b_TextBoxFeild: UIView {
         }
     }
     
-    func normal() {
-        self.refreshText()
+    func normal(ending : Bool = false) {
+        self.refreshText(isEnding: ending)
         if errorLabel != nil{
             errorLabel.isHidden = true
             errorLabel.text = ""
@@ -135,20 +142,29 @@ class b_TextBoxFeild: UIView {
             field.text =  placeHolder
             field.tag = 0
             field.textColor = placeHolderColor
-            
         }else{
             field.textColor = textColor
             field.tag = 1
         }
+        
+        refreshTextAlignment()
+    }
+    
+    func refreshTextAlignment(){
+//        if field.tag == 0 {
+//            field.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
+//        }else{
+//            field.textAlignment = .natural
+//        }
     }
     
     func isEmptyAndNotOptional()->Bool{
         return self.getText().b_trim().isEmpty && !optional
     }
     
-    func validate()->Bool{
+    func validate(isEnding : Bool = false)->Bool{
         var isValid = true
-        normal()
+        normal(ending: isEnding)
         if isEmptyAndNotOptional(){
             isValid = false
             self.invalid(error: (errorMsg != "") ?
@@ -165,15 +181,16 @@ extension b_TextBoxFeild : UITextViewDelegate{
             delegate.textBoxDidChange(textBox: self)
         }
         normal()
-        if textView.text.count == 0  {
-            textView.text =  placeHolder
-            textView.tag = 0
-            textView.textColor = placeHolderColor
-            
-        }else{
-            textView.textColor = textColor
-            textView.tag = 1
-        }
+//        if textView.text.count == 0  {
+//            textView.text =  placeHolder
+//            textView.tag = 0
+//            textView.textColor = placeHolderColor
+//        }else{
+//            textView.textColor = textColor
+//            textView.tag = 1
+//        }
+        
+        refreshTextAlignment()
         
 //        if textView.contentSize.height >= 90
 //        {
@@ -196,7 +213,7 @@ extension b_TextBoxFeild : UITextViewDelegate{
             delegate.shouldChangeTextInRange(textBox: self)
         }
         normal()
-        if textView.tag == 0 {
+        if textView.tag == 0 || field.text == placeHolder{
             textView.text = ""
             textView.tag = 1
             return true
@@ -225,7 +242,7 @@ extension b_TextBoxFeild : UITextViewDelegate{
         if delegate != nil{
             delegate.textBoxDidEndEditing(textBox: self)
         }
-        _ = validate()
+        _ = validate(isEnding: true)
         if textView.tag == 1{
             if textView.text.b_trim() == ""
             {
@@ -234,6 +251,8 @@ extension b_TextBoxFeild : UITextViewDelegate{
                 textView.tag = 0
             }
         }
+        
+        refreshTextAlignment()
     }
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         if delegate != nil{

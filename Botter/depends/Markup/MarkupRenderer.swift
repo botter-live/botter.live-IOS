@@ -29,8 +29,11 @@ public final class MarkupRenderer {
 
 private extension MarkupNode {
 	func render(withAttributes attributes: [NSAttributedString.Key: Any]) -> NSAttributedString {
-		guard let currentFont = attributes[NSAttributedString.Key.font] as? Font else {
-			fatalError("Missing font attribute in \(attributes)")
+        var currentFont = BotterSettingsManager.Font.getRegularFontForParsing()
+        if let font = attributes[NSAttributedString.Key.font] as? Font{
+            currentFont = font
+        } else {
+//			fatalError("Missing font attribute in \(attributes)")
 		}
 
 		switch self {
@@ -44,7 +47,11 @@ private extension MarkupNode {
 
 		case .emphasis(let children):
 			var newAttributes = attributes
-			newAttributes[NSAttributedString.Key.font] = currentFont.italicFont()
+            if currentFont.italicFont() == nil{
+                newAttributes[NSAttributedString.Key.font] = UIFont.italicSystemFont(ofSize: currentFont.pointSize)
+            }else{
+                newAttributes[NSAttributedString.Key.font] = currentFont.italicFont()
+            }
 			return children.map { $0.render(withAttributes: newAttributes) }.joined()
 
 		case .delete(let children):

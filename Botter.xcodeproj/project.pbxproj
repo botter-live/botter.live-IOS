@@ -264,13 +264,6 @@
 		8C016D4B250118B7000E2DC3 /* UIImageViewAligned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewAligned.h; sourceTree = "<group>"; };
 		8C016D4C250118B7000E2DC3 /* UIImageViewAligned.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewAligned.m; sourceTree = "<group>"; };
 		8C016D4F25016014000E2DC3 /* CachingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingModel.swift; sourceTree = "<group>"; };
-		8C08E7FE249298E300A2B984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C08E800249298E300A2B984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8C08E802249298E300A2B984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8C08E805249298E300A2B984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8C08E80A249298E500A2B984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8C08E80C249298E500A2B984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C08E81524929BA100A2B984 /* HiddenLauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenLauncherViewController.swift; sourceTree = "<group>"; };
 		8C1B446E24E34E4700853B03 /* b_LocalizableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b_LocalizableViewController.swift; sourceTree = "<group>"; };
 		8C1B447724E55E4100853B03 /* LazyImage.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = LazyImage.modulemap; sourceTree = "<group>"; };
 		8C1B447824E55E4100853B03 /* LazyImage-dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LazyImage-dummy.m"; sourceTree = "<group>"; };
@@ -303,8 +296,6 @@
 		8C41822F24A1CF070097E1A6 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		8C41823124A1F3AA0097E1A6 /* BotterSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotterSettingsManager.swift; sourceTree = "<group>"; };
 		8C41823324A1FF100097E1A6 /* UIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIManager.swift; sourceTree = "<group>"; };
-		8C41823A24A3B0150097E1A6 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		8C41823B24A3B0150097E1A6 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		8C463ACE24BF37BC00B78E96 /* BaseApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseApi.swift; sourceTree = "<group>"; };
 		8C463AD024BF472600B78E96 /* BotData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotData.swift; sourceTree = "<group>"; };
 		8C463AD224BF475800B78E96 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
@@ -350,7 +341,6 @@
 		8C786A3D24E0F04E004A826C /* PresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
 		8C786A3E24E0F04E004A826C /* ViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
 		8C786A3F24E0F04E004A826C /* InteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
-		8C83EE2724CF3FF6000F2637 /* BotterTests.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BotterTests.entitlements; sourceTree = "<group>"; };
 		8C83EE2A24D05C32000F2637 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
 		8C83EE2C24D0649D000F2637 /* AttachmentDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentDataSource.swift; sourceTree = "<group>"; };
 		8C83EE2E24D06CB8000F2637 /* AttchedFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttchedFile.swift; sourceTree = "<group>"; };
@@ -587,22 +577,6 @@
 			path = UIImageViewAligned;
 			sourceTree = "<group>";
 		};
-		8C08E7FD249298E300A2B984 /* BotterSample */ = {
-			isa = PBXGroup;
-			children = (
-				8C83EE2724CF3FF6000F2637 /* BotterTests.entitlements */,
-				8C41823524A3858D0097E1A6 /* Fonts */,
-				8C08E7FE249298E300A2B984 /* AppDelegate.swift */,
-				8C08E800249298E300A2B984 /* SceneDelegate.swift */,
-				8C08E802249298E300A2B984 /* ViewController.swift */,
-				8C08E804249298E300A2B984 /* Main.storyboard */,
-				8C08E809249298E500A2B984 /* LaunchScreen.storyboard */,
-				8C08E80C249298E500A2B984 /* Info.plist */,
-				8C08E81524929BA100A2B984 /* HiddenLauncherViewController.swift */,
-			);
-			path = BotterSample;
-			sourceTree = "<group>";
-		};
 		8C1B447E24E55E4100853B03 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,15 +643,6 @@
 				8C2EFE3424C4B7560070D728 /* EndFormViewController.swift */,
 			);
 			path = EndForm;
-			sourceTree = "<group>";
-		};
-		8C41823524A3858D0097E1A6 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				8C41823A24A3B0150097E1A6 /* Roboto-Medium.ttf */,
-				8C41823B24A3B0150097E1A6 /* Roboto-Regular.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		8C463ACD24BF379B00B78E96 /* DataSource */ = {
@@ -930,7 +895,6 @@
 			isa = PBXGroup;
 			children = (
 				8CC4F4A5248CFBA4000692AE /* Botter */,
-				8C08E7FD249298E300A2B984 /* BotterSample */,
 				8CC4F4A4248CFBA4000692AE /* Products */,
 				F954DB11F77578B1EBA192C3 /* Pods */,
 				2C4534889BE08B066D37F9CC /* Frameworks */,
@@ -1342,7 +1306,7 @@
 		8CC4F49A248CFBA4000692AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = BlueCrunch;
 				TargetAttributes = {
@@ -1657,22 +1621,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8C08E804249298E300A2B984 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C08E805249298E300A2B984 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8C08E809249298E500A2B984 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C08E80A249298E500A2B984 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		8CC4F4E4248CFCCB000692AE /* B_Chat.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

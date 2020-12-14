@@ -398,10 +398,10 @@
             filePath = "Botter/Controllers/ChatView/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "509"
-            endingLineNumber = "509"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "527"
+            endingLineNumber = "527"
+            landmarkName = "b_ChatViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -800,8 +800,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
-            landmarkName = "uploadAttachment(image:completion:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -976,8 +976,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "uploadAttachment(url:name:completion:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   uuid = "14897677-B071-444A-9A2F-B859DC84AA72 - 44e990c17032d933"
@@ -1024,8 +1024,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "uploadAttachment(url:name:completion:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1040,8 +1040,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "uploadAttachment(url:name:completion:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1436,9 +1436,9 @@
             filePath = "Botter/Controllers/ChatView/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "517"
-            endingLineNumber = "517"
-            landmarkName = "tableView(_:heightForRowAt:)"
+            startingLineNumber = "535"
+            endingLineNumber = "535"
+            landmarkName = "fileExtension()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1486,7 +1486,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "registerCells()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1644,10 +1644,10 @@
             filePath = "Botter/Controllers/ChatView/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
-            landmarkName = "removeObservers()"
-            landmarkType = "7">
+            startingLineNumber = "325"
+            endingLineNumber = "325"
+            landmarkName = "b_ChatViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1694,7 +1694,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
             endingLineNumber = "117"
-            landmarkName = "endSession()"
+            landmarkName = "closeConnectionUpdateView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1772,8 +1772,8 @@
             filePath = "Botter/Controllers/ChatView/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
+            startingLineNumber = "399"
+            endingLineNumber = "399"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

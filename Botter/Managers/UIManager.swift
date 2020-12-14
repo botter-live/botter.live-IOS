@@ -253,20 +253,48 @@ class b_AttachmentImage : UIImageView{
     }
 }
 
+class customTextFeild : UITextField{
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        NotificationCenter.default.removeObserver(self)
+//        NotificationCenter.default.addObserver(self, selector: #selector(inputModeDidChange), name: UITextInputMode.currentInputModeDidChangeNotification , object: nil)
+    }
+    
+    @objc func inputModeDidChange(_ notification: Notification) {
+   
+        if let inputMode = self.textInputMode{
+            if let lang = inputMode.primaryLanguage{
+                print(lang)
+                if self.text?.b_trim() == "" {
+                    if lang.contains("ar"){
+                        self.textAlignment = .right
+                    }else if lang.contains("en") {
+                        self.textAlignment = .left
+                    }
+                }
+            }
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+}
+
 
 extension UITextField {
     open override func awakeFromNib() {
-        if self.textAlignment == .natural{
-            self.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
-        }
+//        if self.textAlignment == .natural{
+//            self.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
+//        }
     }
 }
 
 extension UITextView {
     open override func awakeFromNib() {
-        if self.textAlignment == .natural{
-            self.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
-        }
+//        if self.textAlignment == .natural{
+//            self.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
+//        }
     }
 }
 
