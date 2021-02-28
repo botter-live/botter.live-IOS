@@ -60,7 +60,7 @@ extension Date {
         let weekDay = myComponents.weekday
         dateFormater.locale = NSLocale.init(localeIdentifier: "en_US") as Locale
         let index = (weekDay!  - 1) % 7
-        print(dateFormater.shortWeekdaySymbols[index])
+//        print(dateFormater.shortWeekdaySymbols[index])
         return (dateFormater.shortWeekdaySymbols[index]).capitalized
 //            dateFormater.weekdaySymbols[Calendar.current.component(.weekday, from: self)]
     }

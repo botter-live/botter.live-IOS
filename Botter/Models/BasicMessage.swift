@@ -107,7 +107,7 @@ class b_BasicMessage :  Mappable  {
         }
         
         if msgType == .userImage &&  msgType == .attachment{
-            print(map.JSON)
+//            print(map.JSON)
         }
         
         if msgType == .userImage{

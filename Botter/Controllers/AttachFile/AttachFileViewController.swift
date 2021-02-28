@@ -332,7 +332,7 @@ extension b_AttachFileViewController : UIDocumentPickerDelegate{
         guard let myURL = urls.first else {
             return
         }
-        print("import result : \(myURL)")
+//        print("import result : \(myURL)")
         
         uploadUrl(url: myURL.absoluteString)
         //        + "." + myURL.absoluteString.fileExtension()
@@ -340,12 +340,12 @@ extension b_AttachFileViewController : UIDocumentPickerDelegate{
     
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
-        print("import result : \(url)")
+//        print("import result : \(url)")
         uploadUrl(url: url.absoluteString)
     }
     
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-        print("view was cancelled")
+//        print("view was cancelled")
         dismiss(animated: true, completion: nil)
     }
 }
@@ -356,7 +356,7 @@ extension b_AttachFileViewController : CLLocationManagerDelegate {
         guard let userLocation: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         self.latitude = userLocation.latitude
         self.longitude = userLocation.longitude
-        print("locations = \(userLocation.latitude) \(userLocation.longitude)")
+//        print("locations = \(userLocation.latitude) \(userLocation.longitude)")
         
     }
     

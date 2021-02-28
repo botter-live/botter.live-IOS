@@ -55,7 +55,7 @@ class UserImageTableViewCell: UserChatTableViewCell {
             openInAppleMap()
             }
       }else{
-        print("failed")
+//        print("failed")
 //        if let urlDestination = URL.init(string: "https://www.google.co.in/maps/dir/?saddr=&daddr=\(String(describing: msg.latitude)),\(String(describing: msg.langtude))&directionsmode=driving") {
 //            UIApplication.shared.open(urlDestination)
 //           }

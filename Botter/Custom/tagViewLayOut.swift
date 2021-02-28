@@ -32,7 +32,7 @@ class b_tagViewLayOut: UICollectionViewFlowLayout {
             // calculate new value for current margin
             
             if refAttributes.frame.maxX > rect.maxX {
-                print("offLimit")
+//                print("offLimit")
                 var newLeftAlignedFrame = refAttributes.frame
                 newLeftAlignedFrame.origin.x = self.sectionInset.left
                 refAttributes.frame = newLeftAlignedFrame

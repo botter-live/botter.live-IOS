@@ -264,7 +264,7 @@ class customTextFeild : UITextField{
    
         if let inputMode = self.textInputMode{
             if let lang = inputMode.primaryLanguage{
-                print(lang)
+//                print(lang)
                 if self.text?.b_trim() == "" {
                     if lang.contains("ar"){
                         self.textAlignment = .right

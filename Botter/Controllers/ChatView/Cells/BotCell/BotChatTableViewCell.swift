@@ -88,7 +88,7 @@ class BotChatTableViewCell: UserChatTableViewCell {
     func getBase64Imag(){
         if let dataDecoded:NSData = NSData(base64Encoded: self.msg.sender.avatar, options: NSData.Base64DecodingOptions(rawValue: 0)){
             if let decodedimage:UIImage = UIImage(data: dataDecoded as Data){
-                print(decodedimage)
+//                print(decodedimage)
 //                DispatchQueue.main.async {
                     self.avatarImg.image = decodedimage
                     self.avatarImg.contentMode = .scaleAspectFill

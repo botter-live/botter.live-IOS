@@ -56,11 +56,11 @@ class TextFormater{
             let italicFontAttribute = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 15.0)]
             let boldText = text.string[range]
             text.addAttributes(italicFontAttribute, range: text.mutableString.range(of: String(boldText)))
-            print(text.string.unicodeScalars.count)
+//            print(text.string.unicodeScalars.count)
             let ftempIndex  = text.string.firstIndex(of: "_")
             text.replaceCharacters(in: NSRange(location: ftempIndex?.distance(in: text.string) ?? startIndex , length: 1), with: " ")
             let tempIndex  = text.string.firstIndex(of: "_")
-            print(tempIndex?.distance(in: text.string) ?? 0)
+//            print(tempIndex?.distance(in: text.string) ?? 0)
             text.replaceCharacters(in: NSRange(location: tempIndex?.distance(in: text.string) ?? endIndex, length: 1), with: " ")
             
         }else if char == "~" {

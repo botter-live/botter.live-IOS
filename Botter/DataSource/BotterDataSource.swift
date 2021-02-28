@@ -16,7 +16,7 @@ class BotterDataSource : BaseDataSource{
         let url = Constants.BOTTER_DATA + getLangStr() + "?bot_id=" + BotterSettingsManager.BotID
         BaseAPI(url: url   , method: .get , params: nil, headers: nil) { (json, error) in
             if json != nil {
-                print(json)
+//                print(json)
                 let data = b_BotData.getBotterData(dict: json ?? [:])
                 completion(.sucess , data)
             }else{
@@ -47,7 +47,7 @@ class BotterDataSource : BaseDataSource{
             
             
                 if json != nil {
-                    print(json)
+//                    print(json)
                     
                     
                     let data = b_FaqData.getFAQS(dict: json ?? [[:]])
@@ -73,11 +73,11 @@ class BotterDataSource : BaseDataSource{
                       "bot_id" : BotterSettingsManager.BotID ,
                       "token" : BotterSettingsManager.FCMToken ]
         
-        print(params as? AnyObject)
+//        print(params as? AnyObject)
         
         BaseAPI(url: Constants.SEND_TOKEN , method: .put , params: params, headers: nil) { (json, error) in
                 if json != nil {
-                    print(json)
+//                    print(json)
 //                    let data = b_FaqData.getFAQS(dict: json ?? [[:]])
                     completion(.sucess , "")
                 }else{

@@ -33,7 +33,7 @@ class MapTableViewCell: BotChatTableViewCell {
         btn.setTitle(msg.location.btnTitle, for: .normal)
         DispatchQueue.main.async {
             self.msg.lazyImage.show(imageView: self.img, url: msg.location.imageUrl) { (lazyError) in
-                print(lazyError?.localizedDescription)
+//                print(lazyError?.localizedDescription)
             }
         }
     }

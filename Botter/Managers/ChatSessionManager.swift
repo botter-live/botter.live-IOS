@@ -83,7 +83,7 @@ internal class ChatSessionManager {
             tAttribute["value"] = userSettings[key]
             attributes.append(tAttribute)
         }
-        print(attributes as AnyObject )
+//        print(attributes as AnyObject )
         if attributes.count > 0{
             BotterSettingsManager.userSettings = attributes
         }

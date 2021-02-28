@@ -40,7 +40,7 @@ internal class B_SocketManager : WebSocketDelegate  {
             if !self.isConnected && b_ReachabilityManager.shared.isNetworkAvailable{
                 self.connect()
             }
-            print(b_ReachabilityManager.shared.isNetworkAvailable)
+//            print(b_ReachabilityManager.shared.isNetworkAvailable)
             self.isConnected = b_ReachabilityManager.shared.isNetworkAvailable
         }
     }

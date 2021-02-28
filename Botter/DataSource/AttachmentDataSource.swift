@@ -26,7 +26,7 @@ class AttachmentDataSource : BaseDataSource{
             if data != nil {
                 upload(data: data! , mime: mime.value , name:  nName) { (json, error) in
                     if json != nil {
-                        print(json)
+//                        print(json)
                         let data = b_AttachedFile.getData(dict: json ?? [:])
                         completion(.sucess , data)
                     }else{
@@ -57,7 +57,7 @@ class AttachmentDataSource : BaseDataSource{
         if data != nil {
             upload(data: data! , mime: mime , name: "img\(Date.timeIntervalSinceReferenceDate).\(imageType.contentType)") { (json, error) in
                 if json != nil{
-                    print(json)
+//                    print(json)
                     let data = b_AttachedFile.getData(dict: json ?? [:])
                     completion(.sucess , data)
                 }else{

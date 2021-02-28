@@ -52,9 +52,9 @@ class BaseDataSource : Any {
                     break
                 case .failure(let error):
                     if let data = response.data {
-                        print("Print Server Error: " + String(data: data, encoding: String.Encoding.utf8)!)
+//                        print("Print Server Error: " + String(data: data, encoding: String.Encoding.utf8)!)
                     }
-                    print(error)
+//                    print(error)
                     completion(nil,response.error)
                     break
                 }
@@ -73,9 +73,9 @@ class BaseDataSource : Any {
                     break
                 case .failure(let error):
                     if let data = response.data {
-                        print("Print Server Error: " + String(data: data, encoding: String.Encoding.utf8)!)
+//                        print("Print Server Error: " + String(data: data, encoding: String.Encoding.utf8)!)
                     }
-                    print(error)
+//                    print(error)
                     completion(nil,response.error)
                     break
                 }
@@ -102,9 +102,9 @@ class BaseDataSource : Any {
                 break
             case .failure(let error):
                     if let data = response.data {
-                        print("Print Server Error: " + String(data: data, encoding: String.Encoding.utf8)!)
+//                        print("Print Server Error: " + String(data: data, encoding: String.Encoding.utf8)!)
                     }
-                    print(error)
+//                    print(error)
                     completion(nil,response.error)
                     break
                 }

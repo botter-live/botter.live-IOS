@@ -43,7 +43,7 @@ class WeatherTableViewCell: BotChatTableViewCell  {
 //        self.lazyImage.showWithSpinner(imageView: self.img, url: msg.weather.imageUrl)
         DispatchQueue.main.async {
             self.msg.lazyImage.show(imageView: self.img, url: msg.weather.imageUrl) { (lazyError) in
-                print(lazyError?.localizedDescription)
+//                print(lazyError?.localizedDescription)
             }
         }
     }

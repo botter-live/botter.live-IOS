@@ -191,7 +191,7 @@ extension b_ChatViewController {
    
         if let inputMode = chatView.field.textInputMode{
             if let lang = inputMode.primaryLanguage{
-                print(lang)
+//                print(lang)
                 if chatView.field.text.b_trim() == "" || chatView.field.tag == 0{
                     if lang.contains("ar"){
                         chatView.field.textAlignment = .right
@@ -241,7 +241,7 @@ extension b_ChatViewController {
             options: [.curveEaseInOut],
             animations: {
                 if newValue < self.original {
-                    print("Alert----------------")
+//                    print("Alert----------------")
                     self.bottomConstraint.constant = self.original
                 }else if changeInHeight > 0 && newValue > changeInHeight + self.original{
                     self.bottomConstraint.constant = changeInHeight + self.original
@@ -295,7 +295,7 @@ extension b_ChatViewController {
     }
     
     @objc func applicationWillEnterForeground(_ notification: NSNotification) {
-        print("App moved to foreground!")
+//        print("App moved to foreground!")
         B_SocketManager.shared.connect()
     }
     

@@ -32,7 +32,7 @@ class b_AudioHandler{
             item.message = msg
             audios.append(item)
             player.add(item: item)
-            print("audio count : \(player.items?.count)")
+//            print("audio count : \(player.items?.count)")
         }
     }
     
@@ -45,7 +45,7 @@ class b_AudioHandler{
     }
     
     func playPausePressed(cell : AudioBotTableViewCell){
-        print("audio count : \(player.items?.count)")
+//        print("audio count : \(player.items?.count)")
         if player.items?.count ?? 0 == 0{
             player.add(items: audios)
         }
@@ -82,7 +82,7 @@ extension b_AudioHandler : AudioPlayerDelegate{
         
         switch state {
         case .playing:
-            print("Playing")
+//            print("Playing")
             break
         default:
             break
@@ -134,7 +134,7 @@ extension b_AudioHandler : AudioPlayerDelegate{
     }
     
     func audioPlayer(_ audioPlayer: AudioPlayer, didUpdateEmptyMetadataOn item: AudioItem, withData data: Metadata) {
-        print(data)
+//        print(data)
     }
     
     func audioPlayer(_ audioPlayer: AudioPlayer, didLoad range: TimeRange, for item: AudioItem) {
