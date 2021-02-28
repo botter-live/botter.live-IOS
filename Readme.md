@@ -27,6 +27,8 @@ You can open BOTTER from a persistent button that sits over your app’s UI, Fro
 - [Push Notifications (FCM)](#Push-Notifications-FCM)
 - [Customizations](#Customizations)
 - [On-premise extra customizations](#On-premise-extra-customizations)
+- [Share Location (Optional)](#Share-location-feature-Optional)
+- [Custom User Attributes (Optional)](#Custom-user-attributes-Optional)
 - [Customization parameters table](#Customizations-guidance-table)
 - [Licence](#Licence)
 
@@ -246,6 +248,8 @@ extension AppDelegate : MessagingDelegate{
 
 ```
 
+[back to top](#readme)
+
 
 ## Customizations
 if you want anytime at any screen hide the BOTTER chat icon, just write the below line inside <strong>viewWillAppear</strong> method : 
@@ -293,6 +297,8 @@ BotterSettingsManager.logo = UIImage()
 BotterSettingsManager.language  = .english
 ```
 
+[back to top](#readme)
+
 ## On-premise extra customizations
 for on-premise servers you can easily set (socket, API and upload) URLs calling these methods:
 
@@ -301,6 +307,66 @@ BotterSettingsManager.setBotSocket(url: "wss://...")
 BotterSettingsManager.setBotBase(url: "https://...")
 BotterSettingsManager.setBotUpload(url: "https://...")
 ```
+
+## Share location feature (Optional)
+
+### Step :one:: Get Google static map key for your app
+
+If you want to enable share current location feature you have to provide google static maps API key, 
+you need to open [Google cloud console](https://console.cloud.google.com/apis/credentials?) and make sure you choose the desired project.
+
+From the left menu you need to choose Credentials tab then press on (+ CREATE CREDENTIALS) and create your static map key.
+
+(it's recommended to restrict your key to be used with static maps only) - please refer to image below :
+
+
+<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/static_map.png" alt="static_map">
+
+
+### Step :two:: Provide the static map key to BOTTER
+
+You need to pass the key from step 1 to `BotterSettingsManager` to activate the share location feature like below : 
+
+
+```swift
+
+BotterSettingsManager.enableShareLocation(googleMapKey: "You google static map key here")
+
+```
+
+To be able to make clicking on map location action open <strong>Google Maps</strong> app, you will need to add app url in <strong>Application Queries Schemes </strong>. otherwise the action will open apple <strong>Maps</strong> app by default.
+
+```swift
+
+ <key>LSApplicationQueriesSchemes</key>
+    <array>
+     <string>comgooglemaps</string>
+    </array> 
+
+```
+
+
+[back to top](#readme)
+
+
+## Custom User Attributes (Optional)
+
+If you want to pass custom user attributes to BOTTER SDK instead of showing start forum or along with this forum then you can use the `Botter.setUserSettings(userSettings: [:])` function to pass your custom attributes to the SDK like below : 
+
+```swift
+
+Botter.setUserSettings(userSettings: ["custom_key":"custom_value",
+                                      "custom_key":"custom_value",
+                                      "custom_key":"custom_value"])
+```
+
+
+<strong>Important : </strong>
+
+To make sure that you have your user attributes ready, you need to use the above code in your AppDelegate or Main View Controller to make it ready before user opens chat screen.
+
+
+[back to top](#readme)
 
 ## Customization parameters table:
 | Name  | Description | Screenshot |
@@ -322,5 +388,6 @@ BotterSettingsManager.setBotUpload(url: "https://...")
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of at:
 <a href='https://opensource.org/licenses/apache2.0.php'>https://opensource.org/licenses/apache2.0.php</a>
 
+[back to top](#readme)
 
 ### Thank you 
