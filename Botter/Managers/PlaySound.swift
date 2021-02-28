@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-class PlaySound{
+internal class PlaySound{
     private static var player: AVAudioPlayer?
     
     

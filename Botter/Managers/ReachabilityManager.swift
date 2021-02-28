@@ -8,7 +8,7 @@
 
 import UIKit
 
-class b_ReachabilityManager: NSObject {
+internal class b_ReachabilityManager: NSObject {
     static  let shared = b_ReachabilityManager()
     // 3. Boolean to track network reachability
     var isNetworkAvailable : Bool {

@@ -36,6 +36,10 @@ public func openChatScreen(APIKey : String){
     }
 }
 
+public func setUserSettings(userSettings : [String:Any]){
+    ChatSessionManager.shared.setUserSettings(userSettings: userSettings)
+}
+
 public func hideLauncherButton(){
     let windows = UIApplication.shared.windows
     if let floatingWindow = windows.last(where:  { (window) -> Bool in

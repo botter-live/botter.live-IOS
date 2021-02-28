@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NotificationManager{
+internal class NotificationManager{
     
     static var shared = NotificationManager()
     

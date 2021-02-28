@@ -29,7 +29,7 @@ class BaseDataSource : Any {
         static var FAQ_DATA = BASE_URL + "widget/faqs/"
         static var SEND_TOKEN = SOCKET_URL.replacingOccurrences(of: "ws", with: "http") + "notification/user-token"
         
-        static var UPLOAD_URL = PROD_UPLOAD
+        static var UPLOAD_URL = PRODUCTION_URL
         static var UPLOAD_ATTACHMENT = BASE_URL + "api/file/upload"
         
     }

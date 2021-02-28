@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class UserImageTableViewCell: UserChatTableViewCell {
     
@@ -29,9 +30,9 @@ class UserImageTableViewCell: UserChatTableViewCell {
      func setData(msg: b_BasicMessage) {
         super.setData(msg: msg)
         self.msgImage?.image = nil
-        if msg.slug == "user_location"{
-             self.msg.lazyImage.show(imageView: self.msgImage!, url:
-             "https://2ab9pu2w8o9xpg6w26xnz04d-wpengine.netdna-ssl.com/wp-content/uploads/staticmaps/s/373149-static-lounge/static-lounge-map-large.png") { (lazyError) in
+        if msg.msgType == .userLocation{
+            let url = "https://maps.googleapis.com/maps/api/staticmap?center=\(msg.latitude ?? 0.0),\(msg.langtude ?? 0.0)&zoom=13&size=\(Int(self.msgImage?.frame.width ?? 120))x\(Int(self.msgImage?.frame.height ?? 220))&key=\(BotterSettingsManager.googleMapKey)&markers=size:mid%7Ccolor:0xff0000%7C\(msg.latitude ?? 0.0),\(msg.langtude ?? 0.0)"
+             self.msg.lazyImage.show(imageView: self.msgImage!, url: url) { (lazyError) in
                         }
             actionBtn?.isHidden = false
         }else{
@@ -45,17 +46,34 @@ class UserImageTableViewCell: UserChatTableViewCell {
     
     @IBAction func openMaps(){
       if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {  //if phone has an app
-
-        if let url = URL(string: "comgooglemaps-x-callback://?saddr=&daddr=\(String(describing: msg.latitude)),\(String(describing: msg.langtude))&directionsmode=driving") {
+//        UIApplication.shared.open(!, options: [:], completionHandler: nil)
+        if let url = URL(string:"comgooglemaps://?center=\(msg.latitude ?? 0),\(msg.langtude ?? 0)&zoom=12&views=traffic&q=\(msg.latitude ?? 0),\(msg.langtude ?? 0)") {
             UIApplication.shared.open(url, options: [:])
            }
       else {
              //Open in browser
-            if let urlDestination = URL.init(string: "https://www.google.co.in/maps/dir/?saddr=&daddr=\(String(describing: msg.latitude)),\(String(describing: msg.langtude))&directionsmode=driving") {
-                UIApplication.shared.open(urlDestination)
-               }
+            openInAppleMap()
             }
-        }
+      }else{
+        print("failed")
+//        if let urlDestination = URL.init(string: "https://www.google.co.in/maps/dir/?saddr=&daddr=\(String(describing: msg.latitude)),\(String(describing: msg.langtude))&directionsmode=driving") {
+//            UIApplication.shared.open(urlDestination)
+//           }
+        openInAppleMap()
+      }
+    }
+    
+    func openInAppleMap(){
+        let coordinate = CLLocationCoordinate2DMake(msg.latitude ?? 0, msg.langtude ?? 0)
+        let region = MKCoordinateRegion.init(center: coordinate, span: MKCoordinateSpan.init(latitudeDelta: 0.01, longitudeDelta: 0.02))
+//            MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(0.01, 0.02))
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: region.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: region.span)]
+        mapItem.name = ""
+        mapItem.openInMaps(launchOptions: options)
     }
     
    override func prepareForReuse() {

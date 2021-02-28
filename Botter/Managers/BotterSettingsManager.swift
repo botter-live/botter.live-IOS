@@ -23,6 +23,9 @@ public class BotterSettingsManager  {
         }
     }
     
+    internal static var userSettings : [[String:Any]] = [[String:Any]]()
+    internal static var googleMapKey : String = ""
+    
     public static var AccentColor : UIColor = UIColor.init(codeString: "#642c7a")
     
     public static var LauncherColor : UIColor = AccentColor{
@@ -205,6 +208,10 @@ public class BotterSettingsManager  {
     
     public static func getBotSocket()->String{
         return BaseDataSource.Constants.SOCKET_URL
+    }
+    
+    public static func enableShareLocation(googleMapKey : String){
+        BotterSettingsManager.googleMapKey = googleMapKey
     }
 }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ChatSessionManager {
+internal class ChatSessionManager {
     
     static var shared = ChatSessionManager()
     
@@ -71,6 +71,21 @@ class ChatSessionManager {
             return "Bot".b_localize() + ": "
         case .user :
             return "You".b_localize() + ": "
+        }
+    }
+    
+    internal func setUserSettings(userSettings : [String:Any]){
+        var attributes = [[String : Any]]()
+        let keys = Array(userSettings.keys)
+        for key in keys{
+            var tAttribute = [String : Any]()
+            tAttribute["attribute"] = key
+            tAttribute["value"] = userSettings[key]
+            attributes.append(tAttribute)
+        }
+        print(attributes as AnyObject )
+        if attributes.count > 0{
+            BotterSettingsManager.userSettings = attributes
         }
     }
     

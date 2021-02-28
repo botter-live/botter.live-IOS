@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class botBubbelView : UIView{
+internal class botBubbelView : UIView{
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = BotterSettingsManager.BotterMessageBGColor

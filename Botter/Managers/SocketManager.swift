@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 //import Starscream
 
-class B_SocketManager : WebSocketDelegate  {
+internal class B_SocketManager : WebSocketDelegate  {
     
     static var shared : B_SocketManager! = B_SocketManager()
     var messageRecieved:((b_BasicMessage)->())!
@@ -173,15 +173,30 @@ class B_SocketManager : WebSocketDelegate  {
     }
     
     func sendOpeningMessage(){
+        var allAtributes = [[String:Any]]()
+        if BotterSettingsManager.userSettings.count > 0{
+            allAtributes.append(contentsOf: BotterSettingsManager.userSettings)
+        }
+        if self.attributes != nil{
+            allAtributes.append(contentsOf: attributes)
+        }
+        
         let isFirst = B_SocketManager.first && !ChatSessionManager.shared.hasActiveSession()
+        if !isFirst && allAtributes.count > 0{
+            sendAttrebutes(attributes: allAtributes)
+        }
         var msg : [String:Any] = ["bot_id": BotterSettingsManager.BotID ,
                    "channel": channel ,
                    "type": isFirst  ? "hello"  : "welcome_back",
                    "user": guid ,
                    "user_profile": ""]
-        if self.attributes != nil{
-            msg["attributes"] = attributes
+        
+        if allAtributes.count > 0 && isFirst{
+            msg["attributes"] = allAtributes
         }
+        
+            print(allAtributes as AnyObject)
+        
         let msgString = json(from: msg) ?? ""
 //        ChatSessionManager.shared.setActiveSession(active: true)
         self.socket.write(ping: "PING".data(using: .utf8)!) {

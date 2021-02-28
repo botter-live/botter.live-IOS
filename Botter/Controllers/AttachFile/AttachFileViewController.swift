@@ -15,8 +15,8 @@ import CoreLocation
 class b_AttachFileViewController: b_LocalizableViewController {
     
     @IBOutlet weak var tableView : UITableView!
-//,"Current location"
-    var actions = ["Camera" , "Gallery" , "File"]
+    //,"Current location"
+    var actions = ["Camera" , "Gallery" , "File","Current location"]
     let imagepicker = UIImagePickerController()
     var completion : ((b_AttachedFile)->())!
     var loader = b_LoaderManager()
@@ -24,6 +24,7 @@ class b_AttachFileViewController: b_LocalizableViewController {
     var userLocationDelegate : UserLoadationDelegate?
     var latitude : Double?
     var longitude: Double?
+    var checkLocationStatus = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,12 +61,12 @@ class b_AttachFileViewController: b_LocalizableViewController {
     }
     
     override func collapsedHeight(containedIn contentSheet: ContentSheet) -> CGFloat {
-           return 350
-       }
-       
-       override func expandedHeight(containedIn contentSheet: ContentSheet) -> CGFloat {
-           return 350
-       }
+        return 350
+    }
+    
+    override func expandedHeight(containedIn contentSheet: ContentSheet) -> CGFloat {
+        return 350
+    }
     
     func showLoader() {
         self.loader.show(inRect: self.view.frame, inView: self.view)
@@ -184,7 +185,7 @@ class b_AttachFileViewController: b_LocalizableViewController {
 extension b_AttachFileViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return actions.count
+        return BotterSettingsManager.googleMapKey == "" ? (actions.count - 1)  : actions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -219,28 +220,33 @@ extension b_AttachFileViewController : UITableViewDelegate{
     func checkUserLocationPermission()  {
         
         if CLLocationManager.locationServicesEnabled()
+        {
+            switch(CLLocationManager.authorizationStatus())
             {
-                switch(CLLocationManager.authorizationStatus())
-                {
-                  case .notDetermined:
-                        locationManager.requestWhenInUseAuthorization()
-                        break
-                  case .authorizedWhenInUse, .authorizedAlways :
-                             // If authorized when in use
-                            userLocationDelegate?.shareUserLocation(latitude: latitude ?? 0.0, langtuide: longitude ?? 0.0)
-                            self.dismiss(animated: true, completion: nil)
-                             break
-                         case .restricted:
-                             // If restricted by e.g. parental controls. User can't enable Location Services
-                             break
-                         case .denied:
-                            // grant access from Settings.app
-                                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-                             break
-                         default:
-                             break
-                }
+            case .notDetermined:
+                checkLocationStatus = true
+                locationManager.requestWhenInUseAuthorization()
+                break
+            case .authorizedWhenInUse, .authorizedAlways :
+                // If authorized when in use
+                checkLocationStatus = false
+                
+                userLocationDelegate?.shareUserLocation(latitude: latitude ?? (locationManager.location?.coordinate.latitude ?? 0.0), langtuide: longitude ?? (locationManager.location?.coordinate.longitude ?? 0.0))
+                self.dismiss(animated: true, completion: nil)
+                break
+            case .restricted:
+                // If restricted by e.g. parental controls. User can't enable Location Services
+                checkLocationStatus = false
+                break
+            case .denied:
+                // grant access from Settings.app
+                checkLocationStatus = false
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                break
+            default:
+                break
             }
+        }
     }
     
 }
@@ -252,7 +258,7 @@ extension b_AttachFileViewController : UIImagePickerControllerDelegate , UINavig
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let imageURL = info[UIImagePickerController.InfoKey.imageURL] as? URL {
-//            print(imageURL.typeIdentifier ?? "unknown UTI")
+            //            print(imageURL.typeIdentifier ?? "unknown UTI")
             self.dismiss(animated: true) {
                 self.uploadUrl(url: imageURL.absoluteString , name: "img\(Date.timeIntervalSinceReferenceDate)")
             }
@@ -298,29 +304,29 @@ extension b_AttachFileViewController : UIImagePickerControllerDelegate , UINavig
     }
     
     func uploadImage(image : UIImage){
-           let dataSource = AttachmentDataSource()
-           showLoader()
-           dataSource.uploadAttachment(image: image) { (status, response) in
-               self.hideLoader()
-               switch status{
-               case .sucess:
+        let dataSource = AttachmentDataSource()
+        showLoader()
+        dataSource.uploadAttachment(image: image) { (status, response) in
+            self.hideLoader()
+            switch status{
+            case .sucess:
                 let file = response as? b_AttachedFile ?? b_AttachedFile()
                 self.dismiss(animated: true) {
                     if self.completion != nil {
                         self.completion(file)
                     }
                 }
-                   break
-               case .error , .networkError:
+                break
+            case .error , .networkError:
                 self.b_showMessage(response as? String ?? "Something went wrong".b_localize())
-                   break
-               }
-           }
-       }
+                break
+            }
+        }
+    }
 }
 extension b_AttachFileViewController : UIDocumentPickerDelegate{
     
-
+    
     
     public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let myURL = urls.first else {
@@ -329,15 +335,15 @@ extension b_AttachFileViewController : UIDocumentPickerDelegate{
         print("import result : \(myURL)")
         
         uploadUrl(url: myURL.absoluteString)
-//        + "." + myURL.absoluteString.fileExtension()
+        //        + "." + myURL.absoluteString.fileExtension()
     }
-
-
+    
+    
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
-         print("import result : \(url)")
-         uploadUrl(url: url.absoluteString)
+        print("import result : \(url)")
+        uploadUrl(url: url.absoluteString)
     }
-
+    
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         print("view was cancelled")
         dismiss(animated: true, completion: nil)
@@ -351,10 +357,22 @@ extension b_AttachFileViewController : CLLocationManagerDelegate {
         self.latitude = userLocation.latitude
         self.longitude = userLocation.longitude
         print("locations = \(userLocation.latitude) \(userLocation.longitude)")
-
+        
+    }
+    
+    
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedAlways ||
+            status == CLAuthorizationStatus.authorizedWhenInUse{
+            if checkLocationStatus{
+                checkUserLocationPermission()
+            }
+        }
     }
 }
 
 protocol UserLoadationDelegate {
     func shareUserLocation(latitude : Double, langtuide : Double)
 }
+
