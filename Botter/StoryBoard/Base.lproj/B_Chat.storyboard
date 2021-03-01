@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -508,19 +508,19 @@ to BOTTER Mobile</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="cnj-ya-FOi" customClass="b_HeaderView" customModule="Botter" customModuleProvider="target">
+                            <view contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="cnj-ya-FOi">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Olx-3d-3Dm">
                                         <rect key="frame" x="0.0" y="34" width="414" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOTTER" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhJ-tN-HXW" customClass="b_ChatHeader" customModule="Botter" customModuleProvider="target">
-                                                <rect key="frame" x="72" y="5" width="264" height="26"/>
+                                                <rect key="frame" x="72" y="17" width="264" height="26"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkT-zo-WdZ">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkT-zo-WdZ">
                                                 <rect key="frame" x="72" y="36" width="12" height="12"/>
                                                 <color key="backgroundColor" red="0.1333333333" green="0.76470588240000004" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -539,7 +539,7 @@ to BOTTER Mobile</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sro-s6-mgF" customClass="b_UserMesgLbl" customModule="Botter" customModuleProvider="target">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sro-s6-mgF" customClass="b_UserMesgLbl" customModule="Botter" customModuleProvider="target">
                                                 <rect key="frame" x="92" y="35" width="36.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -568,13 +568,13 @@ to BOTTER Mobile</string>
                                                     <constraint firstItem="Oit-IZ-sSi" firstAttribute="top" secondItem="bmg-7A-12u" secondAttribute="top" constant="6" id="wUA-WU-Lue"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Uu-kD-Bjh">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Uu-kD-Bjh" customClass="b_AccentBtn" customModule="Botter" customModuleProvider="target">
                                                 <rect key="frame" x="344" y="8" width="40" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="kTQ-Rf-iw9"/>
                                                     <constraint firstAttribute="width" constant="40" id="oe8-DR-xXH"/>
                                                 </constraints>
-                                                <state key="normal" image="close"/>
+                                                <state key="normal" image="close-1"/>
                                                 <connections>
                                                     <action selector="b_backDismiss:" destination="doQ-LX-xpz" eventType="touchUpInside" id="CZS-BN-Evd"/>
                                                     <action selector="b_backDismiss:" destination="mBd-sT-l3W" eventType="touchUpInside" id="Mcd-6X-xyi"/>
@@ -586,7 +586,7 @@ to BOTTER Mobile</string>
                                         <constraints>
                                             <constraint firstItem="7Uu-kD-Bjh" firstAttribute="leading" secondItem="OhJ-tN-HXW" secondAttribute="trailing" constant="8" id="0Kt-qL-s1T"/>
                                             <constraint firstItem="Sro-s6-mgF" firstAttribute="centerY" secondItem="OkT-zo-WdZ" secondAttribute="centerY" id="1zC-GJ-Shy"/>
-                                            <constraint firstItem="OhJ-tN-HXW" firstAttribute="centerY" secondItem="Olx-3d-3Dm" secondAttribute="centerY" constant="-12" id="IYJ-fG-odJ"/>
+                                            <constraint firstItem="OhJ-tN-HXW" firstAttribute="centerY" secondItem="Olx-3d-3Dm" secondAttribute="centerY" id="IYJ-fG-odJ"/>
                                             <constraint firstItem="OkT-zo-WdZ" firstAttribute="leading" secondItem="bmg-7A-12u" secondAttribute="trailing" constant="8" id="JqI-dX-bDq"/>
                                             <constraint firstItem="bmg-7A-12u" firstAttribute="leading" secondItem="Olx-3d-3Dm" secondAttribute="leading" constant="24" id="NKf-dO-t6o"/>
                                             <constraint firstItem="OhJ-tN-HXW" firstAttribute="leading" secondItem="bmg-7A-12u" secondAttribute="trailing" constant="8" id="PUC-K1-cST"/>
@@ -599,7 +599,7 @@ to BOTTER Mobile</string>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.39215686274509803" green="0.17254901960784313" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Olx-3d-3Dm" secondAttribute="trailing" id="PpU-h9-3hx"/>
                                     <constraint firstItem="Olx-3d-3Dm" firstAttribute="leading" secondItem="cnj-ya-FOi" secondAttribute="leading" id="UDB-5A-Aq5"/>
@@ -2232,7 +2232,7 @@ itemTitle.alpha = 0</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVc-RY-Bc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847.82608695652175" y="8.7053571428571423"/>
+            <point key="canvasLocation" x="922" y="-7"/>
         </scene>
         <!--Web Links View Controller-->
         <scene sceneID="wWp-x4-vtj">

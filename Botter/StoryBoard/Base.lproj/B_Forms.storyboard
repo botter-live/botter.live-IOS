@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -329,7 +329,6 @@
                                         <constraint firstAttribute="trailing" secondItem="Kel-77-Nlg" secondAttribute="trailing" constant="26" id="7Z2-2e-eY9"/>
                                         <constraint firstItem="Kel-77-Nlg" firstAttribute="leading" secondItem="6Uo-Pe-Gq7" secondAttribute="leading" id="7nV-Ll-Cuy"/>
                                         <constraint firstAttribute="trailing" secondItem="6Uo-Pe-Gq7" secondAttribute="trailing" constant="26" id="F1b-es-qXE"/>
-                                        <constraint firstItem="lYP-QR-L1w" firstAttribute="leading" secondItem="ngP-4T-mZJ" secondAttribute="trailing" priority="250" constant="24" id="Il2-OD-jtf"/>
                                         <constraint firstAttribute="bottom" secondItem="lxd-qj-oaY" secondAttribute="bottom" constant="-8" id="Jov-Py-3bv"/>
                                         <constraint firstItem="ngP-4T-mZJ" firstAttribute="leading" secondItem="ruv-aR-KVw" secondAttribute="leading" constant="26" id="PDh-MC-aCa"/>
                                         <constraint firstItem="6Uo-Pe-Gq7" firstAttribute="leading" secondItem="ngP-4T-mZJ" secondAttribute="leading" id="QEa-sQ-MtP"/>

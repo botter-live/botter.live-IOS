@@ -208,24 +208,21 @@ class b_HeaderLogo : UIImageView{
         else if self.tag == 100{
             
         }else{
-            if BotterSettingsManager.logo != nil {
-                tintColor = BotterSettingsManager.FontColor
-                image = BotterSettingsManager.chatHeaderLogo
-            }
+            tintColor = BotterSettingsManager.FontColor
+            image = BotterSettingsManager.chatHeaderLogo
         }
     }
 }
 
-class b_WelcomeHeaderLogo : UIImageViewAligned{
+class b_WelcomeHeaderLogo : UIImageView{
+//    UIImageViewAligned
     override func awakeFromNib() {
         super.awakeFromNib()
         tintColor = BotterSettingsManager.HeaderColor
-        if BotterSettingsManager.welcomeBrandLogo != nil {
-            image = BotterSettingsManager.welcomeBrandLogo
-            tintColor = BotterSettingsManager.FontColor
-        }
-        self.alignLeft = BotterSettingsManager.language == .english
-        self.alignRight = BotterSettingsManager.language == .arabic
+        image = BotterSettingsManager.welcomeBrandLogo
+        tintColor = BotterSettingsManager.FontColor
+//        self.alignLeft = BotterSettingsManager.language == .english
+//        self.alignRight = BotterSettingsManager.language == .arabic
     }
 }
 
