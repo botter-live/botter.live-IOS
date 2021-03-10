@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // to show chat icon over entir app
         customizeChat()
-        Botter.show(APIKey: "9nw32y9gfqf59gye7y7")
+        Botter.show(APIKey: "")
 //        "9nw32y9gfqf59gye7y7"
 //        "nKmovPCdWNZdYnIejRnd"
         return true
