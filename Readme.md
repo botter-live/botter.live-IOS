@@ -10,7 +10,7 @@ You can open BOTTER from a persistent button that sits over your app’s UI, Fro
 
 ## Screenshots
 <p float="left">
-<img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/sample_black.jpg" width="200" alt="sample1">
+<img src="https://github.com/botter-live/botter.live-IOS/blob/d11b6797c7de8bc3a466d6c65ff99bc34cfb897a/Images/sample_black.jpeg" width="200" alt="sample1">
 <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/sample_blue.jpg" width="200" alt="sample2">
 <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/sample_orange.jpg" width="200" alt="sample3">
 <img src="https://raw.githubusercontent.com/botter-live/botter.live-Android/master/.github/images/sample_green.jpg" width="200" alt="sample4">
