@@ -54,9 +54,18 @@ class BasicFormTableViewCell: UITableViewCell {
     func evaluateRegex(text : String)->Bool{
 //        let regex = input.regex.trimmingCharacters(in: CharacterSet.init(charactersIn: "/"))
         if input.regex != "" {
-            let testCase = NSPredicate(format:"SELF MATCHES %@", input.regex)
-            let isValid = testCase.evaluate(with: text)
-            return isValid
+            do {
+                
+                let _ = try NSRegularExpression.init(pattern: input.regex , options: [])
+                
+                let testCase = NSPredicate(format:"SELF MATCHES %@", input.regex)
+                let isValid = testCase.evaluate(with: text)
+                return isValid
+            }catch{
+                print(error)
+//                errorLbl.isHidden = false
+                return false
+            }
         }
         return input.required ? text.count > 0 : true
     }

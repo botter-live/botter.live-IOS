@@ -72,11 +72,24 @@ class TextInputCardTableViewCell: BotChatTableViewCell {
     }
     
     func evaluateRegex()->Bool{
+//        self.regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         if regex != ""{
-            let testCase = NSPredicate(format:"SELF MATCHES %@", self.regex)
-            let isValid = testCase.evaluate(with: textFeild.text?.b_trim())
-            errorLbl.isHidden = isValid
-            return isValid
+            do {
+                
+                let _ = try NSRegularExpression.init(pattern: self.regex , options: [])
+                
+                let testCase = NSPredicate(format:"SELF MATCHES %@", self.regex)
+                print(self.regex)
+                
+                let isValid = testCase.evaluate(with: textFeild.text?.b_trim())
+                errorLbl.isHidden = isValid
+                return isValid
+            }catch{
+                print(error)
+                errorLbl.isHidden = false
+                return false
+            }
+          
         }else{
             let isValid = textFeild.text?.b_trim() != ""
             errorLbl.isHidden = isValid
