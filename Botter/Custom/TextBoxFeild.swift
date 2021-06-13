@@ -81,8 +81,8 @@ class b_TextBoxFeild: UIView {
     func refreshText(isEnding : Bool = false){
         if field != nil {
             if field.tag == 0 || field.text == "" || field.text == placeHolder {
+                field.text =  placeHolder
                 if isEnding{
-                    field.text =  placeHolder
                     if field.tag == 0 {
                         field.textAlignment = BotterSettingsManager.language == .arabic ? .right : .left
                     }else{
