@@ -50,7 +50,32 @@ final class b_ChatViewController: UIViewController {
         for v in self.view.subviews{
             v.semanticContentAttribute = .forceLeftToRight
         }
+//        NotificationCenter.default.addObserver(self, selector: #selector(pauseSession(notification:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
+
+//        NotificationCenter.default.addObserver(self, selector: #selector(resumeSession(notification:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseSession(notification:)), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(resumeSession(notification:)), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
+    
+   
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
+    
+    @objc func pauseSession(notification: NSNotification){
+        print("Fired: " + notification.name.rawValue)
+        B_SocketManager.shared.pauseSession()
+    }
+    
+    @objc func resumeSession(notification: NSNotification ){
+        print("Fired: " + notification.name.rawValue)
+        B_SocketManager.shared.resumeSession()
+    }
+    
     
     func registerCells(){
         tableView.registerBotterCellNib(FlightTicketTableViewCell.self)
@@ -106,6 +131,7 @@ final class b_ChatViewController: UIViewController {
     
     func close(){
         self.presenter.close()
+        NotificationCenter.default.removeObserver(self)
         if self.history{
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         }else{
@@ -272,6 +298,10 @@ extension b_ChatViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         B_SocketManager.shared.connect()
+//        if !self.isBeingPresented{
+//            B_SocketManager.shared.resumeSession()
+//        }
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -283,6 +313,8 @@ extension b_ChatViewController {
             B_SocketManager.shared = nil
             B_SocketManager.shared = B_SocketManager()
             NotificationManager.shared.clear()
+        }else{
+            
         }
     }
     

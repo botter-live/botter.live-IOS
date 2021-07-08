@@ -33,6 +33,7 @@ final class b_ChatPresenter {
     func close(){
         interactor = b_ChatInteractor()
         wireframe = b_ChatWireframe(botData: b_BotData())
+        B_SocketManager.shared.pauseSession()
         B_SocketManager.shared.messageRecieved = nil
     }
 }

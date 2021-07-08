@@ -53,6 +53,7 @@ public class BotterSettingsManager  {
     
     
     public static var hasFAQs : Bool = true
+    public static var showStartForm : Bool = true
     public static var  alignLauncherLeft : Bool = false{
         didSet{
             Botter.reSet()

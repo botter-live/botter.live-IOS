@@ -18,6 +18,9 @@ class BotterDataSource : BaseDataSource{
             if json != nil {
 //                print(json)
                 let data = b_BotData.getBotterData(dict: json ?? [:])
+                if !BotterSettingsManager.showStartForm{
+                    data.startForm = b_Form()
+                }
                 completion(.sucess , data)
             }else{
                 if (error != nil){

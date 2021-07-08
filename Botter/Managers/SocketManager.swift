@@ -217,9 +217,11 @@ internal class B_SocketManager : WebSocketDelegate  {
                    "user": guid ,
                    "user_profile": ""]
         let msgString = json(from: msg) ?? ""
-        self.socket.write(ping: "PING".data(using: .utf8)!) {
-            if self.isConnected{
-                self.socket.write(string: msgString)
+        if self.isConnected{
+            self.socket.write(ping: "PING".data(using: .utf8)!) {
+                if self.isConnected{
+                    self.socket.write(string: msgString)
+                }
             }
         }
         
@@ -227,6 +229,54 @@ internal class B_SocketManager : WebSocketDelegate  {
         B_SocketManager.shared = B_SocketManager()
 //        B_SocketManager.shared.socket.disconnect()
         NotificationManager.shared.clear()
+    }
+    
+    func pauseSession(){
+        let msg = ["bot_id": BotterSettingsManager.BotID ,
+                   "channel": channel ,
+                   "type":  "event:applicationMinimize",
+                   "user": guid ,
+                   "user_profile": ""]
+        let msgString = json(from: msg) ?? ""
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            print("done")
+            if self.isConnected{
+                self.socket.write(string: msgString)
+            }else{
+                self.connect()
+                self.pauseSession()
+            }
+        })
+        
+    }
+    
+    func resumeSession(){
+        let msg = ["bot_id": BotterSettingsManager.BotID ,
+                   "channel": channel ,
+                   "type":  "event:applicationWakeup",
+                   "user": guid ,
+                   "user_profile": ""]
+        let msgString = json(from: msg) ?? ""
+        print(msgString)
+        if self.isConnected{
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                print("done")
+                self.socket.write(string: msgString)
+            })
+
+        }else{
+            self.connect()
+            self.resumeSession()
+        }
+
+//        if self.isConnected{
+//        self.socket.write(ping: "PING".data(using: .utf8)!) {
+//                    }
+//        }else{
+//            connect()
+//            self.resumeSession()
+//        }
+        
     }
     
     func sendMessage(text : String , completion:@escaping((Bool)->())){
